@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>405A20A1-613D-4C15-9864-B1403497F0A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>project</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</key>
+		<string>https://github.com/personalhealthcaresolution/workoutsolution.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WorkoutSolution/WorkoutSolution.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/personalhealthcaresolution/workoutsolution.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WorkoutSolution</string>
+		</dict>
+	</array>
+</dict>
+</plist>
