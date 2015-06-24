@@ -10,6 +10,16 @@ import UIKit
 
 class TrackerViewController: UIViewController {
 
+    @IBOutlet weak var enableTracker: UISwitch!
+
+    @IBAction func trackerChangeValue(sender: UISwitch) {
+        if (enableTracker.on){
+            UIDevice.currentDevice().proximityMonitoringEnabled = true
+        }else{
+            UIDevice.currentDevice().proximityMonitoringEnabled = false
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

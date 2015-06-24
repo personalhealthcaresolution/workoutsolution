@@ -79,7 +79,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23i-Q3-EhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="557" y="1178"/>
+            <point key="canvasLocation" x="557" y="474"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Wl8-i6-Y2a">
@@ -110,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubV-KD-IPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="1178"/>
+            <point key="canvasLocation" x="1211" y="474"/>
         </scene>
         <!--Tracker View Controller-->
         <scene sceneID="MKQ-uT-hIq">
@@ -135,13 +135,29 @@
                                     <tabBarItem title="Setting" id="4XT-zc-UeA"/>
                                 </items>
                             </tabBar>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gXG-MQ-Eqj">
+                                <rect key="frame" x="276" y="491" width="51" height="31"/>
+                                <connections>
+                                    <action selector="trackerChangeValue:" destination="sHi-IX-MKc" eventType="valueChanged" id="62X-j2-pe6"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxI-g5-Fvc">
+                                <rect key="frame" x="87" y="381" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="enableTracker" destination="gXG-MQ-Eqj" id="yLn-Nl-Brr"/>
+                        <outlet property="test" destination="nxI-g5-Fvc" id="6QQ-TZ-ym9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTa-mW-qZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="439"/>
+            <point key="canvasLocation" x="1211" y="-276"/>
         </scene>
     </scenes>
 </document>
