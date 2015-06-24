@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D08D0F01B3B4DEE00887C13 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
 		5D6A53A21B27B228005C167E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53A11B27B228005C167E /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A539C1B27B228005C167E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				5D6A53A81B27B228005C167E /* LaunchScreen.xib */,
 				5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */,
 				5D6A539A1B27B228005C167E /* Supporting Files */,
+				5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */,
 			);
 			path = WorkoutSolution;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
+				5D08D0F01B3B4DEE00887C13 /* TrackerViewController.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
 			);
@@ -413,6 +417,7 @@
 				5D6A53BB1B27B229005C167E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D6A53BC1B27B229005C167E /* Build configuration list for PBXNativeTarget "WorkoutSolutionTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +426,7 @@
 				5D6A53BE1B27B229005C167E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

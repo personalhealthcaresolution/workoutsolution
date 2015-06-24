@@ -17,8 +17,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0a-6b-k8s">
-                                <rect key="frame" x="61" y="20" width="55" height="30"/>
-                                <state key="normal" title="Button1">
+                                <rect key="frame" x="61" y="20" width="51" height="30"/>
+                                <state key="normal" title="Tracker">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1297" y="1178"/>
         </scene>
-        <!--View Controller-->
+        <!--Tracker View Controller-->
         <scene sceneID="MKQ-uT-hIq">
             <objects>
-                <viewController id="sHi-IX-MKc" sceneMemberID="viewController">
+                <viewController id="sHi-IX-MKc" customClass="TrackerViewController" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jcB-0y-3Iv"/>
                         <viewControllerLayoutGuide type="bottom" id="eqB-Vq-UUK"/>
@@ -141,7 +141,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sTa-mW-qZ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297" y="431"/>
+            <point key="canvasLocation" x="1297" y="439"/>
         </scene>
     </scenes>
 </document>
