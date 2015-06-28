@@ -22,15 +22,21 @@ class TrackerViewController: UIViewController {
     @IBOutlet weak var accX: UILabel!
     @IBOutlet weak var accY: UILabel!
     @IBOutlet weak var accZ: UILabel!
+    @IBOutlet weak var curProximity: UILabel!
+    @IBOutlet weak var proximityState: UILabel!
 
     @IBAction func trackerChangeValue(sender: UISwitch) {
         UIDevice.currentDevice().proximityMonitoringEnabled = enableTracker.on
+        curProximity.text = UIDevice.currentDevice().proximityMonitoringEnabled.description
+        proximityState.text = UIDevice.currentDevice().proximityState.description
     }
     
     override func viewDidLoad() {
         
-        motionManager.accelerometerUpdateInterval = 0.2
+        curProximity.text = UIDevice.currentDevice().proximityMonitoringEnabled.description
+        proximityState.text = UIDevice.currentDevice().proximityState.description
         
+        motionManager.accelerometerUpdateInterval = 0.2
         motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue .currentQueue(), withHandler: {(accelerometerData: CMAccelerometerData!, error: NSError!) -> Void in
             self.outputAccelerationData(accelerometerData.acceleration)
             if (error != nil){
