@@ -15,6 +15,7 @@
 		5D6A53A71B27B228005C167E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A53A61B27B228005C167E /* Images.xcassets */; };
 		5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A53A81B27B228005C167E /* LaunchScreen.xib */; };
 		5D6A53B61B27B229005C167E /* WorkoutSolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */; };
+		5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5D6A53AF1B27B229005C167E /* WorkoutSolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutSolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A53B41B27B229005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSolutionTests.swift; sourceTree = "<group>"; };
+		5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		5D6A538E1B27B228005C167E = {
 			isa = PBXGroup;
 			children = (
+				5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */,
 				5D6A53991B27B228005C167E /* WorkoutSolution */,
 				5D6A53B21B27B229005C167E /* WorkoutSolutionTests */,
 				5D6A53981B27B228005C167E /* Products */,
