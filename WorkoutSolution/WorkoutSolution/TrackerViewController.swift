@@ -37,13 +37,14 @@ class TrackerViewController: UIViewController {
         proximityState.text = UIDevice.currentDevice().proximityState.description
         
         motionManager.accelerometerUpdateInterval = 0.2
+        /*
         motionManager.startAccelerometerUpdatesToQueue(NSOperationQueue .currentQueue(), withHandler: {(accelerometerData: CMAccelerometerData!, error: NSError!) -> Void in
             self.outputAccelerationData(accelerometerData.acceleration)
             if (error != nil){
                 println("\(error)")
             }
         })
-        
+        */
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
