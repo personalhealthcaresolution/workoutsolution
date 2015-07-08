@@ -16,6 +16,7 @@
 		5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A53A81B27B228005C167E /* LaunchScreen.xib */; };
 		5D6A53B61B27B229005C167E /* WorkoutSolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */; };
 		5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */; };
+		5DFEDEC71B4CB10C00F222C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		5D6A53B41B27B229005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSolutionTests.swift; sourceTree = "<group>"; };
 		5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFEDEC71B4CB10C00F222C5 /* AVFoundation.framework in Frameworks */,
 				5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		5D6A538E1B27B228005C167E = {
 			isa = PBXGroup;
 			children = (
+				5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */,
 				5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */,
 				5D6A53991B27B228005C167E /* WorkoutSolution */,
 				5D6A53B21B27B229005C167E /* WorkoutSolutionTests */,

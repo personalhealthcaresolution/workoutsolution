@@ -10,21 +10,13 @@ import UIKit
 import CoreMotion
 
 class TrackerViewController: UIViewController {
-    
-    var currentAccelX: Double = 0;
-    var currentAccelY: Double = 0;
-    var currentAccelZ: Double = 0;
-    var currentMaxAccelZ: Double = 0;
-    var counter: Int = 0;
-    
-    //let motionManager = CMMotionManager()
 
-    @IBOutlet weak var enableTracker: UISwitch!
-    @IBOutlet weak var accX: UILabel!
-    @IBOutlet weak var accY: UILabel!
-    @IBOutlet weak var accZ: UILabel!
-    @IBOutlet weak var curProximity: UILabel!
-    @IBOutlet weak var proximityState: UILabel!
+    var counter: Int = 0
+    var tracking: Bool = false
+    var startAccelZ: Double = 0
+    var currentAccelX: Double = 0
+    var currentAccelY: Double = 0
+    var currentAccelZ: Double = 0
     
     lazy var motionManager: CMMotionManager = {
         let motion = CMMotionManager()
@@ -32,9 +24,9 @@ class TrackerViewController: UIViewController {
         return motion
     }()
 
+    @IBOutlet weak var enableTracker: UISwitch!
     @IBAction func trackerChangeValue(sender: UISwitch) {
         UIDevice.currentDevice().proximityMonitoringEnabled = enableTracker.on
-        curProximity.text = UIDevice.currentDevice().proximityMonitoringEnabled.description
         if enableTracker.on {
             let queue = NSOperationQueue()
             self.motionManager.startAccelerometerUpdatesToQueue(queue, withHandler:
@@ -42,19 +34,17 @@ class TrackerViewController: UIViewController {
                     guard let data = data else {
                         return
                     }
-                    self.outputAccelerationData(data.acceleration)
+                    if (UIDevice.currentDevice().proximityState) {
+                        self.outputAccelerationData(data.acceleration)
+                    }
                 }
             )
         } else {
             self.motionManager.stopAccelerometerUpdates()
         }
-        proximityState.text = UIDevice.currentDevice().proximityState.description
     }
     
     override func viewDidLoad() {
-        curProximity.text = UIDevice.currentDevice().proximityMonitoringEnabled.description
-        proximityState.text = "0"
-        
         super.viewDidLoad()
     }
 
@@ -63,17 +53,16 @@ class TrackerViewController: UIViewController {
     }
 
     func outputAccelerationData(acceleration: CMAcceleration){
-        //if (UIDevice.currentDevice().proximityState){
-            self.accX.text = "\(acceleration.x)"
-            self.accY.text = "\(acceleration.y)"
-            self.accZ.text = "\(acceleration.z)"
-            print("X = \(acceleration.x)")
-            print("Y = \(acceleration.y)")
-            print("Z = \(acceleration.z)")
-            if (fabs(acceleration.z) > fabs(currentMaxAccelZ)){
-                counter++;
-                proximityState.text = counter.description
-            }
-        //}
+        //print("X = \(acceleration.x)")
+        //print("Y = \(acceleration.y)")
+        //print("Z = \(acceleration.z)")
+        if (acceleration.z > startAccelZ && tracking) {
+            counter++;
+            tracking = false
+            print("counter: \(counter)")
+        } else {
+            tracking = true
+        }
     }
+
 }
