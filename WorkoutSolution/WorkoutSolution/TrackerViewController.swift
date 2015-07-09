@@ -8,15 +8,18 @@
 
 import UIKit
 import CoreMotion
+import AVFoundation
 
 class TrackerViewController: UIViewController {
 
     var counter: Int = 0
     var tracking: Bool = false
-    var startAccelZ: Double = 0
+    var startAccelY: Double = 0
     var currentAccelX: Double = 0
     var currentAccelY: Double = 0
     var currentAccelZ: Double = 0
+    let synth = AVSpeechSynthesizer()
+    var myUtterance = AVSpeechUtterance(string: "")
     
     lazy var motionManager: CMMotionManager = {
         let motion = CMMotionManager()
@@ -27,7 +30,7 @@ class TrackerViewController: UIViewController {
     @IBOutlet weak var enableTracker: UISwitch!
     @IBAction func trackerChangeValue(sender: UISwitch) {
         UIDevice.currentDevice().proximityMonitoringEnabled = enableTracker.on
-        if enableTracker.on {
+        if (enableTracker.on) {
             let queue = NSOperationQueue()
             self.motionManager.startAccelerometerUpdatesToQueue(queue, withHandler:
                 {data, error in
@@ -40,6 +43,8 @@ class TrackerViewController: UIViewController {
                 }
             )
         } else {
+            counter = 0
+            startAccelY = 0
             self.motionManager.stopAccelerometerUpdates()
         }
     }
@@ -53,16 +58,24 @@ class TrackerViewController: UIViewController {
     }
 
     func outputAccelerationData(acceleration: CMAcceleration){
-        //print("X = \(acceleration.x)")
-        //print("Y = \(acceleration.y)")
-        //print("Z = \(acceleration.z)")
-        if (acceleration.z > startAccelZ && tracking) {
-            counter++;
-            tracking = false
-            print("counter: \(counter)")
+        if (startAccelY == 0) {
+            startAccelY = acceleration.y
+        }
+        if (acceleration.y >= startAccelY) {
+            if (tracking) {
+                counter++;
+                tracking = false
+                textToSpeech(counter)
+            }
         } else {
             tracking = true
         }
+    }
+    
+    func textToSpeech(data: Int){
+        let myString = String(data)
+        myUtterance = AVSpeechUtterance(string: myString)
+        synth.speakUtterance(myUtterance)
     }
 
 }
