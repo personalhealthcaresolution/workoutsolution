@@ -72,13 +72,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A52BAF31B63AB6000DA45C2 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */,
+				3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */,
+				5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */,
+				5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
 		5D6A538E1B27B228005C167E = {
 			isa = PBXGroup;
 			children = (
-				5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */,
-				5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */,
-				3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */,
-				3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */,
+				3A52BAF31B63AB6000DA45C2 /* Framework */,
 				5D6A53991B27B228005C167E /* WorkoutSolution */,
 				5D6A53B21B27B229005C167E /* WorkoutSolutionTests */,
 				5D6A53981B27B228005C167E /* Products */,
