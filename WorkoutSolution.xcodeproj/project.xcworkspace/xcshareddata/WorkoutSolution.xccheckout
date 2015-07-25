@@ -7,18 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>405A20A1-613D-4C15-9864-B1403497F0A8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>WorkoutSolution</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</key>
 		<string>https://github.com/personalhealthcaresolution/workoutsolution.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WorkoutSolution/WorkoutSolution.xcodeproj/project.xcworkspace</string>
+	<string>WorkoutSolution.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</key>
-		<string>../../..</string>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/personalhealthcaresolution/workoutsolution.git</string>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>2810F01EFF4A40A6B298C127E76A7B8C42BCB09B</string>
 			<key>IDESourceControlWCCName</key>
-			<string>WorkoutSolution</string>
+			<string>workoutsolution</string>
 		</dict>
 	</array>
 </dict>
