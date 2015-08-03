@@ -27,68 +27,6 @@
             </objects>
             <point key="canvasLocation" x="449" y="-276"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="jWW-ck-rKV">
-            <objects>
-                <viewController id="6Ug-bk-ogK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WAa-aA-mqH"/>
-                        <viewControllerLayoutGuide type="bottom" id="PJa-xK-WeT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iCM-W6-cJE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TMX-pU-IZK">
-                                <rect key="frame" x="16" y="543" width="568" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Back" id="n2J-FD-lWa"/>
-                                    <tabBarItem title="Item2" id="m7b-QK-G4o"/>
-                                    <tabBarItem title="SignUp" id="Jk5-Pr-SLG"/>
-                                    <tabBarItem title="Download" id="QUK-wH-H9n"/>
-                                    <tabBarItem title="Setting" id="Enk-vk-2PW"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="23i-Q3-EhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="449" y="474"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Wl8-i6-Y2a">
-            <objects>
-                <viewController id="dzx-j7-0ur" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="QYy-fH-G3V"/>
-                        <viewControllerLayoutGuide type="bottom" id="nZ7-47-ztw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8dd-Ux-ADd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e7z-Rp-E2x">
-                                <rect key="frame" x="16" y="543" width="568" height="49"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem title="Back" id="OEe-Sn-LeE"/>
-                                    <tabBarItem title="Item2" id="XbY-6u-QBn"/>
-                                    <tabBarItem title="SignUp" id="wQ9-G8-qwz"/>
-                                    <tabBarItem title="Download" id="3Ki-Yp-oM3"/>
-                                    <tabBarItem title="Setting" id="zgj-yX-QtC"/>
-                                </items>
-                            </tabBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ubV-KD-IPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1211" y="474"/>
-        </scene>
         <!--Tracker View Controller-->
         <scene sceneID="MKQ-uT-hIq">
             <objects>
