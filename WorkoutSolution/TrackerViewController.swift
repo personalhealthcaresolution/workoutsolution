@@ -9,70 +9,83 @@
 import UIKit
 import CoreMotion
 import AVFoundation
+import CoreLocation
+
 
 class TrackerViewController: UIViewController {
 
     var counter: Int = 0
     var tracking: Bool = false
-    var startAccelY: Double = 0
-    var currentAccelX: Double = 0
-    var currentAccelY: Double = 0
-    var currentAccelZ: Double = 0
+    var startValue: Double = 0
+    var timer: NSTimer = NSTimer()
+    var startTime = NSTimeInterval()
+    var totalTime = NSTimeInterval()
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
+
+    @IBOutlet weak var enableTracker: UISwitch!
     
     lazy var motionManager: CMMotionManager = {
         let motion = CMMotionManager()
         motion.accelerometerUpdateInterval = 1.0/10.0
         return motion
     }()
-
-    @IBOutlet weak var enableTracker: UISwitch!
-    @IBAction func trackerChangeValue(sender: UISwitch) {
-        UIDevice.currentDevice().proximityMonitoringEnabled = enableTracker.on
-        if (enableTracker.on) {
-            let queue = NSOperationQueue()
-            self.motionManager.startAccelerometerUpdatesToQueue(queue, withHandler:
-                {data, error in
-                    guard let data = data else {
-                        return
-                    }
-                    if (UIDevice.currentDevice().proximityState) {
-                        self.outputAccelerationData(data.acceleration)
-                    }
-                }
-            )
-        } else {
-            counter = 0
-            startAccelY = 0
-            self.motionManager.stopAccelerometerUpdates()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        motionManager.startDeviceMotionUpdates()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    func outputAccelerationData(acceleration: CMAcceleration){
-        if (startAccelY == 0) {
-            startAccelY = acceleration.y
-        }
-        if (acceleration.y >= startAccelY) {
-            if (tracking) {
-                counter++;
-                tracking = false
-                textToSpeech(counter)
-            }
+    
+    @IBAction func trackerChangeValue(sender: UISwitch) {
+        UIDevice.currentDevice().proximityMonitoringEnabled = enableTracker.on
+        if (enableTracker.on) {
+            startCounter()
         } else {
-            tracking = true
+            stopCounter()
         }
     }
     
-    func textToSpeech(data: Int){
+    func startCounter() {
+        let aSelector : Selector = "updateTime"
+        startTime = NSDate.timeIntervalSinceReferenceDate()
+        timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
+    }
+    
+    func stopCounter() {
+        counter = 0
+        startValue = 0
+        timer.invalidate()
+        totalTime = NSDate.timeIntervalSinceReferenceDate() - startTime
+    }
+    
+    func updateTime() {
+        let deviceMotion: CMDeviceMotion! = motionManager.deviceMotion
+        let acceleration: CMAcceleration! = deviceMotion.userAcceleration
+        print("\(deviceMotion)")
+        
+        if UIDevice.currentDevice().proximityState {
+            if (startValue == 0) {
+                startValue = acceleration.y
+            }
+            if (acceleration.y >= startValue) {
+                if (tracking) {
+                    counter++;
+                    tracking = false
+                    textToSpeech(counter)
+                }
+            } else {
+                tracking = true
+            }
+        }
+    }
+    
+    func textToSpeech(data: Int) {
+        print("textToSpeech")
         let myString = String(data)
         myUtterance = AVSpeechUtterance(string: myString)
         synth.speakUtterance(myUtterance)
