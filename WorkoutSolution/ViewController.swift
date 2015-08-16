@@ -41,7 +41,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if error == nil {
-            print("login complete")
             self.performSegueWithIdentifier("showApp", sender: self)
         } else {
             print(error.localizedDescription)
@@ -49,7 +48,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     }
 
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("logged out")
     }
 
 }
