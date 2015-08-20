@@ -14,6 +14,7 @@ import CoreLocation
 
 class TrackerViewController: UIViewController {
 
+    var curDate: NSDate!
     var counter: Int = 0
     var tracking: Bool = false
     var startValue: Double = 0
@@ -51,6 +52,7 @@ class TrackerViewController: UIViewController {
     }
     
     func startCounter() {
+        curDate = NSDate()
         let aSelector : Selector = "updateTime"
         startTime = NSDate.timeIntervalSinceReferenceDate()
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
@@ -61,12 +63,13 @@ class TrackerViewController: UIViewController {
         startValue = 0
         timer.invalidate()
         totalTime = NSDate.timeIntervalSinceReferenceDate() - startTime
+        saveToSD()
     }
     
     func updateTime() {
         let deviceMotion: CMDeviceMotion! = motionManager.deviceMotion
         let acceleration: CMAcceleration! = deviceMotion.userAcceleration
-        print("\(deviceMotion)")
+        //print("\(deviceMotion)")
         
         if UIDevice.currentDevice().proximityState {
             if (startValue == 0) {
@@ -89,6 +92,33 @@ class TrackerViewController: UIViewController {
         let myString = String(data)
         myUtterance = AVSpeechUtterance(string: myString)
         synth.speakUtterance(myUtterance)
+    }
+    
+    func saveToSD() {
+        let documents = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let writePath = documents.stringByAppendingPathComponent("file.plist")
+
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "dd:MM:yyyy-HH:mm:ss"
+        let fileName = formatter.stringFromDate(curDate)+".txt"
+        
+        let text = totalTime.description + "|" + counter.description
+        do {
+            try text.writeToFile(writePath + fileName, atomically: true, encoding: NSUTF8StringEncoding)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        //reading
+        /*
+        var text2: String!
+        do {
+            text2 = try String(contentsOfFile: writePath + fileName, encoding: NSUTF8StringEncoding)
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        print("text2: \(text2)")
+        */
     }
 
 }
