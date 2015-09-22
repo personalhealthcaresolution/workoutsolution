@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -58,7 +58,7 @@
         <!--Item 1-->
         <scene sceneID="cKG-HV-KOK">
             <objects>
-                <viewController id="buJ-dY-tGj" sceneMemberID="viewController">
+                <viewController id="buJ-dY-tGj" customClass="Tracker" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rVS-F1-1x1"/>
                         <viewControllerLayoutGuide type="bottom" id="lDA-jx-Tx6"/>
@@ -67,16 +67,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="item 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uow-RO-P0d">
-                                <rect key="frame" x="279" y="289" width="46" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MIk-Gt-1xB">
+                                <rect key="frame" x="276" y="512" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="Fkw-NB-fxB"/>
+                                    <constraint firstAttribute="height" constant="31" id="tvX-aw-7Wn"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="trackerChangedValue:" destination="buJ-dY-tGj" eventType="valueChanged" id="HBz-t8-2Et"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lDA-jx-Tx6" firstAttribute="top" secondItem="MIk-Gt-1xB" secondAttribute="bottom" constant="8" symbolic="YES" id="Cq2-hs-NkY"/>
+                            <constraint firstItem="MIk-Gt-1xB" firstAttribute="centerX" secondItem="BYi-nR-Fcp" secondAttribute="centerX" id="agf-Oo-gKe"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="TsK-34-0xI"/>
+                    <connections>
+                        <outlet property="trackerSwitcher" destination="MIk-Gt-1xB" id="VfU-5G-Nz3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFI-mu-3dN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
