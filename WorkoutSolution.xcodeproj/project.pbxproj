@@ -10,6 +10,7 @@
 		3A0FB3351B63A3ED0030BFFC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */; };
 		3A0FB3371B63A3F60030BFFC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */; };
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; settings = {ASSET_TAGS = (); }; };
+		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; settings = {ASSET_TAGS = (); }; };
 		5D08D0F01B3B4DEE00887C13 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
@@ -36,6 +37,7 @@
 		3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
+		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
 		5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				3A2F80421BB1A82600AAA040 /* Tracker.swift */,
+				3ADA54C81BC128AF009A4D78 /* Settings.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
 				5D08D0F01B3B4DEE00887C13 /* TrackerViewController.swift in Sources */,
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
