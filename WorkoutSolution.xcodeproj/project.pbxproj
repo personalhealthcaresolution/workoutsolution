@@ -19,7 +19,6 @@
 		3A8F28941BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F28931BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; settings = {ASSET_TAGS = (); }; };
-		5D08D0F01B3B4DEE00887C13 /* TrackerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
 		5D6A53A21B27B228005C167E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53A11B27B228005C167E /* ViewController.swift */; };
@@ -96,7 +95,6 @@
 		3A8F28931BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
-		5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackerViewController.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A539C1B27B228005C167E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -226,7 +224,6 @@
 				5D6A53A81B27B228005C167E /* LaunchScreen.xib */,
 				5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */,
 				5D6A539A1B27B228005C167E /* Supporting Files */,
-				5D08D0EF1B3B4DEE00887C13 /* TrackerViewController.swift */,
 			);
 			path = WorkoutSolution;
 			sourceTree = "<group>";
@@ -432,7 +429,6 @@
 			files = (
 				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
-				5D08D0F01B3B4DEE00887C13 /* TrackerViewController.swift in Sources */,
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
@@ -723,6 +719,7 @@
 				3A8F289C1BC150B700BCC5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A8F289F1BC150B700BCC5BC /* Build configuration list for PBXNativeTarget "Watch" */ = {
 			isa = XCConfigurationList;
@@ -731,6 +728,7 @@
 				3A8F289A1BC150B700BCC5BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5D6A53921B27B228005C167E /* Build configuration list for PBXProject "WorkoutSolution" */ = {
 			isa = XCConfigurationList;
