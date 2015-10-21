@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -41,8 +42,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="item 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lo-xF-sZo">
-                                <rect key="frame" x="279" y="289" width="48" height="21"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tQg-GX-df6">
+                                <rect key="frame" x="531" y="74" width="51" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ScU-QN-wU5"/>
+                                    <constraint firstAttribute="width" constant="49" id="WHm-2w-1Y5"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="notificationChangedValue:" destination="PHH-t3-tYl" eventType="valueChanged" id="H6w-vO-LMC"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Lo-xF-sZo">
+                                <rect key="frame" x="20" y="79" width="88" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -51,8 +63,17 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uGd-b6-4LG" firstAttribute="top" secondItem="tQg-GX-df6" secondAttribute="bottom" constant="446" id="10m-y5-ael"/>
+                            <constraint firstItem="9Lo-xF-sZo" firstAttribute="leading" secondItem="jZo-U6-Ls7" secondAttribute="leadingMargin" id="8Rp-ah-ht3"/>
+                            <constraint firstItem="tQg-GX-df6" firstAttribute="centerY" secondItem="9Lo-xF-sZo" secondAttribute="centerY" id="IcH-ym-AF7"/>
+                            <constraint firstItem="tQg-GX-df6" firstAttribute="trailing" secondItem="jZo-U6-Ls7" secondAttribute="trailingMargin" id="O9j-tG-bYG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="iH3-ZJ-hT8"/>
+                    <connections>
+                        <outlet property="enableNotification" destination="tQg-GX-df6" id="wbF-Gu-NpH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iP-S0-1HE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
