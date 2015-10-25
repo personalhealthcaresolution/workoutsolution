@@ -20,12 +20,6 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.center = self.view.center
         loginButton.delegate = self
         self.view.addSubview(loginButton)
-
-        let localNotification: UILocalNotification = UILocalNotification()
-        localNotification.alertAction = "notifications on"
-        localNotification.alertBody = "Woww it works!!"
-        localNotification.fireDate = NSDate(timeIntervalSinceNow: 30)
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
     override func viewDidAppear(animated: Bool) {
