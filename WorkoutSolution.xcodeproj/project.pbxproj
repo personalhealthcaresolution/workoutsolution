@@ -18,6 +18,7 @@
 		3A8F28921BC150B600BCC5BC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F28911BC150B600BCC5BC /* NotificationController.swift */; };
 		3A8F28941BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F28931BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
+		3AC7E09C1BECE7DD004828E1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7E09B1BECE7DD004828E1 /* History.swift */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
@@ -94,6 +95,7 @@
 		3A8F28911BC150B600BCC5BC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3A8F28931BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AC7E09B1BECE7DD004828E1 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = ViewController/History.swift; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				3A2F80421BB1A82600AAA040 /* Tracker.swift */,
 				3ADA54C81BC128AF009A4D78 /* Settings.swift */,
+				3AC7E09B1BECE7DD004828E1 /* History.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AC7E09C1BECE7DD004828E1 /* History.swift in Sources */,
 				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
