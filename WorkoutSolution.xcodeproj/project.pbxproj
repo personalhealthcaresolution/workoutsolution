@@ -95,6 +95,7 @@
 		3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
+		3A67FE121BF41AD4002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A8F287A1BC150B600BCC5BC /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F287D1BC150B600BCC5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A8F287F1BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,6 +254,7 @@
 				5D6A53A81B27B228005C167E /* LaunchScreen.xib */,
 				5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */,
 				5D6A539A1B27B228005C167E /* Supporting Files */,
+				3A67FE121BF41AD4002A8198 /* WorkoutSolution-Bridging-Header.h */,
 			);
 			path = WorkoutSolution;
 			sourceTree = "<group>";
@@ -751,6 +753,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkoutSolution-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -773,6 +776,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ian.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WorkoutSolution-Bridging-Header.h";
 			};
 			name = Release;
 		};
