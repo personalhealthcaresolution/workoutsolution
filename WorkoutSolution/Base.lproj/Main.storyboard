@@ -151,10 +151,28 @@
                     <view key="view" contentMode="scaleToFill" id="kYa-9q-K2a">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93f-Eb-NNT">
+                                <rect key="frame" x="20" y="28" width="560" height="331"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="331" id="eMp-y8-fiM"/>
+                                    <constraint firstAttribute="width" constant="560" id="xcN-Wi-HBu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="93f-Eb-NNT" firstAttribute="leading" secondItem="kYa-9q-K2a" secondAttribute="leadingMargin" id="AVb-yx-9aa"/>
+                            <constraint firstItem="93f-Eb-NNT" firstAttribute="top" secondItem="i8l-xi-aM9" secondAttribute="bottom" constant="8" symbolic="YES" id="Naa-kB-iSb"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Lp6-Fe-Y6y"/>
+                    <connections>
+                        <outlet property="graphView" destination="93f-Eb-NNT" id="lKo-Yg-7bT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5L-qe-pWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
