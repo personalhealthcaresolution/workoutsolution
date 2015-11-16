@@ -9,29 +9,29 @@
 import UIKit
 
 class History: UIViewController, CPTPlotDataSource {
-
-    @IBOutlet weak var graphView: UIView!
     
+    @IBOutlet weak var graphView: CPTGraphHostingView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         // create graph
-        var graph = CPTXYGraph(frame: CGRectZero)
+        let graph = CPTXYGraph(frame: CGRectZero)
         graph.title = "Hello Graph"
         graph.paddingLeft = 0
         graph.paddingTop = 0
         graph.paddingRight = 0
         graph.paddingBottom = 0
         // hide the axes
-        var axes = graph.axisSet as CPTXYAxisSet
-        var lineStyle = CPTMutableLineStyle()
+        let axes = graph.axisSet as! CPTXYAxisSet
+        let lineStyle = CPTMutableLineStyle()
         lineStyle.lineWidth = 0
-        axes.xAxis.axisLineStyle = lineStyle
-        axes.yAxis.axisLineStyle = lineStyle
+        axes.xAxis!.axisLineStyle = lineStyle
+        axes.yAxis!.axisLineStyle = lineStyle
         
         // add a pie plot
-        var pie = CPTPieChart()
+        let pie = CPTPieChart()
         pie.dataSource = self
         pie.pieRadius = (self.view.frame.size.width * 0.9)/2
         graph.addPlot(pie)
@@ -44,11 +44,11 @@ class History: UIViewController, CPTPlotDataSource {
         // Dispose of any resources that can be recreated.
     }
     
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
+    func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
         return 4
     }
     
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex idx: UInt) -> NSNumber! {
+    func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex idx: UInt) -> AnyObject? {
         return idx+1
     }
 }

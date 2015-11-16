@@ -9,6 +9,6 @@
 #ifndef WorkoutSolution_Bridging_Header_h
 #define WorkoutSolution_Bridging_Header_h
 
-#import "Pods/CorePlot/framework/CorePlot-CocoaTouch.h"
+#import "CorePlot-CocoaTouch.h"
 
 #endif /* WorkoutSolution_Bridging_Header_h */

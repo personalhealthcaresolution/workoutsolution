@@ -171,7 +171,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Lp6-Fe-Y6y"/>
                     <connections>
-                        <outlet property="graphView" destination="93f-Eb-NNT" id="lKo-Yg-7bT"/>
+                        <outlet property="graphView" destination="93f-Eb-NNT" id="iFi-Jt-3xw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5L-qe-pWa" userLabel="First Responder" sceneMemberID="firstResponder"/>

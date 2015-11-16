@@ -29,7 +29,6 @@
 		5D6A53B61B27B229005C167E /* WorkoutSolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */; };
 		5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */; };
 		5DFEDEC71B4CB10C00F222C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */; };
-		9100DB7078688A26DC2D3AAC /* libPods-WorkoutSolution.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67B4F537D6A63BF99C539FFE /* libPods-WorkoutSolution.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,7 +142,6 @@
 				3A0FB3371B63A3F60030BFFC /* FBSDKCoreKit.framework in Frameworks */,
 				5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */,
 				3A0FB3351B63A3ED0030BFFC /* FBSDKLoginKit.framework in Frameworks */,
-				9100DB7078688A26DC2D3AAC /* libPods-WorkoutSolution.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
