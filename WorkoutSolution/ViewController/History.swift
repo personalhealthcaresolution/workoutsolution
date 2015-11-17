@@ -12,36 +12,10 @@ class History: UIViewController, CPTPlotDataSource {
     
     @IBOutlet weak var graphView: CPTGraphHostingView!
     
-    var datesInWeek :[NSNumber] = [10,35,18, 20, 50, 5]
+    var datesInWeek :[NSNumber] = [10, 35, 50, 20, 50, 5]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        // create graph
-        /*
-        let graph = CPTXYGraph(frame: CGRectZero)
-        graph.title = "Hello Graph"
-        graph.paddingLeft = 0
-        graph.paddingTop = 0
-        graph.paddingRight = 0
-        graph.paddingBottom = 0
-        // hide the axes
-        let axes = graph.axisSet as! CPTXYAxisSet
-        let lineStyle = CPTMutableLineStyle()
-        lineStyle.lineWidth = 0
-        axes.xAxis!.axisLineStyle = lineStyle
-        axes.yAxis!.axisLineStyle = lineStyle
-        
-        // add a pie plot
-        let pie = CPTPieChart()
-        pie.dataSource = self
-        pie.pieRadius = (self.view.frame.size.width * 0.9)/2
-        graph.addPlot(pie)
-        
-        self.graphView.hostedGraph = graph
-        */
-        datesInWeek  = [10, 35, 18, 20, 50, 5]
 
         // 1 - Create the graph
         let graph = CPTXYGraph(frame: CGRectZero)
@@ -64,13 +38,13 @@ class History: UIViewController, CPTPlotDataSource {
         graph.titlePlotAreaFrameAnchor = CPTRectAnchor.Top
         graph.titleDisplacement = CGPointMake(0.0, -16.0)
         // 5 - Set up plot space
-        var xMin: Float = 0
-        var xMax : Float = Float(datesInWeek.count) + 1
-        var yMin : Float = 0
-        var yMax : Float = 800
-        var plotSpace = graph.defaultPlotSpace as! CPTXYPlotSpace
-        var xRange = plotSpace.yRange.mutableCopy() as! CPTMutablePlotRange
-        var yRange = plotSpace.yRange.mutableCopy() as! CPTMutablePlotRange
+        let xMin: Float = 0
+        let xMax : Float = Float(datesInWeek.count) + 1
+        let yMin : Float = 0
+        let yMax : Float = 800
+        let plotSpace = graph.defaultPlotSpace as! CPTXYPlotSpace
+        plotSpace.xRange = CPTPlotRange(location: xMin, length: xMax)
+        plotSpace.yRange = CPTPlotRange(location: yMin, length: yMax)
         
         // 1 - Set up the three plots
         let aaplPlot = CPTBarPlot()
@@ -137,10 +111,21 @@ class History: UIViewController, CPTPlotDataSource {
     }
     
     func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
-        return 4
+        return UInt(datesInWeek.count)
     }
     
     func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex idx: UInt) -> AnyObject? {
-        return idx+1
+        switch (fieldEnum) {
+        case 0:
+            if (idx < UInt(datesInWeek.count)) {
+                return idx + 1
+            }
+            break;
+        case 1:
+            return datesInWeek[Int(idx)]
+        default:
+            return 1
+        }
+        return 1
     }
 }
