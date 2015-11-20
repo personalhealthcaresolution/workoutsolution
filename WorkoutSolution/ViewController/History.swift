@@ -12,7 +12,7 @@ class History: UIViewController, CPTPlotDataSource {
     
     @IBOutlet weak var graphView: CPTGraphHostingView!
     
-    var datesInWeek :[NSNumber] = [10, 35, 50, 20, 50, 5]
+    var datesInWeek :[NSNumber] = [10, 35, 100, 20, 50, 5]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class History: UIViewController, CPTPlotDataSource {
         graph.paddingRight  = -5.0
         // 3 - Set up styles
         let titleStyle = CPTMutableTextStyle()
-        titleStyle.color = CPTColor.blackColor()
+        titleStyle.color = CPTColor.whiteColor()
         titleStyle.fontName = "Helvetica-Bold"
         titleStyle.fontSize = 16.0
         // 4 - Set up title
@@ -37,22 +37,15 @@ class History: UIViewController, CPTPlotDataSource {
         graph.titleTextStyle = titleStyle
         graph.titlePlotAreaFrameAnchor = CPTRectAnchor.Top
         graph.titleDisplacement = CGPointMake(0.0, -16.0)
+        graph.plotAreaFrame?.paddingLeft = 30
+        graph.plotAreaFrame?.paddingBottom = 30
         // 5 - Set up plot space
-        let xMin: Float = 0
-        let xMax : Float = Float(datesInWeek.count) + 1
-        let yMin : Float = 0
-        let yMax : Float = 800
         let plotSpace = graph.defaultPlotSpace as! CPTXYPlotSpace
-        plotSpace.xRange = CPTPlotRange(location: xMin, length: xMax)
-        plotSpace.yRange = CPTPlotRange(location: yMin, length: yMax)
-        
+        plotSpace.allowsUserInteraction = true
+
         // 1 - Set up the three plots
-        let aaplPlot = CPTBarPlot()
-        aaplPlot.barsAreHorizontal = false
-        let googPlot = CPTBarPlot()
-        googPlot.barsAreHorizontal = false
-        let msftPlot = CPTBarPlot()
-        msftPlot.barsAreHorizontal = false
+        let aaplPlot = CPTScatterPlot()
+        let aaplColor: CPTColor = CPTColor.redColor();
         // 2 - Set up line style
         let barLineStyle = CPTMutableLineStyle()
         barLineStyle.lineColor = CPTColor.lightGrayColor()
@@ -60,26 +53,21 @@ class History: UIViewController, CPTPlotDataSource {
         // 3 - Add plots to graph
         aaplPlot.dataSource = self
         aaplPlot.delegate = self
-        aaplPlot.barWidth = 1
-        aaplPlot.barOffset = 1
-        aaplPlot.lineStyle = barLineStyle
+        graph.addPlot(aaplPlot, toPlotSpace: plotSpace)
         
-        googPlot.dataSource = self
-        googPlot.delegate = self
-        googPlot.barWidth = 1
-        googPlot.barOffset = 1
-        googPlot.lineStyle = barLineStyle
-        
-        msftPlot.dataSource = self
-        msftPlot.delegate = self
-        msftPlot.barWidth = 1
-        msftPlot.barOffset = 1
-        msftPlot.lineStyle = barLineStyle
-        
-        graph.addPlot(aaplPlot)
-        graph.addPlot(googPlot)
-        graph.addPlot(msftPlot)
-        
+        // 3 - Set up plot space
+        let plots: [CPTPlot]? = [aaplPlot]
+        plotSpace.scaleToFitPlots(plots)
+        let xRange: CPTMutablePlotRange = plotSpace.xRange.mutableCopy() as! CPTMutablePlotRange
+        plotSpace.xRange = xRange
+        let yRange: CPTMutablePlotRange = plotSpace.yRange.mutableCopy() as! CPTMutablePlotRange
+        plotSpace.yRange = yRange
+        // 4 - Create styles and symbols
+        let aaplLineStyle: CPTMutableLineStyle = (aaplPlot.dataLineStyle?.mutableCopy())! as! CPTMutableLineStyle
+        aaplLineStyle.lineWidth = 2.5;
+        aaplLineStyle.lineColor = aaplColor;
+        aaplPlot.dataLineStyle = aaplLineStyle;
+
         // 1 - Configure styles
         let axisTitleStyle = CPTMutableTextStyle()
         axisTitleStyle.color = CPTColor.redColor()
