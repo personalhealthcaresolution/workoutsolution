@@ -10,20 +10,31 @@
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="sf0-oB-FbC">
+                                <rect key="frame" x="86" y="308" width="148" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
+                                <state key="normal" title="Already have account"/>
+                                <connections>
+                                    <action selector="showLogin:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="g7L-QN-RwC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
+                        <outlet property="btnLogin" destination="sf0-oB-FbC" id="Qot-6i-jez"/>
                         <segue destination="oCx-x7-NJW" kind="modal" identifier="showApp" id="ytc-Bn-fAG"/>
+                        <segue destination="0b7-BC-Cyx" kind="modal" identifier="showLogin" id="SbM-AO-ZQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239.46666666666667" y="-261.27999999999997"/>
+            <point key="canvasLocation" x="2" y="-262"/>
         </scene>
         <!--settings-->
         <scene sceneID="bAN-KG-7UX">
@@ -61,6 +72,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iP-S0-1HE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010.6666666666666" y="147.68000000000001"/>
+        </scene>
+        <!--Sign up-->
+        <scene sceneID="6O3-eg-Aeh">
+            <objects>
+                <viewController id="GTR-i9-zUm" customClass="SignUp" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Qas-V9-a03">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sign up" id="Yfg-Ot-m9U"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6tZ-dK-qvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="-911"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="PS0-IT-dsR">
+            <objects>
+                <viewController id="1Jb-bx-npI" customClass="Login" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6t9-ew-Xfp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Login" id="esP-BB-kn0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgz-jS-f6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="-1602"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jUA-Ou-kVY">
+            <objects>
+                <tabBarController id="0b7-BC-Cyx" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="FbL-7v-qw5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="1Jb-bx-npI" kind="relationship" relationship="viewControllers" id="P48-3t-bwJ"/>
+                        <segue destination="GTR-i9-zUm" kind="relationship" relationship="viewControllers" id="XCJ-af-bLU"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9u-Yp-Pa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="103" y="-1288"/>
         </scene>
         <!--tracking-->
         <scene sceneID="cKG-HV-KOK">
@@ -121,7 +183,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="93f-Eb-NNT" customClass="CPTGraphHostingView">
-                                <rect key="frame" x="20" y="50" width="280" height="331"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l5L-qe-pWa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="581" y="397"/>
+            <point key="canvasLocation" x="581" y="432"/>
         </scene>
     </scenes>
 </document>

@@ -12,6 +12,11 @@ import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBAction func showLogin(sender: AnyObject) {
+        self.performSegueWithIdentifier("showLogin", sender: self)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
