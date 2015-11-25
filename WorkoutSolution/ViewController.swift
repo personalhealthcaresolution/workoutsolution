@@ -32,6 +32,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         if ((FBSDKAccessToken.currentAccessToken()) != nil) {
             self.performSegueWithIdentifier("showApp", sender: self)
         }
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        let username: String = (defaults.objectForKey("username")?.description)!
+        let password: String = (defaults.objectForKey("password")?.description)!
+        
+        let isUser: Bool = Account.verifyAccount(username, password: password)
+        if isUser {
+            self.performSegueWithIdentifier("showApp", sender: self)
+        }
     }
 
     override func didReceiveMemoryWarning() {

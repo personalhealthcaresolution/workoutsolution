@@ -10,6 +10,27 @@ import UIKit
 
 class Login: UIViewController {
 
+    var isUser: Bool = false
+
+    @IBOutlet weak var txtUsername: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    @IBAction func verifyAccount(sender: AnyObject) {
+        if txtUsername == "" {
+            return
+        } else if txtPassword == "" {
+            return
+        }
+        
+        isUser = Account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
+        
+        if isUser {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(txtUsername.text, forKey: "username")
+            defaults.setObject(txtPassword.text, forKey: "password")
+            self.performSegueWithIdentifier("showApp", sender: self)
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 

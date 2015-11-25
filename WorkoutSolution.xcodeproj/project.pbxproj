@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF781C05FA2900AD1F9D /* Login.swift */; };
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
+		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
 		3A0FB3351B63A3ED0030BFFC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */; };
 		3A0FB3371B63A3F60030BFFC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */; };
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; };
@@ -95,6 +96,7 @@
 /* Begin PBXFileReference section */
 		3A01FF781C05FA2900AD1F9D /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ViewController/Login.swift; sourceTree = "<group>"; };
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
+		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
 		3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
@@ -159,6 +161,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A01FF7C1C05FF7900AD1F9D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				3A01FF7D1C05FFD000AD1F9D /* Account.swift */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
 		3A2F803D1BB1A6DD00AAA040 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -251,6 +261,7 @@
 		5D6A53991B27B228005C167E /* WorkoutSolution */ = {
 			isa = PBXGroup;
 			children = (
+				3A01FF7C1C05FF7900AD1F9D /* src */,
 				3A2F803D1BB1A6DD00AAA040 /* ViewController */,
 				5D6A539C1B27B228005C167E /* AppDelegate.swift */,
 				5D6A53A11B27B228005C167E /* ViewController.swift */,
@@ -528,6 +539,7 @@
 				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
+				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
 				3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
