@@ -33,9 +33,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
             self.performSegueWithIdentifier("showApp", sender: self)
         }
         
+        var username: String = ""
+        var password: String = ""
         let defaults = NSUserDefaults.standardUserDefaults()
-        let username: String = (defaults.objectForKey("username")?.description)!
-        let password: String = (defaults.objectForKey("password")?.description)!
+        if defaults.objectForKey("username") != nil {
+            username = (defaults.objectForKey("username")?.description)!
+        }
+        if defaults.objectForKey("password") != nil {
+            password = (defaults.objectForKey("password")?.description)!
+        }
         
         let isUser: Bool = Account.verifyAccount(username, password: password)
         if isUser {
