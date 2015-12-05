@@ -128,7 +128,6 @@
 		5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSolutionTests.swift; sourceTree = "<group>"; };
 		5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		67B4F537D6A63BF99C539FFE /* libPods-WorkoutSolution.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WorkoutSolution.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA96506851C7E5E2B471857 /* Pods-WorkoutSolution.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WorkoutSolution.release.xcconfig"; path = "Pods/Target Support Files/Pods-WorkoutSolution/Pods-WorkoutSolution.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -302,7 +301,6 @@
 		D92379176CF6273B0F303F87 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				67B4F537D6A63BF99C539FFE /* libPods-WorkoutSolution.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
