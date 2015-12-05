@@ -29,6 +29,9 @@ class Tracker: UIViewController {
         super.viewDidLoad()
         motionManager.startDeviceMotionUpdates()
         trackerSwitcher.on = false
+        
+        open.target = self.revealViewController()
+        open.action = Selector("revealToggle:")
     }
 
     override func didReceiveMemoryWarning() {
