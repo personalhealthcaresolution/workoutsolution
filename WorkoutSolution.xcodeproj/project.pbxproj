@@ -13,6 +13,7 @@
 		3A0FB3351B63A3ED0030BFFC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */; };
 		3A0FB3371B63A3F60030BFFC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */; };
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; };
+		3A7A5B451C134A6B00C6EA87 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */; };
 		3A8F287E1BC150B600BCC5BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287C1BC150B600BCC5BC /* Interface.storyboard */; };
 		3A8F28801BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287F1BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28871BC150B600BCC5BC /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A8F28861BC150B600BCC5BC /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -100,7 +101,9 @@
 		3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
-		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = "<group>"; };
+		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		3A7A5B431C134A6B00C6EA87 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
+		3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		3A8F287A1BC150B600BCC5BC /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F287D1BC150B600BCC5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A8F287F1BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -234,7 +237,6 @@
 		5D6A538E1B27B228005C167E = {
 			isa = PBXGroup;
 			children = (
-				3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */,
 				3A52BAF31B63AB6000DA45C2 /* Framework */,
 				5D6A53991B27B228005C167E /* WorkoutSolution */,
 				5D6A53B21B27B229005C167E /* WorkoutSolutionTests */,
@@ -276,6 +278,9 @@
 		5D6A539A1B27B228005C167E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */,
+				3A7A5B431C134A6B00C6EA87 /* SWRevealViewController.h */,
+				3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */,
 				5D6A539B1B27B228005C167E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -539,6 +544,7 @@
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
 				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
 				3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */,
+				3A7A5B451C134A6B00C6EA87 /* SWRevealViewController.m in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
 			);

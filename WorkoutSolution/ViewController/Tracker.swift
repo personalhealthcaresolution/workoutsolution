@@ -22,6 +22,9 @@ class Tracker: UIViewController {
             stopCounter()
         }
     }
+
+    @IBOutlet weak var open: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         motionManager.startDeviceMotionUpdates()
