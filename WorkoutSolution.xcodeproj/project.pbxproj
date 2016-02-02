@@ -12,8 +12,11 @@
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
 		3A0FB3351B63A3ED0030BFFC /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */; };
 		3A0FB3371B63A3F60030BFFC /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */; };
+		3A244B0A1C60DE5F007ADB54 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A26E9FB1C5FBEB7009D049B /* Realm.framework */; };
+		3A244B0B1C60DE5F007ADB54 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A26E9FB1C5FBEB7009D049B /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A26E9F41C5FAE0A009D049B /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A26E9EF1C5FADCF009D049B /* Charts.framework */; };
 		3A26E9F51C5FAE0A009D049B /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A26E9EF1C5FADCF009D049B /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3A26E9FC1C5FBEB7009D049B /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A26E9FB1C5FBEB7009D049B /* Realm.framework */; };
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; };
 		3A7A5B451C134A6B00C6EA87 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */; };
 		3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */; };
@@ -119,6 +122,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				3A244B0B1C60DE5F007ADB54 /* Realm.framework in Embed Frameworks */,
 				3A26E9F51C5FAE0A009D049B /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -133,6 +137,7 @@
 		3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3A26E9E81C5FADCF009D049B /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		3A26E9FB1C5FBEB7009D049B /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Charts/ThirdParty/Realm/ios/Realm.framework; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
 		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		3A7A5B431C134A6B00C6EA87 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
@@ -178,9 +183,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A26E9FC1C5FBEB7009D049B /* Realm.framework in Frameworks */,
 				5DFEDEC71B4CB10C00F222C5 /* AVFoundation.framework in Frameworks */,
 				3A0FB3371B63A3F60030BFFC /* FBSDKCoreKit.framework in Frameworks */,
 				3A26E9F41C5FAE0A009D049B /* Charts.framework in Frameworks */,
+				3A244B0A1C60DE5F007ADB54 /* Realm.framework in Frameworks */,
 				5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */,
 				3A0FB3351B63A3ED0030BFFC /* FBSDKLoginKit.framework in Frameworks */,
 			);
@@ -230,6 +237,7 @@
 		3A52BAF31B63AB6000DA45C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A26E9FB1C5FBEB7009D049B /* Realm.framework */,
 				3A26E9E81C5FADCF009D049B /* Charts.xcodeproj */,
 				3A0FB3341B63A3ED0030BFFC /* FBSDKLoginKit.framework */,
 				3A0FB3361B63A3F60030BFFC /* FBSDKCoreKit.framework */,
@@ -780,6 +788,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ianyuen/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Charts/ThirdParty/Realm/ios",
 				);
 				INFOPLIST_FILE = WorkoutSolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -802,6 +811,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ianyuen/Documents/FacebookSDK,
+					"$(PROJECT_DIR)/Charts/ThirdParty/Realm/ios",
 				);
 				INFOPLIST_FILE = WorkoutSolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
