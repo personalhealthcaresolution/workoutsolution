@@ -14,7 +14,12 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var btnLogin: UIButton!
     @IBAction func showLogin(sender: AnyObject) {
-        self.performSegueWithIdentifier("showLogin", sender: self)
+        //self.performSegueWithIdentifier("showLogin", sender: self)
+
+
+        let storyboard = UIStoryboard(name: "Login", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as UIViewController
+        self.presentViewController(controller, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
