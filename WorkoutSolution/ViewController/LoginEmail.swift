@@ -8,17 +8,65 @@
 
 import UIKit
 
-class LoginEmail: UIViewController {
-    
-    @IBOutlet weak var txtUsername: UITextField!
-    @IBOutlet weak var txtPassword: UITextField!
+class LoginEmail: UIViewController, UITextFieldDelegate {
+    var btnLogin = UIButton()
+    var txtUsername = UITextField()
+    var txtPassword = UITextField()
+    var btnResetPass = UIButton()
 
-    var isUser: Bool = false
+    var isUser = false
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    var xPosition: CGFloat = 0
+    var yPosition: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        height = 30
+        width = self.view.frame.size.width - 40
+        xPosition = self.view.frame.origin.x + 20
+        yPosition = self.view.frame.origin.y + 70
+        txtUsername.frame = CGRectMake(xPosition, yPosition, width, height)
+
+        txtUsername.placeholder = "Enter your username"
+        txtUsername.borderStyle = UITextBorderStyle.RoundedRect
+        txtUsername.delegate = self
+        self.view.addSubview(txtUsername)
+        
+        height = 30
+        width = self.view.frame.size.width - 40
+        xPosition = self.view.frame.origin.x + 20
+        yPosition = txtUsername.frame.origin.y + txtUsername.frame.height + 10
+        txtPassword.frame = CGRectMake(xPosition, yPosition, width, height)
+        
+        txtPassword.placeholder = "Enter your password"
+        txtPassword.borderStyle = UITextBorderStyle.RoundedRect
+        txtPassword.secureTextEntry = true
+        txtPassword.delegate = self
+        self.view.addSubview(txtPassword)
+        
+        width = 100
+        height = 30
+        xPosition = (self.view.frame.width - width) / 2
+        yPosition = txtPassword.frame.origin.y + txtPassword.frame.height + 10
+        btnLogin.frame = CGRectMake(xPosition, yPosition, width, height)
+
+        btnLogin.setTitle("Login", forState: UIControlState.Normal)
+        btnLogin.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        btnLogin.addTarget(self, action: "verifyAccount:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(btnLogin)
+        
+        width = 150
+        height = 30
+        xPosition = (self.view.frame.width - width) / 2
+        yPosition = btnLogin.frame.origin.y + btnLogin.frame.height + 10
+        btnResetPass.frame = CGRectMake(xPosition, yPosition, width, height)
+        
+        btnResetPass.setTitle("Forgot Password", forState: UIControlState.Normal)
+        btnResetPass.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
+        btnResetPass.addTarget(self, action: "resetPassword:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(btnResetPass)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +74,7 @@ class LoginEmail: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func verifyAccount(sender: AnyObject) {
+    func verifyAccount(sender:UIButton!) {
         if txtUsername == "" {
             return
         } else if txtPassword == "" {
@@ -44,5 +92,9 @@ class LoginEmail: UIViewController {
             let controller = storyboard.instantiateViewControllerWithIdentifier("InitialApp") as UIViewController
             self.presentViewController(controller, animated: true, completion: nil)
         }
+    }
+    
+    func resetPassword(sender:UIButton!) {
+        print("Implementing")
     }
 }
