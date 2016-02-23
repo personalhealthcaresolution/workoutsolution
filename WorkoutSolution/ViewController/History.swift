@@ -10,13 +10,23 @@ import UIKit
 import Charts
 
 class History: UIViewController {
-    @IBOutlet weak var barChartView: BarChartView!
-    
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    var xPosition: CGFloat = 0
+    var yPosition: CGFloat = 0
+    var screenWidth: CGFloat = 0
+    var screenHeight: CGFloat = 0
+
     var months: [String]!
+    var barChartView = BarChartView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        screenWidth = self.view.frame.size.width
+        screenHeight = self.view.frame.size.height
+        initView()
+
         months = [ "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" ]
         let unitsSold = [ 20.0, 4.0, 6.0, 3.0, 12.0, 16.0, 4.0 ]
         setChart(months, values: unitsSold)
@@ -24,6 +34,22 @@ class History: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        let swap = screenWidth
+        screenWidth = screenHeight
+        screenHeight = swap
+        initView()
+    }
+
+    func initView() {
+        width = screenWidth
+        height = screenHeight - 70
+        xPosition = self.view.frame.origin.x
+        yPosition = self.view.frame.origin.y + 20
+        barChartView.frame = CGRectMake(xPosition, yPosition, width, height)
+        self.view.addSubview(barChartView)
     }
     
     func setChart(dataPoints: [String], values: [Double]) {
@@ -41,4 +67,6 @@ class History: UIViewController {
         let chartData = BarChartData(xVals: months, dataSet: chartDataSet)
         barChartView.data = chartData
     }
+    
+    
 }

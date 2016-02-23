@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginEmail: UIViewController, UITextFieldDelegate {
+class LoginEmail: UIViewController {
     var btnLogin = UIButton()
     var txtUsername = UITextField()
     var txtPassword = UITextField()
@@ -51,7 +51,6 @@ class LoginEmail: UIViewController, UITextFieldDelegate {
 
         txtUsername.placeholder = "Enter your username"
         txtUsername.borderStyle = UITextBorderStyle.RoundedRect
-        txtUsername.delegate = self
         self.view.addSubview(txtUsername)
         
         height = 30
@@ -63,7 +62,6 @@ class LoginEmail: UIViewController, UITextFieldDelegate {
         txtPassword.placeholder = "Enter your password"
         txtPassword.borderStyle = UITextBorderStyle.RoundedRect
         txtPassword.secureTextEntry = true
-        txtPassword.delegate = self
         self.view.addSubview(txtPassword)
         
         width = 100
