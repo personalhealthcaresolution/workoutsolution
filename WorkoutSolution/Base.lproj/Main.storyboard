@@ -27,7 +27,6 @@
                     <connections>
                         <outlet property="btnLogin" destination="sf0-oB-FbC" id="Qot-6i-jez"/>
                         <segue destination="oCx-x7-NJW" kind="modal" identifier="showApp" id="ytc-Bn-fAG"/>
-                        <segue destination="0b7-BC-Cyx" kind="modal" identifier="showLogin" id="SbM-AO-ZQw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -67,21 +66,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4iP-S0-1HE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1010.6666666666666" y="147.68000000000001"/>
-        </scene>
-        <!--Sign up-->
-        <scene sceneID="6O3-eg-Aeh">
-            <objects>
-                <viewController id="GTR-i9-zUm" customClass="SignUp" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Qas-V9-a03">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Sign up" id="Yfg-Ot-m9U"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6tZ-dK-qvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="581" y="-911"/>
         </scene>
         <!--tracking-->
         <scene sceneID="aZV-5W-h2h">
@@ -145,80 +129,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxC-k7-V9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1427" y="-533"/>
-        </scene>
-        <!--Login-->
-        <scene sceneID="PS0-IT-dsR">
-            <objects>
-                <viewController id="1Jb-bx-npI" customClass="Login" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6t9-ew-Xfp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f4I-bU-wUA">
-                                <rect key="frame" x="20" y="133" width="74" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="VU9-Q0-nSU">
-                                <rect key="frame" x="107" y="92" width="193" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="Dq0-bu-5Kr">
-                                <rect key="frame" x="107" y="130" width="193" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jqv-vR-nJu">
-                                <rect key="frame" x="141" y="237" width="38" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="verifyAccount:" destination="1Jb-bx-npI" eventType="touchUpInside" id="Td5-Zr-2AD"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FuT-AL-JSO">
-                                <rect key="frame" x="20" y="96" width="79" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Login" id="esP-BB-kn0"/>
-                    <connections>
-                        <outlet property="txtPassword" destination="Dq0-bu-5Kr" id="YQN-0B-Bkl"/>
-                        <outlet property="txtUsername" destination="VU9-Q0-nSU" id="wNJ-7I-gRd"/>
-                        <segue destination="oCx-x7-NJW" kind="modal" identifier="showApp" id="Ksm-Tm-lRe"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lgz-jS-f6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="581" y="-1531"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="jUA-Ou-kVY">
-            <objects>
-                <tabBarController id="0b7-BC-Cyx" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="FbL-7v-qw5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="1Jb-bx-npI" kind="relationship" relationship="viewControllers" id="P48-3t-bwJ"/>
-                        <segue destination="GTR-i9-zUm" kind="relationship" relationship="viewControllers" id="XCJ-af-bLU"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g9u-Yp-Pa1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="103" y="-1288"/>
         </scene>
         <!--tracking-->
         <scene sceneID="cKG-HV-KOK">
@@ -287,7 +197,4 @@
             <point key="canvasLocation" x="581" y="432"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Ksm-Tm-lRe"/>
-    </inferredMetricsTieBreakers>
 </document>
