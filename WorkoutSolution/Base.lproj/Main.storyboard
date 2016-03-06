@@ -109,15 +109,6 @@
                     <view key="view" contentMode="scaleToFill" id="BYi-nR-Fcp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="MIk-Gt-1xB">
-                                <rect key="frame" x="136" y="480" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="trackerChangedValue:" destination="buJ-dY-tGj" eventType="valueChanged" id="HBz-t8-2Et"/>
-                                </connections>
-                            </switch>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="tracking" id="TsK-34-0xI"/>
@@ -126,7 +117,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="open" destination="0AV-Ng-68L" id="O22-3x-6o4"/>
-                        <outlet property="trackerSwitcher" destination="MIk-Gt-1xB" id="VfU-5G-Nz3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gFI-mu-3dN" userLabel="First Responder" sceneMemberID="firstResponder"/>

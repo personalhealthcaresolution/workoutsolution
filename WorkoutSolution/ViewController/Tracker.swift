@@ -12,32 +12,17 @@ import AVFoundation
 import CoreLocation
 
 class Tracker: UIViewController {
-
-    @IBOutlet weak var trackerSwitcher: UISwitch!
-    @IBAction func trackerChangedValue(sender: UISwitch) {
-        UIDevice.currentDevice().proximityMonitoringEnabled = trackerSwitcher.on
-        if (trackerSwitcher.on) {
-            startCounter()
-        } else {
-            stopCounter()
-        }
-    }
-
     @IBOutlet weak var open: UIBarButtonItem!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        motionManager.startDeviceMotionUpdates()
-        trackerSwitcher.on = false
-        
-        open.target = self.revealViewController()
-        open.action = Selector("revealToggle:")
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    var xPosition: CGFloat = 0
+    var yPosition: CGFloat = 0
+    var screenWidth: CGFloat = 0
+    var screenHeight: CGFloat = 0
     
+    var trackerSwitcher = UISwitch();
+
     var curDate: NSDate!
     var counter: Int = 0
     var tracking: Bool = false
@@ -47,12 +32,46 @@ class Tracker: UIViewController {
     var totalTime = NSTimeInterval()
     let synth = AVSpeechSynthesizer()
     var myUtterance = AVSpeechUtterance(string: "")
-    
     lazy var motionManager: CMMotionManager = {
         let motion = CMMotionManager()
         motion.accelerometerUpdateInterval = 1.0/10.0
         return motion
     }()
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        motionManager.startDeviceMotionUpdates()
+        trackerSwitcher.addTarget(self, action: "switchValueDidChange:", forControlEvents: .ValueChanged);
+        
+        open.target = self.revealViewController()
+        open.action = Selector("revealToggle:")
+        
+        screenWidth = self.view.frame.size.width
+        screenHeight = self.view.frame.size.height
+        initView()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        let swap = screenWidth
+        screenWidth = screenHeight
+        screenHeight = swap
+        initView()
+    }
+    
+    func initView() {
+        width = screenWidth
+        height = screenHeight - 70
+        xPosition = 150
+        yPosition = 300
+
+        trackerSwitcher.setOn(false, animated: false)
+        trackerSwitcher.frame = CGRectMake(xPosition, yPosition, width, height)
+        self.view.addSubview(trackerSwitcher)
+    }
 
     func startCounter() {
         curDate = NSDate()
@@ -113,6 +132,14 @@ class Tracker: UIViewController {
             } else {
                 tracking = true
             }
+        }
+    }
+    
+    func switchValueDidChange(sender:UISwitch!) {
+        if (sender.on == true) {
+            startCounter()
+        } else {
+            stopCounter()
         }
     }
 }
