@@ -72,7 +72,7 @@ class LoginEmail: UIViewController {
 
         btnLogin.setTitle("Login", forState: UIControlState.Normal)
         btnLogin.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btnLogin.addTarget(self, action: "verifyAccount:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnLogin.addTarget(self, action: #selector(LoginEmail.verifyAccount(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btnLogin)
         
         width = 150
@@ -83,7 +83,7 @@ class LoginEmail: UIViewController {
 
         btnResetPass.setTitle("Forgot Password", forState: UIControlState.Normal)
         btnResetPass.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btnResetPass.addTarget(self, action: "resetPassword:", forControlEvents: UIControlEvents.TouchUpInside)
+        btnResetPass.addTarget(self, action: #selector(LoginEmail.resetPassword(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btnResetPass)
     }
 
