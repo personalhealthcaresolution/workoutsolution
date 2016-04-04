@@ -41,10 +41,10 @@ class Tracker: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         motionManager.startDeviceMotionUpdates()
-        trackerSwitcher.addTarget(self, action: "switchValueDidChange:", forControlEvents: .ValueChanged);
+        trackerSwitcher.addTarget(self, action: #selector(Tracker.switchValueDidChange(_:)), forControlEvents: .ValueChanged);
         
         open.target = self.revealViewController()
-        open.action = Selector("revealToggle:")
+        open.action = #selector(SWRevealViewController.revealToggle(_:))
         
         screenWidth = self.view.frame.size.width
         screenHeight = self.view.frame.size.height
@@ -75,7 +75,7 @@ class Tracker: UIViewController {
 
     func startCounter() {
         curDate = NSDate()
-        let aSelector : Selector = "update"
+        let aSelector : Selector = #selector(Tracker.update)
         startTime = NSDate.timeIntervalSinceReferenceDate()
         timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: aSelector, userInfo: nil, repeats: true)
     }
@@ -125,7 +125,7 @@ class Tracker: UIViewController {
             }
             if (acceleration.y >= startValue) {
                 if (tracking) {
-                    counter++;
+                    counter += 1;
                     tracking = false
                     textToSpeech(counter)
                 }
