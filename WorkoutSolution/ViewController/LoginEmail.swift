@@ -9,18 +9,13 @@
 import UIKit
 
 class LoginEmail: UIViewController {
+    var screenWidth: CGFloat = 0
+    var screenHeight: CGFloat = 0
+
     var btnLogin = UIButton()
     var txtUsername = UITextField()
     var txtPassword = UITextField()
     var btnResetPass = UIButton()
-
-    var isUser = false
-    var width: CGFloat = 0
-    var height: CGFloat = 0
-    var xPosition: CGFloat = 0
-    var yPosition: CGFloat = 0
-    var screenWidth: CGFloat = 0
-    var screenHeight: CGFloat = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +38,11 @@ class LoginEmail: UIViewController {
     }
     
     func initView() {
+        var width: CGFloat = 0
+        var height: CGFloat = 0
+        var xPosition: CGFloat = 0
+        var yPosition: CGFloat = 0
+
         height = 30
         width = screenWidth - 40
         xPosition = self.view.frame.origin.x + 20
@@ -94,7 +94,7 @@ class LoginEmail: UIViewController {
             return
         }
         
-        isUser = Account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
+        let isUser = Account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
         
         if isUser {
             let defaults = NSUserDefaults.standardUserDefaults()
