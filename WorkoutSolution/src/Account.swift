@@ -11,49 +11,22 @@ import Foundation
 class Account {
     
     class func verifyAccount(username: String, password: String) -> Bool {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000")!)
-        request.HTTPMethod = "POST"
-        let postString = "/ian/hello/world"
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            guard error == nil && data != nil else {
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+        let postString = "action=signin&username=\(username)&password=\(password)"
+        
+        let connect = ConnectServer()
+        connect.sendRequest(postString) { jsonString in
+            print("ian test: \(jsonString)")
         }
-        task.resume()
         return false
     }
 
     class func addAccount(username: String, password: String) -> Bool {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000")!)
-        request.HTTPMethod = "POST"
         let postString = "action=signup&username=\(username)&password=\(password)"
-        
-        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
-            guard error == nil && data != nil else {
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? NSHTTPURLResponse where httpStatus.statusCode != 200 {
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
-            print("responseString = \(responseString)")
+
+        let connect = ConnectServer()
+        connect.sendRequest(postString) { jsonString in
+            print("ian test: \(jsonString)")
         }
-        task.resume()
 
         return false
     }

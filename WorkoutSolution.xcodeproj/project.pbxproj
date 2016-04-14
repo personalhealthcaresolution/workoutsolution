@@ -30,6 +30,7 @@
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
 		3AC7E09C1BECE7DD004828E1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7E09B1BECE7DD004828E1 /* History.swift */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; };
+		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
 		3AEE15EA1C721523005F9F81 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEE15E91C721523005F9F81 /* Login.storyboard */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
@@ -158,6 +159,7 @@
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AC7E09B1BECE7DD004828E1 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = ViewController/History.swift; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
+		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
 		3AEE15E91C721523005F9F81 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = storyboard/Login.storyboard; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				3A01FF7D1C05FFD000AD1F9D /* Account.swift */,
+				3ADB5C741CBFD43700D847BA /* ConnectServer.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
+				3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
