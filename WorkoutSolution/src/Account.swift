@@ -49,7 +49,6 @@ class Account {
 
         while (!canResponse) {}
 
-        print("ian test returnValue: \(returnValue)")
         return returnValue
     }
 }
