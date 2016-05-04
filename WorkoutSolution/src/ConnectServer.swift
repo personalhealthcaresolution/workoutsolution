@@ -10,7 +10,7 @@ import Foundation
 
 class ConnectServer {
 
-    func sendRequest(postString: String, completion: (NSString) -> ()) {
+    func sendRequest(postString: String, callback: (NSString) -> ()) {
         let url = NSURL(string: "http://localhost:3000")
         var responseString: NSString = ""
         let request = NSMutableURLRequest(URL: url!)
@@ -28,7 +28,7 @@ class ConnectServer {
             }
             
             responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
-            completion(responseString)
+            callback(responseString)
         }
         task.resume()
     }

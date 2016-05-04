@@ -11,17 +11,28 @@ import Foundation
 class Account {
     
     class func verifyAccount(username: String, password: String) -> Bool {
-        let postString = "action=signin&username=\(username)&password=\(password)"
-        
+        var canResponse = false;
+        var returnValue = false;
+
         let connect = ConnectServer()
+        let postString = "action=signIn&username=\(username)&password=\(password)"
+
         connect.sendRequest(postString) { jsonString in
-            print("ian test: \(jsonString)")
+            if (jsonString == "true") {
+                returnValue = true
+            } else {
+                returnValue = false
+            }
+            canResponse = true;
         }
-        return false
+
+        while (!canResponse) {}
+
+        return returnValue
     }
 
     class func addAccount(username: String, password: String) -> Bool {
-        let postString = "action=signup&username=\(username)&password=\(password)"
+        let postString = "action=signUp&username=\(username)&password=\(password)"
 
         let connect = ConnectServer()
         connect.sendRequest(postString) { jsonString in
