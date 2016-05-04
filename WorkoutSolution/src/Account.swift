@@ -32,13 +32,24 @@ class Account {
     }
 
     class func addAccount(username: String, password: String) -> Bool {
-        let postString = "action=signUp&username=\(username)&password=\(password)"
+        var canResponse = false;
+        var returnValue = false;
 
         let connect = ConnectServer()
+        let postString = "action=signUp&username=\(username)&password=\(password)"
+
         connect.sendRequest(postString) { jsonString in
-            print("ian test: \(jsonString)")
+            if (jsonString != "") {
+                returnValue = true
+            } else {
+                returnValue = false
+            }
+            canResponse = true
         }
 
-        return false
+        while (!canResponse) {}
+
+        print("ian test returnValue: \(returnValue)")
+        return returnValue
     }
 }
