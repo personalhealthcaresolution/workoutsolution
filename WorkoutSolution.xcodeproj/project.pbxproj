@@ -819,7 +819,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ianyuen/Documents/FacebookSDK,
-					"$(PROJECT_DIR)/Charts/ThirdParty/Realm/ios",
 				);
 				INFOPLIST_FILE = WorkoutSolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
@@ -842,7 +841,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/ianyuen/Documents/FacebookSDK,
-					"$(PROJECT_DIR)/Charts/ThirdParty/Realm/ios",
 				);
 				INFOPLIST_FILE = WorkoutSolution/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
