@@ -96,10 +96,10 @@ class Tracker: UIViewController {
         let fileName = formatter.stringFromDate(curDate)+".txt"
         
         let text = totalTime.description + "|" + counter.description
-        print("documents: \(documents)")
-        print("writePath: \(writePath)")
-        print("fileName: \(fileName)")
-        print("text: \(text)")
+        //print("documents: \(documents)")
+        //print("writePath: \(writePath)")
+        //print("fileName: \(fileName)")
+        //print("text: \(text)")
         
         do {
             try text.writeToFile(writePath.description + fileName, atomically: true, encoding: NSUTF8StringEncoding)
@@ -117,13 +117,13 @@ class Tracker: UIViewController {
     
     func update() {
         let deviceMotion: CMDeviceMotion! = motionManager.deviceMotion
-        let acceleration: CMAcceleration! = deviceMotion.userAcceleration
-        
+        //let acceleration: CMAcceleration! = deviceMotion.userAcceleration
+
         if UIDevice.currentDevice().proximityState {
             if (startValue == 0) {
-               startValue = acceleration.y
+               startValue = deviceMotion.gravity.y
             }
-            if (acceleration.y >= startValue) {
+            if (deviceMotion.gravity.y >= startValue) {
                 if (tracking) {
                     counter += 1;
                     tracking = false
