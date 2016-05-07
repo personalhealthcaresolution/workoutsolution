@@ -8,7 +8,7 @@
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
-//  https://github.com/danielgindi/ios-charts
+//  https://github.com/danielgindi/Charts
 //
 
 import Foundation
@@ -24,12 +24,12 @@ public class CombinedChartRenderer: ChartDataRendererBase
     /// if set to true, all values are drawn above their bars, instead of below their top
     public var drawValueAboveBarEnabled = true
     
-    /// if set to true, a grey area is darawn behind each bar that indicates the maximum value
+    /// if set to true, a grey area is drawn behind each bar that indicates the maximum value
     public var drawBarShadowEnabled = true
     
     internal var _renderers = [ChartDataRendererBase]()
     
-    internal var _drawOrder: [CombinedChartView.CombinedChartDrawOrder] = [.Bar, .Bubble, .Line, .Candle, .Scatter]
+    internal var _drawOrder: [CombinedChartView.DrawOrder] = [.Bar, .Bubble, .Line, .Candle, .Scatter]
     
     public init(chart: CombinedChartView, animator: ChartAnimator, viewPortHandler: ChartViewPortHandler)
     {
@@ -167,7 +167,7 @@ public class CombinedChartRenderer: ChartDataRendererBase
     /// the order in which the provided data objects should be drawn.
     /// The earlier you place them in the provided array, the further they will be in the background.
     /// e.g. if you provide [DrawOrder.Bar, DrawOrder.Line], the bars will be drawn behind the lines.
-    public var drawOrder: [CombinedChartView.CombinedChartDrawOrder]
+    public var drawOrder: [CombinedChartView.DrawOrder]
     {
         get
         {

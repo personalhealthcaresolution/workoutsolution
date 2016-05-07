@@ -8,12 +8,16 @@
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
-//  https://github.com/danielgindi/ios-charts
+//  https://github.com/danielgindi/Charts
 //
 
 import Foundation
 import CoreGraphics
-import UIKit
+
+#if !os(OSX)
+    import UIKit
+#endif
+
 
 public class ChartYAxisRenderer: ChartAxisRendererBase
 {
@@ -27,9 +31,10 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
     }
     
     /// Computes the axis values.
-    public func computeAxis(var yMin yMin: Double, var yMax: Double)
+    public func computeAxis(yMin yMin: Double, yMax: Double)
     {
         guard let yAxis = yAxis else { return }
+        var yMin = yMin, yMax = yMax
         
         // calculate the starting and entry point of the y-labels (depending on
         // zoom / contentrect bounds)
@@ -72,14 +77,24 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             return
         }
         
+        // Find out how much spacing (in y value space) between axis values
         let rawInterval = range / Double(labelCount)
         var interval = ChartUtils.roundToNextSignificant(number: Double(rawInterval))
-        let intervalMagnitude = pow(10.0, round(log10(interval)))
-        let intervalSigDigit = (interval / intervalMagnitude)
+        
+        // If granularity is enabled, then do not allow the interval to go below specified granularity.
+        // This is used to avoid repeated values when rounding values for display.
+        if yAxis.granularityEnabled
+        {
+            interval = interval < yAxis.granularity ? yAxis.granularity : interval
+        }
+        
+        // Normalize interval
+        let intervalMagnitude = ChartUtils.roundToNextSignificant(number: pow(10.0, Double(Int(log10(interval)))))
+        let intervalSigDigit = Int(interval / intervalMagnitude)
         if (intervalSigDigit > 5)
         {
             // Use one order of magnitude higher, to avoid intervals like 0.9 or 90
-            interval = floor(10.0 * intervalMagnitude)
+            interval = floor(10.0 * Double(intervalMagnitude))
         }
         
         // force label count
@@ -100,7 +115,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             
             var v = yMin
             
-            for (var i = 0; i < labelCount; i++)
+            for _ in 0 ..< labelCount
             {
                 yAxis.entries.append(v)
                 v += step
@@ -118,15 +133,16 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
             }
             else
             {
-                let first = ceil(Double(yMin) / interval) * interval
-                let last = ChartUtils.nextUp(floor(Double(yMax) / interval) * interval)
+                let first = interval == 0.0 ? 0.0 : ceil(Double(yMin) / interval) * interval
+                let last = interval == 0.0 ? 0.0 : ChartUtils.nextUp(floor(Double(yMax) / interval) * interval)
                 
-                var f: Double
-                var i: Int
                 var n = 0
-                for (f = first; f <= last; f += interval)
+                if interval != 0.0 && last != first
                 {
-                    ++n
+                    for _ in first.stride(through: last, by: interval)
+                    {
+                        n += 1
+                    }
                 }
                 
                 if (yAxis.entries.count < n)
@@ -139,9 +155,19 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
                     yAxis.entries.removeRange(n..<yAxis.entries.count)
                 }
                 
-                for (f = first, i = 0; i < n; f += interval, ++i)
+                var f = first
+                var i = 0
+                while (i < n)
                 {
+                    if (f == 0.0)
+                    { // Fix for IEEE negative zero case (Where value == -0.0, and 0.0 == -0.0)
+                        f = 0.0
+                    }
+                    
                     yAxis.entries[i] = Double(f)
+                    
+                    f += interval
+                    i += 1
                 }
             }
         }
@@ -254,7 +280,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
         
         var pt = CGPoint()
         
-        for (var i = 0; i < yAxis.entryCount; i++)
+        for i in 0 ..< yAxis.entryCount
         {
             let text = yAxis.getFormattedLabel(i)
             
@@ -280,46 +306,95 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
     {
         guard let yAxis = yAxis else { return }
         
-        if (!yAxis.isDrawGridLinesEnabled || !yAxis.isEnabled)
+        if !yAxis.isEnabled
         {
             return
         }
         
-        CGContextSaveGState(context)
-
-        if (!yAxis.gridAntialiasEnabled)
+        if yAxis.drawGridLinesEnabled
         {
-            CGContextSetShouldAntialias(context, false)
+            CGContextSaveGState(context)
+            
+            CGContextSetShouldAntialias(context, yAxis.gridAntialiasEnabled)
+            CGContextSetStrokeColorWithColor(context, yAxis.gridColor.CGColor)
+            CGContextSetLineWidth(context, yAxis.gridLineWidth)
+            CGContextSetLineCap(context, yAxis.gridLineCap)
+            
+            if (yAxis.gridLineDashLengths != nil)
+            {
+                CGContextSetLineDash(context, yAxis.gridLineDashPhase, yAxis.gridLineDashLengths, yAxis.gridLineDashLengths.count)
+            }
+            else
+            {
+                CGContextSetLineDash(context, 0.0, nil, 0)
+            }
+            
+            let valueToPixelMatrix = transformer.valueToPixelMatrix
+            
+            var position = CGPoint(x: 0.0, y: 0.0)
+            
+            // draw the horizontal grid
+            for i in 0 ..< yAxis.entryCount
+            {
+                position.x = 0.0
+                position.y = CGFloat(yAxis.entries[i])
+                position = CGPointApplyAffineTransform(position, valueToPixelMatrix)
+                
+                _gridLineBuffer[0].x = viewPortHandler.contentLeft
+                _gridLineBuffer[0].y = position.y
+                _gridLineBuffer[1].x = viewPortHandler.contentRight
+                _gridLineBuffer[1].y = position.y
+                CGContextStrokeLineSegments(context, _gridLineBuffer, 2)
+            }
+            
+            CGContextRestoreGState(context)
         }
 
-        CGContextSetStrokeColorWithColor(context, yAxis.gridColor.CGColor)
-        CGContextSetLineWidth(context, yAxis.gridLineWidth)
-        if (yAxis.gridLineDashLengths != nil)
+        if yAxis.drawZeroLineEnabled
         {
-            CGContextSetLineDash(context, yAxis.gridLineDashPhase, yAxis.gridLineDashLengths, yAxis.gridLineDashLengths.count)
+            // draw zero line
+            
+            var position = CGPoint(x: 0.0, y: 0.0)
+            transformer.pointValueToPixel(&position)
+                
+            drawZeroLine(context: context,
+                x1: viewPortHandler.contentLeft,
+                x2: viewPortHandler.contentRight,
+                y1: position.y,
+                y2: position.y);
+        }
+    }
+    
+    /// Draws the zero line at the specified position.
+    public func drawZeroLine(
+        context context: CGContext,
+        x1: CGFloat,
+        x2: CGFloat,
+        y1: CGFloat,
+        y2: CGFloat)
+    {
+        guard let
+            yAxis = yAxis,
+            zeroLineColor = yAxis.zeroLineColor
+            else { return }
+        
+        CGContextSaveGState(context)
+        
+        CGContextSetStrokeColorWithColor(context, zeroLineColor.CGColor)
+        CGContextSetLineWidth(context, yAxis.zeroLineWidth)
+        
+        if (yAxis.zeroLineDashLengths != nil)
+        {
+            CGContextSetLineDash(context, yAxis.zeroLineDashPhase, yAxis.zeroLineDashLengths!, yAxis.zeroLineDashLengths!.count)
         }
         else
         {
             CGContextSetLineDash(context, 0.0, nil, 0)
         }
         
-        let valueToPixelMatrix = transformer.valueToPixelMatrix
-        
-        var position = CGPoint(x: 0.0, y: 0.0)
-        
-        // draw the horizontal grid
-        for (var i = 0, count = yAxis.entryCount; i < count; i++)
-        {
-            position.x = 0.0
-            position.y = CGFloat(yAxis.entries[i])
-            position = CGPointApplyAffineTransform(position, valueToPixelMatrix)
-        
-            _gridLineBuffer[0].x = viewPortHandler.contentLeft
-            _gridLineBuffer[0].y = position.y
-            _gridLineBuffer[1].x = viewPortHandler.contentRight
-            _gridLineBuffer[1].y = position.y
-            CGContextStrokeLineSegments(context, _gridLineBuffer, 2)
-        }
+        CGContextMoveToPoint(context, x1, y1)
+        CGContextAddLineToPoint(context, x2, y2)
+        CGContextDrawPath(context, CGPathDrawingMode.Stroke)
         
         CGContextRestoreGState(context)
     }
@@ -343,7 +418,7 @@ public class ChartYAxisRenderer: ChartAxisRendererBase
         
         var position = CGPoint(x: 0.0, y: 0.0)
         
-        for (var i = 0; i < limitLines.count; i++)
+        for i in 0 ..< limitLines.count
         {
             let l = limitLines[i]
             

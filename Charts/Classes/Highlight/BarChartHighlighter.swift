@@ -9,7 +9,7 @@
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
-//  https://github.com/danielgindi/ios-charts
+//  https://github.com/danielgindi/Charts
 //
 
 import Foundation
@@ -131,6 +131,7 @@ public class BarChartHighlighter: ChartHighlighter
         }
 
         if let ranges = getRanges(entry: entry!)
+            where ranges.count > 0
         {
             let stackIndex = getClosestStackIndex(ranges: ranges, value: yValue)
             let h = ChartHighlight(xIndex: xIndex, dataSetIndex: dataSetIndex, stackIndex: stackIndex, range: ranges[stackIndex])
@@ -160,7 +161,7 @@ public class BarChartHighlighter: ChartHighlighter
             }
             else
             {
-                stackIndex++
+                stackIndex += 1
             }
         }
         
@@ -218,7 +219,7 @@ public class BarChartHighlighter: ChartHighlighter
         var ranges = [ChartRange]()
         ranges.reserveCapacity(values!.count)
         
-        for (var i = 0, count = values!.count; i < count; i++)
+        for i in 0 ..< values!.count
         {
             let value = values![i]
             

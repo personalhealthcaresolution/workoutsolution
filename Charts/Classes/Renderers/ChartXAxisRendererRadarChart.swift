@@ -8,12 +8,16 @@
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
-//  https://github.com/danielgindi/ios-charts
+//  https://github.com/danielgindi/Charts
 //
 
 import Foundation
 import CoreGraphics
-import UIKit
+
+#if !os(OSX)
+    import UIKit
+#endif
+
 
 public class ChartXAxisRendererRadarChart: ChartXAxisRenderer
 {
@@ -51,7 +55,7 @@ public class ChartXAxisRendererRadarChart: ChartXAxisRenderer
         let center = chart.centerOffsets
         
         let modulus = xAxis.axisLabelModulus
-        for var i = 0, count = xAxis.values.count; i < count; i += modulus
+        for i in 0.stride(to: xAxis.values.count, by: modulus)
         {
             let label = xAxis.values[i]
             

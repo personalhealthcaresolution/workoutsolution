@@ -8,12 +8,15 @@
 //  A port of MPAndroidChart for iOS
 //  Licensed under Apache License 2.0
 //
-//  https://github.com/danielgindi/ios-charts
+//  https://github.com/danielgindi/Charts
 //
 
 import Foundation
 import CoreGraphics
-import UIKit
+
+#if !os(OSX)
+    import UIKit
+#endif
 
 public class BarChartRenderer: ChartDataRendererBase
 {
@@ -30,7 +33,7 @@ public class BarChartRenderer: ChartDataRendererBase
     {
         guard let dataProvider = dataProvider, barData = dataProvider.barData else { return }
         
-        for (var i = 0; i < barData.dataSetCount; i++)
+        for i in 0 ..< barData.dataSetCount
         {
             guard let set = barData.getDataSetByIndex(i) else { continue }
             
@@ -70,10 +73,13 @@ public class BarChartRenderer: ChartDataRendererBase
         let phaseY = animator.phaseY
         var barRect = CGRect()
         var barShadow = CGRect()
+        let borderWidth = dataSet.barBorderWidth
+        let borderColor = dataSet.barBorderColor
+        let drawBorder = borderWidth > 0.0
         var y: Double
         
         // do the drawing
-        for (var j = 0, count = Int(ceil(CGFloat(dataSet.entryCount) * animator.phaseX)); j < count; j++)
+        for j in 0 ..< Int(ceil(CGFloat(dataSet.entryCount) * animator.phaseX))
         {
             guard let e = dataSet.entryForIndex(j) as? BarChartDataEntry else { continue }
             
@@ -133,6 +139,13 @@ public class BarChartRenderer: ChartDataRendererBase
                 // Set the color for the currently drawn value. If the index is out of bounds, reuse colors.
                 CGContextSetFillColorWithColor(context, dataSet.colorAt(j).CGColor)
                 CGContextFillRect(context, barRect)
+                
+                if drawBorder
+                {
+                    CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
+                    CGContextSetLineWidth(context, borderWidth)
+                    CGContextStrokeRect(context, barRect)
+                }
             }
             else
             {
@@ -177,7 +190,7 @@ public class BarChartRenderer: ChartDataRendererBase
                 }
                 
                 // fill the stack
-                for (var k = 0; k < vals!.count; k++)
+                for k in 0 ..< vals!.count
                 {
                     let value = vals![k]
                     
@@ -234,13 +247,20 @@ public class BarChartRenderer: ChartDataRendererBase
                     // Set the color for the currently drawn value. If the index is out of bounds, reuse colors.
                     CGContextSetFillColorWithColor(context, dataSet.colorAt(k).CGColor)
                     CGContextFillRect(context, barRect)
+                    
+                    if drawBorder
+                    {
+                        CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
+                        CGContextSetLineWidth(context, borderWidth)
+                        CGContextStrokeRect(context, barRect)
+                    }
                 }
             }
         }
         
         CGContextRestoreGState(context)
     }
-    
+
     /// Prepares a bar for being highlighted.
     public func prepareBarHighlight(x x: CGFloat, y1: Double, y2: Double, barspacehalf: CGFloat, trans: ChartTransformer, inout rect: CGRect)
     {
@@ -277,7 +297,7 @@ public class BarChartRenderer: ChartDataRendererBase
             var posOffset: CGFloat
             var negOffset: CGFloat
             
-            for (var dataSetIndex = 0, count = barData.dataSetCount; dataSetIndex < count; dataSetIndex++)
+            for dataSetIndex in 0 ..< barData.dataSetCount
             {
                 guard let dataSet = dataSets[dataSetIndex] as? IBarChartDataSet else { continue }
                 
@@ -301,8 +321,6 @@ public class BarChartRenderer: ChartDataRendererBase
                     negOffset = -negOffset - valueTextHeight
                 }
                 
-                let valueTextColor = dataSet.valueTextColor
-                
                 guard let formatter = dataSet.valueFormatter else { continue }
                 
                 let trans = dataProvider.getTransformer(dataSet.axisDependency)
@@ -314,7 +332,7 @@ public class BarChartRenderer: ChartDataRendererBase
                 // if only single values are drawn (sum)
                 if (!dataSet.isStacked)
                 {
-                    for (var j = 0, count = Int(ceil(CGFloat(dataSet.entryCount) * animator.phaseX)); j < count; j++)
+                    for j in 0 ..< Int(ceil(CGFloat(dataSet.entryCount) * animator.phaseX))
                     {
                         guard let e = dataSet.entryForIndex(j) as? BarChartDataEntry else { continue }
                         
@@ -339,21 +357,21 @@ public class BarChartRenderer: ChartDataRendererBase
                         }
                         
                         let val = e.value
-                    
+
                         drawValue(context: context,
                             value: formatter.stringFromNumber(val)!,
                             xPos: valuePoint.x,
                             yPos: valuePoint.y + (val >= 0.0 ? posOffset : negOffset),
                             font: valueFont,
                             align: .Center,
-                            color: valueTextColor)
+                            color: dataSet.valueTextColorAt(j))
                     }
                 }
                 else
                 {
                     // if we have stacks
                     
-                    for (var j = 0, count = Int(ceil(CGFloat(dataSet.entryCount) * animator.phaseX)); j < count; j++)
+                    for j in 0 ..< Int(ceil(CGFloat(dataSet.entryCount) * animator.phaseX))
                     {
                         guard let e = dataSet.entryForIndex(j) as? BarChartDataEntry else { continue }
                         
@@ -381,7 +399,7 @@ public class BarChartRenderer: ChartDataRendererBase
                                 yPos: valuePoint.y + (e.value >= 0.0 ? posOffset : negOffset),
                                 font: valueFont,
                                 align: .Center,
-                                color: valueTextColor)
+                                color: dataSet.valueTextColorAt(j))
                         }
                         else
                         {
@@ -393,7 +411,7 @@ public class BarChartRenderer: ChartDataRendererBase
                             var posY = 0.0
                             var negY = -e.negativeSum
                             
-                            for (var k = 0; k < vals.count; k++)
+                            for k in 0 ..< vals.count
                             {
                                 let value = vals[k]
                                 var y: Double
@@ -414,7 +432,7 @@ public class BarChartRenderer: ChartDataRendererBase
                             
                             trans.pointValuesToPixel(&transformed)
                             
-                            for (var k = 0; k < transformed.count; k++)
+                            for k in 0 ..< transformed.count
                             {
                                 let x = valuePoint.x
                                 let y = transformed[k].y + (vals[k] >= 0 ? posOffset : negOffset)
@@ -435,7 +453,7 @@ public class BarChartRenderer: ChartDataRendererBase
                                     yPos: y,
                                     font: valueFont,
                                     align: .Center,
-                                    color: valueTextColor)
+                                    color: dataSet.valueTextColorAt(j))
                             }
                         }
                     }
@@ -445,7 +463,7 @@ public class BarChartRenderer: ChartDataRendererBase
     }
     
     /// Draws a value at the specified x and y position.
-    public func drawValue(context context: CGContext, value: String, xPos: CGFloat, yPos: CGFloat, font: UIFont, align: NSTextAlignment, color: UIColor)
+    public func drawValue(context context: CGContext, value: String, xPos: CGFloat, yPos: CGFloat, font: NSUIFont, align: NSTextAlignment, color: NSUIColor)
     {
         ChartUtils.drawText(context: context, text: value, point: CGPoint(x: xPos, y: yPos), align: align, attributes: [NSFontAttributeName: font, NSForegroundColorAttributeName: color])
     }
@@ -471,7 +489,7 @@ public class BarChartRenderer: ChartDataRendererBase
         let drawHighlightArrowEnabled = dataProvider.isDrawHighlightArrowEnabled
         var barRect = CGRect()
         
-        for (var i = 0; i < indices.count; i++)
+        for i in 0 ..< indices.count
         {
             let h = indices[i]
             let index = h.xIndex
