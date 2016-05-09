@@ -18,6 +18,7 @@
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; };
 		3A7A5B451C134A6B00C6EA87 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */; };
 		3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */; };
+		3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */; };
 		3A8F287E1BC150B600BCC5BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287C1BC150B600BCC5BC /* Interface.storyboard */; };
 		3A8F28801BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287F1BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28871BC150B600BCC5BC /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A8F28861BC150B600BCC5BC /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -149,6 +150,7 @@
 		3A7A5B431C134A6B00C6EA87 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
 		3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = SWRevealViewController/SWRevealViewController.m; sourceTree = SOURCE_ROOT; };
 		3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackerBack.swift; path = ViewController/TrackerBack.swift; sourceTree = "<group>"; };
+		3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainNew.storyboard; path = storyboard/MainNew.storyboard; sourceTree = "<group>"; };
 		3A8F287A1BC150B600BCC5BC /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F287D1BC150B600BCC5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A8F287F1BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -292,6 +294,7 @@
 			children = (
 				5D6A53A31B27B228005C167E /* Main.storyboard */,
 				3AEE15E91C721523005F9F81 /* Login.storyboard */,
+				3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */,
 			);
 			name = storyboard;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				3AEE15EA1C721523005F9F81 /* Login.storyboard in Resources */,
 				5D6A53A51B27B228005C167E /* Main.storyboard in Resources */,
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
+				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
