@@ -8,7 +8,7 @@
         <!--Main-->
         <scene sceneID="lhg-A0-COh">
             <objects>
-                <viewController id="scc-Mf-cgh" customClass="Main" sceneMemberID="viewController">
+                <viewController id="scc-Mf-cgh" customClass="Main" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aI6-gF-2Ip"/>
                         <viewControllerLayoutGuide type="bottom" id="ZKz-BD-rSw"/>
