@@ -39,8 +39,7 @@ class Main: UIViewController {
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
 
-        let imageName = "Calisthenics"
-        let image = UIImage(named: imageName)
+        let image = UIImage(named: "calisthenics")
         let imageView = UIImageView(image: image!)
 
         height = 30
@@ -49,5 +48,25 @@ class Main: UIViewController {
         yPosition = self.view.frame.origin.y + 70
         imageView.frame = CGRectMake(xPosition, yPosition, width, height)
         view.addSubview(imageView)
+
+        let btnType = UIButton()
+        width = 100
+        height = 100
+        xPosition = (screenWidth - width) / 2
+        yPosition = 150
+        btnType.frame = CGRectMake(xPosition, yPosition, width, height)
+
+        btnType.setImage(UIImage(named: "type"), forState: UIControlState.Normal)
+        self.view.addSubview(btnType)
+
+        let btnLevel = UIButton()
+        width = 100
+        height = 100
+        xPosition = (screenWidth - width) / 2
+        yPosition = 300
+        btnLevel.frame = CGRectMake(xPosition, yPosition, width, height)
+        
+        btnLevel.setImage(UIImage(named: "level"), forState: UIControlState.Normal)
+        self.view.addSubview(btnLevel)
     }
 }
