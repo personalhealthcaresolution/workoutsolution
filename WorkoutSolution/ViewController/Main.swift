@@ -39,34 +39,79 @@ class Main: UIViewController {
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
 
+        width = screenWidth
+        height = screenHeight / 16
+        xPosition = 0
+        yPosition = screenHeight / 24
+        let labelBlack = UILabel()
+        labelBlack.frame = CGRectMake(xPosition, yPosition, width, height)
+        labelBlack.backgroundColor = Color.UIColorFromHex(Color.citrus)
+        self.view.addSubview(labelBlack)
+
+        width = screenHeight / 16
+        height = screenHeight / 16
+        xPosition = screenWidth / 18
+        yPosition = screenHeight / 24
+        let btnBack = UIButton()
+        btnBack.frame = CGRectMake(xPosition, yPosition, width, height)
+        btnBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
+        self.view.addSubview(btnBack)
+
+        height = 36
+        width = screenWidth - 40
+        xPosition = 20
+        yPosition = screenHeight / 5
         let image = UIImage(named: "calisthenics")
         let imageView = UIImageView(image: image!)
-
-        height = 30
-        width = screenWidth - 40
-        xPosition = self.view.frame.origin.x + 20
-        yPosition = self.view.frame.origin.y + 70
         imageView.frame = CGRectMake(xPosition, yPosition, width, height)
         view.addSubview(imageView)
 
-        let btnType = UIButton()
+        width = screenWidth - 80
+        height = screenHeight / 16
+        xPosition = 40
+        yPosition = screenHeight / 2.4
+        let labelChoose = UILabel()
+        labelChoose.frame = CGRectMake(xPosition, yPosition, width, height)
+        labelChoose.text = "CHOOSE BY"
+        labelChoose.textColor = Color.UIColorFromHex(Color.citrus)
+        self.view.addSubview(labelChoose)
+
         width = 100
         height = 100
-        xPosition = (screenWidth - width) / 2
-        yPosition = 150
+        xPosition = screenWidth / 3
+        yPosition = screenHeight / 2
+        let btnType = UIButton()
         btnType.frame = CGRectMake(xPosition, yPosition, width, height)
-
         btnType.setImage(UIImage(named: "type"), forState: UIControlState.Normal)
         self.view.addSubview(btnType)
 
-        let btnLevel = UIButton()
+        width = screenWidth - 80
+        height = screenHeight / 16
+        xPosition = screenWidth / 1.5
+        yPosition = screenHeight / 1.8
+        let labelType = UILabel()
+        labelType.frame = CGRectMake(xPosition, yPosition, width, height)
+        labelType.text = "TYPE"
+        labelType.textColor = Color.UIColorFromHex(Color.white)
+        self.view.addSubview(labelType)
+
         width = 100
         height = 100
-        xPosition = (screenWidth - width) / 2
-        yPosition = 300
+        xPosition = screenWidth / 3
+        yPosition = screenHeight / 1.45
+        let btnLevel = UIButton()
         btnLevel.frame = CGRectMake(xPosition, yPosition, width, height)
-        
         btnLevel.setImage(UIImage(named: "level"), forState: UIControlState.Normal)
         self.view.addSubview(btnLevel)
+
+        width = screenWidth - 80
+        height = screenHeight / 16
+        xPosition = screenWidth / 1.5
+        yPosition = screenHeight / 1.35
+        let labelLevel = UILabel()
+        labelLevel.frame = CGRectMake(xPosition, yPosition, width, height)
+        labelLevel.text = "LEVEL"
+        labelLevel.textColor = Color.UIColorFromHex(Color.white)
+        self.view.addSubview(labelLevel)
     }
 }
