@@ -11,6 +11,7 @@ import UIKit
 class Main: UIViewController {
     var screenWidth: CGFloat = 0
     var screenHeight: CGFloat = 0
+    let statusHeight: CGFloat = UIApplication.sharedApplication().statusBarFrame.size.height
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,17 +33,24 @@ class Main: UIViewController {
     }
     
     func initView() {
-        self.view.backgroundColor = Color.UIColorFromHex(Color.coralRed)
-
         var width: CGFloat = 0
         var height: CGFloat = 0
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
 
         width = screenWidth
+        height = screenHeight - statusHeight
+        xPosition = 0
+        yPosition = statusHeight
+        let background = UILabel()
+        background.frame = CGRectMake(xPosition, yPosition, width, height)
+        background.backgroundColor = Color.UIColorFromHex(Color.coralRed)
+        self.view.addSubview(background)
+
+        width = screenWidth
         height = screenHeight / 16
         xPosition = 0
-        yPosition = screenHeight / 24
+        yPosition = statusHeight
         let labelBlack = UILabel()
         labelBlack.frame = CGRectMake(xPosition, yPosition, width, height)
         labelBlack.backgroundColor = Color.UIColorFromHex(Color.citrus)
@@ -51,7 +59,7 @@ class Main: UIViewController {
         width = screenHeight / 16
         height = screenHeight / 16
         xPosition = screenWidth / 18
-        yPosition = screenHeight / 24
+        yPosition = statusHeight
         let btnBack = UIButton()
         btnBack.frame = CGRectMake(xPosition, yPosition, width, height)
         btnBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
