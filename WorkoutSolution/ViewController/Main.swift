@@ -92,6 +92,7 @@ class Main: UIViewController {
         let labelType = UILabel()
         labelType.frame = CGRectMake(xPosition, yPosition, width, height)
         labelType.text = "TYPE"
+        labelType.font = UIFont(name: "Arial", size: 20)
         labelType.textColor = Color.UIColorFromHex(Color.white)
         self.view.addSubview(labelType)
 
@@ -111,6 +112,7 @@ class Main: UIViewController {
         let labelLevel = UILabel()
         labelLevel.frame = CGRectMake(xPosition, yPosition, width, height)
         labelLevel.text = "LEVEL"
+        labelType.font = UIFont(name: "Arial", size: 20)
         labelLevel.textColor = Color.UIColorFromHex(Color.white)
         self.view.addSubview(labelLevel)
     }
