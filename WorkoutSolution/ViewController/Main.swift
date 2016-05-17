@@ -91,6 +91,7 @@ class Main: UIViewController {
         let btnType = UIButton()
         btnType.frame = CGRectMake(xPosition, yPosition, width, height)
         btnType.setImage(UIImage(named: "type"), forState: UIControlState.Normal)
+        btnType.addTarget(self, action: #selector(Main.btnTypeClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btnType)
 
         width = screenWidth - 80
@@ -123,5 +124,9 @@ class Main: UIViewController {
         labelLevel.font = UIFont(name: Font.helveticaNeueBold, size: 20)
         labelLevel.textColor = Color.UIColorFromHex(Color.white)
         self.view.addSubview(labelLevel)
+    }
+
+    func btnTypeClicked(sender:UIButton!) {
+        self.performSegueWithIdentifier("showType", sender: self)
     }
 }

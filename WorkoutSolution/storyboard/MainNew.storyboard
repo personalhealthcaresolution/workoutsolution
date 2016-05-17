@@ -18,10 +18,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="77Z-dx-kZg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ylt-v3-a8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="526" y="374"/>
+        </scene>
+        <!--Type-->
+        <scene sceneID="JAd-hZ-O5Y">
+            <objects>
+                <viewController storyboardIdentifier="type" id="j7F-lH-Kty" customClass="Type" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BXa-sv-N3X"/>
+                        <viewControllerLayoutGuide type="bottom" id="HHg-H6-dEz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nEk-mL-7hS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7gZ-n3-8ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1322" y="374"/>
         </scene>
     </scenes>
 </document>
