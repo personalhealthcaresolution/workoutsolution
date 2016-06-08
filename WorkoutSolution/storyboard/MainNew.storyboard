@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,11 +20,30 @@
                     </view>
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="77Z-dx-kZg"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="Jya-nm-CTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ylt-v3-a8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="526" y="374"/>
+        </scene>
+        <!--Level-->
+        <scene sceneID="AJa-tk-uTM">
+            <objects>
+                <viewController id="vzv-Ww-cyC" customClass="Level" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cLl-HB-1At"/>
+                        <viewControllerLayoutGuide type="bottom" id="oP7-YS-GxP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="M9g-70-BxW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U5J-tR-xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="1183"/>
         </scene>
         <!--Type-->
         <scene sceneID="JAd-hZ-O5Y">

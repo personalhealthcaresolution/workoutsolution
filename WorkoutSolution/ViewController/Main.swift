@@ -29,7 +29,7 @@ class Main: UIViewController {
         let swap = screenWidth
         screenWidth = screenHeight
         screenHeight = swap
-        initView()
+        //initView()
     }
     
     func initView() {
@@ -112,6 +112,7 @@ class Main: UIViewController {
         let btnLevel = UIButton()
         btnLevel.frame = CGRectMake(xPosition, yPosition, width, height)
         btnLevel.setImage(UIImage(named: "level"), forState: UIControlState.Normal)
+        btnLevel.addTarget(self, action: #selector(Main.btnLevelClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(btnLevel)
 
         width = screenWidth - 80
@@ -128,5 +129,9 @@ class Main: UIViewController {
 
     func btnTypeClicked(sender:UIButton!) {
         self.performSegueWithIdentifier("showType", sender: self)
+    }
+
+    func btnLevelClicked(sender:UIButton!) {
+        self.performSegueWithIdentifier("showLevel", sender: self)
     }
 }
