@@ -9,8 +9,8 @@
 import Foundation
 
 class ScreenSize {
-    internal static let defaultWidth:CGFloat = 1080
-    internal static let defaultHeight:CGFloat = 1920
+    internal static let defaultWidth:CGFloat = 1242
+    internal static let defaultHeight:CGFloat = 2208
     
     class func getPositionX(screenWidth:CGFloat, positionX:CGFloat) ->  CGFloat {
         return (screenWidth * positionX) / defaultWidth

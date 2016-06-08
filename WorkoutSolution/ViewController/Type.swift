@@ -43,8 +43,8 @@ class Type: UIViewController {
         var itemWidth: CGFloat = 0
         var itemHeight: CGFloat = 0
         
-        width = 1080
-        height = 1920
+        width = ScreenSize.defaultWidth
+        height = ScreenSize.defaultHeight
         xPosition = 0
         yPosition = 80
         positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
@@ -56,8 +56,8 @@ class Type: UIViewController {
         background.backgroundColor = Color.UIColorFromHex(Color.citrus)
         self.view.addSubview(background)
 
-        width = 120
-        height = 120
+        width = 140
+        height = 140
         xPosition = 60
         yPosition = 80
         positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
