@@ -61,5 +61,57 @@ class Level: UIViewController {
         btnBack.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
         btnBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
         self.view.addSubview(btnBack)
+
+        width = 592
+        height = 592
+        xPosition = 0
+        yPosition = 203
+        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        let backgroundAbsBeginner = UILabel()
+        backgroundAbsBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        backgroundAbsBeginner.backgroundColor = Color.UIColorFromHex(Color.coralRed)
+        self.view.addSubview(backgroundAbsBeginner)
+
+        width = 592
+        height = 592
+        xPosition = 650
+        yPosition = 203
+        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        let backgroundBeginner = UILabel()
+        backgroundBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        backgroundBeginner.backgroundColor = Color.UIColorFromHex(Color.coralRed)
+        self.view.addSubview(backgroundBeginner)
+
+        width = 592
+        height = 592
+        xPosition = 0
+        yPosition = 853
+        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        let backgroundAdvanced = UILabel()
+        backgroundAdvanced.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        backgroundAdvanced.backgroundColor = Color.UIColorFromHex(Color.coralRed)
+        self.view.addSubview(backgroundAdvanced)
+        
+        width = 592
+        height = 592
+        xPosition = 650
+        yPosition = 853
+        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        let backgroundIntermediate = UILabel()
+        backgroundIntermediate.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        backgroundIntermediate.backgroundColor = Color.UIColorFromHex(Color.coralRed)
+        self.view.addSubview(backgroundIntermediate)
     }
 }
