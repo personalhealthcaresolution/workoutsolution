@@ -26,219 +26,70 @@ class Level: UIViewController {
     }
 
     func initView() {
-        var width: CGFloat = 0
-        var height: CGFloat = 0
-        var xPosition: CGFloat = 0
-        var yPosition: CGFloat = 0
+        addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
+        addButton(70, yPosition: 83, width: 140, height: 140, icon: "back")
 
-        var positionX: CGFloat = 0
-        var positionY: CGFloat = 0
-        var itemWidth: CGFloat = 0
-        var itemHeight: CGFloat = 0
+        //absBeginner
+        addBackground(0, yPosition: 203, width: 592, height: 592, color: Color.coralRed)
+        addLabel(41, yPosition: 273, width: 510, height: 100, text: "ABSOLUTE BEGINNER", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
+        addButton(121, yPosition: 375, width: 350, height: 350, icon: "absBeginner")
 
-        width = ScreenSize.defaultWidth
-        height = ScreenSize.defaultHeight
-        xPosition = 0
-        yPosition = 80
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        //beginner
+        addBackground(650, yPosition: 203, width: 592, height: 592, color: Color.coralRed)
+        addLabel(821, yPosition: 273, width: 250, height: 100, text: "BEGINNER", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
+        addButton(771, yPosition: 375, width: 350, height: 350, icon: "beginner")
+
+        //advanced
+        addBackground(0, yPosition: 853, width: 592, height: 592, color: Color.coralRed)
+        addLabel(166, yPosition: 923, width: 260, height: 100, text: "ADVANCED", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
+        addButton(121, yPosition: 1025, width: 350, height: 350, icon: "advanced")
+
+        //intermediate
+        addBackground(650, yPosition: 853, width: 592, height: 592, color: Color.coralRed)
+        addLabel(771, yPosition: 923, width: 350, height: 100, text: "INTERMEDIATE", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
+        addButton(771, yPosition: 1025, width: 350, height: 350, icon: "intermediate")
+
+        //cardio
+        addLabel((ScreenSize.defaultWidth - 280) / 2, yPosition: 1495, width: 280, height: 100, text: "CARDIO", font: Font.helveticaNeueBold, size: 18, color: Color.white)
+        addButton((ScreenSize.defaultWidth - 350) / 2, yPosition: 1645, width: 350, height: 350, icon: "cardio")
+    }
+
+    func addBackground(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+
         let background = UILabel()
         background.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        background.backgroundColor = Color.UIColorFromHex(Color.citrus)
+        background.backgroundColor = Color.UIColorFromHex(color)
         self.view.addSubview(background)
-        
-        width = 140
-        height = 140
-        xPosition = 70
-        yPosition = 83
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let btnBack = UIButton()
-        btnBack.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        btnBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
-        self.view.addSubview(btnBack)
+    }
 
-        width = 592
-        height = 592
-        xPosition = 0
-        yPosition = 203
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let backgroundAbsBeginner = UILabel()
-        backgroundAbsBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        backgroundAbsBeginner.backgroundColor = Color.UIColorFromHex(Color.coralRed)
-        self.view.addSubview(backgroundAbsBeginner)
+    func addLabel(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
 
-        width = 510
-        height = 100
-        xPosition = 41
-        yPosition = 273
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let labelAbsBeginner = UILabel()
-        labelAbsBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        labelAbsBeginner.text = "ABSOLUTE BEGINNER"
-        labelAbsBeginner.font = UIFont(name: Font.helveticaNeueBold, size: 12)
-        labelAbsBeginner.textColor = Color.UIColorFromHex(Color.citrus)
-        self.view.addSubview(labelAbsBeginner)
+        let label = UILabel()
+        label.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        label.text = text
+        label.font = UIFont(name: font, size: size)
+        label.textColor = Color.UIColorFromHex(color)
+        self.view.addSubview(label)
 
-        width = 350
-        height = 350
-        xPosition = 121
-        yPosition = 375
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let btnAbsBeginner = UIButton()
-        btnAbsBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        btnAbsBeginner.setImage(UIImage(named: "absBeginner"), forState: UIControlState.Normal)
-        self.view.addSubview(btnAbsBeginner)
+    }
 
-        width = 592
-        height = 592
-        xPosition = 650
-        yPosition = 203
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let backgroundBeginner = UILabel()
-        backgroundBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        backgroundBeginner.backgroundColor = Color.UIColorFromHex(Color.coralRed)
-        self.view.addSubview(backgroundBeginner)
+    func addButton(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
 
-        width = 250
-        height = 100
-        xPosition = 821
-        yPosition = 273
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let labelBeginner = UILabel()
-        labelBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        labelBeginner.text = "BEGINNER"
-        labelBeginner.font = UIFont(name: Font.helveticaNeueBold, size: 12)
-        labelBeginner.textColor = Color.UIColorFromHex(Color.citrus)
-        self.view.addSubview(labelBeginner)
-
-        width = 350
-        height = 350
-        xPosition = 771
-        yPosition = 375
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let btnBeginner = UIButton()
-        btnBeginner.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        btnBeginner.setImage(UIImage(named: "beginner"), forState: UIControlState.Normal)
-        self.view.addSubview(btnBeginner)
-
-        width = 592
-        height = 592
-        xPosition = 0
-        yPosition = 853
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let backgroundAdvanced = UILabel()
-        backgroundAdvanced.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        backgroundAdvanced.backgroundColor = Color.UIColorFromHex(Color.coralRed)
-        self.view.addSubview(backgroundAdvanced)
-
-        width = 260
-        height = 100
-        xPosition = 166
-        yPosition = 923
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let labelAdvanced = UILabel()
-        labelAdvanced.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        labelAdvanced.text = "ADVANCED"
-        labelAdvanced.font = UIFont(name: Font.helveticaNeueBold, size: 12)
-        labelAdvanced.textColor = Color.UIColorFromHex(Color.citrus)
-        self.view.addSubview(labelAdvanced)
-
-        width = 350
-        height = 350
-        xPosition = 121
-        yPosition = 1025
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let btnAdvanced = UIButton()
-        btnAdvanced.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        btnAdvanced.setImage(UIImage(named: "advanced"), forState: UIControlState.Normal)
-        self.view.addSubview(btnAdvanced)
-        
-        width = 592
-        height = 592
-        xPosition = 650
-        yPosition = 853
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let backgroundIntermediate = UILabel()
-        backgroundIntermediate.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        backgroundIntermediate.backgroundColor = Color.UIColorFromHex(Color.coralRed)
-        self.view.addSubview(backgroundIntermediate)
-
-        width = 350
-        height = 100
-        xPosition = 771
-        yPosition = 923
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let labelIntermediate = UILabel()
-        labelIntermediate.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        labelIntermediate.text = "INTERMEDIATE"
-        labelIntermediate.font = UIFont(name: Font.helveticaNeueBold, size: 12)
-        labelIntermediate.textColor = Color.UIColorFromHex(Color.citrus)
-        self.view.addSubview(labelIntermediate)
-
-        width = 350
-        height = 350
-        xPosition = 771
-        yPosition = 1025
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let btnIntermediate = UIButton()
-        btnIntermediate.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        btnIntermediate.setImage(UIImage(named: "intermediate"), forState: UIControlState.Normal)
-        self.view.addSubview(btnIntermediate)
-
-        width = 280
-        height = 100
-        xPosition = (ScreenSize.defaultWidth - width) / 2
-        yPosition = 1495
-        positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
-        positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
-        itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
-        itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
-        let labelCardio = UILabel()
-        labelCardio.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        labelCardio.text = "CARDIO"
-        labelCardio.font = UIFont(name: Font.helveticaNeueBold, size: 18)
-        labelCardio.textColor = Color.UIColorFromHex(Color.white)
-        self.view.addSubview(labelCardio)
+        let button = UIButton()
+        button.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        button.setImage(UIImage(named: icon), forState: UIControlState.Normal)
+        self.view.addSubview(button)
     }
 }
