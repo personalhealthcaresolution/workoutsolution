@@ -81,7 +81,7 @@ class Level: UIViewController {
 
     }
 
-    func addButton(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String) {
+    func addButton(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String, selector: Selector = nil) {
         let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
         let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
@@ -90,6 +90,7 @@ class Level: UIViewController {
         let button = UIButton()
         button.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
         button.setImage(UIImage(named: icon), forState: UIControlState.Normal)
+        button.addTarget(self, action: selector, forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
     }
 }

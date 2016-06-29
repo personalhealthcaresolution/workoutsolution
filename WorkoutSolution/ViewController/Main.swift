@@ -33,98 +33,19 @@ class Main: UIViewController {
     }
     
     func initView() {
-        var width: CGFloat = 0
-        var height: CGFloat = 0
-        var xPosition: CGFloat = 0
-        var yPosition: CGFloat = 0
+        addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.coralRed)
+        addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: 140, color: Color.citrus)
+        addButton(70, yPosition: 83, width: 140, height: 140, icon: "back")
 
-        width = screenWidth
-        height = screenHeight - statusHeight
-        xPosition = 0
-        yPosition = statusHeight
-        let background = UILabel()
-        background.frame = CGRectMake(xPosition, yPosition, width, height)
-        background.backgroundColor = Color.UIColorFromHex(Color.coralRed)
-        self.view.addSubview(background)
+        addButton(100, yPosition: 563, width: 1042, height: 150, icon: "calisthenics")
 
-        width = screenWidth
-        height = screenHeight / 16
-        xPosition = 0
-        yPosition = statusHeight
-        let labelBlack = UILabel()
-        labelBlack.frame = CGRectMake(xPosition, yPosition, width, height)
-        labelBlack.backgroundColor = Color.UIColorFromHex(Color.citrus)
-        self.view.addSubview(labelBlack)
+        addLabel(351, yPosition: 1103, width: 540, height: 100, text: "CHOOSE BY", font: Font.helveticaNeueBold, size: 23, color: Color.citrus)
 
-        width = screenHeight / 16
-        height = screenHeight / 16
-        xPosition = screenWidth / 18
-        yPosition = statusHeight
-        let btnBack = UIButton()
-        btnBack.frame = CGRectMake(xPosition, yPosition, width, height)
-        btnBack.setImage(UIImage(named: "back"), forState: UIControlState.Normal)
-        self.view.addSubview(btnBack)
+        addButton(380, yPosition: 1283, width: 300, height: 300, icon: "type", selector: #selector(Main.btnTypeClicked(_:)))
+        addLabel(730, yPosition: 1403, width: 540, height: 60, text: "TYPE", font: Font.helveticaNeueBold, size: 20, color: Color.white)
 
-        height = 36
-        width = screenWidth - 40
-        xPosition = 20
-        yPosition = screenHeight / 5
-        let image = UIImage(named: "calisthenics")
-        let imageView = UIImageView(image: image!)
-        imageView.frame = CGRectMake(xPosition, yPosition, width, height)
-        view.addSubview(imageView)
-
-        width = screenWidth - 80
-        height = screenHeight / 16
-        xPosition = 40
-        yPosition = screenHeight / 2.4
-        let labelChoose = UILabel()
-        labelChoose.frame = CGRectMake(xPosition, yPosition, width, height)
-        labelChoose.text = "CHOOSE BY"
-        labelChoose.textColor = Color.UIColorFromHex(Color.citrus)
-        self.view.addSubview(labelChoose)
-
-        width = 100
-        height = 100
-        xPosition = screenWidth / 3
-        yPosition = screenHeight / 2
-        let btnType = UIButton()
-        btnType.frame = CGRectMake(xPosition, yPosition, width, height)
-        btnType.setImage(UIImage(named: "type"), forState: UIControlState.Normal)
-        btnType.addTarget(self, action: #selector(Main.btnTypeClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(btnType)
-
-        width = screenWidth - 80
-        height = screenHeight / 16
-        xPosition = screenWidth / 1.5
-        yPosition = screenHeight / 1.8
-        let labelType = UILabel()
-        labelType.frame = CGRectMake(xPosition, yPosition, width, height)
-        labelType.text = "TYPE"
-        labelType.font = UIFont(name: Font.helveticaNeueBold, size: 20)
-        labelType.textColor = Color.UIColorFromHex(Color.white)
-        self.view.addSubview(labelType)
-
-        width = 100
-        height = 100
-        xPosition = screenWidth / 3
-        yPosition = screenHeight / 1.45
-        let btnLevel = UIButton()
-        btnLevel.frame = CGRectMake(xPosition, yPosition, width, height)
-        btnLevel.setImage(UIImage(named: "level"), forState: UIControlState.Normal)
-        btnLevel.addTarget(self, action: #selector(Main.btnLevelClicked(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        self.view.addSubview(btnLevel)
-
-        width = screenWidth - 80
-        height = screenHeight / 16
-        xPosition = screenWidth / 1.5
-        yPosition = screenHeight / 1.35
-        let labelLevel = UILabel()
-        labelLevel.frame = CGRectMake(xPosition, yPosition, width, height)
-        labelLevel.text = "LEVEL"
-        labelLevel.font = UIFont(name: Font.helveticaNeueBold, size: 20)
-        labelLevel.textColor = Color.UIColorFromHex(Color.white)
-        self.view.addSubview(labelLevel)
+        addButton(380, yPosition: 1613, width: 300, height: 300, icon: "level", selector: #selector(Main.btnLevelClicked(_:)))
+        addLabel(730, yPosition: 1733, width: 540, height: 60, text: "LEVEL", font: Font.helveticaNeueBold, size: 20, color: Color.white)
     }
 
     func btnTypeClicked(sender:UIButton!) {
@@ -133,5 +54,45 @@ class Main: UIViewController {
 
     func btnLevelClicked(sender:UIButton!) {
         self.performSegueWithIdentifier("showLevel", sender: self)
+    }
+
+    func addBackground(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        
+        let background = UILabel()
+        background.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        background.backgroundColor = Color.UIColorFromHex(color)
+        self.view.addSubview(background)
+    }
+    
+    func addLabel(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        
+        let label = UILabel()
+        label.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        label.text = text
+        label.font = UIFont(name: font, size: size)
+        label.textColor = Color.UIColorFromHex(color)
+        self.view.addSubview(label)
+        
+    }
+    
+    func addButton(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String, selector: Selector = nil) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        
+        let button = UIButton()
+        button.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        button.setImage(UIImage(named: icon), forState: UIControlState.Normal)
+        button.addTarget(self, action: selector, forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(button)
     }
 }
