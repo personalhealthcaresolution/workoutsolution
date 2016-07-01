@@ -37,7 +37,7 @@ class Main: UIViewController {
         addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: 140, color: Color.citrus)
         addButton(70, yPosition: 83, width: 140, height: 140, icon: "back")
 
-        addButton(100, yPosition: 563, width: 1042, height: 150, icon: "calisthenics")
+        addImage(100, yPosition: 563, width: 1042, height: 150, named: "calisthenics")
 
         addLabel(351, yPosition: 1103, width: 540, height: 100, text: "CHOOSE BY", font: Font.helveticaNeueBold, size: 23, color: Color.citrus)
 
@@ -67,7 +67,19 @@ class Main: UIViewController {
         background.backgroundColor = Color.UIColorFromHex(color)
         self.view.addSubview(background)
     }
-    
+
+    func addImage(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+        let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(screenWidth, itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(screenHeight, itemHeight: height)
+        
+        let image = UIImage(named: named)
+        let imageView = UIImageView(image: image!)
+        imageView.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+        self.view.addSubview(imageView)
+    }
+
     func addLabel(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(screenWidth, positionX: xPosition)
         let positionY = ScreenSize.getPositionY(screenHeight, positionY: yPosition)
