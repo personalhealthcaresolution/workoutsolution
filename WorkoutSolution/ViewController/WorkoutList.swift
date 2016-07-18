@@ -34,6 +34,38 @@ class WorkoutList: UIViewController {
     func initView() {
         addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
         addButton(70, yPosition: 83, width: 140, height: 140, icon: "back")
+
+        addBackground(0, yPosition: 220, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
+        addButton(100, yPosition: 240, width: 304, height: 304, icon: "chinups")
+        addLabel(440, yPosition: 310, width: 280, height: 164, text: "CHINUP", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
+
+        addBackground(0, yPosition: 595, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
+        addButton(100, yPosition: 615, width: 304, height: 304, icon: "wallSix")
+        addLabel(440, yPosition: 685, width: 350, height: 164, text: "WALL SIX", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
+
+        addBackground(0, yPosition: 970, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
+        addButton(100, yPosition: 990, width: 304, height: 304, icon: "dipOnChair")
+        addLabel(440, yPosition: 1060, width: 500, height: 164, text: "DIP ON CHAIR", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
+
+        addBackground(0, yPosition: 1345, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
+        addButton(100, yPosition: 1365, width: 304, height: 304, icon: "squats")
+        addLabel(440, yPosition: 1435, width: 280, height: 164, text: "SQUAT", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
+
+        addBackground(0, yPosition: 1720, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
+        addButton(100, yPosition: 1740, width: 304, height: 304, icon: "pushUp")
+        addLabel(440, yPosition: 1810, width: 320, height: 164, text: "PUSH UP", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
+
+        addButton(112, yPosition: 2076, width: 90, height: 90, icon: "exercises")
+        addLabel(112, yPosition: 2166, width: 320, height: 30, text: "Exercises", font: Font.helveticaNeueBold, size: 5, color: Color.white)
+
+        addButton(412, yPosition: 2076, width: 90, height: 90, icon: "workouts")
+        addLabel(412, yPosition: 2166, width: 320, height: 30, text: "Workouts", font: Font.helveticaNeueBold, size: 5, color: Color.white)
+
+        addButton(712, yPosition: 2076, width: 90, height: 90, icon: "tracker")
+        addLabel(722, yPosition: 2166, width: 320, height: 30, text: "Tracker", font: Font.helveticaNeueBold, size: 5, color: Color.white)
+
+        addButton(1012, yPosition: 2076, width: 90, height: 90, icon: "setting")
+        addLabel(1022, yPosition: 2166, width: 320, height: 30, text: "Settings", font: Font.helveticaNeueBold, size: 5, color: Color.white)
     }
 
     func addBackground(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
