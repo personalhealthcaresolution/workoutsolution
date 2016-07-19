@@ -27,7 +27,7 @@ class Level: UIViewController {
 
     func initView() {
         addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
-        addButton(70, yPosition: 83, width: 140, height: 140, icon: "back")
+        addButton(70, yPosition: 83, width: 140, height: 140, icon: "back", selector: #selector(Level.btnBackClicked(_:)))
 
         //absBeginner
         addBackground(0, yPosition: 203, width: 592, height: 592, color: Color.coralRed)
@@ -52,6 +52,10 @@ class Level: UIViewController {
         //cardio
         addLabel((ScreenSize.defaultWidth - 280) / 2, yPosition: 1495, width: 280, height: 100, text: "CARDIO", font: Font.helveticaNeueBold, size: 18, color: Color.white)
         addButton((ScreenSize.defaultWidth - 350) / 2, yPosition: 1645, width: 350, height: 350, icon: "cardio")
+    }
+
+    func btnBackClicked(sender:UIButton!) {
+        self.performSegueWithIdentifier("showMain", sender: self)
     }
 
     func addBackground(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {

@@ -53,9 +53,7 @@ class Main: UIViewController {
     }
 
     func btnLevelClicked(sender:UIButton!) {
-        //self.performSegueWithIdentifier("showLevel", sender: self)
-        self.performSegueWithIdentifier("showWorkout", sender: self)
-        
+        self.performSegueWithIdentifier("showLevel", sender: self)        
     }
 
     func addBackground(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {

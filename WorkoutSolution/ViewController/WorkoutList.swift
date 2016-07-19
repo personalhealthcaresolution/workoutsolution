@@ -33,7 +33,7 @@ class WorkoutList: UIViewController {
 
     func initView() {
         addBackground(0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
-        addButton(70, yPosition: 83, width: 140, height: 140, icon: "back")
+        addButton(70, yPosition: 83, width: 140, height: 140, icon: "back", selector: #selector(WorkoutList.btnBackClicked(_:)))
 
         addBackground(0, yPosition: 220, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
         addButton(100, yPosition: 240, width: 304, height: 304, icon: "chinups")
@@ -66,6 +66,10 @@ class WorkoutList: UIViewController {
 
         addButton(1012, yPosition: 2076, width: 90, height: 90, icon: "setting")
         addLabel(1022, yPosition: 2166, width: 320, height: 30, text: "Settings", font: Font.helveticaNeueBold, size: 5, color: Color.white)
+    }
+
+    func btnBackClicked(sender:UIButton!) {
+        self.performSegueWithIdentifier("showType", sender: self)
     }
 
     func addBackground(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
