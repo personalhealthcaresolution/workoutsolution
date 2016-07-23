@@ -31,32 +31,32 @@ class Level: UIViewController {
     }
 
     func initView() {
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 70, yPosition: 83, width: 140, height: 140, icon: "back", selector: #selector(Level.btnBackClicked(_:)))
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
+        ScreenObject.addButton(self, xPosition: 70, yPosition: 110, width: 50, height: 90, icon: "back", selector: #selector(Level.btnBackClicked(_:)))
 
         //absBeginner
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 203, width: 592, height: 592, color: Color.coralRed)
-        ScreenObject.addLabel(self, xPosition: 41, yPosition: 273, width: 510, height: 100, text: "ABSOLUTE BEGINNER", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 121, yPosition: 375, width: 350, height: 350, icon: "absBeginner")
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 224, width: 594, height: 650, color: Color.coralRed)
+        ScreenObject.addLabel(self, xPosition: 20, yPosition: 294, width: 554, height: 40, text: "ABSOLUTE BEGINNER", font: Font.helveticaNeueBold, size: 13, color: Color.citrus)
+        ScreenObject.addButton(self, xPosition: 91, yPosition: 392, width: 412, height: 412, icon: "absBeginner")
 
         //beginner
-        ScreenObject.addBackground(self, xPosition: 650, yPosition: 203, width: 592, height: 592, color: Color.coralRed)
-        ScreenObject.addLabel(self, xPosition: 821, yPosition: 273, width: 250, height: 100, text: "BEGINNER", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 771, yPosition: 375, width: 350, height: 350, icon: "beginner")
+        ScreenObject.addBackground(self, xPosition: 652, yPosition: 224, width: 594, height: 650, color: Color.coralRed)
+        ScreenObject.addLabel(self, xPosition: 816, yPosition: 294, width: 266, height: 40, text: "BEGINNER", font: Font.helveticaNeueBold, size: 13, color: Color.citrus)
+        ScreenObject.addButton(self, xPosition: 743, yPosition: 392, width: 412, height: 412, icon: "beginner")
 
         //advanced
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 853, width: 592, height: 592, color: Color.coralRed)
-        ScreenObject.addLabel(self, xPosition: 166, yPosition: 923, width: 260, height: 100, text: "ADVANCED", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 121, yPosition: 1025, width: 350, height: 350, icon: "advanced")
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 932, width: 594, height: 650, color: Color.coralRed)
+        ScreenObject.addLabel(self, xPosition: 156, yPosition: 1002, width: 282, height: 40, text: "ADVANCED", font: Font.helveticaNeueBold, size: 13, color: Color.citrus)
+        ScreenObject.addButton(self, xPosition: 91, yPosition: 1100, width: 412, height: 412, icon: "advanced")
 
         //intermediate
-        ScreenObject.addBackground(self, xPosition: 650, yPosition: 853, width: 592, height: 592, color: Color.coralRed)
-        ScreenObject.addLabel(self, xPosition: 771, yPosition: 923, width: 350, height: 100, text: "INTERMEDIATE", font: Font.helveticaNeueBold, size: 12, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 771, yPosition: 1025, width: 350, height: 350, icon: "intermediate")
+        ScreenObject.addBackground(self, xPosition: 652, yPosition: 932, width: 594, height: 650, color: Color.coralRed)
+        ScreenObject.addLabel(self, xPosition: 771, yPosition: 1002, width: 378, height: 40, text: "INTERMEDIATE", font: Font.helveticaNeueBold, size: 13, color: Color.citrus)
+        ScreenObject.addButton(self, xPosition: 760, yPosition: 1100, width: 412, height: 412, icon: "intermediate")
 
         //cardio
-        ScreenObject.addLabel(self, xPosition: (ScreenSize.defaultWidth - 280) / 2, yPosition: 1495, width: 280, height: 100, text: "CARDIO", font: Font.helveticaNeueBold, size: 18, color: Color.white)
-        ScreenObject.addButton(self, xPosition: (ScreenSize.defaultWidth - 350) / 2, yPosition: 1645, width: 350, height: 350, icon: "cardio")
+        ScreenObject.addLabel(self, xPosition: (ScreenSize.defaultWidth - 340) / 2, yPosition: 1632, width: 340, height: 70, text: "CARDIO", font: Font.helveticaNeueBold, size: 22, color: Color.white)
+        ScreenObject.addButton(self, xPosition: (ScreenSize.defaultWidth - 420) / 2, yPosition: 1738, width: 420, height: 420, icon: "cardio-1")
     }
 
     func btnBackClicked(sender:UIButton!) {

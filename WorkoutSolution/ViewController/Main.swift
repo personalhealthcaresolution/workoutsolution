@@ -31,19 +31,19 @@ class Main: UIViewController {
     }
     
     func initView() {
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.coralRed)
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.coralRed)
         ScreenObject.addBackground(self, xPosition: 0, yPosition: 80, width: ScreenSize.defaultWidth, height: 140, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 70, yPosition: 83, width: 140, height: 140, icon: "back")
+        ScreenObject.addButton(self, xPosition: 70, yPosition: 110, width: 50, height: 90, icon: "back")
 
-        ScreenObject.addImage(self, xPosition: 100, yPosition: 563, width: 1042, height: 150, named: "calisthenics")
+        ScreenObject.addImage(self, xPosition: 145, yPosition: 563, width: 952, height: 190, named: "calisthenics")
 
-        ScreenObject.addLabel(self, xPosition: 351, yPosition: 1103, width: 540, height: 100, text: "CHOOSE BY", font: Font.helveticaNeueBold, size: 23, color: Color.citrus)
+        ScreenObject.addLabel(self, xPosition: 351, yPosition: 1243, width: 540, height: 65, text: "CHOOSE BY", font: Font.helveticaNeueBold, size: 22, color: Color.citrus)
 
-        ScreenObject.addButton(self, xPosition: 380, yPosition: 1283, width: 300, height: 300, icon: "type", selector: #selector(Main.btnTypeClicked(_:)))
-        ScreenObject.addLabel(self, xPosition: 730, yPosition: 1403, width: 540, height: 60, text: "TYPE", font: Font.helveticaNeueBold, size: 20, color: Color.white)
+        ScreenObject.addButton(self, xPosition: 380, yPosition: 1388, width: 225, height: 225, icon: "type", selector: #selector(Main.btnTypeClicked(_:)))
+        ScreenObject.addLabel(self, xPosition: 650, yPosition: 1475, width: 540, height: 52, text: "TYPE", font: Font.helveticaNeueBold, size: 17, color: Color.white)
 
-        ScreenObject.addButton(self, xPosition: 380, yPosition: 1613, width: 300, height: 300, icon: "level", selector: #selector(Main.btnLevelClicked(_:)))
-        ScreenObject.addLabel(self, xPosition: 730, yPosition: 1733, width: 540, height: 60, text: "LEVEL", font: Font.helveticaNeueBold, size: 20, color: Color.white)
+        ScreenObject.addButton(self, xPosition: 380, yPosition: 1663, width: 225, height: 225, icon: "level", selector: #selector(Main.btnLevelClicked(_:)))
+        ScreenObject.addLabel(self, xPosition: 650, yPosition: 1750, width: 540, height: 52, text: "LEVEL", font: Font.helveticaNeueBold, size: 17, color: Color.white)
     }
 
     func btnTypeClicked(sender:UIButton!) {

@@ -31,8 +31,8 @@ class Type: UIViewController {
     }
 
     func initView() {
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
-        ScreenObject.addButton(self, xPosition: 70, yPosition: 83, width: 140, height: 140, icon: "back", selector: #selector(Type.btnBackClicked(_:)))
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
+        ScreenObject.addButton(self, xPosition: 70, yPosition: 110, width: 50, height: 90, icon: "back", selector: #selector(Type.btnBackClicked(_:)))
 
         ScreenObject.addBackground(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 380, color: Color.coralRed)
         ScreenObject.addButton(self, xPosition: 104, yPosition: 262, width: 302, height: 302, icon: "upper", selector: #selector(Type.btnUpperClicked(_:)))
@@ -46,8 +46,8 @@ class Type: UIViewController {
         ScreenObject.addButton(self, xPosition: 104, yPosition: 1092, width: 302, height: 302, icon: "coreAbs", selector: #selector(Type.btnCoreAbsClicked(_:)))
         ScreenObject.addLabel(self, xPosition: 536, yPosition: 1219, width: 619, height: 48, text: "CORE ABS", font: Font.helveticaNeueBold, size: 15, color: Color.citrus)
 
-        ScreenObject.addLabel(self, xPosition: 104, yPosition: 1707, width: 619, height: 100, text: "CARDIO", font: Font.helveticaNeueBold, size: 20, color: Color.white)
-        ScreenObject.addButton(self, xPosition: 723, yPosition: 1547, width: 419, height: 419, icon: "cardio")
+        ScreenObject.addLabel(self, xPosition: 104, yPosition: 1783, width: 391, height: 75, text: "CARDIO", font: Font.helveticaNeueBold, size: 25, color: Color.white)
+        ScreenObject.addButton(self, xPosition: 592, yPosition: 1547, width: 547, height: 547, icon: "cardio")
     }
 
     func btnBackClicked(sender:UIButton!) {
