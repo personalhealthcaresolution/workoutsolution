@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -20,11 +20,33 @@
                     </view>
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="xWl-iE-MFF"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="bId-fO-APc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-t1-cYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1322" y="1183"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="l6u-S8-Eh2">
+            <objects>
+                <viewController id="WJM-jH-MOM" customClass="Details" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Ki-M9-Kee"/>
+                        <viewControllerLayoutGuide type="bottom" id="hSh-rH-lfK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZKX-qG-PzI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkout" id="J8D-cn-1m3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="06C-PC-2kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="1183"/>
         </scene>
         <!--Main-->
         <scene sceneID="lhg-A0-COh">
@@ -93,7 +115,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xWl-iE-MFF"/>
         <segue reference="pTy-IG-rOQ"/>
+        <segue reference="xWl-iE-MFF"/>
+        <segue reference="J8D-cn-1m3"/>
     </inferredMetricsTieBreakers>
 </document>

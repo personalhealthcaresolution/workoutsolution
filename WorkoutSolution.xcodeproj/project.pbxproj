@@ -19,6 +19,7 @@
 		3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28AB361CE11BFF0027AB70 /* Main.swift */; };
 		3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29660B1C77860500A5E733 /* LoginEmail.swift */; };
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; };
+		3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D5F2A1D448EDF00E0BFAF /* Details.swift */; };
 		3A734B1A1D3CFBF6000EF7DC /* WorkoutList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A734B191D3CFBF6000EF7DC /* WorkoutList.swift */; };
 		3A7A5B451C134A6B00C6EA87 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */; };
 		3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */; };
@@ -157,6 +158,7 @@
 		3A28AB361CE11BFF0027AB70 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Main.swift; path = ViewController/Main.swift; sourceTree = "<group>"; };
 		3A29660B1C77860500A5E733 /* LoginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginEmail.swift; path = ViewController/LoginEmail.swift; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
+		3A4D5F2A1D448EDF00E0BFAF /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Details.swift; path = ViewController/Details.swift; sourceTree = "<group>"; };
 		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		3A734B191D3CFBF6000EF7DC /* WorkoutList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutList.swift; path = ViewController/WorkoutList.swift; sourceTree = "<group>"; };
 		3A7A5B431C134A6B00C6EA87 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = SWRevealViewController/SWRevealViewController.h; sourceTree = SOURCE_ROOT; };
@@ -273,6 +275,7 @@
 				3A7BC3F41CEA190B008B329E /* Type.swift */,
 				3A174E631D083C4F00C308A4 /* Level.swift */,
 				3A734B191D3CFBF6000EF7DC /* WorkoutList.swift */,
+				3A4D5F2A1D448EDF00E0BFAF /* Details.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				3A7BC3F51CEA190B008B329E /* Type.swift in Sources */,
 				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
+				3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */,
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
 				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
 				3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */,
