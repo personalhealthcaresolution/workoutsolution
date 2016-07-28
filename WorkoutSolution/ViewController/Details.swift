@@ -43,7 +43,7 @@ class Details: UIViewController {
         ScreenObject.addLabel(self, xPosition: 685, yPosition: 829, width: 332, height: 57, text: "BEHIND", font: Font.helveticaNeueBold, size: 22, color: Color.citrus)
 
         ScreenObject.addBackground(self, xPosition: 0, yPosition: 1813, width: ScreenSize.defaultWidth, height: 255, color: Color.coralRed)
-        ScreenObject.addButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, icon: "button")
+        ScreenObject.addButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, background: "button", title: "START ROUTINE")
 
         ScreenObject.addButton(self, xPosition: 112, yPosition: 2076, width: 90, height: 90, icon: "exercises")
         ScreenObject.addLabel(self, xPosition: 112, yPosition: 2166, width: 320, height: 30, text: "Exercises", font: Font.helveticaNeueBold, size: 5, color: Color.white)
