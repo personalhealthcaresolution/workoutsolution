@@ -37,7 +37,7 @@ class WorkoutList: UIViewController {
         ScreenObject.addBackground(self, xPosition: 0, yPosition: 220, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
         ScreenObject.addButton(self, xPosition: 100, yPosition: 240, width: 306, height: 306, icon: "chinups", selector: #selector(WorkoutList.btnDetailsClicked(_:)))
         ScreenObject.addLabel(self, xPosition: 440, yPosition: 310, width: 280, height: 164, text: "CHINUP", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
-        ScreenObject.addLabel(self, xPosition: 1107, yPosition: 310, width: 50, height: 164, text: ">", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)//true width = 35
+        ScreenObject.addLabel(self, xPosition: 1107, yPosition: 310, width: 50, height: 164, text: ">", font: Font.helveticaNeueBold, size: 18, color: Color.citrus)
 
         ScreenObject.addBackground(self, xPosition: 0, yPosition: 595, width: ScreenSize.defaultWidth, height: 344, color: Color.coralRed)
         ScreenObject.addButton(self, xPosition: 100, yPosition: 615, width: 306, height: 306, icon: "wallSix", selector: #selector(WorkoutList.btnDetailsClicked(_:)))
