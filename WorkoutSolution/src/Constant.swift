@@ -6,6 +6,7 @@
 //  Copyright © 2016 Khai Dao. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 class Constant {

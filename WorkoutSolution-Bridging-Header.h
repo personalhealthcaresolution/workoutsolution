@@ -9,6 +9,5 @@
 #ifndef WorkoutSolution_Bridging_Header_h
 #define WorkoutSolution_Bridging_Header_h
 
-#import "SWRevealViewController.h"
 
 #endif /* WorkoutSolution_Bridging_Header_h */
