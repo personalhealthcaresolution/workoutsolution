@@ -41,7 +41,6 @@
 		5D6A53A21B27B228005C167E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53A11B27B228005C167E /* ViewController.swift */; };
 		5D6A53A71B27B228005C167E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A53A61B27B228005C167E /* Images.xcassets */; };
 		5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D6A53A81B27B228005C167E /* LaunchScreen.xib */; };
-		5D6A53B61B27B229005C167E /* WorkoutSolutionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */; };
 		5D9B4FFD1B3F8843004ECDF0 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */; };
 		5DFEDEC71B4CB10C00F222C5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
@@ -60,13 +59,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 3A8F28791BC150B600BCC5BC;
 			remoteInfo = Watch;
-		};
-		5D6A53B01B27B229005C167E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D6A538F1B27B228005C167E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5D6A53961B27B228005C167E;
-			remoteInfo = WorkoutSolution;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -147,9 +139,6 @@
 		5D6A53A11B27B228005C167E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5D6A53A61B27B228005C167E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5D6A53A91B27B228005C167E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		5D6A53AF1B27B229005C167E /* WorkoutSolutionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorkoutSolutionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D6A53B41B27B229005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutSolutionTests.swift; sourceTree = "<group>"; };
 		5D9B4FFC1B3F8843004ECDF0 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		5DFEDEC61B4CB10C00F222C5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -173,13 +162,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D6A53AC1B27B229005C167E /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -193,13 +175,6 @@
 				3AD4A78E1D5F31D00046C52C /* Constant.swift */,
 			);
 			name = src;
-			sourceTree = "<group>";
-		};
-		3A28AB2E1CE119B30027AB70 /* Constant */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Constant;
 			sourceTree = "<group>";
 		};
 		3A2F803D1BB1A6DD00AAA040 /* ViewController */ = {
@@ -277,7 +252,6 @@
 			children = (
 				3A52BAF31B63AB6000DA45C2 /* Frameworks */,
 				5D6A53991B27B228005C167E /* WorkoutSolution */,
-				5D6A53B21B27B229005C167E /* WorkoutSolutionTests */,
 				3A8F287B1BC150B600BCC5BC /* Watch */,
 				3A8F288A1BC150B600BCC5BC /* Watch Extension */,
 				5D6A53981B27B228005C167E /* Products */,
@@ -288,7 +262,6 @@
 			isa = PBXGroup;
 			children = (
 				5D6A53971B27B228005C167E /* WorkoutSolution.app */,
-				5D6A53AF1B27B229005C167E /* WorkoutSolutionTests.xctest */,
 				3A8F287A1BC150B600BCC5BC /* Watch.app */,
 				3A8F28861BC150B600BCC5BC /* Watch Extension.appex */,
 			);
@@ -298,7 +271,6 @@
 		5D6A53991B27B228005C167E /* WorkoutSolution */ = {
 			isa = PBXGroup;
 			children = (
-				3A28AB2E1CE119B30027AB70 /* Constant */,
 				3AEE15E81C720900005F9F81 /* storyboard */,
 				3A01FF7C1C05FF7900AD1F9D /* src */,
 				3A2F803D1BB1A6DD00AAA040 /* ViewController */,
@@ -318,23 +290,6 @@
 				3A7A5B431C134A6B00C6EA87 /* SWRevealViewController.h */,
 				3A7A5B441C134A6B00C6EA87 /* SWRevealViewController.m */,
 				5D6A539B1B27B228005C167E /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5D6A53B21B27B229005C167E /* WorkoutSolutionTests */ = {
-			isa = PBXGroup;
-			children = (
-				5D6A53B51B27B229005C167E /* WorkoutSolutionTests.swift */,
-				5D6A53B31B27B229005C167E /* Supporting Files */,
-			);
-			path = WorkoutSolutionTests;
-			sourceTree = "<group>";
-		};
-		5D6A53B31B27B229005C167E /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5D6A53B41B27B229005C167E /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -396,24 +351,6 @@
 			productReference = 5D6A53971B27B228005C167E /* WorkoutSolution.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5D6A53AE1B27B229005C167E /* WorkoutSolutionTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5D6A53BC1B27B229005C167E /* Build configuration list for PBXNativeTarget "WorkoutSolutionTests" */;
-			buildPhases = (
-				5D6A53AB1B27B229005C167E /* Sources */,
-				5D6A53AC1B27B229005C167E /* Frameworks */,
-				5D6A53AD1B27B229005C167E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5D6A53B11B27B229005C167E /* PBXTargetDependency */,
-			);
-			name = WorkoutSolutionTests;
-			productName = WorkoutSolutionTests;
-			productReference = 5D6A53AF1B27B229005C167E /* WorkoutSolutionTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -436,10 +373,6 @@
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = W42C8BLL6A;
 					};
-					5D6A53AE1B27B229005C167E = {
-						CreatedOnToolsVersion = 6.3.2;
-						TestTargetID = 5D6A53961B27B228005C167E;
-					};
 				};
 			};
 			buildConfigurationList = 5D6A53921B27B228005C167E /* Build configuration list for PBXProject "WorkoutSolution" */;
@@ -456,7 +389,6 @@
 			projectRoot = "";
 			targets = (
 				5D6A53961B27B228005C167E /* WorkoutSolution */,
-				5D6A53AE1B27B229005C167E /* WorkoutSolutionTests */,
 				3A8F28791BC150B600BCC5BC /* Watch */,
 				3A8F28851BC150B600BCC5BC /* Watch Extension */,
 			);
@@ -488,13 +420,6 @@
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5D6A53AD1B27B229005C167E /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,14 +464,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5D6A53AB1B27B229005C167E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5D6A53B61B27B229005C167E /* WorkoutSolutionTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -559,11 +476,6 @@
 			isa = PBXTargetDependency;
 			target = 3A8F28791BC150B600BCC5BC /* Watch */;
 			targetProxy = 3A8F28961BC150B600BCC5BC /* PBXContainerItemProxy */;
-		};
-		5D6A53B11B27B229005C167E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5D6A53961B27B228005C167E /* WorkoutSolution */;
-			targetProxy = 5D6A53B01B27B229005C167E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -787,36 +699,6 @@
 			};
 			name = Release;
 		};
-		5D6A53BD1B27B229005C167E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = WorkoutSolutionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ian.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutSolution.app/WorkoutSolution";
-			};
-			name = Debug;
-		};
-		5D6A53BE1B27B229005C167E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = "";
-				INFOPLIST_FILE = WorkoutSolutionTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ian.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WorkoutSolution.app/WorkoutSolution";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -852,15 +734,6 @@
 			buildConfigurations = (
 				5D6A53BA1B27B229005C167E /* Debug */,
 				5D6A53BB1B27B229005C167E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5D6A53BC1B27B229005C167E /* Build configuration list for PBXNativeTarget "WorkoutSolutionTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5D6A53BD1B27B229005C167E /* Debug */,
-				5D6A53BE1B27B229005C167E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
