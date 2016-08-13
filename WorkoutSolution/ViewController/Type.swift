@@ -31,22 +31,22 @@ class Type: UIViewController {
     }
 
     func initView() {
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Color.citrus)
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: Constant.citrus)
         ScreenObject.addButton(self, xPosition: 70, yPosition: 110, width: 50, height: 90, icon: "back", selector: #selector(Type.btnBackClicked(_:)))
 
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 380, color: Color.coralRed)
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 380, color: Constant.coralRed)
         ScreenObject.addButton(self, xPosition: 104, yPosition: 262, width: 302, height: 302, icon: "upper", selector: #selector(Type.btnUpperClicked(_:)))
-        ScreenObject.addLabel(self, xPosition: 536, yPosition: 389, width: 619, height: 48, text: "UPPER BODY", font: Font.helveticaNeueBold, size: 15, color: Color.citrus)
+        ScreenObject.addLabel(self, xPosition: 536, yPosition: 389, width: 619, height: 48, text: "UPPER BODY", font: Constant.helveticaNeueBold, size: 15, color: Constant.citrus)
 
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 638, width: ScreenSize.defaultWidth, height: 380, color: Color.coralRed)
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 638, width: ScreenSize.defaultWidth, height: 380, color: Constant.coralRed)
         ScreenObject.addButton(self, xPosition: 104, yPosition: 677, width: 302, height: 302, icon: "lower", selector: #selector(Type.btnLowerClicked(_:)))
-        ScreenObject.addLabel(self, xPosition: 536, yPosition: 804, width: 619, height: 48, text: "LOWER BODY", font: Font.helveticaNeueBold, size: 15, color: Color.citrus)
+        ScreenObject.addLabel(self, xPosition: 536, yPosition: 804, width: 619, height: 48, text: "LOWER BODY", font: Constant.helveticaNeueBold, size: 15, color: Constant.citrus)
 
-        ScreenObject.addBackground(self, xPosition: 0, yPosition: 1053, width: ScreenSize.defaultWidth, height: 380, color: Color.coralRed)
+        ScreenObject.addBackground(self, xPosition: 0, yPosition: 1053, width: ScreenSize.defaultWidth, height: 380, color: Constant.coralRed)
         ScreenObject.addButton(self, xPosition: 104, yPosition: 1092, width: 302, height: 302, icon: "coreAbs", selector: #selector(Type.btnCoreAbsClicked(_:)))
-        ScreenObject.addLabel(self, xPosition: 536, yPosition: 1219, width: 619, height: 48, text: "CORE ABS", font: Font.helveticaNeueBold, size: 15, color: Color.citrus)
+        ScreenObject.addLabel(self, xPosition: 536, yPosition: 1219, width: 619, height: 48, text: "CORE ABS", font: Constant.helveticaNeueBold, size: 15, color: Constant.citrus)
 
-        ScreenObject.addLabel(self, xPosition: 104, yPosition: 1783, width: 391, height: 75, text: "CARDIO", font: Font.helveticaNeueBold, size: 25, color: Color.white)
+        ScreenObject.addLabel(self, xPosition: 104, yPosition: 1783, width: 391, height: 75, text: "CARDIO", font: Constant.helveticaNeueBold, size: 25, color: Constant.white)
         ScreenObject.addButton(self, xPosition: 592, yPosition: 1547, width: 547, height: 547, icon: "cardio")
     }
 

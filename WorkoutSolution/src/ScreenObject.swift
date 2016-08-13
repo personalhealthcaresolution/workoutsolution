@@ -17,7 +17,7 @@ class ScreenObject {
         
         let background = UILabel()
         background.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        background.backgroundColor = Color.UIColorFromHex(color)
+        background.backgroundColor = Constant.UIColorFromHex(color)
         view.view.addSubview(background)
     }
     
@@ -43,7 +43,7 @@ class ScreenObject {
         label.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
         label.text = text
         label.font = UIFont(name: font, size: size)
-        label.textColor = Color.UIColorFromHex(color)
+        label.textColor = Constant.UIColorFromHex(color)
         view.view.addSubview(label)
         
     }

@@ -11,7 +11,6 @@
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
 		3A174E641D083C4F00C308A4 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A174E631D083C4F00C308A4 /* Level.swift */; };
-		3A28AB351CE11A100027AB70 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28AB341CE11A100027AB70 /* Color.swift */; };
 		3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28AB361CE11BFF0027AB70 /* Main.swift */; };
 		3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29660B1C77860500A5E733 /* LoginEmail.swift */; };
 		3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F80421BB1A82600AAA040 /* Tracker.swift */; };
@@ -29,12 +28,12 @@
 		3A8F28921BC150B600BCC5BC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F28911BC150B600BCC5BC /* NotificationController.swift */; };
 		3A8F28941BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F28931BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
-		3A9FA0A51CE4BC7500E0EEFA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9FA0A41CE4BC7500E0EEFA /* Font.swift */; };
 		3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB51FB31D412C5B00872A67 /* ScreenSize.swift */; };
 		3AC2156D1D3FBC41003C26E9 /* ScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */; };
 		3AC7E09C1BECE7DD004828E1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7E09B1BECE7DD004828E1 /* History.swift */; };
 		3AD4A7861D5EE8F60046C52C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */; };
 		3AD4A7881D5F02690046C52C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */; };
+		3AD4A78F1D5F31D00046C52C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4A78E1D5F31D00046C52C /* Constant.swift */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; };
 		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
@@ -111,7 +110,6 @@
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
 		3A174E631D083C4F00C308A4 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = ViewController/Level.swift; sourceTree = "<group>"; };
-		3A28AB341CE11A100027AB70 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		3A28AB361CE11BFF0027AB70 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Main.swift; path = ViewController/Main.swift; sourceTree = "<group>"; };
 		3A29660B1C77860500A5E733 /* LoginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginEmail.swift; path = ViewController/LoginEmail.swift; sourceTree = "<group>"; };
 		3A2F80421BB1A82600AAA040 /* Tracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = ViewController/Tracker.swift; sourceTree = "<group>"; };
@@ -134,12 +132,12 @@
 		3A8F28911BC150B600BCC5BC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3A8F28931BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3A9FA0A41CE4BC7500E0EEFA /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Font.swift; path = Constant/Font.swift; sourceTree = "<group>"; };
 		3AB51FB31D412C5B00872A67 /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenSize.swift; path = src/ScreenSize.swift; sourceTree = "<group>"; };
 		3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenObject.swift; path = src/ScreenObject.swift; sourceTree = "<group>"; };
 		3AC7E09B1BECE7DD004828E1 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = ViewController/History.swift; sourceTree = "<group>"; };
 		3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		3AD4A78E1D5F31D00046C52C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = src/Constant.swift; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
 		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +190,7 @@
 				3A01FF7D1C05FFD000AD1F9D /* Account.swift */,
 				3ADB5C741CBFD43700D847BA /* ConnectServer.swift */,
 				3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */,
+				3AD4A78E1D5F31D00046C52C /* Constant.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -199,8 +198,6 @@
 		3A28AB2E1CE119B30027AB70 /* Constant */ = {
 			isa = PBXGroup;
 			children = (
-				3A28AB341CE11A100027AB70 /* Color.swift */,
-				3A9FA0A41CE4BC7500E0EEFA /* Font.swift */,
 			);
 			name = Constant;
 			sourceTree = "<group>";
@@ -528,12 +525,11 @@
 				3A2F80431BB1A82600AAA040 /* Tracker.swift in Sources */,
 				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
 				3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */,
+				3AD4A78F1D5F31D00046C52C /* Constant.swift in Sources */,
 				3AC2156D1D3FBC41003C26E9 /* ScreenObject.swift in Sources */,
 				3A7A5B451C134A6B00C6EA87 /* SWRevealViewController.m in Sources */,
 				3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */,
-				3A28AB351CE11A100027AB70 /* Color.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
-				3A9FA0A51CE4BC7500E0EEFA /* Font.swift in Sources */,
 				3A734B1A1D3CFBF6000EF7DC /* WorkoutList.swift in Sources */,
 				3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
