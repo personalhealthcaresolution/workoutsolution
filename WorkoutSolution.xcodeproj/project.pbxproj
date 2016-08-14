@@ -32,6 +32,7 @@
 		3AD4A7861D5EE8F60046C52C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */; };
 		3AD4A7881D5F02690046C52C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */; };
 		3AD4A78F1D5F31D00046C52C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4A78E1D5F31D00046C52C /* Constant.swift */; };
+		3AD4A7921D5F50010046C52C /* main.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4A7911D5F50010046C52C /* main.xml */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; };
 		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
@@ -125,6 +126,7 @@
 		3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3AD4A78E1D5F31D00046C52C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = src/Constant.swift; sourceTree = "<group>"; };
+		3AD4A7911D5F50010046C52C /* main.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = main.xml; path = XMLs/main.xml; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
 		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,6 +235,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3AD4A7901D5F4FEC0046C52C /* XMLs */ = {
+			isa = PBXGroup;
+			children = (
+				3AD4A7911D5F50010046C52C /* main.xml */,
+			);
+			name = XMLs;
+			sourceTree = "<group>";
+		};
 		3AEE15E81C720900005F9F81 /* storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,6 +275,7 @@
 		5D6A53991B27B228005C167E /* WorkoutSolution */ = {
 			isa = PBXGroup;
 			children = (
+				3AD4A7901D5F4FEC0046C52C /* XMLs */,
 				3AEE15E81C720900005F9F81 /* storyboard */,
 				3A01FF7C1C05FF7900AD1F9D /* src */,
 				3A2F803D1BB1A6DD00AAA040 /* ViewController */,
@@ -409,6 +420,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AD4A7921D5F50010046C52C /* main.xml in Resources */,
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
