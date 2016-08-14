@@ -50,8 +50,6 @@ class Main: UIViewController, NSXMLParserDelegate {
         let parser = NSXMLParser(data: data!)
         parser.delegate = self
         parser.parse()
-
-        //ScreenObject.addButton(self, xPosition: 380, yPosition: 1663, width: 225, height: 225, icon: "level", selector: #selector(Main.btnLevelClicked(_:)))
     }
 
     func btnTypeClicked(sender:UIButton!) {
@@ -66,9 +64,6 @@ class Main: UIViewController, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         curElement = elementName
         didStartElement = true
-        if curElement == "object" {
-            print("start object")
-        }
     }
 
     func parser(parser: NSXMLParser, foundCharacters string: String) {
@@ -121,7 +116,6 @@ class Main: UIViewController, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         didStartElement = false
         if elementName == "object" {
-            print("end object")
             switch type {
             case "background":
                 ScreenObject.addBackground(self, xPosition: xPosition, yPosition: yPosition, width: width, height: height, color: color)
