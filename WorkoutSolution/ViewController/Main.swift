@@ -9,20 +9,6 @@
 import UIKit
 
 class Main: UIViewController, NSXMLParserDelegate {
-    var type: String = ""
-    var icon: String = ""
-    var font: String = ""
-    var text: String = ""
-    var size: CGFloat = 0
-    var named: String = ""
-    var color: UInt32 = 0
-    var width: CGFloat = 0
-    var height: CGFloat = 0
-    var selector: String = ""
-    var xPosition: CGFloat = 0
-    var yPosition: CGFloat = 0
-    var curElement: String = ""
-    var didStartElement: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +31,28 @@ class Main: UIViewController, NSXMLParserDelegate {
     }
     
     func initView() {
-        let path = NSBundle.mainBundle().pathForResource("main", ofType: "xml")
-        let data = NSData.init(contentsOfFile: path!)
-        let parser = NSXMLParser(data: data!)
-        parser.delegate = self
-        parser.parse()
+        var objects = [ScreenObject.Object()]
+        let screenObject = ScreenObject()
+        objects = screenObject.getObjects("main")
+
+        let i: Int = 0
+        while  i < objects.count {
+            var object = ScreenObject.Object()
+            object = objects.first!
+            switch object.type {
+            case "background":
+                ScreenObject.addBackground(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
+            case "button":
+                ScreenObject.addButton(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: getSelector(object.selector))
+            case "image":
+                ScreenObject.addImage(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+            case "label":
+                ScreenObject.addLabel(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+            default:
+                break
+            }
+            objects.removeFirst()
+        }
     }
 
     func btnTypeClicked(sender:UIButton!) {
@@ -58,92 +61,6 @@ class Main: UIViewController, NSXMLParserDelegate {
 
     func btnLevelClicked(sender:UIButton!) {
         self.performSegueWithIdentifier("showLevel", sender: self)        
-    }
-
-    //XMLParser Methods
-    func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-        curElement = elementName
-        didStartElement = true
-    }
-
-    func parser(parser: NSXMLParser, foundCharacters string: String) {
-        if didStartElement {
-            switch curElement {
-            case "type":
-                type = string
-            case "icon":
-                icon = string
-            case "text":
-                text = string
-            case "font":
-                font = string
-            case "selector":
-                selector = string
-            case "size":
-                if let temp = NSNumberFormatter().numberFromString(string) {
-                    size = CGFloat(temp)
-                }
-            case "named":
-                named = string
-            case "color":
-                color = getColor(string)
-            case "posX":
-                if let temp = NSNumberFormatter().numberFromString(string) {
-                    xPosition = CGFloat(temp)
-                }
-            case "posY":
-                if let temp = NSNumberFormatter().numberFromString(string) {
-                    yPosition = CGFloat(temp)
-                }
-            case "width":
-                if string == "full" {
-                    width = ScreenSize.defaultWidth
-                } else if let temp = NSNumberFormatter().numberFromString(string) {
-                    width = CGFloat(temp)
-                }
-            case "height":
-                if string == "full" {
-                    height = ScreenSize.defaultHeight
-                } else if let temp = NSNumberFormatter().numberFromString(string) {
-                    height = CGFloat(temp)
-                }
-            default:
-                return
-            }
-        }
-    }
-
-    func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
-        didStartElement = false
-        if elementName == "object" {
-            switch type {
-            case "background":
-                ScreenObject.addBackground(self, xPosition: xPosition, yPosition: yPosition, width: width, height: height, color: color)
-            case "button":
-                ScreenObject.addButton(self, xPosition: xPosition, yPosition: yPosition, width: width, height: height, icon: icon, selector: getSelector(selector))
-            case "image":
-                ScreenObject.addImage(self, xPosition: xPosition, yPosition: yPosition, width: width, height: height, named: named)
-            case "label":
-                ScreenObject.addLabel(self, xPosition: xPosition, yPosition: yPosition, width: width, height: height, text: text, font: font, size: size, color: color)
-            default:
-                return
-            }
-        }
-    }
-
-    func getColor(value: String) -> UInt32 {
-        var color: UInt32
-        switch value {
-        case "0xffffff":
-            color = Constant.white
-        case "0x373639":
-            color = Constant.citrus
-        case "0xF94343":
-            color = Constant.coralRed
-        default:
-            color = Constant.coralRed
-        }
-        return color
     }
 
     func getSelector(value: String) -> Selector {
