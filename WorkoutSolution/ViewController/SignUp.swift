@@ -38,7 +38,8 @@ class SignUp: UIViewController {
 
     func addAccount(sender:UIButton!) {
         if (txtPassword.text == txtPasswordAgain.text) {
-            Account.addAccount(txtUsername.text!, password: txtPassword.text!)
+            let account = Account()
+            account.addAccount(txtUsername.text!, password: txtPassword.text!)
         }
     }
 

@@ -93,8 +93,9 @@ class LoginEmail: UIViewController {
         } else if txtPassword == "" {
             return
         }
-        
-        let isUser = Account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
+
+        let account = Account()
+        let isUser = account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
         
         if isUser {
             let defaults = NSUserDefaults.standardUserDefaults()

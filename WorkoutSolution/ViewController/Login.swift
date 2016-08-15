@@ -30,8 +30,9 @@ class Login: UIViewController {
         } else if txtPassword == "" {
             return
         }
-        
-        isUser = Account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
+
+        let account = Account()
+        isUser = account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
         
         if isUser {
             let defaults = NSUserDefaults.standardUserDefaults()
