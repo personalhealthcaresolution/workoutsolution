@@ -41,26 +41,18 @@ class Main: UIViewController, NSXMLParserDelegate {
             object = objects.first!
             switch object.type {
             case "background":
-                ScreenObject.addBackground(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
+                screenObject.addBackground(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
             case "button":
-                ScreenObject.addButton(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: getSelector(object.selector))
+                screenObject.addButton(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: getSelector(object.selector))
             case "image":
-                ScreenObject.addImage(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+                screenObject.addImage(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
             case "label":
-                ScreenObject.addLabel(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+                screenObject.addLabel(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
             default:
                 break
             }
             objects.removeFirst()
         }
-    }
-
-    func btnTypeClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showType", sender: self)
-    }
-
-    func btnLevelClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showLevel", sender: self)        
     }
 
     func getSelector(value: String) -> Selector {
@@ -72,5 +64,13 @@ class Main: UIViewController, NSXMLParserDelegate {
         default:
             return nil
         }
+    }
+
+    func btnTypeClicked(sender:UIButton!) {
+        self.performSegueWithIdentifier("showType", sender: self)
+    }
+
+    func btnLevelClicked(sender:UIButton!) {
+        self.performSegueWithIdentifier("showLevel", sender: self)        
     }
 }

@@ -10,12 +10,6 @@ import UIKit
 import Foundation
 
 class ScreenObject: NSObject, NSXMLParserDelegate {
-    var object = Object()
-    var objects: [Object] = []
-    var curObject: Int = 0
-    var isParsing: Bool = false
-    var curElement: String = ""
-    var didStartElement: Bool = false
 
     struct Object {
         var type: String = ""
@@ -31,6 +25,14 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
     }
+
+    var object = Object()
+    var objects: [Object] = []
+    var constant = Constant()
+    var curObject: Int = 0
+    var isParsing: Bool = false
+    var curElement: String = ""
+    var didStartElement: Bool = false
 
     func getObjects(xmlFile: String) -> [Object] {
         objects = []
@@ -113,18 +115,18 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         var color: UInt32
         switch value {
         case "0xffffff":
-            color = Constant.white
+            color = constant.white
         case "0x373639":
-            color = Constant.citrus
+            color = constant.citrus
         case "0xF94343":
-            color = Constant.coralRed
+            color = constant.coralRed
         default:
-            color = Constant.coralRed
+            color = constant.coralRed
         }
         return color
     }
 
-    class func addBackground(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
+    func addBackground(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -132,11 +134,11 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         
         let background = UILabel()
         background.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
-        background.backgroundColor = Constant.UIColorFromHex(color)
+        background.backgroundColor = constant.UIColorFromHex(color)
         view.view.addSubview(background)
     }
     
-    class func addImage(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+    func addImage(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -148,7 +150,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         view.view.addSubview(imageView)
     }
     
-    class func addLabel(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+    func addLabel(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -158,12 +160,12 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         label.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
         label.text = text
         label.font = UIFont(name: font, size: size)
-        label.textColor = Constant.UIColorFromHex(color)
+        label.textColor = constant.UIColorFromHex(color)
         view.view.addSubview(label)
         
     }
     
-    class func addButton(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.whiteColor(), selector: Selector = nil) {
+    func addButton(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.whiteColor(), selector: Selector = nil) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
