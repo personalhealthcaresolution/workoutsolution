@@ -11,6 +11,7 @@
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
 		3A174E641D083C4F00C308A4 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A174E631D083C4F00C308A4 /* Level.swift */; };
+		3A20F8E21D64B5790049931A /* type.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A20F8E11D64B5790049931A /* type.xml */; };
 		3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28AB361CE11BFF0027AB70 /* Main.swift */; };
 		3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29660B1C77860500A5E733 /* LoginEmail.swift */; };
 		3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D5F2A1D448EDF00E0BFAF /* Details.swift */; };
@@ -28,7 +29,6 @@
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
 		3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB51FB31D412C5B00872A67 /* ScreenSize.swift */; };
 		3AC2156D1D3FBC41003C26E9 /* ScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */; };
-		3AC7E09C1BECE7DD004828E1 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7E09B1BECE7DD004828E1 /* History.swift */; };
 		3AD4A7861D5EE8F60046C52C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */; };
 		3AD4A7881D5F02690046C52C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */; };
 		3AD4A78F1D5F31D00046C52C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4A78E1D5F31D00046C52C /* Constant.swift */; };
@@ -101,6 +101,7 @@
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
 		3A174E631D083C4F00C308A4 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = ViewController/Level.swift; sourceTree = "<group>"; };
+		3A20F8E11D64B5790049931A /* type.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = type.xml; path = XMLs/type.xml; sourceTree = "<group>"; };
 		3A28AB361CE11BFF0027AB70 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Main.swift; path = ViewController/Main.swift; sourceTree = "<group>"; };
 		3A29660B1C77860500A5E733 /* LoginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginEmail.swift; path = ViewController/LoginEmail.swift; sourceTree = "<group>"; };
 		3A4D5F2A1D448EDF00E0BFAF /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Details.swift; path = ViewController/Details.swift; sourceTree = "<group>"; };
@@ -122,7 +123,6 @@
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB51FB31D412C5B00872A67 /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenSize.swift; path = src/ScreenSize.swift; sourceTree = "<group>"; };
 		3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenObject.swift; path = src/ScreenObject.swift; sourceTree = "<group>"; };
-		3AC7E09B1BECE7DD004828E1 /* History.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = History.swift; path = ViewController/History.swift; sourceTree = "<group>"; };
 		3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3AD4A78E1D5F31D00046C52C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = src/Constant.swift; sourceTree = "<group>"; };
@@ -180,7 +180,6 @@
 				3A28AB361CE11BFF0027AB70 /* Main.swift */,
 				5D6A53A11B27B228005C167E /* ViewController.swift */,
 				3ADA54C81BC128AF009A4D78 /* Settings.swift */,
-				3AC7E09B1BECE7DD004828E1 /* History.swift */,
 				3A01FF781C05FA2900AD1F9D /* Login.swift */,
 				3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */,
 				3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */,
@@ -238,6 +237,7 @@
 		3AD4A7901D5F4FEC0046C52C /* XMLs */ = {
 			isa = PBXGroup;
 			children = (
+				3A20F8E11D64B5790049931A /* type.xml */,
 				3AD4A7911D5F50010046C52C /* main.xml */,
 			);
 			name = XMLs;
@@ -421,6 +421,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AD4A7921D5F50010046C52C /* main.xml in Resources */,
+				3A20F8E21D64B5790049931A /* type.xml in Resources */,
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
@@ -446,7 +447,6 @@
 			files = (
 				3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */,
 				3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */,
-				3AC7E09C1BECE7DD004828E1 /* History.swift in Sources */,
 				3A7BC3F51CEA190B008B329E /* Type.swift in Sources */,
 				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
