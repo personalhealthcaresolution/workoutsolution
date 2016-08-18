@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view>
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>83</posY>
+		<width>full</width>
+		<height>full</height>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>70</posX>
+		<posY>110</posY>
+		<width>50</width>
+		<height>90</height>
+		<icon>back</icon>
+		<selector>btnBackClicked</selector>
+	</object>
+
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>224</posY>
+		<width>594</width>
+		<height>650</height>
+		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>20</posX>
+		<posY>294</posY>
+		<width>554</width>
+		<height>40</height>
+		<text>ABSOLUTE BEGINNER</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>13</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>91</posX>
+		<posY>392</posY>
+		<width>412</width>
+		<height>412</height>
+		<icon>absBeginner</icon>
+	</object>
+
+	<object>
+		<type>background</type>
+		<posX>652</posX>
+		<posY>224</posY>
+		<width>594</width>
+		<height>650</height>
+		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>816</posX>
+		<posY>294</posY>
+		<width>266</width>
+		<height>40</height>
+		<text>BEGINNER</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>13</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>743</posX>
+		<posY>392</posY>
+		<width>412</width>
+		<height>412</height>
+		<icon>beginner</icon>
+	</object>
+
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>932</posY>
+		<width>594</width>
+		<height>650</height>
+		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>156</posX>
+		<posY>1002</posY>
+		<width>282</width>
+		<height>40</height>
+		<text>ADVANCED</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>13</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>91</posX>
+		<posY>1100</posY>
+		<width>412</width>
+		<height>412</height>
+		<icon>advanced</icon>
+	</object>
+
+	<object>
+		<type>background</type>
+		<posX>652</posX>
+		<posY>932</posY>
+		<width>594</width>
+		<height>650</height>
+		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>771</posX>
+		<posY>1002</posY>
+		<width>378</width>
+		<height>40</height>
+		<text>INTERMEDIATE</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>13</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>760</posX>
+		<posY>1100</posY>
+		<width>412</width>
+		<height>412</height>
+		<icon>intermediate</icon>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>451</posX>
+		<posY>1632</posY>
+		<width>340</width>
+		<height>70</height>
+		<text>CARDIO</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>22</size>
+		<color>0xffffff</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>411</posX>
+		<posY>1738</posY>
+		<width>420</width>
+		<height>420</height>
+		<icon>cardio-1</icon>
+	</object>
+</view>

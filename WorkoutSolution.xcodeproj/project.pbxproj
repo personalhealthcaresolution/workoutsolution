@@ -10,6 +10,7 @@
 		3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF781C05FA2900AD1F9D /* Login.swift */; };
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
+		3A0CCEBF1D65EA1B005D8128 /* level.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CCEBE1D65EA1B005D8128 /* level.xml */; };
 		3A174E641D083C4F00C308A4 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A174E631D083C4F00C308A4 /* Level.swift */; };
 		3A20F8E21D64B5790049931A /* type.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A20F8E11D64B5790049931A /* type.xml */; };
 		3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28AB361CE11BFF0027AB70 /* Main.swift */; };
@@ -100,6 +101,7 @@
 		3A01FF781C05FA2900AD1F9D /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ViewController/Login.swift; sourceTree = "<group>"; };
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
+		3A0CCEBE1D65EA1B005D8128 /* level.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level.xml; path = XMLs/level.xml; sourceTree = "<group>"; };
 		3A174E631D083C4F00C308A4 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = ViewController/Level.swift; sourceTree = "<group>"; };
 		3A20F8E11D64B5790049931A /* type.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = type.xml; path = XMLs/type.xml; sourceTree = "<group>"; };
 		3A28AB361CE11BFF0027AB70 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Main.swift; path = ViewController/Main.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		3AD4A7901D5F4FEC0046C52C /* XMLs */ = {
 			isa = PBXGroup;
 			children = (
+				3A0CCEBE1D65EA1B005D8128 /* level.xml */,
 				3A20F8E11D64B5790049931A /* type.xml */,
 				3AD4A7911D5F50010046C52C /* main.xml */,
 			);
@@ -422,6 +425,7 @@
 			files = (
 				3AD4A7921D5F50010046C52C /* main.xml in Resources */,
 				3A20F8E21D64B5790049931A /* type.xml in Resources */,
+				3A0CCEBF1D65EA1B005D8128 /* level.xml in Resources */,
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
