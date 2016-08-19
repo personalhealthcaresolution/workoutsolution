@@ -53,6 +53,9 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         curElement = elementName
         didStartElement = true
+        if elementName == "object" {
+            object = Object()
+        }
     }
     
     func parser(parser: NSXMLParser, foundCharacters string: String) {
