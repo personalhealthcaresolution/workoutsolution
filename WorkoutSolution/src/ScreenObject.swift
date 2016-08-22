@@ -12,6 +12,7 @@ import Foundation
 class ScreenObject: NSObject, NSXMLParserDelegate {
 
     struct Object {
+        var tab: String = ""
         var type: String = ""
         var icon: String = ""
         var font: String = ""
@@ -21,9 +22,10 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         var color: UInt32 = 0
         var width: CGFloat = 0
         var height: CGFloat = 0
-        var selector: String = ""
+        var selector: Selector = Selector()
         var xPosition: CGFloat = 0
         var yPosition: CGFloat = 0
+        var selectorRaw: String = ""
     }
 
     var object = Object()
@@ -34,7 +36,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
     var curElement: String = ""
     var didStartElement: Bool = false
 
-    func getObjects(xmlFile: String) -> [Object] {
+    func GetObjects(xmlFile: String) -> [Object] {
         objects = []
         curObject = 0
         isParsing = true
@@ -61,6 +63,8 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if didStartElement {
             switch curElement {
+            case "tab":
+                object.tab = string
             case "type":
                 object.type = string
             case "icon":
@@ -70,7 +74,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
             case "font":
                 object.font = string
             case "selector":
-                object.selector = string
+                object.selectorRaw = string
             case "size":
                 if let temp = NSNumberFormatter().numberFromString(string) {
                     object.size = CGFloat(temp)
@@ -78,7 +82,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
             case "named":
                 object.named = string
             case "color":
-                object.color = getColor(string)
+                object.color = GetColor(string)
             case "posX":
                 if let temp = NSNumberFormatter().numberFromString(string) {
                     object.xPosition = CGFloat(temp)
@@ -114,22 +118,60 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         }
     }
     
-    func getColor(value: String) -> UInt32 {
-        var color: UInt32
+    func GetColor(value: String) -> UInt32 {
         switch value {
         case "0xffffff":
-            color = constant.white
+            return constant.white
         case "0x373639":
-            color = constant.citrus
+            return constant.citrus
         case "0xF94343":
-            color = constant.coralRed
+            return constant.coralRed
         default:
-            color = constant.coralRed
+            return constant.coralRed
         }
-        return color
     }
 
-    func addBackground(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
+    func DrawScreen(view: UIViewController, currentTab: String = "") {
+        while objects.count > 0 {
+            var canDraw: Bool = true
+            var object = ScreenObject.Object()
+            object = objects.first!
+            if object.tab == "" {
+                canDraw = true
+            } else {
+                if object.tab == "all" {
+                    canDraw = true
+                } else if object.tab == currentTab {
+                    canDraw = true
+                } else {
+                    canDraw = false
+                }
+            }
+            switch object.type {
+            case "background":
+                if canDraw {
+                    AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
+                }
+            case "button":
+                if canDraw {
+                    AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector)
+                }
+            case "image":
+                if canDraw {
+                    AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+                }
+            case "label":
+                if canDraw {
+                    AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+                }
+            default:
+                break
+            }
+            objects.removeFirst()
+        }
+    }
+
+    func AddBackground(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -141,7 +183,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         view.view.addSubview(background)
     }
     
-    func addImage(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+    func AddImage(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -153,7 +195,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         view.view.addSubview(imageView)
     }
     
-    func addLabel(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+    func AddLabel(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -168,7 +210,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         
     }
     
-    func addButton(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.whiteColor(), selector: Selector = nil) {
+    func AddButton(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.whiteColor(), selector: Selector = nil) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)

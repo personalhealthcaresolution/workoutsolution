@@ -673,7 +673,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ianyuen/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/Frameworks/Facebook",
 				);
 				INFOPLIST_FILE = WorkoutSolution/Info.plist;
@@ -696,7 +695,6 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/ianyuen/Documents/FacebookSDK,
 					"$(PROJECT_DIR)/Frameworks/Facebook",
 				);
 				INFOPLIST_FILE = WorkoutSolution/Info.plist;

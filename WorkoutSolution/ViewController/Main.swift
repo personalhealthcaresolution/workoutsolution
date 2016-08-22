@@ -32,27 +32,22 @@ class Main: UIViewController, NSXMLParserDelegate {
     
     func initView() {
         var objects = [ScreenObject.Object()]
+        var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.getObjects("main")
-
-        let i: Int = 0
-        while  i < objects.count {
+        objects = screenObject.GetObjects("main")
+        
+        while objects.count > 0 {
             var object = ScreenObject.Object()
             object = objects.first!
-            switch object.type {
-            case "background":
-                screenObject.addBackground(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
-            case "button":
-                screenObject.addButton(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: getSelector(object.selector))
-            case "image":
-                screenObject.addImage(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
-            case "label":
-                screenObject.addLabel(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
-            default:
-                break
+            if object.selectorRaw != "" {
+                object.selector = getSelector(object.selectorRaw)
             }
+            objectsDraw.append(object)
             objects.removeFirst()
         }
+
+        screenObject.objects = objectsDraw
+        screenObject.DrawScreen(self)
     }
 
     func getSelector(value: String) -> Selector {

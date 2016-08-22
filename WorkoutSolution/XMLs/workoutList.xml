@@ -235,15 +235,18 @@
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>button</type>
 		<posX>112</posX>
 		<posY>2076</posY>
 		<width>90</width>
 		<height>90</height>
 		<icon>exercises</icon>
+        <selector>btnExercisesClicked</selector>
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>label</type>
 		<posX>112</posX>
 		<posY>2166</posY>
@@ -256,15 +259,18 @@
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>button</type>
 		<posX>412</posX>
 		<posY>2076</posY>
 		<width>90</width>
 		<height>90</height>
 		<icon>workouts</icon>
+        <selector>btnWorkoutsClicked</selector>
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>label</type>
 		<posX>412</posX>
 		<posY>2166</posY>
@@ -277,15 +283,18 @@
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>button</type>
 		<posX>712</posX>
 		<posY>2076</posY>
 		<width>90</width>
 		<height>90</height>
 		<icon>tracker</icon>
+        <selector>btnTrackerClicked</selector>
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>label</type>
 		<posX>712</posX>
 		<posY>2166</posY>
@@ -298,15 +307,18 @@
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>button</type>
 		<posX>1012</posX>
 		<posY>2076</posY>
 		<width>90</width>
 		<height>90</height>
-		<icon>setting</icon>
+		<icon>settings</icon>
+        <selector>btnSettingClicked</selector>
 	</object>
 
 	<object>
+        <tab>all</tab>
 		<type>label</type>
 		<posX>1012</posX>
 		<posY>2166</posY>

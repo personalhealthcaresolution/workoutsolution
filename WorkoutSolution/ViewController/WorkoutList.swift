@@ -9,6 +9,7 @@
 import UIKit
 
 class WorkoutList: UIViewController {
+    var currenTab: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +17,8 @@ class WorkoutList: UIViewController {
         ScreenSize.setStatusHeight(UIApplication.sharedApplication().statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
+
+        currenTab = "exercises"
         initView()
     }
 
@@ -32,27 +35,21 @@ class WorkoutList: UIViewController {
 
     func initView() {
         var objects = [ScreenObject.Object()]
+        var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.getObjects("workoutList")
-        
-        let i: Int = 0
-        while  i < objects.count {
+        objects = screenObject.GetObjects("workoutList")
+
+        while objects.count > 0 {
             var object = ScreenObject.Object()
             object = objects.first!
-            switch object.type {
-            case "background":
-                screenObject.addBackground(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
-            case "button":
-                screenObject.addButton(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: getSelector(object.selector))
-            case "image":
-                screenObject.addImage(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
-            case "label":
-                screenObject.addLabel(self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
-            default:
-                break
+            if object.selectorRaw != "" {
+                object.selector = getSelector(object.selectorRaw)
             }
+            objectsDraw.append(object)
             objects.removeFirst()
         }
+        screenObject.objects = objectsDraw
+        screenObject.DrawScreen(self, currentTab: currenTab)
     }
 
     func getSelector(value: String) -> Selector {
@@ -61,6 +58,15 @@ class WorkoutList: UIViewController {
             return #selector(WorkoutList.btnBackClicked(_:))
         case "btnDetailsClicked":
             return #selector(WorkoutList.btnDetailsClicked(_:))
+        case "btnExercisesClicked":
+            return #selector(WorkoutList.btnExercisesClicked(_:))
+        case "btnWorkoutsClicked":
+            return #selector(WorkoutList.btnWorkoutsClicked(_:))
+        case "btnTrackerClicked":
+            return #selector(WorkoutList.btnTrackerClicked(_:))
+        case "btnSettingClicked":
+            return #selector(WorkoutList.btnSettingClicked(_:))
+            
         default:
             return nil
         }
@@ -72,5 +78,33 @@ class WorkoutList: UIViewController {
 
     func btnBackClicked(sender:UIButton!) {
         self.performSegueWithIdentifier("showType", sender: self)
+    }
+
+    func btnExercisesClicked(sender:UIButton) {
+        if currenTab != "exercises" {
+            currenTab = "exercises"
+            initView()
+        }
+    }
+
+    func btnWorkoutsClicked(sender:UIButton) {
+        if currenTab != "exercises" {
+            currenTab = "workouts"
+            initView()
+        }
+    }
+
+    func btnTrackerClicked(sender:UIButton) {
+        if currenTab != "exercises" {
+            currenTab = "tracker"
+            initView()
+        }
+    }
+
+    func btnSettingClicked(sender:UIButton) {
+        if currenTab != "exercises" {
+            currenTab = "settings"
+            initView()
+        }
     }
 }
