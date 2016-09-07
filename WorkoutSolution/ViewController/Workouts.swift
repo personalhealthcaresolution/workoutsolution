@@ -8,8 +8,9 @@
 
 import UIKit
 
-class WorkoutList: UIViewController {
-    var currenTab: String = ""
+class Workouts: UIViewController {
+    var currenTab: String = "exercises"
+    let screenObject = ScreenObject()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +19,6 @@ class WorkoutList: UIViewController {
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
-        currenTab = "exercises"
         initView()
     }
 
@@ -36,8 +36,10 @@ class WorkoutList: UIViewController {
     func initView() {
         var objects = [ScreenObject.Object()]
         var objectsDraw = [ScreenObject.Object()]
-        let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("workoutList")
+
+        screenObject.ParseXML(currenTab)
+        screenObject.ParseXML("footer")
+        objects = screenObject.GetObjects()
 
         while objects.count > 0 {
             var object = ScreenObject.Object()
@@ -50,22 +52,26 @@ class WorkoutList: UIViewController {
         }
         screenObject.objects = objectsDraw
         screenObject.DrawScreen(self, currentTab: currenTab)
+        let scrool = UIScrollView()
+        scrool.frame = CGRectMake(0, 83, 100, 100)
+        scrool.backgroundColor = UIColor.blackColor()
+        //self.view.addSubview(scrool)
     }
 
     func getSelector(value: String) -> Selector {
         switch value {
         case "btnBackClicked":
-            return #selector(WorkoutList.btnBackClicked(_:))
+            return #selector(Workouts.btnBackClicked(_:))
         case "btnDetailsClicked":
-            return #selector(WorkoutList.btnDetailsClicked(_:))
+            return #selector(Workouts.btnDetailsClicked(_:))
         case "btnExercisesClicked":
-            return #selector(WorkoutList.btnExercisesClicked(_:))
+            return #selector(Workouts.btnExercisesClicked(_:))
         case "btnWorkoutsClicked":
-            return #selector(WorkoutList.btnWorkoutsClicked(_:))
+            return #selector(Workouts.btnWorkoutsClicked(_:))
         case "btnTrackerClicked":
-            return #selector(WorkoutList.btnTrackerClicked(_:))
+            return #selector(Workouts.btnTrackerClicked(_:))
         case "btnSettingClicked":
-            return #selector(WorkoutList.btnSettingClicked(_:))
+            return #selector(Workouts.btnSettingClicked(_:))
             
         default:
             return nil
@@ -88,21 +94,21 @@ class WorkoutList: UIViewController {
     }
 
     func btnWorkoutsClicked(sender:UIButton) {
-        if currenTab != "exercises" {
+        if currenTab != "workouts" {
             currenTab = "workouts"
             initView()
         }
     }
 
     func btnTrackerClicked(sender:UIButton) {
-        if currenTab != "exercises" {
+        if currenTab != "tracker" {
             currenTab = "tracker"
             initView()
         }
     }
 
     func btnSettingClicked(sender:UIButton) {
-        if currenTab != "exercises" {
+        if currenTab != "settings" {
             currenTab = "settings"
             initView()
         }

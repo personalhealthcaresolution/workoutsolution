@@ -12,9 +12,9 @@
 	<object>
 		<type>button</type>
 		<posX>70</posX>
-		<posY>110</posY>
-		<width>50</width>
-		<height>90</height>
+		<posY>100</posY>
+		<width>120</width>
+		<height>120</height>
 		<icon>back</icon>
 		<selector>btnBackClicked</selector>
 	</object>

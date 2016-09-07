@@ -12,7 +12,6 @@ import Foundation
 class ScreenObject: NSObject, NSXMLParserDelegate {
 
     struct Object {
-        var tab: String = ""
         var type: String = ""
         var icon: String = ""
         var font: String = ""
@@ -38,7 +37,6 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
 
     func GetObjects(xmlFile: String) -> [Object] {
         objects = []
-        curObject = 0
         isParsing = true
 
         let path = NSBundle.mainBundle().pathForResource(xmlFile, ofType: "xml")
@@ -52,6 +50,20 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         return objects
     }
 
+    func GetObjects() -> [Object] {
+        return objects
+    }
+
+    func ParseXML(xmlFile: String) {
+        let path = NSBundle.mainBundle().pathForResource(xmlFile, ofType: "xml")
+        let data = NSData.init(contentsOfFile: path!)
+        let parser = NSXMLParser(data: data!)
+        parser.delegate = self
+        parser.parse()
+        
+        while isParsing {}
+    }
+
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         curElement = elementName
         didStartElement = true
@@ -63,8 +75,6 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if didStartElement {
             switch curElement {
-            case "tab":
-                object.tab = string
             case "type":
                 object.type = string
             case "icon":
@@ -133,37 +143,17 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
 
     func DrawScreen(view: UIViewController, currentTab: String = "") {
         while objects.count > 0 {
-            var canDraw: Bool = true
             var object = ScreenObject.Object()
             object = objects.first!
-            if object.tab == "" {
-                canDraw = true
-            } else {
-                if object.tab == "all" {
-                    canDraw = true
-                } else if object.tab == currentTab {
-                    canDraw = true
-                } else {
-                    canDraw = false
-                }
-            }
             switch object.type {
             case "background":
-                if canDraw {
-                    AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
-                }
+                AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
             case "button":
-                if canDraw {
-                    AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector)
-                }
+                AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector)
             case "image":
-                if canDraw {
-                    AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
-                }
+                AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
             case "label":
-                if canDraw {
-                    AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
-                }
+                AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
             default:
                 break
             }

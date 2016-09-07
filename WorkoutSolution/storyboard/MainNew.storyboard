@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Workout List-->
+        <!--Workouts-->
         <scene sceneID="Wcd-8R-fM3">
             <objects>
-                <viewController id="F2X-mc-cpk" customClass="WorkoutList" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F2X-mc-cpk" customClass="Workouts" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E8N-sE-uQC"/>
                         <viewControllerLayoutGuide type="bottom" id="baT-zX-b4z"/>
