@@ -11,20 +11,27 @@ import Foundation
 
 class ScreenObject: NSObject, NSXMLParserDelegate {
 
-    struct Object {
-        var type: String = ""
-        var icon: String = ""
-        var font: String = ""
-        var text: String = ""
-        var size: CGFloat = 0
-        var named: String = ""
-        var color: UInt32 = 0
-        var width: CGFloat = 0
-        var height: CGFloat = 0
-        var selector: Selector = Selector()
-        var xPosition: CGFloat = 0
-        var yPosition: CGFloat = 0
-        var selectorRaw: String = ""
+	struct Object {
+		var isChecked: Bool = false
+
+		var type: String = ""
+		var icon: String = ""
+		var font: String = ""
+		var text: String = ""
+		var named: String = ""
+		var checked: String = ""
+		var unchecked: String = ""
+		var background: String = ""
+		var selectorRaw: String = ""
+
+		var size: CGFloat = 0
+		var color: UInt32 = 0
+		var width: CGFloat = 0
+		var height: CGFloat = 0
+		var xPosition: CGFloat = 0
+		var yPosition: CGFloat = 0
+
+		var selector: Selector = Selector()
     }
 
     var object = Object()
@@ -85,6 +92,12 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
                 object.font = string
             case "selector":
                 object.selectorRaw = string
+			case "background":
+				object.background = string
+			case "checked":
+				object.checked = string
+			case "unchecked":
+				object.unchecked = string
             case "size":
                 if let temp = NSNumberFormatter().numberFromString(string) {
                     object.size = CGFloat(temp)
@@ -147,13 +160,15 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
             object = objects.first!
             switch object.type {
             case "background":
-                AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
+				AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
             case "button":
-                AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector)
+                AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector, background: object.background)
             case "image":
                 AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
             case "label":
                 AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+			case "check":
+				AddCheckBox(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.selectorRaw, selector: object.selector, checkedImage: object.checked, uncheckedImage: object.unchecked)
             default:
                 break
             }
@@ -215,4 +230,22 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
         button.addTarget(view, action: selector, forControlEvents: UIControlEvents.TouchUpInside)
         view.view.addSubview(button)
     }
+
+	func AddCheckBox(view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkedImage: String = "", uncheckedImage: String = "", selector: Selector = nil) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let checkBox = CheckBox()
+		checkBox.frame = CGRectMake(positionX, positionY, itemWidth, itemHeight)
+		checkBox.addTarget(view, action: selector, forControlEvents: UIControlEvents.TouchUpInside)
+		checkBox.SetCheckedImange(checkedImage)
+		checkBox.SetUncheckedImange(uncheckedImage)
+		view.view.addSubview(checkBox)
+
+		let userDefaults = UserDefaults()
+		let isChecked = userDefaults.GetBool(checked)
+		checkBox.isChecked(isChecked)
+	}
 }

@@ -1,0 +1,345 @@
+<view>
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>83</posY>
+		<width>1242</width>
+		<height>2020</height>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>70</posX>
+		<posY>100</posY>
+		<width>120</width>
+		<height>120</height>
+		<icon>back</icon>
+		<selector>btnBackClicked</selector>
+	</object>
+
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>226</posY>
+		<width>1242</width>
+		<height>1794</height>
+		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>419</posY><!-- 193 + 226 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>622</posY><!-- 203 + 419 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>825</posY><!-- 203 + 622 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>1028</posY><!-- 203 + 825 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>1231</posY><!-- 203 + 1028 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>1434</posY><!-- 203 + 1231 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>1637</posY><!-- 203 + 1434 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>1840</posY><!-- 203 + 1637 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>2043</posY><!-- 203 + 1840 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>2246</posY><!-- 203 + 2052 -->
+		<width>2000</width>
+		<height>10</height>
+		<text>**************************************************************************************************************************</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>10</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>201</posX>
+		<posY>282</posY>
+		<width>840</width>
+		<height>80</height>
+		<text>HOME WORKOUT</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>25</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>465</posY><!-- 46 + 419 -->
+		<width>500</width>
+		<height>100</height>
+		<text>SQUATS</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>668</posY><!-- 46 + 622 -->
+		<width>500</width>
+		<height>100</height>
+		<text>PULLUP</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>881</posY><!-- 46 + 825 -->
+		<width>900</width>
+		<height>100</height>
+		<text>CLAPPING PULL UP</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>1074</posY><!-- 46 + 1028 -->
+		<width>900</width>
+		<height>100</height>
+		<text>CHEST HIGH PULL UP</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>1277</posY><!-- 46 + 1231 -->
+		<width>900</width>
+		<height>100</height>
+		<text>TYPE WRITER PULL UP</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>1480</posY><!-- 46 + 1434 -->
+		<width>500</width>
+		<height>100</height>
+		<text>CHINUP</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>1683</posY><!-- 46 + 1637 -->
+		<width>500</width>
+		<height>100</height>
+		<text>WALL SIX</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>102</posX>
+		<posY>1886</posY><!-- 46 + 1840 -->
+		<width>700</width>
+		<height>100</height>
+		<text>DIP ON CHAIR</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>465</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnSquatsClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>668</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnPullUpClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>881</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnClappingPullUpClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>1074</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnChestHighPullUpClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>1277</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnTypeWriterPullUpClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>1480</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnChinupClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>1683</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnWallSixClicked</selector>
+	</object>
+
+	<object>
+		<type>check</type>
+		<posX>1040</posX>
+		<posY>1886</posY>
+		<width>100</width>
+		<height>100</height>
+		<checked>check2</checked>
+		<unchecked>check1</unchecked>
+		<selector>btnDipOnChairClicked</selector>
+	</object>
+</view>

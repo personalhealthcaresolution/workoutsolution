@@ -52,10 +52,6 @@ class Workouts: UIViewController {
         }
         screenObject.objects = objectsDraw
         screenObject.DrawScreen(self, currentTab: currenTab)
-        let scrool = UIScrollView()
-        scrool.frame = CGRectMake(0, 83, 100, 100)
-        scrool.backgroundColor = UIColor.blackColor()
-        //self.view.addSubview(scrool)
     }
 
     func getSelector(value: String) -> Selector {
@@ -72,7 +68,22 @@ class Workouts: UIViewController {
             return #selector(Workouts.btnTrackerClicked(_:))
         case "btnSettingClicked":
             return #selector(Workouts.btnSettingClicked(_:))
-            
+		case "btnSquatsClicked":
+			return #selector(Workouts.btnSquatsClicked(_:))
+		case "btnPullUpClicked":
+			return #selector(Workouts.btnPullUpClicked(_:))
+		case "btnClappingPullUpClicked":
+			return #selector(Workouts.btnClappingPullUpClicked(_:))
+		case "btnChestHighPullUpClicked":
+			return #selector(Workouts.btnChestHighPullUpClicked(_:))
+		case "btnTypeWriterPullUpClicked":
+			return #selector(Workouts.btnTypeWriterPullUpClicked(_:))
+		case "btnChinupClicked":
+			return #selector(Workouts.btnBackClicked(_:))
+		case "btnWallSixClicked":
+			return #selector(Workouts.btnWallSixClicked(_:))
+		case "btnDipOnChairClicked":
+			return #selector(Workouts.btnDipOnChairClicked(_:))
         default:
             return nil
         }
@@ -109,8 +120,40 @@ class Workouts: UIViewController {
 
     func btnSettingClicked(sender:UIButton) {
         if currenTab != "settings" {
-            currenTab = "settings"
-            initView()
+            //currenTab = "settings"
+            //initView()
         }
     }
+
+	func btnSquatsClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnSquatsClicked")
+	}
+
+	func btnPullUpClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnPullUpClicked")
+	}
+
+	func btnClappingPullUpClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnClappingPullUpClicked")
+	}
+
+	func btnChestHighPullUpClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnChestHighPullUpClicked")
+	}
+
+	func btnTypeWriterPullUpClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnTypeWriterPullUpClicked")
+	}
+
+	func btnChinupClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnChinupClicked")
+	}
+
+	func btnWallSixClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnWallSixClicked")
+	}
+
+	func btnDipOnChairClicked(sender:CheckBox!) {
+		sender.buttonClicked(sender, key: "btnDipOnChairClicked")
+	}
 }
