@@ -10,21 +10,21 @@
 		3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF781C05FA2900AD1F9D /* Login.swift */; };
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
-		3A0CCEBF1D65EA1B005D8128 /* level.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CCEBE1D65EA1B005D8128 /* level.xml */; };
+		3A0CCEBF1D65EA1B005D8128 /* Level.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CCEBE1D65EA1B005D8128 /* Level.xml */; };
 		3A174E641D083C4F00C308A4 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A174E631D083C4F00C308A4 /* Level.swift */; };
-		3A20F8E21D64B5790049931A /* type.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A20F8E11D64B5790049931A /* type.xml */; };
+		3A20F8E21D64B5790049931A /* Type.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A20F8E11D64B5790049931A /* Type.xml */; };
 		3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A28AB361CE11BFF0027AB70 /* Main.swift */; };
 		3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29660B1C77860500A5E733 /* LoginEmail.swift */; };
-		3A44A5FF1D819BFB00B4D026 /* tracker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A44A5FE1D819BFB00B4D026 /* tracker.xml */; };
+		3A44A5FF1D819BFB00B4D026 /* Tracker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A44A5FE1D819BFB00B4D026 /* Tracker.xml */; };
 		3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D5F2A1D448EDF00E0BFAF /* Details.swift */; };
 		3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66AF201D845629002BD1EA /* UserDefaults.swift */; };
 		3A66AF231D846898002BD1EA /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66AF221D846898002BD1EA /* CheckBox.swift */; };
-		3A70C8021D804C8C00E08F0E /* footer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8011D804C8C00E08F0E /* footer.xml */; };
-		3A70C8061D808B5600E08F0E /* workouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8051D808B5600E08F0E /* workouts.xml */; };
+		3A70C8021D804C8C00E08F0E /* Footer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8011D804C8C00E08F0E /* Footer.xml */; };
+		3A70C8061D808B5600E08F0E /* Workouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8051D808B5600E08F0E /* Workouts.xml */; };
 		3A734B1A1D3CFBF6000EF7DC /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A734B191D3CFBF6000EF7DC /* Workouts.swift */; };
 		3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */; };
 		3A7BC3F51CEA190B008B329E /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BC3F41CEA190B008B329E /* Type.swift */; };
-		3A7BEA4C1D673DEF00A5F57F /* exercises.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A7BEA4B1D673DEF00A5F57F /* exercises.xml */; };
+		3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */; };
 		3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */; };
 		3A8F287E1BC150B600BCC5BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287C1BC150B600BCC5BC /* Interface.storyboard */; };
 		3A8F28801BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287F1BC150B600BCC5BC /* Assets.xcassets */; };
@@ -39,10 +39,11 @@
 		3AD4A7861D5EE8F60046C52C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */; };
 		3AD4A7881D5F02690046C52C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */; };
 		3AD4A78F1D5F31D00046C52C /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD4A78E1D5F31D00046C52C /* Constant.swift */; };
-		3AD4A7921D5F50010046C52C /* main.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4A7911D5F50010046C52C /* main.xml */; };
+		3AD4A7921D5F50010046C52C /* Main.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4A7911D5F50010046C52C /* Main.xml */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; };
 		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
 		3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */; };
+		3AEFCF341D85504600DD2B5E /* Settings.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF331D85504600DD2B5E /* Settings.xml */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
 		5D6A53A21B27B228005C167E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53A11B27B228005C167E /* ViewController.swift */; };
@@ -108,22 +109,22 @@
 		3A01FF781C05FA2900AD1F9D /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ViewController/Login.swift; sourceTree = "<group>"; };
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
-		3A0CCEBE1D65EA1B005D8128 /* level.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = level.xml; path = XMLs/level.xml; sourceTree = "<group>"; };
+		3A0CCEBE1D65EA1B005D8128 /* Level.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Level.xml; path = XMLs/Level.xml; sourceTree = "<group>"; };
 		3A174E631D083C4F00C308A4 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = ViewController/Level.swift; sourceTree = "<group>"; };
-		3A20F8E11D64B5790049931A /* type.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = type.xml; path = XMLs/type.xml; sourceTree = "<group>"; };
+		3A20F8E11D64B5790049931A /* Type.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Type.xml; path = XMLs/Type.xml; sourceTree = "<group>"; };
 		3A28AB361CE11BFF0027AB70 /* Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Main.swift; path = ViewController/Main.swift; sourceTree = "<group>"; };
 		3A29660B1C77860500A5E733 /* LoginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginEmail.swift; path = ViewController/LoginEmail.swift; sourceTree = "<group>"; };
-		3A44A5FE1D819BFB00B4D026 /* tracker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = tracker.xml; path = XMLs/tracker.xml; sourceTree = "<group>"; };
+		3A44A5FE1D819BFB00B4D026 /* Tracker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Tracker.xml; path = XMLs/Tracker.xml; sourceTree = "<group>"; };
 		3A4D5F2A1D448EDF00E0BFAF /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Details.swift; path = ViewController/Details.swift; sourceTree = "<group>"; };
 		3A66AF201D845629002BD1EA /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = src/UserDefaults.swift; sourceTree = "<group>"; };
 		3A66AF221D846898002BD1EA /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckBox.swift; path = src/CheckBox.swift; sourceTree = "<group>"; };
 		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		3A70C8011D804C8C00E08F0E /* footer.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = footer.xml; path = XMLs/footer.xml; sourceTree = "<group>"; };
-		3A70C8051D808B5600E08F0E /* workouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = workouts.xml; path = XMLs/workouts.xml; sourceTree = "<group>"; };
+		3A70C8011D804C8C00E08F0E /* Footer.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Footer.xml; path = XMLs/Footer.xml; sourceTree = "<group>"; };
+		3A70C8051D808B5600E08F0E /* Workouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Workouts.xml; path = XMLs/Workouts.xml; sourceTree = "<group>"; };
 		3A734B191D3CFBF6000EF7DC /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workouts.swift; path = ViewController/Workouts.swift; sourceTree = "<group>"; };
 		3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackerBack.swift; path = ViewController/TrackerBack.swift; sourceTree = "<group>"; };
 		3A7BC3F41CEA190B008B329E /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = ViewController/Type.swift; sourceTree = "<group>"; };
-		3A7BEA4B1D673DEF00A5F57F /* exercises.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = exercises.xml; path = XMLs/exercises.xml; sourceTree = "<group>"; };
+		3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Exercises.xml; path = XMLs/Exercises.xml; sourceTree = "<group>"; };
 		3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainNew.storyboard; path = storyboard/MainNew.storyboard; sourceTree = "<group>"; };
 		3A8F287A1BC150B600BCC5BC /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8F287D1BC150B600BCC5BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -141,10 +142,11 @@
 		3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		3AD4A78E1D5F31D00046C52C /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = src/Constant.swift; sourceTree = "<group>"; };
-		3AD4A7911D5F50010046C52C /* main.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = main.xml; path = XMLs/main.xml; sourceTree = "<group>"; };
+		3AD4A7911D5F50010046C52C /* Main.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Main.xml; path = XMLs/Main.xml; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
 		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
 		3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AlienEncountersSolid.ttf; path = Fonts/AlienEncountersSolid.ttf; sourceTree = SOURCE_ROOT; };
+		3AEFCF331D85504600DD2B5E /* Settings.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Settings.xml; path = XMLs/Settings.xml; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A539C1B27B228005C167E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,17 +197,17 @@
 		3A2F803D1BB1A6DD00AAA040 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				3A28AB361CE11BFF0027AB70 /* Main.swift */,
-				5D6A53A11B27B228005C167E /* ViewController.swift */,
-				3ADA54C81BC128AF009A4D78 /* Settings.swift */,
+				3A4D5F2A1D448EDF00E0BFAF /* Details.swift */,
+				3A174E631D083C4F00C308A4 /* Level.swift */,
 				3A01FF781C05FA2900AD1F9D /* Login.swift */,
+				3A29660B1C77860500A5E733 /* LoginEmail.swift */,
+				3A28AB361CE11BFF0027AB70 /* Main.swift */,
+				3ADA54C81BC128AF009A4D78 /* Settings.swift */,
 				3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */,
 				3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */,
-				3A29660B1C77860500A5E733 /* LoginEmail.swift */,
 				3A7BC3F41CEA190B008B329E /* Type.swift */,
-				3A174E631D083C4F00C308A4 /* Level.swift */,
+				5D6A53A11B27B228005C167E /* ViewController.swift */,
 				3A734B191D3CFBF6000EF7DC /* Workouts.swift */,
-				3A4D5F2A1D448EDF00E0BFAF /* Details.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -255,13 +257,14 @@
 		3AD4A7901D5F4FEC0046C52C /* XMLs */ = {
 			isa = PBXGroup;
 			children = (
-				3A70C8051D808B5600E08F0E /* workouts.xml */,
-				3A70C8011D804C8C00E08F0E /* footer.xml */,
-				3A7BEA4B1D673DEF00A5F57F /* exercises.xml */,
-				3A0CCEBE1D65EA1B005D8128 /* level.xml */,
-				3A20F8E11D64B5790049931A /* type.xml */,
-				3AD4A7911D5F50010046C52C /* main.xml */,
-				3A44A5FE1D819BFB00B4D026 /* tracker.xml */,
+				3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */,
+				3A70C8011D804C8C00E08F0E /* Footer.xml */,
+				3A0CCEBE1D65EA1B005D8128 /* Level.xml */,
+				3AD4A7911D5F50010046C52C /* Main.xml */,
+				3AEFCF331D85504600DD2B5E /* Settings.xml */,
+				3A44A5FE1D819BFB00B4D026 /* Tracker.xml */,
+				3A20F8E11D64B5790049931A /* Type.xml */,
+				3A70C8051D808B5600E08F0E /* Workouts.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -452,16 +455,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A70C8021D804C8C00E08F0E /* footer.xml in Resources */,
+				3A70C8021D804C8C00E08F0E /* Footer.xml in Resources */,
 				3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */,
-				3AD4A7921D5F50010046C52C /* main.xml in Resources */,
-				3A20F8E21D64B5790049931A /* type.xml in Resources */,
-				3A0CCEBF1D65EA1B005D8128 /* level.xml in Resources */,
-				3A44A5FF1D819BFB00B4D026 /* tracker.xml in Resources */,
+				3AD4A7921D5F50010046C52C /* Main.xml in Resources */,
+				3A20F8E21D64B5790049931A /* Type.xml in Resources */,
+				3AEFCF341D85504600DD2B5E /* Settings.xml in Resources */,
+				3A0CCEBF1D65EA1B005D8128 /* Level.xml in Resources */,
+				3A44A5FF1D819BFB00B4D026 /* Tracker.xml in Resources */,
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
-				3A7BEA4C1D673DEF00A5F57F /* exercises.xml in Resources */,
-				3A70C8061D808B5600E08F0E /* workouts.xml in Resources */,
+				3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */,
+				3A70C8061D808B5600E08F0E /* Workouts.xml in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

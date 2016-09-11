@@ -34,7 +34,7 @@ class Type: UIViewController {
         var objects = [ScreenObject.Object()]
         var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("type")
+        objects = screenObject.GetObjects("Type")
         
         while objects.count > 0 {
             var object = ScreenObject.Object()

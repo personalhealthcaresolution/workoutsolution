@@ -34,7 +34,7 @@ class Main: UIViewController, NSXMLParserDelegate {
         var objects = [ScreenObject.Object()]
         var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("main")
+        objects = screenObject.GetObjects("Main")
         
         while objects.count > 0 {
             var object = ScreenObject.Object()

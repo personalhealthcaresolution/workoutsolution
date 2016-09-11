@@ -9,7 +9,7 @@
 import UIKit
 
 class Workouts: UIViewController {
-    var currenTab: String = "exercises"
+    var currenTab: String = "Exercises"
     let screenObject = ScreenObject()
 
     override func viewDidLoad() {
@@ -38,7 +38,7 @@ class Workouts: UIViewController {
         var objectsDraw = [ScreenObject.Object()]
 
         screenObject.ParseXML(currenTab)
-        screenObject.ParseXML("footer")
+        screenObject.ParseXML("Footer")
         objects = screenObject.GetObjects()
 
         while objects.count > 0 {
@@ -98,30 +98,30 @@ class Workouts: UIViewController {
     }
 
     func btnExercisesClicked(sender:UIButton) {
-        if currenTab != "exercises" {
-            currenTab = "exercises"
+        if currenTab != "Exercises" {
+            currenTab = "Exercises"
             initView()
         }
     }
 
     func btnWorkoutsClicked(sender:UIButton) {
-        if currenTab != "workouts" {
-            currenTab = "workouts"
+        if currenTab != "Workouts" {
+            currenTab = "Workouts"
             initView()
         }
     }
 
     func btnTrackerClicked(sender:UIButton) {
-        if currenTab != "tracker" {
-            currenTab = "tracker"
+        if currenTab != "Tracker" {
+            currenTab = "Tracker"
             initView()
         }
     }
 
     func btnSettingClicked(sender:UIButton) {
-        if currenTab != "settings" {
-            //currenTab = "settings"
-            //initView()
+        if currenTab != "Settings" {
+            currenTab = "Settings"
+            initView()
         }
     }
 

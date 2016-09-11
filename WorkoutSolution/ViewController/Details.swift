@@ -35,7 +35,7 @@ class Details: UIViewController {
         let screenObject = ScreenObject()
 
         screenObject.AddBackground(self, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: constant.citrus)
-        screenObject.AddButton(self, xPosition: 70, yPosition: 110, width: 50, height: 90, icon: "back", selector: #selector(Details.btnBackClicked(_:)))
+        screenObject.AddButton(self, xPosition: 70, yPosition: 100, width: 120, height: 120, icon: "back", selector: #selector(Details.btnBackClicked(_:)))
 
         screenObject.AddBackground(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 709, color: constant.coralRed)
 

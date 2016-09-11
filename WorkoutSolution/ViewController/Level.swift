@@ -34,7 +34,7 @@ class Level: UIViewController {
         var objects = [ScreenObject.Object()]
         var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("level")
+        objects = screenObject.GetObjects("Level")
         
         while objects.count > 0 {
             var object = ScreenObject.Object()
@@ -54,12 +54,18 @@ class Level: UIViewController {
         switch value {
         case "btnBackClicked":
             return #selector(Level.btnBackClicked(_:))
+		case "btnDetailsClicked":
+			return #selector(Level.btnDetailsClicked(_:))
         default:
             return nil
         }
     }
 
-    func btnBackClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showMain", sender: self)
-    }
+	func btnBackClicked(sender:UIButton!) {
+		self.performSegueWithIdentifier("showMain", sender: self)
+	}
+
+	func btnDetailsClicked(sender:UIButton!) {
+		self.performSegueWithIdentifier("showDetails", sender: self)
+	}
 }
