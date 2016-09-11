@@ -42,6 +42,7 @@
 		3AD4A7921D5F50010046C52C /* main.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AD4A7911D5F50010046C52C /* main.xml */; };
 		3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADA54C81BC128AF009A4D78 /* Settings.swift */; };
 		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
+		3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
 		5D6A53A21B27B228005C167E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53A11B27B228005C167E /* ViewController.swift */; };
@@ -143,6 +144,7 @@
 		3AD4A7911D5F50010046C52C /* main.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = main.xml; path = XMLs/main.xml; sourceTree = "<group>"; };
 		3ADA54C81BC128AF009A4D78 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Settings.swift; path = ViewController/Settings.swift; sourceTree = "<group>"; };
 		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
+		3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AlienEncountersSolid.ttf; path = Fonts/AlienEncountersSolid.ttf; sourceTree = SOURCE_ROOT; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A539C1B27B228005C167E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -272,6 +274,14 @@
 			name = storyboard;
 			sourceTree = "<group>";
 		};
+		3AEFCF301D854FBB00DD2B5E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		5D6A538E1B27B228005C167E = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 		5D6A53991B27B228005C167E /* WorkoutSolution */ = {
 			isa = PBXGroup;
 			children = (
+				3AEFCF301D854FBB00DD2B5E /* Fonts */,
 				3AD4A7901D5F4FEC0046C52C /* XMLs */,
 				3AEE15E81C720900005F9F81 /* storyboard */,
 				3A01FF7C1C05FF7900AD1F9D /* src */,
@@ -442,6 +453,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A70C8021D804C8C00E08F0E /* footer.xml in Resources */,
+				3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */,
 				3AD4A7921D5F50010046C52C /* main.xml in Resources */,
 				3A20F8E21D64B5790049931A /* type.xml in Resources */,
 				3A0CCEBF1D65EA1B005D8128 /* level.xml in Resources */,
