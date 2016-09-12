@@ -23,126 +23,126 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>224</posY>
-		<width>594</width>
-		<height>650</height>
+		<width>609</width>
+		<height>577</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>20</posX>
-		<posY>294</posY>
-		<width>554</width>
-		<height>40</height>
-		<text>ABSOLUTE BEGINNER</text>
+		<posX>100</posX>
+		<posY>259</posY><!-- 35 +224 -->
+		<width>409</width>
+		<height>54</height>
+		<text>BEGINNER</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>91</posX>
-		<posY>392</posY>
-		<width>412</width>
-		<height>412</height>
+		<posX>97</posX>
+		<posY>348</posY>
+		<width>418</width>
+		<height>418</height>
 		<icon>absBeginner</icon>
 	</object>
 
 	<object>
 		<type>background</type>
-		<posX>652</posX>
+		<posX>633</posX>
 		<posY>224</posY>
-		<width>594</width>
-		<height>650</height>
+		<width>609</width>
+		<height>577</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>816</posX>
-		<posY>294</posY>
-		<width>266</width>
-		<height>40</height>
-		<text>BEGINNER</text>
+		<posX>648</posX>
+		<posY>259</posY>
+		<width>579</width>
+		<height>54</height>
+		<text>INTERMEDIATE</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>743</posX>
-		<posY>392</posY>
-		<width>412</width>
-		<height>412</height>
+		<posX>730</posX>
+		<posY>348</posY>
+		<width>418</width>
+		<height>418</height>
 		<icon>beginner</icon>
 	</object>
 
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>932</posY>
-		<width>594</width>
-		<height>650</height>
+		<posY>825</posY>
+		<width>609</width>
+		<height>577</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>156</posX>
-		<posY>1002</posY>
-		<width>282</width>
-		<height>40</height>
+		<posX>82</posX>
+		<posY>860</posY>
+		<width>445</width>
+		<height>54</height>
 		<text>ADVANCED</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>91</posX>
-		<posY>1100</posY>
-		<width>412</width>
-		<height>412</height>
+		<posX>97</posX>
+		<posY>949</posY>
+		<width>418</width>
+		<height>418</height>
 		<icon>advanced</icon>
 	</object>
 
 	<object>
 		<type>background</type>
-		<posX>652</posX>
-		<posY>932</posY>
-		<width>594</width>
-		<height>650</height>
+		<posX>633</posX>
+		<posY>825</posY>
+		<width>609</width>
+		<height>577</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>771</posX>
-		<posY>1002</posY>
-		<width>378</width>
-		<height>40</height>
-		<text>INTERMEDIATE</text>
+		<posX>783</posX>
+		<posY>860</posY>
+		<width>309</width>
+		<height>54</height>
+		<text>EXPERT</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>760</posX>
-		<posY>1100</posY>
-		<width>412</width>
-		<height>412</height>
+		<posX>730</posX>
+		<posY>949</posY>
+		<width>418</width>
+		<height>418</height>
 		<icon>intermediate</icon>
 	</object>
 
 	<object>
 		<type>label</type>
 		<posX>451</posX>
-		<posY>1632</posY>
+		<posY>1457</posY>
 		<width>340</width>
 		<height>70</height>
 		<text>CARDIO</text>
@@ -154,9 +154,9 @@
 	<object>
 		<type>button</type>
 		<posX>411</posX>
-		<posY>1738</posY>
-		<width>420</width>
-		<height>420</height>
+		<posY>1569</posY>
+		<width>418</width>
+		<height>418</height>
 		<icon>cardio-1</icon>
 	</object>
 </view>

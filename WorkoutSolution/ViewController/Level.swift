@@ -34,7 +34,10 @@ class Level: UIViewController {
         var objects = [ScreenObject.Object()]
         var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("Level")
+
+		screenObject.ParseXML("Level")
+		screenObject.ParseXML("Footer")
+		objects = screenObject.GetObjects()
         
         while objects.count > 0 {
             var object = ScreenObject.Object()

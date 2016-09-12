@@ -34,8 +34,11 @@ class Type: UIViewController {
         var objects = [ScreenObject.Object()]
         var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("Type")
-        
+
+		screenObject.ParseXML("Type")
+		screenObject.ParseXML("Footer")
+		objects = screenObject.GetObjects()
+
         while objects.count > 0 {
             var object = ScreenObject.Object()
             object = objects.first!

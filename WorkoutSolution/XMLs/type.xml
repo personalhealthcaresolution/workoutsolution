@@ -115,7 +115,7 @@
 	<object>
 		<type>label</type>
 		<posX>104</posX>
-		<posY>1783</posY>
+		<posY>1691</posY>
 		<width>391</width>
 		<height>75</height>
 		<text>CARDIO</text>
@@ -126,10 +126,10 @@
 
 	<object>
 		<type>button</type>
-		<posX>592</posX>
-		<posY>1547</posY>
-		<width>547</width>
-		<height>547</height>
+		<posX>708</posX>
+		<posY>1513</posY>
+		<width>427</width>
+		<height>447</height>
 		<icon>cardio</icon>
 	</object>
 </view>
