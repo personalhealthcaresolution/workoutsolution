@@ -38,18 +38,6 @@
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>294</posY><!-- 294 = 226 + 68 -->
-		<width>200</width>
-		<height>57</height>
-		<text>Back</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
 		<type>button</type>
 		<posX>1083</posX>
 		<posY>294</posY><!-- 294 = 226 + 68 -->
@@ -65,18 +53,6 @@
 		<width>1242</width>
 		<height>193</height>
 		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>497</posY><!-- 497 = 429 + 68 -->
-		<width>200</width>
-		<height>57</height>
-		<text>Biceps</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
 	</object>
 
 	<object>
@@ -98,18 +74,6 @@
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>700</posY><!-- 700 = 632 + 68 -->
-		<width>200</width>
-		<height>57</height>
-		<text>Legs</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
 		<type>button</type>
 		<posX>1083</posX>
 		<posY>700</posY><!-- 700 = 632 + 68 -->
@@ -128,18 +92,6 @@
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>903</posY><!-- 903 = 835 + 68 -->
-		<width>200</width>
-		<height>57</height>
-		<text>Chest</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
 		<type>button</type>
 		<posX>1083</posX>
 		<posY>903</posY><!-- 903 = 835 + 68 -->
@@ -155,18 +107,6 @@
 		<width>1242</width>
 		<height>193</height>
 		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>1106</posY><!-- 1106 = 1038 + 68 -->
-		<width>200</width>
-		<height>57</height>
-		<text>abc</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
 	</object>
 
 	<object>
@@ -212,5 +152,65 @@
 		<width>1242</width>
 		<height>193</height>
 		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>272</posY><!-- 46 + 226 -->
+		<width>300</width>
+		<height>100</height>
+		<text>Back</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>475</posY><!-- 46 + 429 -->
+		<width>300</width>
+		<height>100</height>
+		<text>Biceps</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>678</posY><!-- 46 + 632 -->
+		<width>300</width>
+		<height>100</height>
+		<text>Legs</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>881</posY><!-- 46 + 835 -->
+		<width>300</width>
+		<height>100</height>
+		<text>Chest</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>1084</posY><!-- 46 + 1038 -->
+		<width>300</width>
+		<height>100</height>
+		<text>abc</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
 	</object>
 </view>

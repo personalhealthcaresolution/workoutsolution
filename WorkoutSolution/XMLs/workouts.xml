@@ -37,18 +37,6 @@
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>294</posY><!-- 294 = 226 + 68 -->
-		<width>700</width>
-		<height>57</height>
-		<text>Home Workout</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
 		<type>button</type>
 		<posX>1083</posX>
 		<posY>294</posY><!-- 294 = 226 + 68 -->
@@ -64,18 +52,6 @@
 		<width>1242</width>
 		<height>193</height>
 		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>497</posY><!-- 497 = 429 + 68 -->
-		<width>700</width>
-		<height>57</height>
-		<text>Complete Arm Workout</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
 	</object>
 
 	<object>
@@ -97,18 +73,6 @@
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>700</posY><!-- 700 = 632 + 68 -->
-		<width>700</width>
-		<height>57</height>
-		<text>Full Body Workout</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
 		<type>button</type>
 		<posX>1083</posX>
 		<posY>700</posY><!-- 700 = 632 + 68 -->
@@ -124,18 +88,6 @@
 		<width>1242</width>
 		<height>193</height>
 		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>903</posY><!-- 903 = 835 + 68 -->
-		<width>700</width>
-		<height>57</height>
-		<text>abc</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>13</size>
-		<color>0x373639</color>
 	</object>
 
 	<object>
@@ -190,5 +142,53 @@
 		<width>1242</width>
 		<height>193</height>
 		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>272</posY><!-- 46 + 226 -->
+		<width>900</width>
+		<height>100</height>
+		<text>Home Workout</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>475</posY><!-- 46 + 429 -->
+		<width>900</width>
+		<height>100</height>
+		<text>Complete Arm Workout</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>678</posY><!-- 46 + 632 -->
+		<width>900</width>
+		<height>100</height>
+		<text>Full Body Workout</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>881</posY><!-- 46 + 835 -->
+		<width>900</width>
+		<height>100</height>
+		<text>abc</text>
+		<font>HelveticaNeue-Bold</font>
+		<size>20</size>
+		<color>0x373639</color>
 	</object>
 </view>
