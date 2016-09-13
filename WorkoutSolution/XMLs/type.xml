@@ -4,8 +4,8 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>83</posY>
-		<width>full</width>
-		<height>full</height>
+		<width>width</width>
+		<height>height</height>
 		<color>0x373639</color>
 	</object>
 
@@ -23,7 +23,7 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>223</posY>
-		<width>full</width>
+		<width>width</width>
 		<height>380</height>
 		<color>0xF94343</color>
 	</object>
@@ -54,7 +54,7 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>638</posY>
-		<width>full</width>
+		<width>width</width>
 		<height>380</height>
 		<color>0xF94343</color>
 	</object>
@@ -85,7 +85,7 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>1053</posY>
-		<width>full</width>
+		<width>width</width>
 		<height>380</height>
 		<color>0xF94343</color>
 	</object>

@@ -10,28 +10,26 @@ import UIKit
 import Foundation
 
 class ScreenObject: NSObject, NSXMLParserDelegate {
-
 	struct Object {
-		var isChecked: Bool = false
-
-		var type: String = ""
-		var icon: String = ""
-		var font: String = ""
-		var text: String = ""
-		var named: String = ""
-		var checked: String = ""
-		var unchecked: String = ""
-		var background: String = ""
-		var selectorRaw: String = ""
+		var font = ""
+		var icon = ""
+		var text = ""
+		var type = ""
+		var named = ""
+		var status = ""
+		var checked = ""
+		var unchecked = ""
+		var background = ""
 
 		var size: CGFloat = 0
-		var color: UInt32 = 0
 		var width: CGFloat = 0
 		var height: CGFloat = 0
 		var xPosition: CGFloat = 0
 		var yPosition: CGFloat = 0
 
-		var selector: Selector = Selector()
+		var color: UInt32 = 0
+		var selector = Selector()
+		var isChecked = false
     }
 
     var object = Object()
@@ -42,24 +40,33 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
     var curElement: String = ""
     var didStartElement: Bool = false
 
-    func GetObjects(xmlFile: String) -> [Object] {
-        objects = []
-        isParsing = true
-
-        let path = NSBundle.mainBundle().pathForResource(xmlFile, ofType: "xml")
-        let data = NSData.init(contentsOfFile: path!)
-        let parser = NSXMLParser(data: data!)
-        parser.delegate = self
-        parser.parse()
-
-        while isParsing {}
-
-        return objects
-    }
-
     func GetObjects() -> [Object] {
         return objects
     }
+
+	func GetSelector(value: String) -> Selector{
+		return NSSelectorFromString(value + ":")
+	}
+
+	func GetScreenSize(value: String) -> CGFloat {
+		switch value {
+		case "width":
+			return ScreenSize.defaultWidth
+		case "height":
+			return ScreenSize.defaultHeight
+		default:
+			return StringToCGFloat(value)
+		}
+	}
+
+	func StringToCGFloat(value: String) -> CGFloat {
+		let result = NSNumberFormatter().numberFromString(value)
+		if result != nil {
+			return CGFloat(result!)
+		} else {
+			return 0
+		}
+	}
 
     func ParseXML(xmlFile: String) {
         let path = NSBundle.mainBundle().pathForResource(xmlFile, ofType: "xml")
@@ -82,50 +89,43 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, foundCharacters string: String) {
         if didStartElement {
             switch curElement {
+			case "font":
+				object.font = string
+			case "icon":
+				object.icon = string
+			case "text":
+				object.text = string
             case "type":
                 object.type = string
-            case "icon":
-                object.icon = string
-            case "text":
-                object.text = string
-            case "font":
-                object.font = string
-            case "selector":
-                object.selectorRaw = string
-			case "background":
-				object.background = string
+			case "named":
+				object.named = string
+			case "status":
+				object.status = string
 			case "checked":
 				object.checked = string
 			case "unchecked":
 				object.unchecked = string
+			case "background":
+				object.background = string
+
             case "size":
-                if let temp = NSNumberFormatter().numberFromString(string) {
-                    object.size = CGFloat(temp)
-                }
-            case "named":
-                object.named = string
-            case "color":
-                object.color = GetColor(string)
-            case "posX":
-                if let temp = NSNumberFormatter().numberFromString(string) {
-                    object.xPosition = CGFloat(temp)
-                }
-            case "posY":
-                if let temp = NSNumberFormatter().numberFromString(string) {
-                    object.yPosition = CGFloat(temp)
-                }
+				object.size = StringToCGFloat(string)
             case "width":
-                if string == "full" {
-                    object.width = ScreenSize.defaultWidth
-                } else if let temp = NSNumberFormatter().numberFromString(string) {
-                    object.width = CGFloat(temp)
-                }
+				object.width = GetScreenSize(string)
             case "height":
-                if string == "full" {
-                    object.height = ScreenSize.defaultHeight
-                } else if let temp = NSNumberFormatter().numberFromString(string) {
-                    object.height = CGFloat(temp)
-                }
+                object.height = GetScreenSize(string)
+			case "posX":
+				object.xPosition = StringToCGFloat(string)
+			case "posY":
+				object.yPosition = StringToCGFloat(string)
+
+			case "color":
+				object.color = GetColor(string)
+			case "selector":
+				object.selector = GetSelector(string)
+				if object.type == "check" {
+					object.status = string
+				}
             default:
                 return
             }
@@ -168,7 +168,7 @@ class ScreenObject: NSObject, NSXMLParserDelegate {
             case "label":
                 AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
 			case "check":
-				AddCheckBox(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.selectorRaw, selector: object.selector, checkedImage: object.checked, uncheckedImage: object.unchecked)
+				AddCheckBox(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, selector: object.selector, checkedImage: object.checked, uncheckedImage: object.unchecked)
             default:
                 break
             }

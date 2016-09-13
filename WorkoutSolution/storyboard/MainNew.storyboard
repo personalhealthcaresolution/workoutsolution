@@ -86,6 +86,7 @@
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="gdv-pP-NxB"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="8GG-l1-AV4"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkout" id="ZDV-1n-cdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5J-tR-xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -117,8 +118,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="gdv-pP-NxB"/>
-        <segue reference="8GG-l1-AV4"/>
-        <segue reference="J8D-cn-1m3"/>
+        <segue reference="ZDV-1n-cdP"/>
+        <segue reference="bId-fO-APc"/>
         <segue reference="xWl-iE-MFF"/>
     </inferredMetricsTieBreakers>
 </document>

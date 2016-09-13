@@ -9,7 +9,7 @@
 import UIKit
 
 class Workouts: UIViewController {
-    var currenTab: String = "Exercises"
+	let tabString: String = ""
     let screenObject = ScreenObject()
 
     override func viewDidLoad() {
@@ -34,59 +34,11 @@ class Workouts: UIViewController {
     }
 
     func initView() {
-        var objects = [ScreenObject.Object()]
-        var objectsDraw = [ScreenObject.Object()]
+		let tabString = Application.instance.TabString()
 
-        screenObject.ParseXML(currenTab)
+        screenObject.ParseXML(tabString)
         screenObject.ParseXML("Footer")
-        objects = screenObject.GetObjects()
-
-        while objects.count > 0 {
-            var object = ScreenObject.Object()
-            object = objects.first!
-            if object.selectorRaw != "" {
-                object.selector = getSelector(object.selectorRaw)
-            }
-            objectsDraw.append(object)
-            objects.removeFirst()
-        }
-        screenObject.objects = objectsDraw
-        screenObject.DrawScreen(self, currentTab: currenTab)
-    }
-
-    func getSelector(value: String) -> Selector {
-        switch value {
-        case "btnBackClicked":
-            return #selector(Workouts.btnBackClicked(_:))
-        case "btnDetailsClicked":
-            return #selector(Workouts.btnDetailsClicked(_:))
-        case "btnExercisesClicked":
-            return #selector(Workouts.btnExercisesClicked(_:))
-        case "btnWorkoutsClicked":
-            return #selector(Workouts.btnWorkoutsClicked(_:))
-        case "btnTrackerClicked":
-            return #selector(Workouts.btnTrackerClicked(_:))
-        case "btnSettingClicked":
-            return #selector(Workouts.btnSettingClicked(_:))
-		case "btnSquatsClicked":
-			return #selector(Workouts.btnSquatsClicked(_:))
-		case "btnPullUpClicked":
-			return #selector(Workouts.btnPullUpClicked(_:))
-		case "btnClappingPullUpClicked":
-			return #selector(Workouts.btnClappingPullUpClicked(_:))
-		case "btnChestHighPullUpClicked":
-			return #selector(Workouts.btnChestHighPullUpClicked(_:))
-		case "btnTypeWriterPullUpClicked":
-			return #selector(Workouts.btnTypeWriterPullUpClicked(_:))
-		case "btnChinupClicked":
-			return #selector(Workouts.btnBackClicked(_:))
-		case "btnWallSixClicked":
-			return #selector(Workouts.btnWallSixClicked(_:))
-		case "btnDipOnChairClicked":
-			return #selector(Workouts.btnDipOnChairClicked(_:))
-        default:
-            return nil
-        }
+        screenObject.DrawScreen(self, currentTab: tabString)
     }
 
     func btnDetailsClicked(sender:UIButton!) {
@@ -98,31 +50,31 @@ class Workouts: UIViewController {
     }
 
     func btnExercisesClicked(sender:UIButton) {
-        if currenTab != "Exercises" {
-            currenTab = "Exercises"
+        if Application.instance.CurrentTab() != Application.FooterTab.EXERCISES {
+            Application.instance.CurrentTab(Application.FooterTab.EXERCISES)
             initView()
         }
     }
 
     func btnWorkoutsClicked(sender:UIButton) {
-        if currenTab != "Workouts" {
-            currenTab = "Workouts"
-            initView()
-        }
+		if Application.instance.CurrentTab() != Application.FooterTab.WORKOUTS {
+			Application.instance.CurrentTab(Application.FooterTab.WORKOUTS)
+			initView()
+		}
     }
 
     func btnTrackerClicked(sender:UIButton) {
-        if currenTab != "Tracker" {
-            currenTab = "Tracker"
-            initView()
-        }
+		if Application.instance.CurrentTab() != Application.FooterTab.TRACKER {
+			Application.instance.CurrentTab(Application.FooterTab.TRACKER)
+			initView()
+		}
     }
 
     func btnSettingClicked(sender:UIButton) {
-        if currenTab != "Settings" {
-            currenTab = "Settings"
-            initView()
-        }
+		if Application.instance.CurrentTab() != Application.FooterTab.SETTINGS {
+			Application.instance.CurrentTab(Application.FooterTab.SETTINGS)
+			initView()
+		}
     }
 
 	func btnSquatsClicked(sender:CheckBox!) {

@@ -31,37 +31,10 @@ class Level: UIViewController {
     }
 
     func initView() {
-        var objects = [ScreenObject.Object()]
-        var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-
 		screenObject.ParseXML("Level")
 		screenObject.ParseXML("Footer")
-		objects = screenObject.GetObjects()
-        
-        while objects.count > 0 {
-            var object = ScreenObject.Object()
-            object = objects.first!
-            if object.selectorRaw != "" {
-                object.selector = getSelector(object.selectorRaw)
-            }
-            objectsDraw.append(object)
-            objects.removeFirst()
-        }
-        
-        screenObject.objects = objectsDraw
         screenObject.DrawScreen(self)
-    }
-
-    func getSelector(value: String) -> Selector {
-        switch value {
-        case "btnBackClicked":
-            return #selector(Level.btnBackClicked(_:))
-		case "btnDetailsClicked":
-			return #selector(Level.btnDetailsClicked(_:))
-        default:
-            return nil
-        }
     }
 
 	func btnBackClicked(sender:UIButton!) {
@@ -70,5 +43,33 @@ class Level: UIViewController {
 
 	func btnDetailsClicked(sender:UIButton!) {
 		self.performSegueWithIdentifier("showDetails", sender: self)
+	}
+
+	func btnExercisesClicked(sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.EXERCISES {
+			Application.instance.CurrentTab(Application.FooterTab.EXERCISES)
+			self.performSegueWithIdentifier("showWorkout", sender: self)
+		}
+	}
+
+	func btnWorkoutsClicked(sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.WORKOUTS {
+			Application.instance.CurrentTab(Application.FooterTab.WORKOUTS)
+			self.performSegueWithIdentifier("showWorkout", sender: self)
+		}
+	}
+
+	func btnTrackerClicked(sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.TRACKER {
+			Application.instance.CurrentTab(Application.FooterTab.TRACKER)
+			self.performSegueWithIdentifier("showWorkout", sender: self)
+		}
+	}
+
+	func btnSettingClicked(sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.SETTINGS {
+			Application.instance.CurrentTab(Application.FooterTab.SETTINGS)
+			self.performSegueWithIdentifier("showWorkout", sender: self)
+		}
 	}
 }

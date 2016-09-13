@@ -4,8 +4,8 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>83</posY>
-		<width>full</width>
-		<height>full</height>
+		<width>width</width>
+		<height>height</height>
 		<color>0x373639</color>
 	</object>
 

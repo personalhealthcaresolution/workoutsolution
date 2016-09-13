@@ -31,34 +31,9 @@ class Main: UIViewController, NSXMLParserDelegate {
     }
     
     func initView() {
-        var objects = [ScreenObject.Object()]
-        var objectsDraw = [ScreenObject.Object()]
         let screenObject = ScreenObject()
-        objects = screenObject.GetObjects("Main")
-        
-        while objects.count > 0 {
-            var object = ScreenObject.Object()
-            object = objects.first!
-            if object.selectorRaw != "" {
-                object.selector = getSelector(object.selectorRaw)
-            }
-            objectsDraw.append(object)
-            objects.removeFirst()
-        }
-
-        screenObject.objects = objectsDraw
+        screenObject.ParseXML("Main")
         screenObject.DrawScreen(self)
-    }
-
-    func getSelector(value: String) -> Selector {
-        switch value {
-        case "btnTypeClicked":
-            return #selector(Main.btnTypeClicked(_:))
-        case "btnLevelClicked":
-            return #selector(Main.btnLevelClicked(_:))
-        default:
-            return nil
-        }
     }
 
     func btnTypeClicked(sender:UIButton!) {
