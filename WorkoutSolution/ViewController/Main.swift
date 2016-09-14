@@ -13,6 +13,7 @@ class Main: UIViewController, NSXMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		_ = Database()
         ScreenSize.setStatusHeight(UIApplication.sharedApplication().statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
