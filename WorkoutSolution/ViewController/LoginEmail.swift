@@ -30,7 +30,7 @@ class LoginEmail: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let swap = screenWidth
         screenWidth = screenHeight
         screenHeight = swap
@@ -47,50 +47,50 @@ class LoginEmail: UIViewController {
         width = screenWidth - 40
         xPosition = self.view.frame.origin.x + 20
         yPosition = self.view.frame.origin.y + 70
-        txtUsername.frame = CGRectMake(xPosition, yPosition, width, height)
+        txtUsername.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
 
         txtUsername.placeholder = "Enter your username"
-        txtUsername.borderStyle = UITextBorderStyle.RoundedRect
+        txtUsername.borderStyle = UITextBorderStyle.roundedRect
         self.view.addSubview(txtUsername)
         
         height = 30
         width = screenWidth - 40
         xPosition = self.view.frame.origin.x + 20
         yPosition = txtUsername.frame.origin.y + txtUsername.frame.height + 10
-        txtPassword.frame = CGRectMake(xPosition, yPosition, width, height)
+        txtPassword.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
 
         txtPassword.placeholder = "Enter your password"
-        txtPassword.borderStyle = UITextBorderStyle.RoundedRect
-        txtPassword.secureTextEntry = true
+        txtPassword.borderStyle = UITextBorderStyle.roundedRect
+        txtPassword.isSecureTextEntry = true
         self.view.addSubview(txtPassword)
         
         width = 100
         height = 30
         xPosition = (screenWidth - width) / 2
         yPosition = txtPassword.frame.origin.y + txtPassword.frame.height + 10
-        btnLogin.frame = CGRectMake(xPosition, yPosition, width, height)
+        btnLogin.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
 
-        btnLogin.setTitle("Login", forState: UIControlState.Normal)
-        btnLogin.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btnLogin.addTarget(self, action: #selector(LoginEmail.verifyAccount(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btnLogin.setTitle("Login", for: UIControlState())
+        btnLogin.setTitleColor(UIColor.blue, for: UIControlState())
+        btnLogin.addTarget(self, action: #selector(LoginEmail.verifyAccount(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(btnLogin)
         
         width = 150
         height = 30
         xPosition = (screenWidth - width) / 2
         yPosition = btnLogin.frame.origin.y + btnLogin.frame.height + 10
-        btnResetPass.frame = CGRectMake(xPosition, yPosition, width, height)
+        btnResetPass.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)
 
-        btnResetPass.setTitle("Forgot Password", forState: UIControlState.Normal)
-        btnResetPass.setTitleColor(UIColor.blueColor(), forState: UIControlState.Normal)
-        btnResetPass.addTarget(self, action: #selector(LoginEmail.resetPassword(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        btnResetPass.setTitle("Forgot Password", for: UIControlState())
+        btnResetPass.setTitleColor(UIColor.blue, for: UIControlState())
+        btnResetPass.addTarget(self, action: #selector(LoginEmail.resetPassword(_:)), for: UIControlEvents.touchUpInside)
         self.view.addSubview(btnResetPass)
     }
 
-    func verifyAccount(sender:UIButton!) {
-        if txtUsername == "" {
+    func verifyAccount(_ sender:UIButton!) {
+        if txtUsername.text == "" {
             return
-        } else if txtPassword == "" {
+        } else if txtPassword.text == "" {
             return
         }
 
@@ -98,17 +98,17 @@ class LoginEmail: UIViewController {
         let isUser = account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
         
         if isUser {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject(txtUsername.text, forKey: "username")
-            defaults.setObject(txtPassword.text, forKey: "password")
+            let defaults = Foundation.UserDefaults.standard
+            defaults.set(txtUsername.text, forKey: "username")
+            defaults.set(txtPassword.text, forKey: "password")
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewControllerWithIdentifier("InitialApp") as UIViewController
-            self.presentViewController(controller, animated: true, completion: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "InitialApp") as UIViewController
+            self.present(controller, animated: true, completion: nil)
         }
     }
     
-    func resetPassword(sender:UIButton!) {
+    func resetPassword(_ sender:UIButton!) {
         print("Implementing")
     }
 }

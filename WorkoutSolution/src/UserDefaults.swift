@@ -10,27 +10,28 @@ import Foundation
 
 class UserDefaults {
 
-	func GetBool(key: String) -> Bool {
-		let defaults = NSUserDefaults.standardUserDefaults()
-		return defaults.boolForKey(key)
+	func GetBool(_ key: String) -> Bool {
+		let defaults = Foundation.UserDefaults.standard
+		return defaults.bool(forKey: key)
 	}
 
-	func SetBool(key: String, value: Bool) {
-		let defaults = NSUserDefaults.standardUserDefaults()
-		defaults.setBool(value, forKey: key)
+	func SetBool(_ key: String, value: Bool) {
+		let defaults = Foundation.UserDefaults.standard
+		defaults.set(value, forKey: key)
 	}
 
-	func GetString(key: String) -> String {
-		let defaults = NSUserDefaults.standardUserDefaults()
-		if defaults.objectForKey(key) != nil {
-			return (defaults.objectForKey(key)?.description)!
+	func GetString(_ key: String) -> String {
+		let defaults = Foundation.UserDefaults.standard
+		if defaults.object(forKey: key) != nil {
+			let result = defaults.object(forKey: key)
+			return result as! String
 		} else {
 			return ""
 		}
 	}
 
-	func SetString(key: String, value: String) {
-		let defaults = NSUserDefaults.standardUserDefaults()
-		defaults.setObject(value, forKey: key)
+	func SetString(_ key: String, value: String) {
+		let defaults = Foundation.UserDefaults.standard
+		defaults.set(value, forKey: key)
 	}
 }

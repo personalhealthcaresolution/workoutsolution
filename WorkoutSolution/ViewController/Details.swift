@@ -13,7 +13,7 @@ class Details: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ScreenSize.setStatusHeight(UIApplication.sharedApplication().statusBarFrame.size.height)
+        ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
@@ -23,7 +23,7 @@ class Details: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let swap = ScreenSize.getCurrentWidth()
         ScreenSize.setCurrentWidth(ScreenSize.getCurrentHeight())
         ScreenSize.setCurrentHeight(swap)
@@ -61,7 +61,7 @@ class Details: UIViewController {
         screenObject.AddLabel(self, xPosition: 1022, yPosition: 2166, width: 320, height: 30, text: "Settings", font: constant.helveticaNeueBold, size: 5, color: constant.white)
     }
 
-    func btnBackClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showWorkout", sender: self)
+    func btnBackClicked(_ sender:UIButton!) {
+        self.performSegue(withIdentifier: "showWorkout", sender: self)
     }
 }

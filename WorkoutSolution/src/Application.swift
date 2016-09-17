@@ -12,48 +12,48 @@ class Application {
 	static let instance = Application()
 
 	enum FooterTab {
-		case EXERCISES
-		case WORKOUTS
-		case TRACKER
-		case SETTINGS
+		case exercises
+		case workouts
+		case tracker
+		case settings
 	}
 
-	var currentTab: FooterTab = FooterTab.WORKOUTS
+	var currentTab: FooterTab = FooterTab.workouts
 
 	func CurrentTab() -> FooterTab {
 		return currentTab
 	}
 
-	func CurrentTab(value: FooterTab) {
+	func CurrentTab(_ value: FooterTab) {
 		currentTab = value
 	}
 
 	func TabString() -> String {
 		switch CurrentTab() {
-		case FooterTab.EXERCISES:
+		case FooterTab.exercises:
 			return "Exercises"
-		case FooterTab.WORKOUTS:
+		case FooterTab.workouts:
 			return "Workouts"
-		case FooterTab.TRACKER:
+		case FooterTab.tracker:
 			return "Tracker"
-		case FooterTab.SETTINGS:
+		case FooterTab.settings:
 			return "Settings"
 		}
 	}
 
 	enum WorkoutsList {
-		case UPPER
-		case LOWER
-		case CORE_ABS
+		case upper
+		case lower
+		case core_ABS
 	}
 
-	var currentWorkout: WorkoutsList = WorkoutsList.UPPER
+	var currentWorkout: WorkoutsList = WorkoutsList.upper
 
 	func CurrentWorkout() -> WorkoutsList {
 		return currentWorkout
 	}
 
-	func CurrentWorkout(value: WorkoutsList) {
+	func CurrentWorkout(_ value: WorkoutsList) {
 		currentWorkout = value
 	}
 }

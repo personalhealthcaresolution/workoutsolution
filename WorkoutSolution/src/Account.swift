@@ -10,7 +10,7 @@ import Foundation
 
 class Account {
     
-    func verifyAccount(username: String, password: String) -> Bool {
+    func verifyAccount(_ username: String, password: String) -> Bool {
         var canResponse = false;
         var returnValue = false;
 
@@ -31,7 +31,7 @@ class Account {
         return returnValue
     }
 
-    func addAccount(username: String, password: String) -> Bool {
+    func addAccount(_ username: String, password: String) -> Bool {
         var canResponse = false;
         var returnValue = false;
 

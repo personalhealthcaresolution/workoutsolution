@@ -15,7 +15,7 @@ class Workouts: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ScreenSize.setStatusHeight(UIApplication.sharedApplication().statusBarFrame.size.height)
+        ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
@@ -26,7 +26,7 @@ class Workouts: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let swap = ScreenSize.getCurrentWidth()
         ScreenSize.setCurrentWidth(ScreenSize.getCurrentHeight())
         ScreenSize.setCurrentHeight(swap)
@@ -41,71 +41,71 @@ class Workouts: UIViewController {
         screenObject.DrawScreen(self, currentTab: tabString)
     }
 
-    func btnDetailsClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showDetails", sender: self)
+    func btnDetailsClicked(_ sender:UIButton!) {
+        self.performSegue(withIdentifier: "showDetails", sender: self)
     }
 
-    func btnBackClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showType", sender: self)
+    func btnBackClicked(_ sender:UIButton!) {
+        self.performSegue(withIdentifier: "showType", sender: self)
     }
 
-    func btnExercisesClicked(sender:UIButton) {
-        if Application.instance.CurrentTab() != Application.FooterTab.EXERCISES {
-            Application.instance.CurrentTab(Application.FooterTab.EXERCISES)
+    func btnExercisesClicked(_ sender:UIButton) {
+        if Application.instance.CurrentTab() != Application.FooterTab.exercises {
+            Application.instance.CurrentTab(Application.FooterTab.exercises)
             initView()
         }
     }
 
-    func btnWorkoutsClicked(sender:UIButton) {
-		if Application.instance.CurrentTab() != Application.FooterTab.WORKOUTS {
-			Application.instance.CurrentTab(Application.FooterTab.WORKOUTS)
+    func btnWorkoutsClicked(_ sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.workouts {
+			Application.instance.CurrentTab(Application.FooterTab.workouts)
 			initView()
 		}
     }
 
-    func btnTrackerClicked(sender:UIButton) {
-		if Application.instance.CurrentTab() != Application.FooterTab.TRACKER {
-			Application.instance.CurrentTab(Application.FooterTab.TRACKER)
+    func btnTrackerClicked(_ sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.tracker {
+			Application.instance.CurrentTab(Application.FooterTab.tracker)
 			initView()
 		}
     }
 
-    func btnSettingClicked(sender:UIButton) {
-		if Application.instance.CurrentTab() != Application.FooterTab.SETTINGS {
-			Application.instance.CurrentTab(Application.FooterTab.SETTINGS)
+    func btnSettingClicked(_ sender:UIButton) {
+		if Application.instance.CurrentTab() != Application.FooterTab.settings {
+			Application.instance.CurrentTab(Application.FooterTab.settings)
 			initView()
 		}
     }
 
-	func btnSquatsClicked(sender:CheckBox!) {
+	func btnSquatsClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnSquatsClicked")
 	}
 
-	func btnPullUpClicked(sender:CheckBox!) {
+	func btnPullUpClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnPullUpClicked")
 	}
 
-	func btnClappingPullUpClicked(sender:CheckBox!) {
+	func btnClappingPullUpClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnClappingPullUpClicked")
 	}
 
-	func btnChestHighPullUpClicked(sender:CheckBox!) {
+	func btnChestHighPullUpClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnChestHighPullUpClicked")
 	}
 
-	func btnTypeWriterPullUpClicked(sender:CheckBox!) {
+	func btnTypeWriterPullUpClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnTypeWriterPullUpClicked")
 	}
 
-	func btnChinupClicked(sender:CheckBox!) {
+	func btnChinupClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnChinupClicked")
 	}
 
-	func btnWallSixClicked(sender:CheckBox!) {
+	func btnWallSixClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnWallSixClicked")
 	}
 
-	func btnDipOnChairClicked(sender:CheckBox!) {
+	func btnDipOnChairClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnDipOnChairClicked")
 	}
 }

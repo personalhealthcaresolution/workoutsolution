@@ -10,18 +10,18 @@ class CheckBox: UIButton {
 		return checked
 	}
 
-	func isChecked(value: Bool) {
+	func isChecked(_ value: Bool) {
 		checked = value
 		updateImage()
 	}
 
-	func SetCheckedImange(named: String) {
+	func SetCheckedImange(_ named: String) {
 		if named != "" {
 			checkedImage = UIImage(named: named)
 		}
 	}
 
-	func SetUncheckedImange(named: String) {
+	func SetUncheckedImange(_ named: String) {
 		if named != "" {
 			unCheckedImage = UIImage(named: named)
 		}
@@ -29,13 +29,13 @@ class CheckBox: UIButton {
 
 	func updateImage() {
 		if checked == true {
-			self.setImage(checkedImage, forState: .Normal)
+			self.setImage(checkedImage, for: UIControlState())
 		} else {
-			self.setImage(unCheckedImage, forState: .Normal)
+			self.setImage(unCheckedImage, for: UIControlState())
 		}
 	}
 
-	func buttonClicked(sender:UIButton, key: String) {
+	func buttonClicked(_ sender:UIButton, key: String) {
 		if sender == self {
 			checked = !checked
 			let userDefaults = UserDefaults()

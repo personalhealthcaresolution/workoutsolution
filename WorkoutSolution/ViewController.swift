@@ -11,15 +11,17 @@ import FBSDKCoreKit
 import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
+	public func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+	}
 
     @IBOutlet weak var btnLogin: UIButton!
-    @IBAction func showLogin(sender: AnyObject) {
+    @IBAction func showLogin(_ sender: AnyObject) {
         //self.performSegueWithIdentifier("showLogin", sender: self)
 
 
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("InitialController") as UIViewController
-        self.presentViewController(controller, animated: true, completion: nil)
+        let controller = storyboard.instantiateViewController(withIdentifier: "InitialController") as UIViewController
+        self.present(controller, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
@@ -32,26 +34,26 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         self.view.addSubview(loginButton)
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if ((FBSDKAccessToken.currentAccessToken()) != nil) {
-            self.performSegueWithIdentifier("showApp", sender: self)
+        if ((FBSDKAccessToken.current()) != nil) {
+            self.performSegue(withIdentifier: "showApp", sender: self)
         }
         
         var username: String = ""
         var password: String = ""
-        let defaults = NSUserDefaults.standardUserDefaults()
-        if defaults.objectForKey("username") != nil {
-            username = (defaults.objectForKey("username")?.description)!
+        let defaults = Foundation.UserDefaults.standard
+        if defaults.object(forKey: "username") != nil {
+            username = ((defaults.object(forKey: "username") as AnyObject).description)!
         }
-        if defaults.objectForKey("password") != nil {
-            password = (defaults.objectForKey("password")?.description)!
+        if defaults.object(forKey: "password") != nil {
+            password = ((defaults.object(forKey: "password") as AnyObject).description)!
         }
 
         let account = Account()
         let isUser: Bool = account.verifyAccount(username, password: password)
         if isUser {
-            self.performSegueWithIdentifier("showApp", sender: self)
+            self.performSegue(withIdentifier: "showApp", sender: self)
         }
     }
 
@@ -59,15 +61,15 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         super.didReceiveMemoryWarning()
     }
     
-    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if error == nil {
-            self.performSegueWithIdentifier("showApp", sender: self)
+            self.performSegue(withIdentifier: "showApp", sender: self)
         } else {
             print(error.localizedDescription)
         }
     }
 
-    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
     }
 
 }

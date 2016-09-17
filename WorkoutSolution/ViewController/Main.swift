@@ -8,13 +8,13 @@
 
 import UIKit
 
-class Main: UIViewController, NSXMLParserDelegate {
+class Main: UIViewController, XMLParserDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
 		_ = Database()
-        ScreenSize.setStatusHeight(UIApplication.sharedApplication().statusBarFrame.size.height)
+        ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
@@ -24,7 +24,7 @@ class Main: UIViewController, NSXMLParserDelegate {
         super.didReceiveMemoryWarning()
     }
 
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         let swap = ScreenSize.getCurrentWidth()
         ScreenSize.setCurrentWidth(ScreenSize.getCurrentHeight())
         ScreenSize.setCurrentHeight(swap)
@@ -37,11 +37,11 @@ class Main: UIViewController, NSXMLParserDelegate {
         screenObject.DrawScreen(self)
     }
 
-    func btnTypeClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showType", sender: self)
+    func btnTypeClicked(_ sender:UIButton!) {
+        self.performSegue(withIdentifier: "showType", sender: self)
     }
 
-    func btnLevelClicked(sender:UIButton!) {
-        self.performSegueWithIdentifier("showLevel", sender: self)        
+    func btnLevelClicked(_ sender:UIButton!) {
+        self.performSegue(withIdentifier: "showLevel", sender: self)        
     }
 }

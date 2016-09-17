@@ -11,44 +11,44 @@ import UIKit
 class Settings: UIViewController {
 
     @IBOutlet weak var enableNotification: UISwitch!
-    @IBAction func notificationChangedValue(sender: AnyObject) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setBool(enableNotification.on, forKey: "enableNotification")
+    @IBAction func notificationChangedValue(_ sender: AnyObject) {
+        let defaults = Foundation.UserDefaults.standard
+        defaults.set(enableNotification.isOn, forKey: "enableNotification")
         
-        if (enableNotification.on) {
+        if (enableNotification.isOn) {
             
-            let curDate = NSDate()
-            let calendar = NSCalendar.currentCalendar()
-            let componentsYear = calendar.components(NSCalendarUnit.Year, fromDate: curDate)
-            let componentsMonth = calendar.components(NSCalendarUnit.Month, fromDate: curDate)
-            let componentsDay = calendar.components(NSCalendarUnit.Day, fromDate: curDate)
+            let curDate = Date()
+            let calendar = Calendar.current
+            let componentsYear = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: curDate)
+            let componentsMonth = (calendar as NSCalendar).components(NSCalendar.Unit.month, from: curDate)
+            let componentsDay = (calendar as NSCalendar).components(NSCalendar.Unit.day, from: curDate)
             
-            let dateComp:NSDateComponents = NSDateComponents()
+            var dateComp:DateComponents = DateComponents()
             dateComp.year = componentsYear.year
             dateComp.month = componentsMonth.month;
             dateComp.day = componentsDay.day;
             dateComp.hour = 05;
             dateComp.minute = 30;
-            dateComp.timeZone = NSTimeZone.systemTimeZone()
+            (dateComp as NSDateComponents).timeZone = TimeZone.current
             
-            let calender:NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let date:NSDate = calender.dateFromComponents(dateComp)!
+            let calender:Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+            let date:Date = calender.date(from: dateComp)!
             
             let notification:UILocalNotification = UILocalNotification()
             notification.category = "notifications on"
             notification.alertBody = "Woww it works!!"
             notification.fireDate = date
-            notification.repeatInterval = NSCalendarUnit.Day
+            notification.repeatInterval = NSCalendar.Unit.day
                 
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            UIApplication.shared.scheduleLocalNotification(notification)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        enableNotification.on = defaults.boolForKey("enableNotification")
+        let defaults = Foundation.UserDefaults.standard
+        enableNotification.isOn = defaults.bool(forKey: "enableNotification")
     }
 
     override func didReceiveMemoryWarning() {

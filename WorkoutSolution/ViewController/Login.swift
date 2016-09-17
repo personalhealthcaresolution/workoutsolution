@@ -22,12 +22,12 @@ class Login: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func verifyAccount(sender: AnyObject) {
+    @IBAction func verifyAccount(_ sender: AnyObject) {
     }
-    @IBAction func verifyAccount_(sender: AnyObject) {
-        if txtUsername == "" {
+    @IBAction func verifyAccount_(_ sender: AnyObject) {
+        if txtUsername.text == "" {
             return
-        } else if txtPassword == "" {
+        } else if txtPassword.text == "" {
             return
         }
 
@@ -35,13 +35,13 @@ class Login: UIViewController {
         isUser = account.verifyAccount(txtUsername.text!, password: txtPassword.text!)
         
         if isUser {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject(txtUsername.text, forKey: "username")
-            defaults.setObject(txtPassword.text, forKey: "password")
+            let defaults = Foundation.UserDefaults.standard
+            defaults.set(txtUsername.text, forKey: "username")
+            defaults.set(txtPassword.text, forKey: "password")
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let controller = storyboard.instantiateViewControllerWithIdentifier("InitialTracking") as UIViewController
-            self.presentViewController(controller, animated: true, completion: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "InitialTracking") as UIViewController
+            self.present(controller, animated: true, completion: nil)
         }
     }
 }
