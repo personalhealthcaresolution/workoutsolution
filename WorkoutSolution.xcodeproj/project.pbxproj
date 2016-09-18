@@ -22,8 +22,8 @@
 		3A66AF231D846898002BD1EA /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66AF221D846898002BD1EA /* CheckBox.swift */; };
 		3A6B7FEF1D899F3E0073ABEA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B7FEE1D899F3E0073ABEA /* Database.swift */; };
 		3A70C8021D804C8C00E08F0E /* Footer.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8011D804C8C00E08F0E /* Footer.xml */; };
-		3A70C8061D808B5600E08F0E /* Workouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8051D808B5600E08F0E /* Workouts.xml */; };
-		3A734B1A1D3CFBF6000EF7DC /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A734B191D3CFBF6000EF7DC /* Workouts.swift */; };
+		3A70C8061D808B5600E08F0E /* WorkoutsList.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A70C8051D808B5600E08F0E /* WorkoutsList.xml */; };
+		3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A734B191D3CFBF6000EF7DC /* WorkoutsList.swift */; };
 		3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */; };
 		3A7BC3F51CEA190B008B329E /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BC3F41CEA190B008B329E /* Type.swift */; };
 		3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */; };
@@ -124,8 +124,8 @@
 		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		3A6B7FEE1D899F3E0073ABEA /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Database.swift; path = src/Database.swift; sourceTree = "<group>"; };
 		3A70C8011D804C8C00E08F0E /* Footer.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Footer.xml; path = XMLs/Footer.xml; sourceTree = "<group>"; };
-		3A70C8051D808B5600E08F0E /* Workouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Workouts.xml; path = XMLs/Workouts.xml; sourceTree = "<group>"; };
-		3A734B191D3CFBF6000EF7DC /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workouts.swift; path = ViewController/Workouts.swift; sourceTree = "<group>"; };
+		3A70C8051D808B5600E08F0E /* WorkoutsList.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WorkoutsList.xml; path = XMLs/WorkoutsList.xml; sourceTree = "<group>"; };
+		3A734B191D3CFBF6000EF7DC /* WorkoutsList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutsList.swift; path = ViewController/WorkoutsList.swift; sourceTree = "<group>"; };
 		3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackerBack.swift; path = ViewController/TrackerBack.swift; sourceTree = "<group>"; };
 		3A7BC3F41CEA190B008B329E /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = ViewController/Type.swift; sourceTree = "<group>"; };
 		3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Exercises.xml; path = XMLs/Exercises.xml; sourceTree = "<group>"; };
@@ -213,7 +213,7 @@
 				3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */,
 				3A7BC3F41CEA190B008B329E /* Type.swift */,
 				5D6A53A11B27B228005C167E /* ViewController.swift */,
-				3A734B191D3CFBF6000EF7DC /* Workouts.swift */,
+				3A734B191D3CFBF6000EF7DC /* WorkoutsList.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 				3AEFCF331D85504600DD2B5E /* Settings.xml */,
 				3A44A5FE1D819BFB00B4D026 /* Tracker.xml */,
 				3A20F8E11D64B5790049931A /* Type.xml */,
-				3A70C8051D808B5600E08F0E /* Workouts.xml */,
+				3A70C8051D808B5600E08F0E /* WorkoutsList.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -474,7 +474,7 @@
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */,
-				3A70C8061D808B5600E08F0E /* Workouts.xml in Resources */,
+				3A70C8061D808B5600E08F0E /* WorkoutsList.xml in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,7 +510,7 @@
 				3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */,
 				3A6B7FEF1D899F3E0073ABEA /* Database.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
-				3A734B1A1D3CFBF6000EF7DC /* Workouts.swift in Sources */,
+				3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */,
 				3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */,
 				3A0D9FD91D882FB20015189F /* Application.swift in Sources */,
 				3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */,

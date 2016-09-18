@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Workouts: UIViewController {
+class WorkoutsList: UIViewController {
 	let tabString: String = ""
     let screenObject = ScreenObject()
 
@@ -34,9 +34,7 @@ class Workouts: UIViewController {
     }
 
     func initView() {
-		let tabString = GetTabString(Application.instance.CurrentTab())
-
-        screenObject.ParseXML(tabString)
+        screenObject.ParseXML("WorkoutsList")
         screenObject.ParseXML("Footer")
         screenObject.DrawScreen(self, currentTab: tabString)
     }

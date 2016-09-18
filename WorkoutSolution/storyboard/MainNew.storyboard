@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Workouts-->
+        <!--Workouts List-->
         <scene sceneID="Wcd-8R-fM3">
             <objects>
-                <viewController id="F2X-mc-cpk" customClass="Workouts" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="F2X-mc-cpk" customClass="WorkoutsList" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="E8N-sE-uQC"/>
                         <viewControllerLayoutGuide type="bottom" id="baT-zX-b4z"/>
@@ -43,7 +43,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkout" id="J8D-cn-1m3"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="J8D-cn-1m3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06C-PC-2kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +88,7 @@
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="gdv-pP-NxB"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="8GG-l1-AV4"/>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkout" id="ZDV-1n-cdP"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="ZDV-1n-cdP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5J-tR-xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -110,7 +110,7 @@
                     </view>
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="pTy-IG-rOQ"/>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkout" id="nAt-Xj-2Px"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="nAt-Xj-2Px"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gZ-n3-8ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -121,7 +121,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="gdv-pP-NxB"/>
         <segue reference="2vZ-2k-U6A"/>
-        <segue reference="ZDV-1n-cdP"/>
+        <segue reference="nAt-Xj-2Px"/>
         <segue reference="xWl-iE-MFF"/>
         <segue reference="bId-fO-APc"/>
     </inferredMetricsTieBreakers>
