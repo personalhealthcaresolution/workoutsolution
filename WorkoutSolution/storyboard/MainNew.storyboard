@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="scc-Mf-cgh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="scc-Mf-cgh">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Workouts-->
@@ -14,9 +15,9 @@
                         <viewControllerLayoutGuide type="bottom" id="baT-zX-b4z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nno-xo-1lz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="xWl-iE-MFF"/>
@@ -36,9 +37,9 @@
                         <viewControllerLayoutGuide type="bottom" id="hSh-rH-lfK"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZKX-qG-PzI">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkout" id="J8D-cn-1m3"/>
@@ -57,9 +58,9 @@
                         <viewControllerLayoutGuide type="bottom" id="ZKz-BD-rSw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="b7d-2Y-qMK">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="77Z-dx-kZg"/>
@@ -79,9 +80,9 @@
                         <viewControllerLayoutGuide type="bottom" id="oP7-YS-GxP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="M9g-70-BxW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="gdv-pP-NxB"/>
@@ -102,9 +103,9 @@
                         <viewControllerLayoutGuide type="bottom" id="HHg-H6-dEz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="nEk-mL-7hS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="pTy-IG-rOQ"/>
@@ -117,9 +118,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="8GG-l1-AV4"/>
         <segue reference="gdv-pP-NxB"/>
         <segue reference="ZDV-1n-cdP"/>
-        <segue reference="bId-fO-APc"/>
         <segue reference="xWl-iE-MFF"/>
     </inferredMetricsTieBreakers>
 </document>

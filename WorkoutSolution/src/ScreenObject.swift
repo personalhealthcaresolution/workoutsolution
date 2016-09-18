@@ -54,12 +54,26 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var iconID = ""
 		if value.contains("WorkoutIcon") {
 			switch Application.instance.CurrentWorkout() {
-			case Application.WorkoutsList.lower:
-				iconID = "Lower" + value
-			case Application.WorkoutsList.upper:
-				iconID = "Upper" + value
-			case Application.WorkoutsList.core_ABS:
-				iconID = "CoreAbs" + value
+			case Application.Workouts.type:
+				switch Application.instance.CurrentWorkoutType() {
+				case Application.WorkoutsType.lower:
+					iconID = "Lower" + value
+				case Application.WorkoutsType.upper:
+					iconID = "Upper" + value
+				case Application.WorkoutsType.coreAbs:
+					iconID = "CoreAbs" + value
+				}
+			case Application.Workouts.level:
+				switch Application.instance.CurrentWorkoutLevel() {
+				case Application.WorkoutsLevel.beginner:
+					iconID = "Beginner" + value
+				case Application.WorkoutsLevel.intermediate:
+					iconID = "Intermediate" + value
+				case Application.WorkoutsLevel.advanced:
+					iconID = "Advanced" + value
+				case Application.WorkoutsLevel.expert:
+					iconID = "Expert" + value
+				}
 			}
 			let userDefaults = UserDefaults()
 			let result = userDefaults.GetString(iconID)
@@ -73,12 +87,26 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var textID = ""
 		if value.contains("WorkoutText") {
 			switch Application.instance.CurrentWorkout() {
-			case Application.WorkoutsList.lower:
-				textID = "Lower" + value
-			case Application.WorkoutsList.upper:
-				textID = "Upper" + value
-			case Application.WorkoutsList.core_ABS:
-				textID = "CoreAbs" + value
+			case Application.Workouts.type:
+				switch Application.instance.CurrentWorkoutType() {
+				case Application.WorkoutsType.lower:
+					textID = "Lower" + value
+				case Application.WorkoutsType.upper:
+					textID = "Upper" + value
+				case Application.WorkoutsType.coreAbs:
+					textID = "CoreAbs" + value
+				}
+			case Application.Workouts.level:
+				switch Application.instance.CurrentWorkoutLevel() {
+				case Application.WorkoutsLevel.beginner:
+					textID = "Beginner" + value
+				case Application.WorkoutsLevel.intermediate:
+					textID = "Intermediate" + value
+				case Application.WorkoutsLevel.advanced:
+					textID = "Advanced" + value
+				case Application.WorkoutsLevel.expert:
+					textID = "Expert" + value
+				}
 			}
 			let userDefaults = UserDefaults()
 			let result = userDefaults.GetString(textID)

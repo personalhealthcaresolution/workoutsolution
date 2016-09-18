@@ -47,6 +47,7 @@
 		<width>418</width>
 		<height>418</height>
 		<icon>absBeginner</icon>
+		<selector>btnAbsBeginnerClicked</selector>
 	</object>
 
 	<object>
@@ -77,6 +78,7 @@
 		<width>418</width>
 		<height>418</height>
 		<icon>beginner</icon>
+		<selector>btnBeginnerClicked</selector>
 	</object>
 
 	<object>
@@ -107,6 +109,7 @@
 		<width>418</width>
 		<height>418</height>
 		<icon>advanced</icon>
+		<selector>btnAdvancedClicked</selector>
 	</object>
 
 	<object>
@@ -137,6 +140,7 @@
 		<width>418</width>
 		<height>418</height>
 		<icon>intermediate</icon>
+		<selector>btnIntermediateClicked</selector>
 	</object>
 
 	<object>

@@ -19,41 +19,36 @@ class Application {
 	}
 
 	var currentTab: FooterTab = FooterTab.workouts
+	func CurrentTab() -> FooterTab { return currentTab }
+	func CurrentTab(_ value: FooterTab) { currentTab = value }
 
-	func CurrentTab() -> FooterTab {
-		return currentTab
+	enum Workouts {
+		case type
+		case level
 	}
 
-	func CurrentTab(_ value: FooterTab) {
-		currentTab = value
-	}
+	var currentWorkout: Workouts = Workouts.type
+	func CurrentWorkout() -> Workouts { return currentWorkout }
+	func CurrentWorkout(_ value: Workouts) { currentWorkout = value }
 
-	func TabString() -> String {
-		switch CurrentTab() {
-		case FooterTab.exercises:
-			return "Exercises"
-		case FooterTab.workouts:
-			return "Workouts"
-		case FooterTab.tracker:
-			return "Tracker"
-		case FooterTab.settings:
-			return "Settings"
-		}
-	}
-
-	enum WorkoutsList {
+	enum WorkoutsType {
 		case upper
 		case lower
-		case core_ABS
+		case coreAbs
 	}
 
-	var currentWorkout: WorkoutsList = WorkoutsList.upper
+	var currentWorkoutType: WorkoutsType = WorkoutsType.upper
+	func CurrentWorkoutType() -> WorkoutsType { return currentWorkoutType }
+	func CurrentWorkoutType(_ value: WorkoutsType) { currentWorkoutType = value }
 
-	func CurrentWorkout() -> WorkoutsList {
-		return currentWorkout
+	enum WorkoutsLevel {
+		case beginner
+		case intermediate
+		case advanced
+		case expert
 	}
 
-	func CurrentWorkout(_ value: WorkoutsList) {
-		currentWorkout = value
-	}
+	var currentWorkoutLevel: WorkoutsLevel = WorkoutsLevel.beginner
+	func CurrentWorkoutLevel() -> WorkoutsLevel { return currentWorkoutLevel }
+	func CurrentWorkoutLevel(_ value: WorkoutsLevel) { currentWorkoutLevel = value }
 }

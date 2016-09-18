@@ -17,6 +17,7 @@ class Type: UIViewController {
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
+		Application.instance.CurrentWorkout(Application.Workouts.type)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,19 +44,19 @@ class Type: UIViewController {
 
     func btnUpperClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
-		Application.instance.CurrentWorkout(Application.WorkoutsList.upper)
+		Application.instance.CurrentWorkoutType(Application.WorkoutsType.upper)
         self.performSegue(withIdentifier: "showWorkout", sender: self)
     }
 
     func btnLowerClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
-		Application.instance.CurrentWorkout(Application.WorkoutsList.lower)
+		Application.instance.CurrentWorkoutType(Application.WorkoutsType.lower)
         self.performSegue(withIdentifier: "showWorkout", sender: self)
     }
 
     func btnCoreAbsClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
-		Application.instance.CurrentWorkout(Application.WorkoutsList.core_ABS)
+		Application.instance.CurrentWorkoutType(Application.WorkoutsType.coreAbs)
         self.performSegue(withIdentifier: "showWorkout", sender: self)
     }
 

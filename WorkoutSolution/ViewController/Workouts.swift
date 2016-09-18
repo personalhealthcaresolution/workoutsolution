@@ -34,12 +34,25 @@ class Workouts: UIViewController {
     }
 
     func initView() {
-		let tabString = Application.instance.TabString()
+		let tabString = GetTabString(Application.instance.CurrentTab())
 
         screenObject.ParseXML(tabString)
         screenObject.ParseXML("Footer")
         screenObject.DrawScreen(self, currentTab: tabString)
     }
+
+	func GetTabString(_ currentTab: Application.FooterTab) -> String {
+		switch currentTab {
+		case Application.FooterTab.exercises:
+			return "Exercises"
+		case Application.FooterTab.workouts:
+			return "Workouts"
+		case Application.FooterTab.tracker:
+			return "Tracker"
+		case Application.FooterTab.settings:
+			return "Settings"
+		}
+	}
 
     func btnDetailsClicked(_ sender:UIButton!) {
         self.performSegue(withIdentifier: "showDetails", sender: self)

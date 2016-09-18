@@ -17,6 +17,7 @@ class Level: UIViewController {
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
+		Application.instance.CurrentWorkout(Application.Workouts.level)
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +42,28 @@ class Level: UIViewController {
 		self.performSegue(withIdentifier: "showMain", sender: self)
 	}
 
-	func btnDetailsClicked(_ sender:UIButton!) {
-		self.performSegue(withIdentifier: "showDetails", sender: self)
+	func btnAbsBeginnerClicked(_ sender:UIButton!) {
+		Application.instance.CurrentTab(Application.FooterTab.workouts)
+		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.beginner)
+		self.performSegue(withIdentifier: "showWorkout", sender: self)
+	}
+
+	func btnBeginnerClicked(_ sender:UIButton!) {
+		Application.instance.CurrentTab(Application.FooterTab.workouts)
+		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.intermediate)
+		self.performSegue(withIdentifier: "showWorkout", sender: self)
+	}
+
+	func btnAdvancedClicked(_ sender:UIButton!) {
+		Application.instance.CurrentTab(Application.FooterTab.workouts)
+		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.advanced)
+		self.performSegue(withIdentifier: "showWorkout", sender: self)
+	}
+
+	func btnIntermediateClicked(_ sender:UIButton!) {
+		Application.instance.CurrentTab(Application.FooterTab.workouts)
+		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.expert)
+		self.performSegue(withIdentifier: "showWorkout", sender: self)
 	}
 
 	func btnExercisesClicked(_ sender:UIButton) {
