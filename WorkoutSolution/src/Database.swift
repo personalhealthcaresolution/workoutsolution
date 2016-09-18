@@ -11,23 +11,45 @@ import Foundation
 class Database {
 	init() {
 		let userDefaults = UserDefaults()
-		userDefaults.SetString("LowerWorkoutIcon1", value: "list")
-		userDefaults.SetString("LowerWorkoutText1", value: "Home Workout")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("UpperWorkoutIcon1", value: "chinups")
+		userDefaults.SetString("UpperWorkoutText1", value: "CHINUPS")
+		userDefaults.SetString("UpperWorkoutList1", value: "list")
 
-		userDefaults.SetString("UpperWorkoutIcon1", value: "list")
-		userDefaults.SetString("UpperWorkoutText1", value: "Full Body Workout")
+		userDefaults.SetString("UpperWorkoutIcon2", value: "wallSix")
+		userDefaults.SetString("UpperWorkoutText2", value: "WALL SIX")
+		userDefaults.SetString("UpperWorkoutList2", value: "list")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("LowerWorkoutIcon1", value: "dipOnChair")
+		userDefaults.SetString("LowerWorkoutText1", value: "Dip On Chair")
+		userDefaults.SetString("LowerWorkoutList1", value: "list")
 
+		userDefaults.SetString("LowerWorkoutIcon2", value: "squats")
+		userDefaults.SetString("LowerWorkoutText2", value: "SQUATS")
+		userDefaults.SetString("LowerWorkoutList2", value: "list")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("CoreAbsWorkoutIcon1", value: "pushUp")
+		userDefaults.SetString("CoreAbsWorkoutText1", value: "PUSH UP")
+		userDefaults.SetString("CoreAbsWorkoutList1", value: "list")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("BeginnerWorkoutIcon1", value: "chinups")
+		userDefaults.SetString("BeginnerWorkoutText1", value: "CHINUPS")
+		userDefaults.SetString("BeginnerWorkoutList1", value: "list")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("IntermediateWorkoutIcon1", value: "wallSix")
+		userDefaults.SetString("IntermediateWorkoutText1", value: "WALL SIX")
+		userDefaults.SetString("IntermediateWorkoutList1", value: "list")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("AdvancedWorkoutIcon1", value: "dipOnChair")
+		userDefaults.SetString("AdvancedWorkoutText1", value: "Dip On Chair")
+		userDefaults.SetString("AdvancedWorkoutList1", value: "list")
+		/////////////////////////////////////////////////////////////////////
+		userDefaults.SetString("ExpertWorkoutIcon1", value: "squats")
+		userDefaults.SetString("ExpertWorkoutText1", value: "SQUATS")
+		userDefaults.SetString("ExpertWorkoutList1", value: "list")
 
-		userDefaults.SetString("CoreAbsWorkoutIcon1", value: "list")
-		userDefaults.SetString("CoreAbsWorkoutText1", value: "Complete Arm Workout")
-
-		userDefaults.SetString("BeginnerWorkoutIcon1", value: "list")
-		userDefaults.SetString("BeginnerWorkoutText1", value: "Home Workout")
-
-		userDefaults.SetString("IntermediateWorkoutIcon1", value: "list")
-		userDefaults.SetString("IntermediateWorkoutText1", value: "Full Body Workout")
-
-		userDefaults.SetString("AdvancedWorkoutIcon1", value: "list")
-		userDefaults.SetString("AdvancedWorkoutText1", value: "Complete Arm Workout")
+		userDefaults.SetString("ExpertWorkoutIcon2", value: "pushUp")
+		userDefaults.SetString("ExpertWorkoutText2", value: "PUSH UP")
+		userDefaults.SetString("ExpertWorkoutList2", value: "list")
 	}
 }

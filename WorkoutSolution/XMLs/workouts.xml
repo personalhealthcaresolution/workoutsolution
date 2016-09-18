@@ -15,285 +15,206 @@
 		<posY>100</posY>
 		<width>120</width>
 		<height>120</height>
-		<icon>recycle</icon>
+		<icon>back</icon>
+		<selector>btnBackClicked</selector>
 	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1042</posX>
-		<posY>100</posY>
-		<width>120</width>
-		<height>120</height>
-		<icon>add</icon>
-	</object>
-<!-- **************************************************************************************************************************** -->
+<!-- ********************************** -->
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>226</posY>
+		<posY>223</posY>
 		<width>1242</width>
-		<height>193</height>
+		<height>339</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
-		<type>label</type>
+		<type>button</type>
 		<posX>100</posX>
-		<posY>272</posY><!-- 46 + 226 -->
-		<width>900</width>
-		<height>100</height>
+		<posY>241</posY><!-- 18 + 223 -->
+		<width>303</width>
+		<height>303</height>
+		<icon>WorkoutIcon1</icon>
+		<selector>btnDetailsClicked</selector>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>503</posX><!-- 200 + 303 -->
+		<posY>363</posY><!-- 140 + 223 -->
+		<width>500</width>
+		<height>59</height>
 		<text>WorkoutText1</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
+		<size>16</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>1083</posX>
-		<posY>272</posY><!-- 46 + 226 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon1</icon>
+		<posX>1097</posX><!-- 1242 - 100 - 45 -->
+		<posY>359</posY><!-- 136 + 223 -->
+		<width>45</width>
+		<height>67</height>
+		<icon>WorkoutList1</icon>
 	</object>
-<!-- **************************************************************************************************************************** -->
+<!-- **************************************** -->
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>429</posY><!-- 203 + 226 -->
+		<posY>587</posY><!-- 25 + 339 + 223 -->
 		<width>1242</width>
-		<height>193</height>
+		<height>339</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
-		<type>label</type>
+		<type>button</type>
 		<posX>100</posX>
-		<posY>475</posY><!-- 46 + 429 -->
-		<width>900</width>
-		<height>100</height>
+		<posY>605</posY><!-- 18 + 587 -->
+		<width>303</width>
+		<height>303</height>
+		<icon>WorkoutIcon2</icon>
+		<selector>btnDetailsClicked</selector>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>503</posX><!-- 200 + 303 -->
+		<posY>727</posY><!-- 140 + 587 -->
+		<width>500</width>
+		<height>59</height>
 		<text>WorkoutText2</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
+		<size>16</size>
 		<color>0x373639</color>
 	</object>
-
 	<object>
 		<type>button</type>
-		<posX>1083</posX>
-		<posY>475</posY><!-- 46 + 429 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon2</icon>
+		<posX>1097</posX><!-- 1242 - 100 - 45 -->
+		<posY>723</posY><!-- 136 + 587 -->
+		<width>45</width>
+		<height>67</height>
+		<icon>WorkoutList2</icon>
 	</object>
-<!-- **************************************************************************************************************************** -->
+<!-- **************************************** -->
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>632</posY><!-- 203 + 429 -->
+		<posY>951</posY><!-- 25 + 339 + 587 -->
 		<width>1242</width>
-		<height>193</height>
+		<height>339</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
-		<type>label</type>
+		<type>button</type>
 		<posX>100</posX>
-		<posY>678</posY><!-- 46 + 632 -->
-		<width>900</width>
-		<height>100</height>
+		<posY>969</posY><!-- 18 + 951 -->
+		<width>303</width>
+		<height>303</height>
+		<icon>WorkoutIcon3</icon>
+		<selector>btnDetailsClicked</selector>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>503</posX><!-- 200 + 303 -->
+		<posY>1091</posY><!-- 140 + 951 -->
+		<width>500</width>
+		<height>59</height>
 		<text>WorkoutText3</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
+		<size>16</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>1083</posX>
-		<posY>678</posY><!-- 46 + 632 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon3</icon>
+		<posX>1097</posX><!-- 1242 - 100 - 45 -->
+		<posY>1087</posY><!-- 136 + 951 -->
+		<width>45</width>
+		<height>67</height>
+		<icon>WorkoutList3</icon>
 	</object>
-<!-- **************************************************************************************************************************** -->
+<!-- **************************************** -->
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>835</posY><!-- 203 + 632 -->
+		<posY>1315</posY><!-- 25 + 339 + 951 -->
 		<width>1242</width>
-		<height>193</height>
+		<height>339</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
-		<type>label</type>
+		<type>button</type>
 		<posX>100</posX>
-		<posY>881</posY><!-- 46 + 835 -->
-		<width>900</width>
-		<height>100</height>
+		<posY>1333</posY><!-- 18 + 1315 -->
+		<width>303</width>
+		<height>303</height>
+		<icon>WorkoutIcon4</icon>
+		<selector>btnDetailsClicked</selector>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>503</posX><!-- 200 + 303 -->
+		<posY>1455</posY><!-- 140 + 1315 -->
+		<width>500</width>
+		<height>59</height>
 		<text>WorkoutText4</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
+		<size>16</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>1083</posX>
-		<posY>881</posY><!-- 46 + 835 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon4</icon>
+		<posX>1097</posX><!-- 1242 - 100 - 45 -->
+		<posY>1451</posY><!-- 136 + 1315 -->
+		<width>45</width>
+		<height>67</height>
+		<icon>WorkoutList4</icon>
 	</object>
-<!-- **************************************************************************************************************************** -->
+<!-- **************************************** -->
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>1038</posY><!-- 203 + 835 -->
+		<posY>1679</posY><!-- 25 + 339 + 1315 -->
 		<width>1242</width>
-		<height>193</height>
+		<height>339</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
-		<type>label</type>
+		<type>button</type>
 		<posX>100</posX>
-		<posY>1084</posY><!-- 46 + 1038 -->
-		<width>900</width>
-		<height>100</height>
+		<posY>1697</posY><!-- 18 + 1679 -->
+		<width>303</width>
+		<height>303</height>
+		<icon>WorkoutIcon5</icon>
+		<selector>btnDetailsClicked</selector>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>503</posX><!-- 200 + 303 -->
+		<posY>1819</posY><!-- 140 + 1679 -->
+		<width>500</width>
+		<height>59</height>
 		<text>WorkoutText5</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
+		<size>16</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>1083</posX>
-		<posY>1084</posY><!-- 46 + 1038 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon5</icon>
-	</object>
-<!-- **************************************************************************************************************************** -->
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1241</posY><!-- 203 + 1038 -->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>1287</posY><!-- 46 + 1241 -->
-		<width>900</width>
-		<height>100</height>
-		<text>WorkoutText6</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>1287</posY><!-- 46 + 1241 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon6</icon>
-	</object>
-<!-- **************************************************************************************************************************** -->
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1444</posY><!-- 203 + 1241 -->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>1490</posY><!-- 46 + 1444 -->
-		<width>900</width>
-		<height>100</height>
-		<text>WorkoutText7</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>1490</posY><!-- 46 + 1444 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon7</icon>
-	</object>
-<!-- **************************************************************************************************************************** -->
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1647</posY><!-- 203 + 1444 -->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>1693</posY><!-- 46 + 1647 -->
-		<width>900</width>
-		<height>100</height>
-		<text>WorkoutText8</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>1693</posY><!-- 46 + 1647 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon8</icon>
-	</object>
-<!-- **************************************************************************************************************************** -->
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1850</posY><!-- 203 + 1647 -->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>1896</posY><!-- 46 + 1850 -->
-		<width>900</width>
-		<height>100</height>
-		<text>WorkoutText9</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>1896</posY><!-- 46 + 1850 -->
-		<width>60</width>
-		<height>100</height>
-		<icon>WorkoutIcon9</icon>
+		<posX>1097</posX><!-- 1242 - 100 - 45 -->
+		<posY>1815</posY><!-- 136 + 1679 -->
+		<width>45</width>
+		<height>67</height>
+		<icon>WorkoutList4</icon>
 	</object>
 </view>

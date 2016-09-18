@@ -22,6 +22,7 @@
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="xWl-iE-MFF"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="bId-fO-APc"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="2vZ-2k-U6A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-t1-cYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -118,9 +119,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8GG-l1-AV4"/>
         <segue reference="gdv-pP-NxB"/>
+        <segue reference="2vZ-2k-U6A"/>
         <segue reference="ZDV-1n-cdP"/>
         <segue reference="xWl-iE-MFF"/>
+        <segue reference="bId-fO-APc"/>
     </inferredMetricsTieBreakers>
 </document>

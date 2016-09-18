@@ -16,7 +16,7 @@
 		<width>122</width>
 		<height>122</height>
 		<icon>exercises</icon>
-		<selector>btnExercisesClicked</selector>
+		<!-- <selector>btnExercisesClicked</selector> -->
 	</object>
 
 	<object>
@@ -38,7 +38,7 @@
 		<width>122</width>
 		<height>122</height>
 		<icon>workouts</icon>
-		<selector>btnWorkoutsClicked</selector>
+		<!-- <selector>btnWorkoutsClicked</selector> -->
 	</object>
 
 	<object>
@@ -60,7 +60,7 @@
 		<width>122</width>
 		<height>122</height>
 		<icon>tracker</icon>
-		<selector>btnTrackerClicked</selector>
+		<!-- <selector>btnTrackerClicked</selector> -->
 	</object>
 
 	<object>
@@ -82,7 +82,7 @@
 		<width>122</width>
 		<height>122</height>
 		<icon>settings</icon>
-		<selector>btnSettingClicked</selector>
+		<!-- <selector>btnSettingClicked</selector> -->
 	</object>
 
 	<object>

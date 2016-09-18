@@ -52,7 +52,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
 	func GetIcon(_ value: String) -> String {
 		var iconID = ""
-		if value.contains("WorkoutIcon") {
+		if value.contains("WorkoutIcon") || value.contains("WorkoutList") {
 			switch Application.instance.CurrentWorkout() {
 			case Application.Workouts.type:
 				switch Application.instance.CurrentWorkoutType() {
