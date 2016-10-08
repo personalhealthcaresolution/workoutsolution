@@ -11,6 +11,7 @@
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
 		3A0CCEBF1D65EA1B005D8128 /* Level.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CCEBE1D65EA1B005D8128 /* Level.xml */; };
+		3A0D38561DA8ADF400388457 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D38551DA8ADF400388457 /* TableViewCell.swift */; };
 		3A0D9FD91D882FB20015189F /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D9FD81D882FB20015189F /* Application.swift */; };
 		3A174E641D083C4F00C308A4 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A174E631D083C4F00C308A4 /* Level.swift */; };
 		3A20F8E21D64B5790049931A /* Type.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A20F8E11D64B5790049931A /* Type.xml */; };
@@ -112,6 +113,7 @@
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
 		3A0CCEBE1D65EA1B005D8128 /* Level.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Level.xml; path = XMLs/Level.xml; sourceTree = "<group>"; };
+		3A0D38551DA8ADF400388457 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = src/TableViewCell.swift; sourceTree = "<group>"; };
 		3A0D9FD81D882FB20015189F /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Application.swift; path = src/Application.swift; sourceTree = "<group>"; };
 		3A174E631D083C4F00C308A4 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Level.swift; path = ViewController/Level.swift; sourceTree = "<group>"; };
 		3A20F8E11D64B5790049931A /* Type.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Type.xml; path = XMLs/Type.xml; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				3A66AF201D845629002BD1EA /* UserDefaults.swift */,
 				3A0D9FD81D882FB20015189F /* Application.swift */,
 				3A6B7FEE1D899F3E0073ABEA /* Database.swift */,
+				3A0D38551DA8ADF400388457 /* TableViewCell.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
 				3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */,
 				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
+				3A0D38561DA8ADF400388457 /* TableViewCell.swift in Sources */,
 				3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */,
 				3AD4A78F1D5F31D00046C52C /* Constant.swift in Sources */,
 				3AC2156D1D3FBC41003C26E9 /* ScreenObject.swift in Sources */,

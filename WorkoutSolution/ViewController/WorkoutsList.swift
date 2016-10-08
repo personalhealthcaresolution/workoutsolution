@@ -8,9 +8,11 @@
 
 import UIKit
 
-class WorkoutsList: UIViewController {
+class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let tabString: String = ""
     let screenObject = ScreenObject()
+
+	var carName = ["Lamborghini", "Drift", "Ferrari", "Hyundai", "Mercedes Benz", "Mitsubishi", "Nissan", "Volkswagen"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,14 @@ class WorkoutsList: UIViewController {
     func initView() {
         screenObject.ParseXML("WorkoutsList")
         screenObject.ParseXML("Footer")
-        screenObject.DrawScreen(self, currentTab: tabString)
+        //screenObject.DrawScreen(self, currentTab: tabString)
+
+		let table = UITableView()
+		table.frame = CGRect(x: -12, y: 50, width: 320, height: 400)
+		table.delegate = self
+		table.dataSource = self
+		table.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+		self.view.addSubview(table)
     }
 
 	func GetTabString(_ currentTab: Application.FooterTab) -> String {
@@ -123,5 +132,24 @@ class WorkoutsList: UIViewController {
 
 	func btnDipOnChairClicked(_ sender:CheckBox!) {
 		sender.buttonClicked(sender, key: "btnDipOnChairClicked")
+	}
+
+	//tableview delegate
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return carName.count
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell:TableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+		cell.label.text = carName[indexPath.row]
+		//cell.textLabel?.text = carName[indexPath.row]
+		return cell
+	}
+
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 	}
 }
