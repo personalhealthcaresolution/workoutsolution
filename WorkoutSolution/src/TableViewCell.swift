@@ -16,6 +16,9 @@ class TableViewCell: UITableViewCell {
 
 		label.frame = CGRect(x: 0, y: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
 		self.addSubview(label)
+
+		let constant = Constant()
+		self.backgroundColor = constant.UIColorFromHex(Constant.init().coralRed)
 	}
 
 	required init?(coder aDecoder: NSCoder) {

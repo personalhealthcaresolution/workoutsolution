@@ -179,6 +179,23 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		}
 	}
 
+	func DrawObject(_ view: UIViewController, object: Object) {
+		switch object.type {
+		case "background":
+			AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
+		case "button":
+			AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, selector: object.selector)
+		case "image":
+			AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+		case "label":
+			AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+		case "check":
+			AddCheckBox(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkedImage: object.checked, uncheckedImage: object.unchecked, selector: object.selector)
+		default:
+			break
+		}
+	}
+
 	func AddBackground(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
@@ -258,6 +275,24 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		let userDefaults = UserDefaults()
 		let isChecked = userDefaults.GetBool(checked)
 		checkBox.isChecked(isChecked)
+	}
+
+	func AddTableView(_ view: WorkoutsList, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let tableView = UITableView()
+		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		tableView.delegate = view
+		tableView.dataSource = view
+		tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.layoutMargins = UIEdgeInsets.zero
+		tableView.separatorInset = UIEdgeInsets.zero
+		tableView.tableFooterView = UIView()
+
+		view.view.addSubview(tableView)
 	}
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {

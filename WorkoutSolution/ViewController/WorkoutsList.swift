@@ -36,17 +36,20 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func initView() {
-        screenObject.ParseXML("WorkoutsList")
+        //screenObject.ParseXML("WorkoutsList")
         screenObject.ParseXML("Footer")
         //screenObject.DrawScreen(self, currentTab: tabString)
 
-		let table = UITableView()
-		table.frame = CGRect(x: -12, y: 50, width: 320, height: 400)
-		table.delegate = self
-		table.dataSource = self
-		table.register(TableViewCell.self, forCellReuseIdentifier: "cell")
-		self.view.addSubview(table)
-    }
+		var objects = screenObject.GetObjects()
+		while objects.count > 0 {
+			var object = ScreenObject.Object()
+			object = objects.first!
+			screenObject.DrawObject(self, object: object)
+			objects.removeFirst()
+		}
+
+		screenObject.AddTableView(self, xPosition: 0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
+	}
 
 	func GetTabString(_ currentTab: Application.FooterTab) -> String {
 		switch currentTab {
@@ -145,8 +148,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:TableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-		cell.label.text = carName[indexPath.row]
-		//cell.textLabel?.text = carName[indexPath.row]
+		//cell.label.text = carName[indexPath.row]
+		cell.textLabel?.text = carName[indexPath.row]
 		return cell
 	}
 
