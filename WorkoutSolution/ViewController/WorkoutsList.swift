@@ -48,7 +48,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			objects.removeFirst()
 		}
 
-		screenObject.AddTableView(self, xPosition: 0, yPosition: 80, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
+		screenObject.AddTableView(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
 	}
 
 	func GetTabString(_ currentTab: Application.FooterTab) -> String {

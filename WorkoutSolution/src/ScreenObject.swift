@@ -291,6 +291,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
 		tableView.tableFooterView = UIView()
+		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
 
 		view.view.addSubview(tableView)
 	}
