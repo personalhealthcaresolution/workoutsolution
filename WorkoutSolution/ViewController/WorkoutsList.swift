@@ -150,6 +150,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		let cell:TableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
 		//cell.label.text = carName[indexPath.row]
 		cell.textLabel?.text = carName[indexPath.row]
+
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 100)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: 18)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: 303)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 303)
+		let image = UIImage(named: "dipOnChair")
+		let imageView = UIImageView(image: image!)
+		imageView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		cell.contentView.addSubview(imageView)
+
 		return cell
 	}
 
