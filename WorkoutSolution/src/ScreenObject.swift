@@ -161,20 +161,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		while objects.count > 0 {
 			var object = ScreenObject.Object()
 			object = objects.first!
-			switch object.type {
-			case "background":
-				AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
-			case "button":
-				AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, selector: object.selector)
-			case "image":
-				AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
-			case "label":
-				AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
-			case "check":
-				AddCheckBox(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkedImage: object.checked, uncheckedImage: object.unchecked, selector: object.selector)
-			default:
-				break
-			}
+			DrawObject(view, object: object)
 			objects.removeFirst()
 		}
 	}
@@ -182,21 +169,21 @@ class ScreenObject: NSObject, XMLParserDelegate {
 	func DrawObject(_ view: UIViewController, object: Object) {
 		switch object.type {
 		case "background":
-			AddBackground(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
+			AddBackground(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
 		case "button":
 			AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, selector: object.selector)
 		case "image":
-			AddImage(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+			AddImage(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
 		case "label":
-			AddLabel(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+			AddLabel(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
 		case "check":
-			AddCheckBox(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkedImage: object.checked, uncheckedImage: object.unchecked, selector: object.selector)
+			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkedImage: object.checked, uncheckedImage: object.unchecked, selector: object.selector)
 		default:
 			break
 		}
 	}
 
-	func AddBackground(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
+	func AddBackground(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -205,10 +192,10 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		let background = UILabel()
 		background.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		background.backgroundColor = constant.UIColorFromHex(color)
-		view.view.addSubview(background)
+		view.addSubview(background)
 	}
 
-	func AddImage(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+	func AddImage(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -217,10 +204,10 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		let image = UIImage(named: named)
 		let imageView = UIImageView(image: image!)
 		imageView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		view.view.addSubview(imageView)
+		view.addSubview(imageView)
 	}
 
-	func AddLabel(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+	func AddLabel(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
 		if text == "" {
 			return
 		}
@@ -235,7 +222,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		label.text = text
 		label.font = UIFont(name: font, size: size)
 		label.textColor = constant.UIColorFromHex(color)
-		view.view.addSubview(label)
+		view.addSubview(label)
 
 	}
 
@@ -259,7 +246,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.view.addSubview(button)
 	}
 
-	func AddCheckBox(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkedImage: String = "", uncheckedImage: String = "", selector: Selector? = nil) {
+	func AddCheckBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkedImage: String = "", uncheckedImage: String = "", selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -270,7 +257,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		checkBox.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
 		checkBox.SetCheckedImange(checkedImage)
 		checkBox.SetUncheckedImange(uncheckedImage)
-		view.view.addSubview(checkBox)
+		view.addSubview(checkBox)
 
 		let userDefaults = UserDefaults()
 		let isChecked = userDefaults.GetBool(checked)
@@ -287,10 +274,10 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		tableView.delegate = view
 		tableView.dataSource = view
-		tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
-		tableView.tableFooterView = UIView()
+		//tableView.tableFooterView = UIView()
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
 
 		view.view.addSubview(tableView)

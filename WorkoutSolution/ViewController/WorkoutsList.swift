@@ -12,7 +12,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	let tabString: String = ""
     let screenObject = ScreenObject()
 
-	var carName = ["Lamborghini", "Drift", "Ferrari", "Hyundai", "Mercedes Benz", "Mitsubishi", "Nissan", "Volkswagen"]
+	var workoutName = ["CHINUPS", "WALL SIX", "Dip On Chair"]
+	var workoutIcon = ["chinups", "wallSix", "dipOnChair"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +41,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
         screenObject.ParseXML("Footer")
         //screenObject.DrawScreen(self, currentTab: tabString)
 
+		screenObject.AddTableView(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
+
 		var objects = screenObject.GetObjects()
 		while objects.count > 0 {
 			var object = ScreenObject.Object()
@@ -47,8 +50,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			screenObject.DrawObject(self, object: object)
 			objects.removeFirst()
 		}
-
-		screenObject.AddTableView(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
 	}
 
 	func GetTabString(_ currentTab: Application.FooterTab) -> String {
@@ -142,27 +143,34 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		return 1
 	}
 
+	func tableView(_ tableView: UITableView, canEditRowAt: IndexPath) -> Bool {
+		print("canEditRowAt canEditRowAt: \(canEditRowAt)")
+		return true
+	}
+
+	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+		print("canMoveRowAt indexPath: \(indexPath)")
+		return true
+	}
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return carName.count
+		return workoutName.count
+	}
+
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		print("didSelectRowAt indexPath: \(indexPath)")
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell:TableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-		//cell.label.text = carName[indexPath.row]
-		cell.textLabel?.text = carName[indexPath.row]
+		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
 
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 100)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: 18)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: 303)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 303)
-		let image = UIImage(named: "dipOnChair")
-		let imageView = UIImageView(image: image!)
-		imageView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		cell.contentView.addSubview(imageView)
+		let constant = Constant()
+		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
+
+		let screenObject = ScreenObject()
+		screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row])
+		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "HelveticaNeue-Bold", size: 16, color: constant.citrus)
 
 		return cell
-	}
-
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 	}
 }
