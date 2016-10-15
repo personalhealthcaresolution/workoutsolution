@@ -45,38 +45,38 @@ class Level: UIViewController {
 	func btnAbsBeginnerClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.beginner)
-		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
 	func btnBeginnerClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.intermediate)
-		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
 	func btnAdvancedClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.advanced)
-		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
 	func btnIntermediateClicked(_ sender:UIButton!) {
 		Application.instance.CurrentTab(Application.FooterTab.workouts)
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.expert)
-		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
 	func btnExercisesClicked(_ sender:UIButton) {
 		if Application.instance.CurrentTab() != Application.FooterTab.exercises {
 			Application.instance.CurrentTab(Application.FooterTab.exercises)
-			self.performSegue(withIdentifier: "showWorkout", sender: self)
+			//self.performSegue(withIdentifier: "showWorkout", sender: self)
 		}
 	}
 
 	func btnWorkoutsClicked(_ sender:UIButton) {
 		if Application.instance.CurrentTab() != Application.FooterTab.workouts {
 			Application.instance.CurrentTab(Application.FooterTab.workouts)
-			self.performSegue(withIdentifier: "showWorkout", sender: self)
+			//self.performSegue(withIdentifier: "showWorkout", sender: self)
 		}
 	}
 

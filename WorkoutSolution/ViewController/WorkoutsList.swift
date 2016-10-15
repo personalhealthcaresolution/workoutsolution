@@ -143,25 +143,57 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		return 1
 	}
 
-	func tableView(_ tableView: UITableView, canEditRowAt: IndexPath) -> Bool {
-		print("canEditRowAt canEditRowAt: \(canEditRowAt)")
-		return true
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-		print("canMoveRowAt indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath)")
 		return true
 	}
 
+	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+		print(#function + " - indexPath: \(indexPath)")
+		return true
+	}
+
+	func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		print(#function + " - count: \(workoutName.count)")
 		return workoutName.count
 	}
 
-	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print("didSelectRowAt indexPath: \(indexPath)")
+	func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+		print(#function + " - count: \(workoutName.count)")
+	}
+
+	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
+		print(#function + " - indexPath: \(indexPath)")
+		return true
+	}
+
+	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+		print(#function + " - indexPath: \(indexPath)")
+		return false
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		print(#function + " - indexPath: \(indexPath)")
 		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
 
 		let constant = Constant()
@@ -172,5 +204,50 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "HelveticaNeue-Bold", size: 16, color: constant.citrus)
 
 		return cell
+	}
+
+	func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+		print(#function + " - section: \(section)")
+	}
+
+	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+		print(#function + " - section: \(section)")
+	}
+
+	func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
+		print(#function + " - section: \(section)")
+	}
+
+	func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
+		print(#function + " - section: \(section)")
+	}
+
+	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+		print(#function + " - sourceIndexPath: \(sourceIndexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+		print(#function + " - indexPath: \(indexPath)")
+	}
+
+	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
+			print("share button tapped")
+		}
+		edit.backgroundColor = UIColor.blue
+
+		return [edit]
 	}
 }
