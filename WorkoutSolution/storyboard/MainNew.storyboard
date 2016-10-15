@@ -44,6 +44,7 @@
                     </view>
                     <connections>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="J8D-cn-1m3"/>
+                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="tAG-pv-qnC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06C-PC-2kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,8 +123,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="8GG-l1-AV4"/>
         <segue reference="2vZ-2k-U6A"/>
-        <segue reference="ZDV-1n-cdP"/>
+        <segue reference="J8D-cn-1m3"/>
         <segue reference="xWl-iE-MFF"/>
-        <segue reference="gdv-pP-NxB"/>
+        <segue reference="tAG-pv-qnC"/>
     </inferredMetricsTieBreakers>
 </document>

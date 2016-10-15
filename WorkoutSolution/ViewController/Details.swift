@@ -62,6 +62,6 @@ class Details: UIViewController {
     }
 
     func btnBackClicked(_ sender:UIButton!) {
-        self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+        self.performSegue(withIdentifier: "showMain", sender: self)
     }
 }
