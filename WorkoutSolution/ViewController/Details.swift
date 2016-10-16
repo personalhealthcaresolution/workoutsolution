@@ -17,6 +17,8 @@ class Details: UIViewController {
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
+
+		Application.instance.CurrentExercisesView(Application.ExercisesView.details)
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,20 +50,26 @@ class Details: UIViewController {
         screenObject.AddBackground(self.view, xPosition: 0, yPosition: 1813, width: ScreenSize.defaultWidth, height: 255, color: constant.coralRed)
         screenObject.AddButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, background: "button", title: "START ROUTINE")
 
-        screenObject.AddButton(self, xPosition: 112, yPosition: 2076, width: 90, height: 90, icon: "exercises")
-        screenObject.AddLabel(self.view, xPosition: 112, yPosition: 2166, width: 320, height: 30, text: "Exercises", font: constant.helveticaNeueBold, size: 5, color: constant.white)
-        
-        screenObject.AddButton(self, xPosition: 412, yPosition: 2076, width: 90, height: 90, icon: "workouts")
-        screenObject.AddLabel(self.view, xPosition: 412, yPosition: 2166, width: 320, height: 30, text: "Workouts", font: constant.helveticaNeueBold, size: 5, color: constant.white)
-        
-        screenObject.AddButton(self, xPosition: 712, yPosition: 2076, width: 90, height: 90, icon: "tracker")
-        screenObject.AddLabel(self.view, xPosition: 722, yPosition: 2166, width: 320, height: 30, text: "Tracker", font: constant.helveticaNeueBold, size: 5, color: constant.white)
-        
-        screenObject.AddButton(self, xPosition: 1012, yPosition: 2076, width: 90, height: 90, icon: "setting")
-        screenObject.AddLabel(self.view, xPosition: 1022, yPosition: 2166, width: 320, height: 30, text: "Settings", font: constant.helveticaNeueBold, size: 5, color: constant.white)
+		screenObject.ParseXML("Footer")
+		var objects = screenObject.GetObjects()
+		while objects.count > 0 {
+			var object = ScreenObject.Object()
+			object = objects.first!
+			screenObject.DrawObject(self, object: object)
+			objects.removeFirst()
+		}
     }
 
     func btnBackClicked(_ sender:UIButton!) {
-        self.performSegue(withIdentifier: "showMain", sender: self)
+		switch Application.instance.CurrentWorkout() {
+		case Application.Workouts.type:
+			self.performSegue(withIdentifier: "showType", sender: self)
+		case Application.Workouts.level:
+			self.performSegue(withIdentifier: "showLevel", sender: self)
+		}
     }
+
+	func btnWorkoutsClicked(_ sender:UIButton) {
+		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+	}
 }

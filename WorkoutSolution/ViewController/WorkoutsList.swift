@@ -52,19 +52,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		}
 	}
 
-	func GetTabString(_ currentTab: Application.FooterTab) -> String {
-		switch currentTab {
-		case Application.FooterTab.exercises:
-			return "Exercises"
-		case Application.FooterTab.workouts:
-			return "Workouts"
-		case Application.FooterTab.tracker:
-			return "Tracker"
-		case Application.FooterTab.settings:
-			return "Settings"
-		}
-	}
-
 	func btnBackClicked(_ sender:UIButton!) {
 		switch Application.instance.CurrentWorkout() {
 		case Application.Workouts.type:
@@ -79,31 +66,23 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func btnExercisesClicked(_ sender:UIButton) {
-        if Application.instance.CurrentTab() != Application.FooterTab.exercises {
-            Application.instance.CurrentTab(Application.FooterTab.exercises)
-            initView()
-        }
+		switch Application.instance.currentExercisesView {
+		case Application.ExercisesView.type:
+			self.performSegue(withIdentifier: "showType", sender: self)
+		case Application.ExercisesView.level:
+			self.performSegue(withIdentifier: "showLevel", sender: self)
+		case Application.ExercisesView.details:
+			self.performSegue(withIdentifier: "showDetails", sender: self)
+		}
     }
 
     func btnWorkoutsClicked(_ sender:UIButton) {
-		if Application.instance.CurrentTab() != Application.FooterTab.workouts {
-			Application.instance.CurrentTab(Application.FooterTab.workouts)
-			initView()
-		}
     }
 
     func btnTrackerClicked(_ sender:UIButton) {
-		if Application.instance.CurrentTab() != Application.FooterTab.tracker {
-			Application.instance.CurrentTab(Application.FooterTab.tracker)
-			initView()
-		}
     }
 
     func btnSettingClicked(_ sender:UIButton) {
-		if Application.instance.CurrentTab() != Application.FooterTab.settings {
-			Application.instance.CurrentTab(Application.FooterTab.settings)
-			initView()
-		}
     }
 
 	func btnSquatsClicked(_ sender:CheckBox!) {

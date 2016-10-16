@@ -11,35 +11,16 @@ import Foundation
 class Application {
 	static let instance = Application()
 
-	enum FooterTab {
-		case exercises
-		case workouts
-		case tracker
-		case settings
-	}
-
-	var currentTab: FooterTab = FooterTab.workouts
-	func CurrentTab() -> FooterTab { return currentTab }
-	func CurrentTab(_ value: FooterTab) { currentTab = value }
-
 	enum Workouts {
 		case type
 		case level
 	}
-
-	var currentWorkout: Workouts = Workouts.type
-	func CurrentWorkout() -> Workouts { return currentWorkout }
-	func CurrentWorkout(_ value: Workouts) { currentWorkout = value }
 
 	enum WorkoutsType {
 		case upper
 		case lower
 		case coreAbs
 	}
-
-	var currentWorkoutType: WorkoutsType = WorkoutsType.upper
-	func CurrentWorkoutType() -> WorkoutsType { return currentWorkoutType }
-	func CurrentWorkoutType(_ value: WorkoutsType) { currentWorkoutType = value }
 
 	enum WorkoutsLevel {
 		case beginner
@@ -48,7 +29,25 @@ class Application {
 		case expert
 	}
 
+	enum ExercisesView {
+		case type
+		case level
+		case details
+	}
+
+	var currentWorkout: Workouts = Workouts.type
+	func CurrentWorkout() -> Workouts { return currentWorkout }
+	func CurrentWorkout(_ value: Workouts) { currentWorkout = value }
+
+	var currentWorkoutType: WorkoutsType = WorkoutsType.upper
+	func CurrentWorkoutType() -> WorkoutsType { return currentWorkoutType }
+	func CurrentWorkoutType(_ value: WorkoutsType) { currentWorkoutType = value }
+
 	var currentWorkoutLevel: WorkoutsLevel = WorkoutsLevel.beginner
 	func CurrentWorkoutLevel() -> WorkoutsLevel { return currentWorkoutLevel }
 	func CurrentWorkoutLevel(_ value: WorkoutsLevel) { currentWorkoutLevel = value }
+
+	var currentExercisesView: ExercisesView = ExercisesView.type
+	func CurrentExercisesView() -> ExercisesView { return currentExercisesView }
+	func CurrentExercisesView(_ value: ExercisesView) { currentExercisesView = value }
 }
