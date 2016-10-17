@@ -61,12 +61,7 @@ class Details: UIViewController {
     }
 
     func btnBackClicked(_ sender:UIButton!) {
-		switch Application.instance.CurrentWorkout() {
-		case Application.Workouts.type:
-			self.performSegue(withIdentifier: "showType", sender: self)
-		case Application.Workouts.level:
-			self.performSegue(withIdentifier: "showLevel", sender: self)
-		}
+		self.performSegue(withIdentifier: "showWorkouts", sender: self)
     }
 
 	func btnWorkoutsClicked(_ sender:UIButton) {

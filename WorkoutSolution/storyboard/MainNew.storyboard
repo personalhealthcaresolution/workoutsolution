@@ -23,11 +23,12 @@
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="xWl-iE-MFF"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="bId-fO-APc"/>
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="2vZ-2k-U6A"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="l61-Hc-J1X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-t1-cYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="1183"/>
+            <point key="canvasLocation" x="526" y="1082"/>
         </scene>
         <!--Details-->
         <scene sceneID="l6u-S8-Eh2">
@@ -47,11 +48,12 @@
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="tAG-pv-qnC"/>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="Uhk-vc-ncI"/>
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="OkA-ER-VUD"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="yLj-9e-h4A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06C-PC-2kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2028" y="1183"/>
+            <point key="canvasLocation" x="2892" y="374"/>
         </scene>
         <!--Main-->
         <scene sceneID="lhg-A0-COh">
@@ -92,11 +94,12 @@
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="gdv-pP-NxB"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="8GG-l1-AV4"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="ZDV-1n-cdP"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="E7w-a8-VCb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5J-tR-xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="526" y="1183"/>
+            <point key="canvasLocation" x="1370" y="739"/>
         </scene>
         <!--Type-->
         <scene sceneID="JAd-hZ-O5Y">
@@ -115,18 +118,44 @@
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="pTy-IG-rOQ"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="nAt-Xj-2Px"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="dHK-07-q3d"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="ag7-ve-xIK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gZ-n3-8ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1322" y="374"/>
+            <point key="canvasLocation" x="1369" y="44"/>
+        </scene>
+        <!--Workouts-->
+        <scene sceneID="AQl-A3-GVN">
+            <objects>
+                <viewController id="tbn-Ls-kZQ" customClass="Workouts" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RHA-il-QsS"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ZY-aX-GhE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AT2-2v-4wN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="mNi-ob-pkO"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="a27-VJ-66M"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="9eQ-MY-E5f"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="uKc-Um-tMX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMo-Sr-gau" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2118" y="374"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8GG-l1-AV4"/>
-        <segue reference="OkA-ER-VUD"/>
-        <segue reference="J8D-cn-1m3"/>
-        <segue reference="Uhk-vc-ncI"/>
+        <segue reference="uKc-Um-tMX"/>
+        <segue reference="l61-Hc-J1X"/>
+        <segue reference="xWl-iE-MFF"/>
+        <segue reference="bId-fO-APc"/>
+        <segue reference="2vZ-2k-U6A"/>
         <segue reference="tAG-pv-qnC"/>
     </inferredMetricsTieBreakers>
 </document>

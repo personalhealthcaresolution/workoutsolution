@@ -13,9 +13,9 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	let tableView = UITableView()
     let screenObject = ScreenObject()
 
-
 	var workoutName = ["CHINUPS", "WALL SIX", "Dip On Chair"]
 	var workoutIcon = ["chinups", "wallSix", "dipOnChair"]
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,14 +65,13 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
-		tableView.tableFooterView = UIView()
+		//tableView.tableFooterView = UIView()
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
-		tableView.allowsSelectionDuringEditing = false
 		self.view.addSubview(tableView)
 	}
 
 	func btnBackClicked(_ sender:UIButton!) {
-		tableView.allowsSelectionDuringEditing = !tableView.allowsSelectionDuringEditing
+		return
 	}
 
     func btnDetailsClicked(_ sender:UIButton!) {
@@ -87,6 +86,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			self.performSegue(withIdentifier: "showLevel", sender: self)
 		case Application.ExercisesView.details:
 			self.performSegue(withIdentifier: "showDetails", sender: self)
+		case Application.ExercisesView.workouts:
+			self.performSegue(withIdentifier: "showWorkouts", sender: self)
 		}
     }
 
@@ -155,11 +156,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
 		print(#function + " - indexPath: \(indexPath.row)")
-		return false
-	}
-
-	func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
-		print(#function + " - indexPath: \(indexPath?.row)")
+		return true
 	}
 
 	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
@@ -170,22 +167,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		return workoutName.count
 	}
 
-	func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
-		print(#function + " - count: \(workoutName.count)")
-	}
-
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
 		print(#function + " - indexPath: \(indexPath.row)")
 		return true
 	}
 
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath.row)")
 		return false
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		print(#function + " - indexPath: \(indexPath.row)")
 		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
 
 		let constant = Constant()

@@ -33,6 +33,7 @@ class Application {
 		case type
 		case level
 		case details
+		case workouts
 	}
 
 	var currentWorkout: Workouts = Workouts.type

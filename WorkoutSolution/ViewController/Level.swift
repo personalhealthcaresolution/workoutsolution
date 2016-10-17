@@ -46,22 +46,22 @@ class Level: UIViewController {
 
 	func btnAbsBeginnerClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.beginner)
-		self.performSegue(withIdentifier: "showDetails", sender: self)
+		self.performSegue(withIdentifier: "showWorkouts", sender: self)
 	}
 
 	func btnBeginnerClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.intermediate)
-		self.performSegue(withIdentifier: "showDetails", sender: self)
+		self.performSegue(withIdentifier: "showWorkouts", sender: self)
 	}
 
 	func btnAdvancedClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.advanced)
-		self.performSegue(withIdentifier: "showDetails", sender: self)
+		self.performSegue(withIdentifier: "showWorkouts", sender: self)
 	}
 
 	func btnIntermediateClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutLevel(Application.WorkoutsLevel.expert)
-		self.performSegue(withIdentifier: "showDetails", sender: self)
+		self.performSegue(withIdentifier: "showWorkouts", sender: self)
 	}
 
 	func btnExercisesClicked(_ sender:UIButton) {

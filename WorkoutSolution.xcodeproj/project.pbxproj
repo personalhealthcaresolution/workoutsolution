@@ -19,6 +19,8 @@
 		3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29660B1C77860500A5E733 /* LoginEmail.swift */; };
 		3A44A5FF1D819BFB00B4D026 /* Tracker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A44A5FE1D819BFB00B4D026 /* Tracker.xml */; };
 		3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D5F2A1D448EDF00E0BFAF /* Details.swift */; };
+		3A6609591DB54275004FC4F5 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6609581DB54273004FC4F5 /* Workouts.swift */; };
+		3A66095B1DB54432004FC4F5 /* Workouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A66095A1DB54432004FC4F5 /* Workouts.xml */; };
 		3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66AF201D845629002BD1EA /* UserDefaults.swift */; };
 		3A66AF231D846898002BD1EA /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66AF221D846898002BD1EA /* CheckBox.swift */; };
 		3A6B7FEF1D899F3E0073ABEA /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6B7FEE1D899F3E0073ABEA /* Database.swift */; };
@@ -121,6 +123,8 @@
 		3A29660B1C77860500A5E733 /* LoginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginEmail.swift; path = ViewController/LoginEmail.swift; sourceTree = "<group>"; };
 		3A44A5FE1D819BFB00B4D026 /* Tracker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Tracker.xml; path = XMLs/Tracker.xml; sourceTree = "<group>"; };
 		3A4D5F2A1D448EDF00E0BFAF /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Details.swift; path = ViewController/Details.swift; sourceTree = "<group>"; };
+		3A6609581DB54273004FC4F5 /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workouts.swift; path = ViewController/Workouts.swift; sourceTree = "<group>"; };
+		3A66095A1DB54432004FC4F5 /* Workouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Workouts.xml; path = XMLs/Workouts.xml; sourceTree = "<group>"; };
 		3A66AF201D845629002BD1EA /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = src/UserDefaults.swift; sourceTree = "<group>"; };
 		3A66AF221D846898002BD1EA /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CheckBox.swift; path = src/CheckBox.swift; sourceTree = "<group>"; };
 		3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorkoutSolution-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
@@ -217,6 +221,7 @@
 				3A7BC3F41CEA190B008B329E /* Type.swift */,
 				5D6A53A11B27B228005C167E /* ViewController.swift */,
 				3A734B191D3CFBF6000EF7DC /* WorkoutsList.swift */,
+				3A6609581DB54273004FC4F5 /* Workouts.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				3A44A5FE1D819BFB00B4D026 /* Tracker.xml */,
 				3A20F8E11D64B5790049931A /* Type.xml */,
 				3A70C8051D808B5600E08F0E /* WorkoutsList.xml */,
+				3A66095A1DB54432004FC4F5 /* Workouts.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A70C8021D804C8C00E08F0E /* Footer.xml in Resources */,
+				3A66095B1DB54432004FC4F5 /* Workouts.xml in Resources */,
 				3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */,
 				3AD4A7921D5F50010046C52C /* Main.xml in Resources */,
 				3A20F8E21D64B5790049931A /* Type.xml in Resources */,
@@ -522,6 +529,7 @@
 				3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */,
 				3A174E641D083C4F00C308A4 /* Level.swift in Sources */,
 				3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */,
+				3A6609591DB54275004FC4F5 /* Workouts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

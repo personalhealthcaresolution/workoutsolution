@@ -46,17 +46,17 @@ class Type: UIViewController {
 
     func btnUpperClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutType(Application.WorkoutsType.upper)
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.performSegue(withIdentifier: "showWorkouts", sender: self)
     }
 
     func btnLowerClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutType(Application.WorkoutsType.lower)
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.performSegue(withIdentifier: "showWorkouts", sender: self)
     }
 
     func btnCoreAbsClicked(_ sender:UIButton!) {
 		Application.instance.CurrentWorkoutType(Application.WorkoutsType.coreAbs)
-        self.performSegue(withIdentifier: "showDetails", sender: self)
+        self.performSegue(withIdentifier: "showWorkouts", sender: self)
     }
 
 	func btnExercisesClicked(_ sender:UIButton) {

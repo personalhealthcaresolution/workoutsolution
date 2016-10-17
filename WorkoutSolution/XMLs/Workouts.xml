@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view>
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>83</posY>
+		<width>1242</width>
+		<height>2020</height>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>70</posX>
+		<posY>100</posY>
+		<width>120</width>
+		<height>120</height>
+		<icon>back</icon>
+		<selector>btnBackClicked</selector>
+	</object>
+</view>
