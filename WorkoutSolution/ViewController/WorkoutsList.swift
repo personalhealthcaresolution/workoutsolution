@@ -10,7 +10,9 @@ import UIKit
 
 class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let tabString: String = ""
+	let tableView = UITableView()
     let screenObject = ScreenObject()
+
 
 	var workoutName = ["CHINUPS", "WALL SIX", "Dip On Chair"]
 	var workoutIcon = ["chinups", "wallSix", "dipOnChair"]
@@ -37,11 +39,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func initView() {
-        //screenObject.ParseXML("WorkoutsList")
+        screenObject.ParseXML("WorkoutsList")
         screenObject.ParseXML("Footer")
-        //screenObject.DrawScreen(self, currentTab: tabString)
-
-		screenObject.AddTableView(self, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight)
 
 		var objects = screenObject.GetObjects()
 		while objects.count > 0 {
@@ -50,15 +49,30 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			screenObject.DrawObject(self, object: object)
 			objects.removeFirst()
 		}
+
+		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1797)
+	}
+
+	func AddTableView(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.layoutMargins = UIEdgeInsets.zero
+		tableView.separatorInset = UIEdgeInsets.zero
+		tableView.tableFooterView = UIView()
+		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
+		tableView.allowsSelectionDuringEditing = false
+		self.view.addSubview(tableView)
 	}
 
 	func btnBackClicked(_ sender:UIButton!) {
-		switch Application.instance.CurrentWorkout() {
-		case Application.Workouts.type:
-			self.performSegue(withIdentifier: "showType", sender: self)
-		case Application.Workouts.level:
-			self.performSegue(withIdentifier: "showLevel", sender: self)
-		}
+		tableView.allowsSelectionDuringEditing = !tableView.allowsSelectionDuringEditing
 	}
 
     func btnDetailsClicked(_ sender:UIButton!) {
@@ -123,37 +137,36 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 		return true
 	}
 
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath)")
-		return true
+		print(#function + " - indexPath: \(indexPath.row)")
+		return false
 	}
 
 	func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath?.row)")
 	}
 
 	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		print(#function + " - count: \(workoutName.count)")
 		return workoutName.count
 	}
 
@@ -162,17 +175,17 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 		return true
 	}
 
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 		return false
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
 
 		let constant = Constant()
@@ -202,11 +215,11 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
@@ -214,11 +227,11 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-		print(#function + " - indexPath: \(indexPath)")
+		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {

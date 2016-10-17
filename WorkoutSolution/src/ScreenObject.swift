@@ -264,25 +264,6 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		checkBox.isChecked(isChecked)
 	}
 
-	func AddTableView(_ view: WorkoutsList, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
-
-		let tableView = UITableView()
-		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		tableView.delegate = view
-		tableView.dataSource = view
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-		tableView.layoutMargins = UIEdgeInsets.zero
-		tableView.separatorInset = UIEdgeInsets.zero
-		//tableView.tableFooterView = UIView()
-		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
-
-		view.view.addSubview(tableView)
-	}
-
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         curElement = elementName
         didStartElement = true
