@@ -19,6 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="mQL-ez-6Mz"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="TTg-CR-enP"/>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="clp-QH-msr"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="Zqa-mK-Txn"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="ENt-8t-EXs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aj3-GG-en2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,6 +75,7 @@
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="Uhk-vc-ncI"/>
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="OkA-ER-VUD"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="yLj-9e-h4A"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="HVy-hK-TLY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06C-PC-2kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,6 +122,7 @@
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="8GG-l1-AV4"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="ZDV-1n-cdP"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="E7w-a8-VCb"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="3rw-X9-GOn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5J-tR-xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,6 +147,7 @@
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="nAt-Xj-2Px"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="dHK-07-q3d"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="ag7-ve-xIK"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="g7E-DY-15V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gZ-n3-8ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,6 +172,7 @@
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="a27-VJ-66M"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="9eQ-MY-E5f"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="uKc-Um-tMX"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="fVF-On-9ua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kMo-Sr-gau" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -170,11 +181,12 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uKc-Um-tMX"/>
-        <segue reference="l61-Hc-J1X"/>
-        <segue reference="xWl-iE-MFF"/>
-        <segue reference="bId-fO-APc"/>
-        <segue reference="2vZ-2k-U6A"/>
-        <segue reference="tAG-pv-qnC"/>
+        <segue reference="nAt-Xj-2Px"/>
+        <segue reference="mNi-ob-pkO"/>
+        <segue reference="ag7-ve-xIK"/>
+        <segue reference="fVF-On-9ua"/>
+        <segue reference="a27-VJ-66M"/>
+        <segue reference="pTy-IG-rOQ"/>
+        <segue reference="dHK-07-q3d"/>
     </inferredMetricsTieBreakers>
 </document>

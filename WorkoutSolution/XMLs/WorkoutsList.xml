@@ -25,6 +25,7 @@
 		<width>120</width>
 		<height>120</height>
 		<icon>add</icon>
+		<selector>btnAddClicked</selector>
 	</object>
 
 	<object>

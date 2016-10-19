@@ -31,6 +31,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			workoutName = defaults.GetArrayString(workoutListName)
 		}
         initView()
+		Application.instance.CurrentWorkoutsView(Application.WorkoutsView.workouts)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +63,13 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		}
 	}
 
+	func AddRow(_ value: String) {
+		workoutName.append(value)
+		let defaults = UserDefaults()
+		defaults.SetArrayString(workoutListName, value: workoutName)
+		tableView.reloadData()
+	}
+
 	func AddTableView(_ object: ScreenObject.Object) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
@@ -79,6 +87,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
 		self.view.addSubview(tableView)
+	}
+
+	func btnAddClicked(_ sender:UIButton!) {
+		return
 	}
 
     func btnDetailsClicked(_ sender:UIButton!) {

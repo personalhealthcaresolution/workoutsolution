@@ -83,7 +83,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
 	func initView() {
-		screenObject.ParseXML("WorkoutsList")
+		screenObject.ParseXML("Workouts")
 		screenObject.ParseXML("Footer")
 
 		var objects = screenObject.GetObjects()
@@ -131,7 +131,12 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func btnWorkoutsClicked(_ sender:UIButton) {
-		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+		switch Application.instance.CurrentWorkoutsView() {
+		case Application.WorkoutsView.workouts:
+			self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+		case Application.WorkoutsView.exercises:
+			self.performSegue(withIdentifier: "showExercises", sender: self)
+		}
 	}
 
 	func btnTrackerClicked(_ sender:UIButton) {

@@ -29,6 +29,11 @@ class Application {
 		case expert
 	}
 
+	enum WorkoutsView {
+		case workouts
+		case exercises
+	}
+
 	enum ExercisesView {
 		case type
 		case level
@@ -47,6 +52,10 @@ class Application {
 	var currentWorkoutLevel: WorkoutsLevel = WorkoutsLevel.beginner
 	func CurrentWorkoutLevel() -> WorkoutsLevel { return currentWorkoutLevel }
 	func CurrentWorkoutLevel(_ value: WorkoutsLevel) { currentWorkoutLevel = value }
+
+	var currentWorkoutsView: WorkoutsView = WorkoutsView.workouts
+	func CurrentWorkoutsView() -> WorkoutsView { return currentWorkoutsView }
+	func CurrentWorkoutsView(_ value: WorkoutsView) { currentWorkoutsView = value }
 
 	var currentExercisesView: ExercisesView = ExercisesView.type
 	func CurrentExercisesView() -> ExercisesView { return currentExercisesView }
