@@ -90,6 +90,17 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
+		screenObject.AddBackground(self.view, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: 0x373639, alpha: 0.7)
+		screenObject.AddBackground(self.view, xPosition: 132, yPosition: 772, width: 978, height: 665, color: 0xF94343)
+		screenObject.AddButton(self, xPosition: 222, yPosition: 1222, width: 295, height: 125, background: "buttonAdd", title: "CANCEL", selector: NSSelectorFromString("btnCancelPopupClicked:"))
+		screenObject.AddButton(self, xPosition: 725, yPosition: 1222, width: 295, height: 125, background: "buttonAdd", title: "ADD", selector: NSSelectorFromString("btnAddPopupClicked:"))
+	}
+
+	func btnAddPopupClicked(_ sender:UIButton!) {
+		return
+	}
+
+	func btnCancelPopupClicked(_ sender:UIButton!) {
 		return
 	}
 

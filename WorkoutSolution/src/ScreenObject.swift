@@ -184,7 +184,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		}
 	}
 
-	func AddBackground(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32) {
+	func AddBackground(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32, alpha:Double = 1.0) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -192,7 +192,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
 		let background = UILabel()
 		background.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		background.backgroundColor = constant.UIColorFromHex(color)
+		background.backgroundColor = constant.UIColorFromHex(color, alpha: alpha)
 		view.addSubview(background)
 	}
 
