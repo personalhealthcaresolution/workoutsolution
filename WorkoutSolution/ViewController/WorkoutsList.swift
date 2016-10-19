@@ -52,18 +52,21 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		while objects.count > 0 {
 			var object = ScreenObject.Object()
 			object = objects.first!
-			screenObject.DrawObject(self, object: object)
+
+			if (object.type == "table") {
+				AddTableView(object)
+			} else {
+				screenObject.DrawObject(self, object: object)
+			}
 			objects.removeFirst()
 		}
-
-		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1797)
 	}
 
-	func AddTableView(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+	func AddTableView(_ object: ScreenObject.Object) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
 
 		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		tableView.delegate = self
@@ -72,14 +75,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
 		let constant = Constant()
-		tableView.backgroundColor = constant.UIColorFromHex(constant.coralRed)
+		tableView.backgroundColor = constant.UIColorFromHex(object.color)//constant.UIColorFromHex(constant.coralRed)
 
-		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 195)
+		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
 		self.view.addSubview(tableView)
-	}
-
-	func btnBackClicked(_ sender:UIButton!) {
-		return
 	}
 
     func btnDetailsClicked(_ sender:UIButton!) {

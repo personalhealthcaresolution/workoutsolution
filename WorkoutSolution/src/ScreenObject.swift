@@ -26,6 +26,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var height: CGFloat = 0
 		var xPosition: CGFloat = 0
 		var yPosition: CGFloat = 0
+		var rowHeight: CGFloat = 0
 
 		var color: UInt32 = 0
 		var selector: Selector!
@@ -304,6 +305,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 				object.xPosition = StringToCGFloat(string)
 			case "posY":
 				object.yPosition = StringToCGFloat(string)
+			case "rowHeight":
+				object.rowHeight = StringToCGFloat(string)
 
 			case "color":
 				object.color = GetColor(string)

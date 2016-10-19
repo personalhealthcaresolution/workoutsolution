@@ -15,7 +15,25 @@
 		<posY>100</posY>
 		<width>120</width>
 		<height>120</height>
-		<icon>back</icon>
-		<selector>btnBackClicked</selector>
+		<icon>recycle</icon>
+	</object>
+
+	<object>
+		<type>button</type>
+		<posX>1022</posX>
+		<posY>100</posY>
+		<width>120</width>
+		<height>120</height>
+		<icon>add</icon>
+	</object>
+
+	<object>
+		<type>table</type>
+		<posX>0</posX>
+		<posY>223</posY>
+		<width>1242</width>
+		<height>1797</height>
+		<color>0xF94343</color>
+		<rowHeight>195</rowHeight>
 	</object>
 </view>
