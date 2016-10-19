@@ -9,12 +9,11 @@
 import UIKit
 
 class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	let tabString: String = ""
 	let tableView = UITableView()
+	let workoutListName = "workoutListName"
     let screenObject = ScreenObject()
 
-	var workoutName = ["CHINUPS", "WALL SIX", "Dip On Chair"]
-	var workoutIcon = ["chinups", "wallSix", "dipOnChair"]
+	var workoutName = [""]//["Home Workout", "Complete Arm Workout", "Full Body Workout"]
 
 
     override func viewDidLoad() {
@@ -24,6 +23,13 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
+		let defaults = UserDefaults()
+		if (defaults.GetArrayString(workoutListName) == [""]) {
+			workoutName = ["Home Workout", "Complete Arm Workout", "Full Body Workout"]
+			defaults.SetArrayString(workoutListName, value: workoutName)
+		} else {
+			workoutName = defaults.GetArrayString(workoutListName)
+		}
         initView()
     }
 
@@ -65,8 +71,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
-		//tableView.tableFooterView = UIView()
-		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
+		let constant = Constant()
+		tableView.backgroundColor = constant.UIColorFromHex(constant.coralRed)
+
+		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 195)
 		self.view.addSubview(tableView)
 	}
 
@@ -100,36 +108,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     func btnSettingClicked(_ sender:UIButton) {
     }
 
-	func btnSquatsClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnSquatsClicked")
-	}
-
-	func btnPullUpClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnPullUpClicked")
-	}
-
-	func btnClappingPullUpClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnClappingPullUpClicked")
-	}
-
-	func btnChestHighPullUpClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnChestHighPullUpClicked")
-	}
-
-	func btnTypeWriterPullUpClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnTypeWriterPullUpClicked")
-	}
-
-	func btnChinupClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnChinupClicked")
-	}
-
-	func btnWallSixClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnWallSixClicked")
-	}
-
-	func btnDipOnChairClicked(_ sender:CheckBox!) {
-		sender.buttonClicked(sender, key: "btnDipOnChairClicked")
+	func btnTableViewCellClicked(_ rowIndex: Int) {
+		self.performSegue(withIdentifier: "showExercises", sender: self)
 	}
 
 	//tableview delegate
@@ -138,7 +118,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
+		btnTableViewCellClicked(indexPath.row)
 	}
 
 	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -150,17 +130,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath.row)")
-		return true
+		return false
 	}
 
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath.row)")
-		return true
+		return false
 	}
 
 	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
 		print(#function + " - indexPath: \(indexPath.row)")
+		tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -173,18 +152,20 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		return false
+		return true
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
-
 		let constant = Constant()
-		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
-
 		let screenObject = ScreenObject()
-		screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row])
-		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "HelveticaNeue-Bold", size: 16, color: constant.citrus)
+
+		let cellFont = "Arial"
+		let cellText = workoutName[indexPath.row]
+
+		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
+		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
+		screenObject.AddLabel(cell.contentView, xPosition: 100, yPosition: 72, width: 700, height: 51, text: cellText, font: cellFont, size: 14, color: constant.citrus)
+		screenObject.AddImage(cell.contentView, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "list")
 
 		return cell
 	}
@@ -205,10 +186,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		print(#function + " - section: \(section)")
 	}
 
-	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
 	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		print(#function + " - indexPath: \(indexPath.row)")
 	}
@@ -225,6 +202,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
+	/*
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 		let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
 			print("share button tapped")
@@ -233,4 +211,5 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 		return [edit]
 	}
+	*/
 }

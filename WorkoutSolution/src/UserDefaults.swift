@@ -23,14 +23,27 @@ class UserDefaults {
 	func GetString(_ key: String) -> String {
 		let defaults = Foundation.UserDefaults.standard
 		if defaults.object(forKey: key) != nil {
-			let result = defaults.object(forKey: key)
-			return result as! String
+			return defaults.object(forKey: key) as! String
 		} else {
 			return ""
 		}
 	}
 
 	func SetString(_ key: String, value: String) {
+		let defaults = Foundation.UserDefaults.standard
+		defaults.set(value, forKey: key)
+	}
+
+	func GetArrayString(_ key: String) -> [String] {
+		let defaults = Foundation.UserDefaults.standard
+		if defaults.object(forKey: key) != nil {
+			return defaults.object(forKey: key) as! [String]
+		} else {
+			return [""]
+		}
+	}
+
+	func SetArrayString(_ key: String, value: [String]) {
 		let defaults = Foundation.UserDefaults.standard
 		defaults.set(value, forKey: key)
 	}

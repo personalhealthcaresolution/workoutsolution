@@ -6,6 +6,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Exercises-->
+        <scene sceneID="VgR-zg-OLV">
+            <objects>
+                <viewController id="9Kv-gd-a2T" customClass="Exercises" customModule="WorkoutSolution" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V2q-hg-kKJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="nLt-TA-rgw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OQg-FQ-mcQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aj3-GG-en2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="1082"/>
+        </scene>
         <!--Workouts List-->
         <scene sceneID="Wcd-8R-fM3">
             <objects>
@@ -24,6 +42,7 @@
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="bId-fO-APc"/>
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="2vZ-2k-U6A"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="l61-Hc-J1X"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="nod-Am-EXQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-t1-cYj" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,7 @@
 		3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF781C05FA2900AD1F9D /* Login.swift */; };
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
+		3A09ECBE1DB7B50E0088D966 /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A09ECBD1DB7B50E0088D966 /* Exercises.swift */; };
 		3A0CCEBF1D65EA1B005D8128 /* Level.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CCEBE1D65EA1B005D8128 /* Level.xml */; };
 		3A0D38561DA8ADF400388457 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D38551DA8ADF400388457 /* TableViewCell.swift */; };
 		3A0D9FD91D882FB20015189F /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D9FD81D882FB20015189F /* Application.swift */; };
@@ -114,6 +115,7 @@
 		3A01FF781C05FA2900AD1F9D /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ViewController/Login.swift; sourceTree = "<group>"; };
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
+		3A09ECBD1DB7B50E0088D966 /* Exercises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercises.swift; path = ViewController/Exercises.swift; sourceTree = "<group>"; };
 		3A0CCEBE1D65EA1B005D8128 /* Level.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Level.xml; path = XMLs/Level.xml; sourceTree = "<group>"; };
 		3A0D38551DA8ADF400388457 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = src/TableViewCell.swift; sourceTree = "<group>"; };
 		3A0D9FD81D882FB20015189F /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Application.swift; path = src/Application.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				3A4D5F2A1D448EDF00E0BFAF /* Details.swift */,
+				3A09ECBD1DB7B50E0088D966 /* Exercises.swift */,
 				3A174E631D083C4F00C308A4 /* Level.swift */,
 				3A01FF781C05FA2900AD1F9D /* Login.swift */,
 				3A29660B1C77860500A5E733 /* LoginEmail.swift */,
@@ -220,8 +223,8 @@
 				3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */,
 				3A7BC3F41CEA190B008B329E /* Type.swift */,
 				5D6A53A11B27B228005C167E /* ViewController.swift */,
-				3A734B191D3CFBF6000EF7DC /* WorkoutsList.swift */,
 				3A6609581DB54273004FC4F5 /* Workouts.swift */,
+				3A734B191D3CFBF6000EF7DC /* WorkoutsList.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 			files = (
 				3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */,
 				3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */,
+				3A09ECBE1DB7B50E0088D966 /* Exercises.swift in Sources */,
 				3A7BC3F51CEA190B008B329E /* Type.swift in Sources */,
 				3ADA54C91BC128AF009A4D78 /* Settings.swift in Sources */,
 				3A66AF231D846898002BD1EA /* CheckBox.swift in Sources */,

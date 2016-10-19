@@ -140,7 +140,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func btnSettingClicked(_ sender:UIButton) {
 	}
 
-	func btnTableViewCellClicked(rowIndex: Int) {
+	func btnTableViewCellClicked(_ rowIndex: Int) {
 		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
@@ -150,7 +150,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		btnTableViewCellClicked(rowIndex: indexPath.row)
+		btnTableViewCellClicked(indexPath.row)
 	}
 
 	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
