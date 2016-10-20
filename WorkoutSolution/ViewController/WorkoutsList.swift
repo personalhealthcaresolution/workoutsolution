@@ -9,7 +9,7 @@
 import UIKit
 
 class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource {
-	let tableView = UITableView()
+	var tableView = UITableView()
 
 	let popupAddButton = UIButton()
 	let popupTextBox = UITextView()
@@ -21,9 +21,17 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	let constant = Constant()
 	let screenObject = ScreenObject()
 
-	let isDeleting = false
-	var workoutName = [""]//["Home Workout", "Complete Arm Workout", "Full Body Workout"]
+	var isDeleting = false
+	var needDelete = [Int]()
+	var workoutName = [""]
 	let workoutListName = "workoutListName"
+
+	enum DeleteState {
+		case none
+		case deleting
+		case completed
+	}
+	var currentDeleteState = DeleteState.none
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +41,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
 		let defaults = UserDefaults()
-		if (defaults.GetArrayString(workoutListName) == [""]) {
+		if (defaults.GetArrayString(workoutListName).count == 0) {
 			workoutName = ["Home Workout", "Complete Arm Workout", "Full Body Workout"]
 			defaults.SetArrayString(workoutListName, value: workoutName)
 		} else {
@@ -74,6 +82,23 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func AddRow(_ value: String) {
 		workoutName.append(value)
+		let defaults = UserDefaults()
+		defaults.SetArrayString(workoutListName, value: workoutName)
+		tableView.reloadData()
+	}
+
+	func RemoveRows() {
+		var current = 0
+		var newWorkouts = [String]()
+		while current < workoutName.count {
+			if needDelete.first != current {
+				newWorkouts.append(workoutName[current])
+			} else {
+				needDelete.removeFirst()
+			}
+			current = current + 1
+		}
+		workoutName = newWorkouts
 		let defaults = UserDefaults()
 		defaults.SetArrayString(workoutListName, value: workoutName)
 		tableView.reloadData()
@@ -158,7 +183,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		tableView.delegate = self
 		tableView.dataSource = self
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
 		let constant = Constant()
@@ -185,6 +210,18 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		AddTextBox(popupTextBox, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, font: font, size: 18, color: 0xffffff)
 		AddButton(popupAddButton, xPosition: 725, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "ADD", selector: NSSelectorFromString("btnAddPopupClicked:"))
 		AddButton(popupCancelButton, xPosition: 222, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "CANCEL", selector: NSSelectorFromString("btnCancelPopupClicked:"))
+	}
+
+	func btnDeleteClicked(_ sender:UIButton!) {
+		switch currentDeleteState {
+		case DeleteState.none:
+			currentDeleteState = DeleteState.deleting
+		case DeleteState.deleting:
+			currentDeleteState = DeleteState.completed
+		case DeleteState.completed:
+			break
+		}
+		tableView.reloadData()
 	}
 
 	func btnAddPopupClicked(_ sender:UIButton!) {
@@ -272,17 +309,24 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let constant = Constant()
-		let screenObject = ScreenObject()
-
-		let cellFont = "Arial"
-		let cellText = workoutName[indexPath.row]
-
-		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
-		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
-		screenObject.AddLabel(cell.contentView, xPosition: 100, yPosition: 72, width: 700, height: 51, text: cellText, font: cellFont, size: 14, color: constant.citrus)
-		screenObject.AddImage(cell.contentView, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "list")
-
+		let cell:TableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
+		cell.textLabel?.text = workoutName[indexPath.row]
+		switch currentDeleteState {
+		case DeleteState.deleting:
+			cell.isDeleting = true;
+		case DeleteState.completed:
+			cell.isDeleting = false
+			if cell.checkBox.isChecked() {
+				needDelete.append(indexPath.row)
+			}
+			if indexPath.row == workoutName.count - 1 {
+				currentDeleteState = DeleteState.none
+				RemoveRows()
+			}
+		case DeleteState.none:
+			cell.isDeleting = false
+		}
+		cell.updateCell()
 		return cell
 	}
 
@@ -304,6 +348,20 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
 		print(#function + " - indexPath: \(indexPath.row)")
+		print(#function + " - currentDeleteState: \(currentDeleteState)")
+		/*
+		if indexPath.row == 0 {
+			switch currentDeleteState {
+			case DeleteState.completed:
+				currentDeleteState = DeleteState.none
+				if cell.checkBox.isChecked() {
+					needDelete.append(indexPath.row)
+				}
+				RemoveRows()
+			default: break
+			}
+		}
+	*/
 	}
 
 	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

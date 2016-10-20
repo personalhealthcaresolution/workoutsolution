@@ -270,9 +270,11 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
 		let checkBox = CheckBox()
 		checkBox.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		checkBox.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
 		checkBox.SetCheckedImange(checkedImage)
 		checkBox.SetUncheckedImange(uncheckedImage)
+		if (selector != nil) {
+			checkBox.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
+		}
 		view.addSubview(checkBox)
 
 		let userDefaults = UserDefaults()
