@@ -227,6 +227,21 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
 	}
 
+	func AddTextBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, font: String, size: CGFloat, color: UInt32) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let textBox = UITextView()
+		textBox.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		textBox.font = UIFont(name: font, size: size)
+		textBox.textColor = constant.UIColorFromHex(color)
+		textBox.backgroundColor = constant.UIColorFromHex(0x373639)
+		textBox.textAlignment = NSTextAlignment.center
+		view.addSubview(textBox)
+	}
+
 	func AddButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)

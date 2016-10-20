@@ -10,11 +10,20 @@ import UIKit
 
 class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let tableView = UITableView()
-	let workoutListName = "workoutListName"
-    let screenObject = ScreenObject()
 
+	let popupAddButton = UIButton()
+	let popupTextBox = UITextView()
+	let popupTitle = UILabel()
+	let popupCancelButton = UIButton()
+	var popupBackground = UIImageView()
+	let screenBackground = UILabel()
+
+	let constant = Constant()
+	let screenObject = ScreenObject()
+
+	let isDeleting = false
 	var workoutName = [""]//["Home Workout", "Complete Arm Workout", "Full Body Workout"]
-
+	let workoutListName = "workoutListName"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +79,76 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.reloadData()
 	}
 
+	func AddImage(_ imageView: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let image = UIImage(named: named)
+		imageView.image = image
+		imageView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		view.addSubview(imageView)
+	}
+
+	func AddLabel(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		label.text = text
+		label.font = UIFont(name: font, size: size)
+		label.textColor = constant.UIColorFromHex(color)
+		view.addSubview(label)
+		
+	}
+
+	func AddButton(_ button: UIButton, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		button.setImage(UIImage(named: icon), for: UIControlState())
+		button.setBackgroundImage(UIImage(named: background), for: UIControlState())
+		button.setTitle(title, for: UIControlState())
+
+		button.setTitleColor(UIColor.black, for: UIControlState())
+
+		if selector != nil {
+			button.addTarget(self, action: selector!, for: UIControlEvents.touchUpInside)
+		}
+		view.addSubview(button)
+	}
+
+	func AddTextBox(_ textView: UITextView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, font: String, size: CGFloat, color: UInt32) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		textView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		textView.font = UIFont(name: font, size: size)
+		textView.textColor = constant.UIColorFromHex(color)
+		textView.backgroundColor = constant.UIColorFromHex(0x373639)
+		textView.textAlignment = NSTextAlignment.center
+		view.addSubview(textView)
+	}
+
+	func AddBackground(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32, alpha:Double = 1.0) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		label.backgroundColor = constant.UIColorFromHex(color, alpha: alpha)
+		view.addSubview(label)
+	}
+
 	func AddTableView(_ object: ScreenObject.Object) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
@@ -89,19 +168,34 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		self.view.addSubview(tableView)
 	}
 
+	func HidePopup() {
+		popupTitle.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+		popupTextBox.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+		popupAddButton.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+		popupCancelButton.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+		popupBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+		screenBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+	}
+
 	func btnAddClicked(_ sender:UIButton!) {
-		screenObject.AddBackground(self.view, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: 0x373639, alpha: 0.7)
-		screenObject.AddBackground(self.view, xPosition: 132, yPosition: 772, width: 978, height: 665, color: 0xF94343)
-		screenObject.AddButton(self, xPosition: 222, yPosition: 1222, width: 295, height: 125, background: "buttonAdd", title: "CANCEL", selector: NSSelectorFromString("btnCancelPopupClicked:"))
-		screenObject.AddButton(self, xPosition: 725, yPosition: 1222, width: 295, height: 125, background: "buttonAdd", title: "ADD", selector: NSSelectorFromString("btnAddPopupClicked:"))
+		let font = "HelveticaNeue"
+		AddBackground(screenBackground, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: 0x373639, alpha: 0.7)
+		AddImage(popupBackground, xPosition: 92, yPosition: 632, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
+		AddLabel(popupTitle, xPosition: (ScreenSize.defaultWidth - 376) / 2, yPosition: 727, width: 376, height: 75, text: "New Workout", font: font, size: 16, color: 0xffffff)
+		AddTextBox(popupTextBox, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, font: font, size: 18, color: 0xffffff)
+		AddButton(popupAddButton, xPosition: 725, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "ADD", selector: NSSelectorFromString("btnAddPopupClicked:"))
+		AddButton(popupCancelButton, xPosition: 222, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "CANCEL", selector: NSSelectorFromString("btnCancelPopupClicked:"))
 	}
 
 	func btnAddPopupClicked(_ sender:UIButton!) {
-		return
+		if (popupTextBox.text != nil) {
+			AddRow(popupTextBox.text)
+		}
+		HidePopup()
 	}
 
 	func btnCancelPopupClicked(_ sender:UIButton!) {
-		return
+		HidePopup()
 	}
 
     func btnDetailsClicked(_ sender:UIButton!) {
