@@ -22,7 +22,7 @@ class TableViewCell: UITableViewCell {
 		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
 		AddLabel(textLabel!, xPosition: 100, yPosition: 72, width: 700, height: 51, text: "", font: "Arial", size: 14, color: constant.citrus)
 		AddImage(icon, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "list")
-		AddCheckBox(checkBox, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 51, height: 51, selector: NSSelectorFromString("btnCheckBoxClicked:"))
+		AddCheckBox(checkBox, xPosition: ScreenSize.defaultWidth - 151, yPosition: 48, width: 99, height: 99, selector: NSSelectorFromString("btnCheckBoxClicked:"))
 	}
 
 	required init?(coder aDecoder: NSCoder) {

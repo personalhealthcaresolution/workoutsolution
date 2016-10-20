@@ -23,7 +23,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	var isDeleting = false
 	var needDelete = [Int]()
-	var workoutName = [""]
+	var workoutName = [String]()
 	let workoutListName = "workoutListName"
 
 	enum DeleteState {
@@ -41,7 +41,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
 		let defaults = UserDefaults()
-		if (defaults.GetArrayString(workoutListName).count == 0) {
+		if (defaults.GetArrayString(workoutListName) == [""]) {
 			workoutName = ["Home Workout", "Complete Arm Workout", "Full Body Workout"]
 			defaults.SetArrayString(workoutListName, value: workoutName)
 		} else {
@@ -305,7 +305,11 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		return true
+		if currentDeleteState == DeleteState.deleting {
+			return false
+		} else {
+			return true
+		}
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -319,7 +323,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			if cell.checkBox.isChecked() {
 				needDelete.append(indexPath.row)
 			}
-			if indexPath.row == workoutName.count - 1 {
+			if indexPath.row == workoutName.count - 1  {
 				currentDeleteState = DeleteState.none
 				RemoveRows()
 			}
