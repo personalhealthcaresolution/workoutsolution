@@ -21,17 +21,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	let constant = Constant()
 	let screenObject = ScreenObject()
 
-	var isDeleting = false
 	var needDelete = [Int]()
 	var workoutName = [String]()
 	let workoutListName = "workoutListName"
 
-	enum DeleteState {
+	enum EditState {
 		case none
-		case deleting
+		case editing
 		case completed
 	}
-	var currentDeleteState = DeleteState.none
+	var currentEditState = EditState.none
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -183,11 +182,11 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		tableView.delegate = self
 		tableView.dataSource = self
-		tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.register(WorkoutsListCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
 		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
-		tableView.backgroundColor = constant.UIColorFromHex(object.color)//constant.UIColorFromHex(constant.coralRed)
+		tableView.backgroundColor = constant.UIColorFromHex(object.color)
 
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
 		self.view.addSubview(tableView)
@@ -206,20 +205,17 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		let font = "HelveticaNeue"
 		AddBackground(screenBackground, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: 0x373639, alpha: 0.7)
 		AddImage(popupBackground, xPosition: 92, yPosition: 632, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
-		AddLabel(popupTitle, xPosition: (ScreenSize.defaultWidth - 376) / 2, yPosition: 727, width: 376, height: 75, text: "New Workout", font: font, size: 16, color: 0xffffff)
+		AddLabel(popupTitle, xPosition: 410, yPosition: 727, width: ScreenSize.defaultWidth - 820, height: 75, text: "New Workout", font: font, size: 18, color: 0xffffff)
 		AddTextBox(popupTextBox, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, font: font, size: 18, color: 0xffffff)
 		AddButton(popupAddButton, xPosition: 725, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "ADD", selector: NSSelectorFromString("btnAddPopupClicked:"))
 		AddButton(popupCancelButton, xPosition: 222, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "CANCEL", selector: NSSelectorFromString("btnCancelPopupClicked:"))
 	}
 
-	func btnDeleteClicked(_ sender:UIButton!) {
-		switch currentDeleteState {
-		case DeleteState.none:
-			currentDeleteState = DeleteState.deleting
-		case DeleteState.deleting:
-			currentDeleteState = DeleteState.completed
-		case DeleteState.completed:
-			break
+	func btnEditClicked(_ sender:UIButton!) {
+		switch currentEditState {
+		case EditState.none: currentEditState = EditState.editing
+		case EditState.editing: currentEditState = EditState.completed
+		case EditState.completed: break
 		}
 		tableView.reloadData()
 	}
@@ -262,7 +258,9 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
 	func btnTableViewCellClicked(_ rowIndex: Int) {
-		self.performSegue(withIdentifier: "showExercises", sender: self)
+		if currentEditState != EditState.editing {
+			self.performSegue(withIdentifier: "showExercises", sender: self)
+		}
 	}
 
 	//tableview delegate
@@ -305,67 +303,27 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		if currentDeleteState == DeleteState.deleting {
-			return false
-		} else {
-			return true
-		}
+		return true
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell:TableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TableViewCell
-		cell.textLabel?.text = workoutName[indexPath.row]
-		switch currentDeleteState {
-		case DeleteState.deleting:
-			cell.isDeleting = true;
-		case DeleteState.completed:
-			cell.isDeleting = false
+		let cell:WorkoutsListCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkoutsListCell
+		cell.titleText = workoutName[indexPath.row]
+		switch currentEditState {
+		case EditState.none: cell.isEditing = false
+		case EditState.editing: cell.isEditing = true
+		case EditState.completed:
+			cell.isEditing = false
 			if cell.checkBox.isChecked() {
 				needDelete.append(indexPath.row)
 			}
 			if indexPath.row == workoutName.count - 1  {
-				currentDeleteState = DeleteState.none
+				currentEditState = EditState.none
 				RemoveRows()
 			}
-		case DeleteState.none:
-			cell.isDeleting = false
 		}
 		cell.updateCell()
 		return cell
-	}
-
-	func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-		print(#function + " - currentDeleteState: \(currentDeleteState)")
-		/*
-		if indexPath.row == 0 {
-			switch currentDeleteState {
-			case DeleteState.completed:
-				currentDeleteState = DeleteState.none
-				if cell.checkBox.isChecked() {
-					needDelete.append(indexPath.row)
-				}
-				RemoveRows()
-			default: break
-			}
-		}
-	*/
 	}
 
 	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

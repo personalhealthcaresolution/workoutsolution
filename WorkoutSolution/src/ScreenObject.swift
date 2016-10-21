@@ -16,9 +16,9 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var text = ""
 		var type = ""
 		var named = ""
+		var check = ""
 		var status = ""
 		var checked = ""
-		var unchecked = ""
 		var background = ""
 
 		var size: CGFloat = 0
@@ -178,7 +178,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		case "label":
 			AddLabel(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
 		case "check":
-			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkedImage: object.checked, uncheckedImage: object.unchecked, selector: object.selector)
+			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkImage: object.check, checkedImage: object.checked, selector: object.selector)
 		default:
 			break
 		}
@@ -262,7 +262,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.view.addSubview(button)
 	}
 
-	func AddCheckBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkedImage: String = "", uncheckedImage: String = "", selector: Selector? = nil) {
+	func AddCheckBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkImage: String = "", checkedImage: String = "", selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -270,8 +270,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
 		let checkBox = CheckBox()
 		checkBox.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		checkBox.SetCheckImange(checkImage)
 		checkBox.SetCheckedImange(checkedImage)
-		checkBox.SetUncheckedImange(uncheckedImage)
 		if (selector != nil) {
 			checkBox.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
 		}
@@ -303,12 +303,12 @@ class ScreenObject: NSObject, XMLParserDelegate {
                 object.type = string
 			case "named":
 				object.named = string
+			case "check":
+				object.check = string
 			case "status":
 				object.status = string
 			case "checked":
 				object.checked = string
-			case "unchecked":
-				object.unchecked = string
 			case "background":
 				object.background = string
 

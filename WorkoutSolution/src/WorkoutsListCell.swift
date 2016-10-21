@@ -8,11 +8,12 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
-	var isDeleting = false
-
+class WorkoutsListCell: UITableViewCell {
 	let icon = UIImageView()
+	let title = UILabel()
 	let checkBox = CheckBox()
+	var titleText = ""
+	let hamburger = UIImageView()
 
 	let constant = Constant()
 
@@ -20,9 +21,14 @@ class TableViewCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
-		AddLabel(textLabel!, xPosition: 100, yPosition: 72, width: 700, height: 51, text: "", font: "Arial", size: 14, color: constant.citrus)
+		AddLabel(title, xPosition: 100, yPosition: 72, width: 700, height: 51, text: titleText, font: "Arial", size: 14, color: constant.citrus)
 		AddImage(icon, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "list")
-		AddCheckBox(checkBox, xPosition: ScreenSize.defaultWidth - 151, yPosition: 48, width: 99, height: 99, selector: NSSelectorFromString("btnCheckBoxClicked:"))
+		AddImage(hamburger, xPosition: ScreenSize.defaultWidth - 159, yPosition: 68, width: 59, height: 59, named: "hamburger")
+		AddCheckBox(checkBox, xPosition: 100, yPosition: 50, width: 95, height: 95, selector: NSSelectorFromString("btnCheckBoxClicked:"))//y = 75, width = 45, height = 45
+
+		checkBox.SetCheckImange("workoutsCheck")
+		checkBox.SetCheckedImange("workoutsChecked")
+		checkBox.updateImage()
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -40,13 +46,21 @@ class TableViewCell: UITableViewCell {
     }
 
 	func updateCell() {
-		if isDeleting {
+		title.text = titleText
+		var positionX: CGFloat = 0
+		if isEditing {
 			icon.isHidden = true
 			checkBox.isHidden = false
+			hamburger.isHidden = false
+			positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 195)
 		} else {
 			icon.isHidden = false
 			checkBox.isHidden = true
+			hamburger.isHidden = true
+			positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 100)
 		}
+
+		title.frame = CGRect(x: positionX, y: title.frame.origin.y, width: title.frame.width, height: title.frame.height)
 	}
 
 	func AddImage(_ icon: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
@@ -62,10 +76,6 @@ class TableViewCell: UITableViewCell {
 	}
 
 	func AddLabel(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
-		if text == "" {
-			return
-		}
-
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -79,15 +89,15 @@ class TableViewCell: UITableViewCell {
 		
 	}
 
-	func AddCheckBox(_ check: CheckBox, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkedImage: String = "", uncheckedImage: String = "", selector: Selector? = nil) {
+	func AddCheckBox(_ check: CheckBox, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkImage: String = "", checkedImage: String = "", selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
 
 		check.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		check.SetCheckImange(checkImage)
 		check.SetCheckedImange(checkedImage)
-		check.SetUncheckedImange(uncheckedImage)
 		if (selector != nil) {
 			checkBox.addTarget(self, action: selector!, for: UIControlEvents.touchUpInside)
 		}
