@@ -10,6 +10,7 @@
 		3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF781C05FA2900AD1F9D /* Login.swift */; };
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
+		3A047C031DBA8BD100D7B0FA /* ExercisesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A047C021DBA8BD100D7B0FA /* ExercisesListCell.swift */; };
 		3A09ECBE1DB7B50E0088D966 /* Exercises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A09ECBD1DB7B50E0088D966 /* Exercises.swift */; };
 		3A0CCEBF1D65EA1B005D8128 /* Level.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A0CCEBE1D65EA1B005D8128 /* Level.xml */; };
 		3A0D38561DA8ADF400388457 /* WorkoutsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */; };
@@ -115,6 +116,7 @@
 		3A01FF781C05FA2900AD1F9D /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ViewController/Login.swift; sourceTree = "<group>"; };
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
+		3A047C021DBA8BD100D7B0FA /* ExercisesListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExercisesListCell.swift; path = src/ExercisesListCell.swift; sourceTree = "<group>"; };
 		3A09ECBD1DB7B50E0088D966 /* Exercises.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercises.swift; path = ViewController/Exercises.swift; sourceTree = "<group>"; };
 		3A0CCEBE1D65EA1B005D8128 /* Level.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Level.xml; path = XMLs/Level.xml; sourceTree = "<group>"; };
 		3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutsListCell.swift; path = src/WorkoutsListCell.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				3AB51FB31D412C5B00872A67 /* ScreenSize.swift */,
 				3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */,
 				3A66AF201D845629002BD1EA /* UserDefaults.swift */,
+				3A047C021DBA8BD100D7B0FA /* ExercisesListCell.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A28AB371CE11BFF0027AB70 /* Main.swift in Sources */,
+				3A047C031DBA8BD100D7B0FA /* ExercisesListCell.swift in Sources */,
 				3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */,
 				3A09ECBE1DB7B50E0088D966 /* Exercises.swift in Sources */,
 				3A7BC3F51CEA190B008B329E /* Type.swift in Sources */,

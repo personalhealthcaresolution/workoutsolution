@@ -99,13 +99,9 @@ class WorkoutsListCell: UITableViewCell {
 		check.SetCheckImange(checkImage)
 		check.SetCheckedImange(checkedImage)
 		if (selector != nil) {
-			checkBox.addTarget(self, action: selector!, for: UIControlEvents.touchUpInside)
+			check.addTarget(self, action: selector!, for: UIControlEvents.touchUpInside)
 		}
 		contentView.addSubview(check)
-
-		let userDefaults = UserDefaults()
-		let isChecked = userDefaults.GetBool(checked)
-		checkBox.isChecked(isChecked)
 	}
 
 	func btnCheckBoxClicked(_ sender:UIButton!) {
