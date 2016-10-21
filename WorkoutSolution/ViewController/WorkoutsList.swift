@@ -186,7 +186,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.register(TableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
-		let constant = Constant()
+		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
 		tableView.backgroundColor = constant.UIColorFromHex(object.color)//constant.UIColorFromHex(constant.coralRed)
 
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
