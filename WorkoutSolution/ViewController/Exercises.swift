@@ -48,6 +48,9 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 	}
 
+	func btnAddClicked(_ sender:UIButton!) {
+	}
+
 	func btnBackClicked(_ sender:UIButton!) {
 		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
 	}
