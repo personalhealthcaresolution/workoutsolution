@@ -12,8 +12,16 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let constant = Constant()
 	var tableView = UITableView()
 	let screenObject = ScreenObject()
-	var exercisesName = ["CHINUPS"]//[String]()
-	var exercisesIcon = ["chinups"]//[String]()
+	var exercisesName = [String]()
+
+	let homeName = ["CHINUPS", "WALL SIX"]
+	let completeArmName = ["Dip On Chair", "SQUATS"]
+	let fullBodyName = ["PUSH UP"]
+	let fullExercisesName = ["CHINUPS", "WALL SIX", "Dip On Chair", "SQUATS", "PUSH UP"]
+
+	var isAdding = false
+	let defaults = UserDefaults()
+	var currentWorkoutName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +29,25 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
 		ScreenSize.setCurrentWidth(self.view.frame.size.width)
 		ScreenSize.setCurrentHeight(self.view.frame.size.height)
+
+		let workoutListName = defaults.GetArrayString("workoutListName")
+		let workoutListIndex = Application.instance.CurrentWorkoutsListIndex()
+		currentWorkoutName = workoutListName[workoutListIndex]
+		if (defaults.GetArrayString(currentWorkoutName) == [""]) {
+			switch currentWorkoutName {
+			case "Home Workout":
+				exercisesName = homeName
+			case "Complete Arm Workout":
+				exercisesName = completeArmName
+			case "Full Body Workout":
+				exercisesName = fullBodyName
+			default:
+				exercisesName = homeName
+			}
+			defaults.SetArrayString(currentWorkoutName, value: exercisesName)
+		} else {
+			exercisesName = defaults.GetArrayString(currentWorkoutName)
+		}
 
 		initView()
 		Application.instance.CurrentWorkoutsView(Application.WorkoutsView.exercises)
@@ -48,7 +75,26 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 	}
 
+	func FindExerciseIcon(_ exerciseName: String) -> String {
+		switch exerciseName {
+		case "CHINUPS":
+			return "chinups"
+		case "WALL SIX":
+			return "wallSix"
+		case "Dip On Chair":
+			return "dipOnChair"
+		case "SQUATS":
+			return "squats"
+		case "PUSH UP":
+			return "pushUp"
+		default:
+			return "chinups"
+		}
+	}
+
 	func btnAddClicked(_ sender:UIButton!) {
+		isAdding = !isAdding
+		tableView.reloadData()
 	}
 
 	func btnBackClicked(_ sender:UIButton!) {
@@ -200,7 +246,12 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return exercisesName.count
+		if isAdding {
+			return fullExercisesName.count
+		} else {
+			exercisesName = defaults.GetArrayString(currentWorkoutName)
+			return exercisesName.count
+		}
 	}
 
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
@@ -214,8 +265,18 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:ExercisesListCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! ExercisesListCell
-		cell.iconNamed = exercisesIcon[indexPath.row]
-		cell.titleText = exercisesName[indexPath.row]
+		if isAdding {
+			cell.isAdding = true
+			cell.titleText = fullExercisesName[indexPath.row]
+			if exercisesName.contains(cell.titleText) {
+				cell.checkBox.isChecked(true)
+			}
+		} else {
+			cell.isAdding = false
+			cell.titleText = exercisesName[indexPath.row]
+		}
+		cell.currentWorkoutName = currentWorkoutName
+		cell.iconNamed = FindExerciseIcon(cell.titleText)
 		cell.updateCell()
 		return cell
 	}

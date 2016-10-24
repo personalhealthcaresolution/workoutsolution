@@ -60,4 +60,8 @@ class Application {
 	var currentExercisesView: ExercisesView = ExercisesView.type
 	func CurrentExercisesView() -> ExercisesView { return currentExercisesView }
 	func CurrentExercisesView(_ value: ExercisesView) { currentExercisesView = value }
+
+	var currentWorkoutsListIndex = 0
+	func CurrentWorkoutsListIndex() -> Int { return currentWorkoutsListIndex }
+	func CurrentWorkoutsListIndex(_ value: Int) { currentWorkoutsListIndex = value}
 }
