@@ -43,10 +43,10 @@
 		<posX>536</posX>
 		<posY>389</posY>
 		<width>619</width>
-		<height>48</height>
+		<height>65</height>
 		<text>UPPER BODY</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>15</size>
+		<font>Arial</font>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
@@ -74,10 +74,10 @@
 		<posX>536</posX>
 		<posY>804</posY>
 		<width>619</width>
-		<height>48</height>
+		<height>65</height>
 		<text>LOWER BODY</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>15</size>
+		<font>Arial-Bold</font>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
@@ -105,31 +105,31 @@
 		<posX>536</posX>
 		<posY>1219</posY>
 		<width>619</width>
-		<height>48</height>
+		<height>65</height>
 		<text>CORE ABS</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>15</size>
+		<font>Arial-Bold</font>
+		<size>19</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>104</posX>
+		<posX>107</posX>
 		<posY>1691</posY>
-		<width>391</width>
-		<height>75</height>
+		<width>390</width>
+		<height>102</height>
 		<text>CARDIO</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>24</size>
+		<size>25</size>
 		<color>0xffffff</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>708</posX>
+		<posX>694</posX>
 		<posY>1513</posY>
-		<width>427</width>
-		<height>447</height>
+		<width>441</width>
+		<height>441</height>
 		<icon>cardio</icon>
 	</object>
 </view>

@@ -53,6 +53,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>AlienEncountersSolid.ttf</string>
+		<string>telegrafico.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

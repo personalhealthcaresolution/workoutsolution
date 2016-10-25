@@ -31,11 +31,11 @@
 		<type>label</type>
 		<posX>351</posX>
 		<posY>1243</posY>
-		<width>540</width>
+		<width>686</width>
 		<height>65</height>
 		<text>CHOOSE BY</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>22</size>
+		<font>telegrafico</font>
+		<size>46</size>
 		<color>0x373639</color>
 	</object>
 

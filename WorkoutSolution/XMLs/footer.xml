@@ -23,11 +23,11 @@
 		<type>label</type>
 		<posX>61</posX>
 		<posY>2156</posY>
-		<width>144</width>
+		<width>250</width>
 		<height>38</height>
 		<text>Exercises</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>8</size>
+		<size>12</size>
 		<color>0xffffff</color>
 	</object>
 
@@ -45,11 +45,11 @@
 		<type>label</type>
 		<posX>387</posX>
 		<posY>2156</posY>
-		<width>142</width>
+		<width>250</width>
 		<height>38</height>
 		<text>Workouts</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>8</size>
+		<size>12</size>
 		<color>0xffffff</color>
 	</object>
 
@@ -67,11 +67,11 @@
 		<type>label</type>
 		<posX>732</posX>
 		<posY>2156</posY>
-		<width>112</width>
+		<width>200</width>
 		<height>38</height>
 		<text>Tracker</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>8</size>
+		<size>12</size>
 		<color>0xffffff</color>
 	</object>
 
@@ -82,18 +82,18 @@
 		<width>122</width>
 		<height>122</height>
 		<icon>settings</icon>
-		<!-- <selector>btnSettingClicked</selector> -->
+		<selector>btnSettingClicked</selector>
 	</object>
 
 	<object>
 		<type>label</type>
 		<posX>1047</posX>
 		<posY>2156</posY>
-		<width>122</width>
+		<width>200</width>
 		<height>38</height>
 		<text>Settings</text>
 		<font>HelveticaNeue-Bold</font>
-		<size>8</size>
+		<size>12</size>
 		<color>0xffffff</color>
 	</object>
 </view>

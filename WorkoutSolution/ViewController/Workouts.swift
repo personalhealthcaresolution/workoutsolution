@@ -98,6 +98,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func AddTableView(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat) {
+        let constant = Constant()
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -109,7 +110,8 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
-		//tableView.tableFooterView = UIView()
+        tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
+        tableView.backgroundColor = constant.UIColorFromHex(constant.coralRed)
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 339)
 		self.view.addSubview(tableView)
 	}
