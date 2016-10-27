@@ -179,6 +179,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 			AddLabel(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
 		case "check":
 			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkImage: object.check, checkedImage: object.checked, selector: object.selector)
+		case "typeButton":
+			AddTypeButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
 		default:
 			break
 		}
@@ -259,6 +261,24 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		if selector != nil {
 			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
 		}
+		view.view.addSubview(button)
+	}
+
+	func AddTypeButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, background: UInt32, icon: String, selector: Selector? = nil) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let button = TypeButton()
+		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		button.imageText = icon
+		button.title.text = title
+		button.backgroundColor = constant.UIColorFromHex(background)
+		if selector != nil {
+			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
+		}
+		button.UpdateButton()
 		view.view.addSubview(button)
 	}
 

@@ -43,6 +43,7 @@
 		3A8F28941BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F28931BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
 		3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB51FB31D412C5B00872A67 /* ScreenSize.swift */; };
+		3AB7095D1DC25054003CF490 /* TypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7095C1DC25054003CF490 /* TypeButton.swift */; };
 		3AC2156D1D3FBC41003C26E9 /* ScreenObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */; };
 		3AD4A7861D5EE8F60046C52C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */; };
 		3AD4A7881D5F02690046C52C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */; };
@@ -154,6 +155,7 @@
 		3A8F28931BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB51FB31D412C5B00872A67 /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenSize.swift; path = src/ScreenSize.swift; sourceTree = "<group>"; };
+		3AB7095C1DC25054003CF490 /* TypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeButton.swift; path = src/TypeButton.swift; sourceTree = "<group>"; };
 		3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenObject.swift; path = src/ScreenObject.swift; sourceTree = "<group>"; };
 		3AD4A77F1D5EE8C80046C52C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = Frameworks/Facebook/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		3AD4A7851D5EE8F60046C52C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = Frameworks/Facebook/FBSDKLoginKit.framework; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */,
 				3A66AF201D845629002BD1EA /* UserDefaults.swift */,
 				3A047C021DBA8BD100D7B0FA /* ExercisesListCell.swift */,
+				3AB7095C1DC25054003CF490 /* TypeButton.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				3AC2156D1D3FBC41003C26E9 /* ScreenObject.swift in Sources */,
 				3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */,
 				3A6B7FEF1D899F3E0073ABEA /* Database.swift in Sources */,
+				3AB7095D1DC25054003CF490 /* TypeButton.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */,
 				3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */,

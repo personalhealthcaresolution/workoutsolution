@@ -20,96 +20,39 @@
 	</object>
 
 	<object>
-		<type>background</type>
+		<type>typeButton</type>
 		<posX>0</posX>
 		<posY>223</posY>
 		<width>width</width>
 		<height>380</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>104</posX>
-		<posY>262</posY>
-		<width>302</width>
-		<height>302</height>
 		<icon>upper</icon>
+		<text>UPPER BODY</text>
+		<color>0xF94343</color>
 		<selector>btnUpperClicked</selector>
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>536</posX>
-		<posY>389</posY>
-		<width>619</width>
-		<height>65</height>
-		<text>UPPER BODY</text>
-		<font>Arial</font>
-		<size>19</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>background</type>
+		<type>typeButton</type>
 		<posX>0</posX>
-		<posY>638</posY>
+		<posY>627</posY>
 		<width>width</width>
 		<height>380</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>104</posX>
-		<posY>677</posY>
-		<width>302</width>
-		<height>302</height>
 		<icon>lower</icon>
+		<text>LOWER BODY</text>
+		<color>0xF94343</color>
 		<selector>btnLowerClicked</selector>
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>536</posX>
-		<posY>804</posY>
-		<width>619</width>
-		<height>65</height>
-		<text>LOWER BODY</text>
-		<font>Arial-Bold</font>
-		<size>19</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>background</type>
+		<type>typeButton</type>
 		<posX>0</posX>
-		<posY>1053</posY>
+		<posY>1031</posY>
 		<width>width</width>
 		<height>380</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>104</posX>
-		<posY>1092</posY>
-		<width>302</width>
-		<height>302</height>
 		<icon>coreAbs</icon>
-		<selector>btnCoreAbsClicked</selector>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>536</posX>
-		<posY>1219</posY>
-		<width>619</width>
-		<height>65</height>
 		<text>CORE ABS</text>
-		<font>Arial-Bold</font>
-		<size>19</size>
-		<color>0x373639</color>
+		<color>0xF94343</color>
+		<selector>btnCoreAbsClicked</selector>
 	</object>
 
 	<object>
