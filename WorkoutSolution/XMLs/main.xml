@@ -10,15 +10,6 @@
 	</object>
 
 	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>83</posY>
-		<width>width</width>
-		<height>140</height>
-		<color>0x373639</color>
-	</object>
-
-	<object>
 		<type>image</type>
 		<posX>145</posX>
 		<posY>563</posY>
