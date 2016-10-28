@@ -4,8 +4,8 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>83</posY>
-		<width>width</width>
-		<height>height</height>
+		<width>screenWidth</width>
+		<height>screenHeight</height>
 		<color>0x373639</color>
 	</object>
 
@@ -23,7 +23,7 @@
 		<type>typeButton</type>
 		<posX>0</posX>
 		<posY>223</posY>
-		<width>width</width>
+		<width>screenWidth</width>
 		<height>380</height>
 		<icon>upper</icon>
 		<text>UPPER BODY</text>
@@ -35,7 +35,7 @@
 		<type>typeButton</type>
 		<posX>0</posX>
 		<posY>627</posY>
-		<width>width</width>
+		<width>screenWidth</width>
 		<height>380</height>
 		<icon>lower</icon>
 		<text>LOWER BODY</text>
@@ -47,7 +47,7 @@
 		<type>typeButton</type>
 		<posX>0</posX>
 		<posY>1031</posY>
-		<width>width</width>
+		<width>screenWidth</width>
 		<height>380</height>
 		<icon>coreAbs</icon>
 		<text>CORE ABS</text>

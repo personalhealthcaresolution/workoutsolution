@@ -4,8 +4,8 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>83</posY>
-		<width>width</width>
-		<height>height</height>
+		<width>screenWidth</width>
+		<height>screenHeight</height>
 		<color>0x373639</color>
 	</object>
 
@@ -20,135 +20,63 @@
 	</object>
 
 	<object>
-		<type>background</type>
+		<type>levelButton</type>
 		<posX>0</posX>
-		<posY>224</posY>
+		<posY>223</posY>
 		<width>609</width>
-		<height>577</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>259</posY><!-- 35 +224 -->
-		<width>409</width>
-		<height>54</height>
-		<text>BEGINNER</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>19</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>97</posX>
-		<posY>348</posY>
-		<width>418</width>
-		<height>418</height>
+		<height>580</height>
 		<icon>absBeginner</icon>
+		<text>BEGINNER</text>
+		<textX>100</textX>
+		<color>0xF94343</color>
 		<selector>btnAbsBeginnerClicked</selector>
 	</object>
 
 	<object>
-		<type>background</type>
-		<posX>633</posX>
-		<posY>224</posY>
+		<type>levelButton</type>
+		<posX>609 + 24</posX>
+		<posY>223</posY>
 		<width>609</width>
-		<height>577</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>648</posX>
-		<posY>259</posY>
-		<width>579</width>
-		<height>54</height>
-		<text>INTERMEDIATE</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>19</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>730</posX>
-		<posY>348</posY>
-		<width>418</width>
-		<height>418</height>
+		<height>580</height>
 		<icon>beginner</icon>
+		<text>INTERMEDIATE</text>
+		<textX>15</textX>
+		<color>0xF94343</color>
 		<selector>btnBeginnerClicked</selector>
 	</object>
 
 	<object>
-		<type>background</type>
+		<type>levelButton</type>
 		<posX>0</posX>
-		<posY>825</posY>
+		<posY>223 + 580 + 24</posY>
 		<width>609</width>
-		<height>577</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>82</posX>
-		<posY>860</posY>
-		<width>445</width>
-		<height>54</height>
-		<text>ADVANCED</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>19</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>97</posX>
-		<posY>949</posY>
-		<width>418</width>
-		<height>418</height>
+		<height>580</height>
 		<icon>advanced</icon>
+		<text>ADVANCED</text>
+		<textX>82</textX>
+		<color>0xF94343</color>
 		<selector>btnAdvancedClicked</selector>
 	</object>
 
 	<object>
-		<type>background</type>
-		<posX>633</posX>
-		<posY>825</posY>
+		<type>levelButton</type>
+		<posX>609 + 24</posX>
+		<posY>223 + 580 + 24</posY>
 		<width>609</width>
-		<height>577</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>783</posX>
-		<posY>860</posY>
-		<width>309</width>
-		<height>54</height>
-		<text>EXPERT</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>19</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>730</posX>
-		<posY>949</posY>
-		<width>418</width>
-		<height>418</height>
+		<height>580</height>
 		<icon>intermediate</icon>
+		<text>EXPERT</text>
+		<textX>150</textX>
+		<color>0xF94343</color>
 		<selector>btnIntermediateClicked</selector>
 	</object>
 
 	<object>
 		<type>label</type>
 		<posX>451</posX>
-		<posY>1457</posY>
+		<posY>223 + 580 + 24 + 580 + 55</posY>
 		<width>340</width>
-		<height>70</height>
+		<height>89</height>
 		<text>CARDIO</text>
 		<font>HelveticaNeue-Bold</font>
 		<size>22</size>
@@ -157,8 +85,8 @@
 
 	<object>
 		<type>button</type>
-		<posX>411</posX>
-		<posY>1569</posY>
+		<posX>412</posX>
+		<posY>223 + 580 + 24 + 580 + 55 + 89 + 42</posY>
 		<width>418</width>
 		<height>418</height>
 		<icon>cardio-1</icon>

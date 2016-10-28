@@ -1,23 +1,25 @@
 //
-//  Button.swift
+//  LevelButton.swift
 //  WorkoutSolution
 //
-//  Created by Thanh Long Nguyen on 10/27/16.
+//  Created by Thanh Long Nguyen on 10/28/16.
 //  Copyright © 2016 Khai Dao. All rights reserved.
 //
 
 import UIKit
 
-class TypeButton: UIButton {
+class LevelButton: UIButton {
 	let icon = UIImageView()
 	let title = UILabel()
 	let constant = Constant()
+
+	var textX: CGFloat = 0
 	var imageText = ""
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-		AddImage(icon, xPosition: 104, yPosition: 39, width: 302, height: 302, named: "")
-		AddLabel(title, xPosition: 536, yPosition: 166, width: 619, height: 65, text: "", font: "Arial-BoldMT", size: 18, color: constant.citrus)
+		AddLabel(title, xPosition: 0, yPosition: 35, width: 619, height: 60, text: "", font: "Arial-BoldMT", size: 20, color: constant.citrus)
+		AddImage(icon, xPosition: 97, yPosition: 130, width: 415, height: 415, named: "")
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -27,6 +29,7 @@ class TypeButton: UIButton {
 	func UpdateButton() {
 		let image = UIImage(named: imageText)
 		icon.image = image
+		title.frame.origin.x = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: textX)
 	}
 
 	func AddLabel(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {

@@ -22,6 +22,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var background = ""
 
 		var size: CGFloat = 0
+		var textX: CGFloat = 0
 		var width: CGFloat = 0
 		var height: CGFloat = 0
 		var xPosition: CGFloat = 0
@@ -198,6 +199,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkImage: object.check, checkedImage: object.checked, selector: object.selector)
 		case "typeButton":
 			AddTypeButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
+		case "levelButton":
+			AddLevelButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, textX: object.textX, background: object.color, icon: object.icon, selector: object.selector)
 		default:
 			break
 		}
@@ -299,6 +302,25 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.view.addSubview(button)
 	}
 
+	func AddLevelButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, background: UInt32, icon: String, selector: Selector? = nil) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let button = LevelButton()
+		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		button.imageText = icon
+		button.title.text = title
+		button.textX = textX
+		button.backgroundColor = constant.UIColorFromHex(background)
+		if selector != nil {
+			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
+		}
+		button.UpdateButton()
+		view.view.addSubview(button)
+	}
+
 	func AddCheckBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkImage: String = "", checkedImage: String = "", selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
@@ -351,6 +373,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
             case "size":
 				object.size = StringToCGFloat(string)
+			case "textX":
+				object.textX = StringToCGFloat(string)
             case "width":
 				object.width = CGFloatFromString(string)
             case "height":
