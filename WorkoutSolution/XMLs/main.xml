@@ -4,16 +4,16 @@
 		<type>background</type>
 		<posX>0</posX>
 		<posY>83</posY>
-		<width>width</width>
-		<height>height</height>
+		<width>screenWidth</width>
+		<height>screenHeight</height>
 		<color>0xF94343</color>
 	</object>
 
 	<object>
 		<type>image</type>
 		<posX>145</posX>
-		<posY>563</posY>
-		<width>952</width>
+		<posY>83 + 140 + 340</posY>
+		<width>screenWidth - 145 - 145</width>
 		<height>190</height>
 		<named>calisthenics</named>
 	</object>
@@ -21,19 +21,19 @@
 	<object>
 		<type>label</type>
 		<posX>351</posX>
-		<posY>1243</posY>
-		<width>686</width>
-		<height>65</height>
+		<posY>83 + 140 + 340 + 190 + 490</posY>
+		<width>screenWidth - 279 - 279</width>
+		<height>62</height>
 		<text>CHOOSE BY</text>
 		<font>telegrafico</font>
-		<size>46</size>
+		<size>24</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
 		<posX>380</posX>
-		<posY>1388</posY>
+		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80</posY>
 		<width>255</width>
 		<height>255</height>
 		<icon>type</icon>
@@ -42,20 +42,20 @@
 
 	<object>
 		<type>label</type>
-		<posX>650</posX>
-		<posY>1457</posY>
+		<posX>380 + 255 + 45</posX>
+		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80 + 87</posY>
 		<width>540</width>
-		<height>52</height>
+		<height>81</height>
 		<text>TYPE</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>17</size>
+		<font>Arial-BoldMT</font>
+		<size>25</size>
 		<color>0xffffff</color>
 	</object>
 
 	<object>
 		<type>button</type>
 		<posX>380</posX>
-		<posY>1663</posY>
+		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80 + 255 + 50</posY>
 		<width>255</width>
 		<height>255</height>
 		<icon>level</icon>
@@ -64,13 +64,13 @@
 
 	<object>
 		<type>label</type>
-		<posX>650</posX>
-		<posY>1750</posY>
+		<posX>380 + 255 + 45</posX>
+		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80 + 255 + 50 + 87</posY>
 		<width>540</width>
-		<height>52</height>
+		<height>81</height>
 		<text>LEVEL</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>17</size>
+		<font>Arial-BoldMT</font>
+		<size>25</size>
 		<color>0xffffff</color>
 	</object>
 </view>

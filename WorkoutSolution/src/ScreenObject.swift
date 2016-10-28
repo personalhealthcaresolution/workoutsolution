@@ -125,15 +125,32 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		return NSSelectorFromString(value + ":")
 	}
 
-	func GetScreenSize(_ value: String) -> CGFloat {
-		switch value {
-		case "width":
-			return ScreenSize.defaultWidth
-		case "height":
-			return ScreenSize.defaultHeight
-		default:
-			return StringToCGFloat(value)
+	func CGFloatFromString(_ value: String) -> CGFloat {
+		var isAdd = true
+		var result: CGFloat = 0
+		var valueArray = value.characters.split{$0 == " "}.map(String.init)
+		while valueArray.count > 0 {
+			let current = valueArray.first
+			valueArray.removeFirst()
+			switch current {
+			case "+"?:
+				isAdd = true
+			case "-"?:
+				isAdd = false
+			case "screenWidth"?:
+				result = result + ScreenSize.defaultWidth
+			case "screenHeight"?:
+				result = result + ScreenSize.defaultHeight
+			default:
+				let number = StringToCGFloat(current!)
+				if isAdd {
+					result = result + number
+				} else {
+					result = result - number
+				}
+			}
 		}
+		return result
 	}
 
 	func StringToCGFloat(_ value: String) -> CGFloat {
@@ -335,15 +352,15 @@ class ScreenObject: NSObject, XMLParserDelegate {
             case "size":
 				object.size = StringToCGFloat(string)
             case "width":
-				object.width = GetScreenSize(string)
+				object.width = CGFloatFromString(string)
             case "height":
-                object.height = GetScreenSize(string)
+                object.height = CGFloatFromString(string)
 			case "posX":
-				object.xPosition = StringToCGFloat(string)
+				object.xPosition = CGFloatFromString(string)
 			case "posY":
-				object.yPosition = StringToCGFloat(string)
+				object.yPosition = CGFloatFromString(string)
 			case "rowHeight":
-				object.rowHeight = StringToCGFloat(string)
+				object.rowHeight = CGFloatFromString(string)
 
 			case "color":
 				object.color = GetColor(string)

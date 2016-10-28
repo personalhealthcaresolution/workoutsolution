@@ -44,4 +44,14 @@ class Main: UIViewController, XMLParserDelegate {
     func btnLevelClicked(_ sender:UIButton!) {
         self.performSegue(withIdentifier: "showLevel", sender: self)        
     }
+
+	func PrintFontNames() {
+		let fontFamilyNames = UIFont.familyNames
+		for familyName in fontFamilyNames {
+			print("------------------------------")
+			print("Font Family Name = [\(familyName)]")
+			let names = UIFont.fontNames(forFamilyName: familyName)
+			print("Font Names = [\(names)]")
+		}
+	}
 }
