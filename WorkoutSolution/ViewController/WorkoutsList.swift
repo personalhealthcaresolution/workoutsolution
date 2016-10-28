@@ -202,10 +202,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
-		let font = "HelveticaNeue"
+		let font = "Arial-BoldMT"
 		AddBackground(screenBackground, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: 0x373639, alpha: 0.7)
-		AddImage(popupBackground, xPosition: 92, yPosition: 632, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
-		AddLabel(popupTitle, xPosition: 410, yPosition: 727, width: ScreenSize.defaultWidth - 820, height: 75, text: "New Workout", font: font, size: 18, color: 0xffffff)
+		AddImage(popupBackground, xPosition: 92, yPosition: 223 + 409, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
+		AddLabel(popupTitle, xPosition: 373, yPosition: 223 + 409 + 95, width: ScreenSize.defaultWidth - 746, height: 75, text: "New Workout", font: font, size: 20, color: 0xffffff)
 		AddTextBox(popupTextBox, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, font: font, size: 18, color: 0xffffff)
 		AddButton(popupAddButton, xPosition: 725, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "ADD", selector: NSSelectorFromString("btnAddPopupClicked:"))
 		AddButton(popupCancelButton, xPosition: 222, yPosition: 1072, width: 295, height: 125, background: "buttonAdd", title: "CANCEL", selector: NSSelectorFromString("btnCancelPopupClicked:"))
