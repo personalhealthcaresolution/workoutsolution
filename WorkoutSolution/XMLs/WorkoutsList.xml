@@ -13,8 +13,8 @@
 		<type>button</type>
 		<posX>100</posX>
 		<posY>93</posY>
-		<width>130</width>
-		<height>130</height>
+		<width>120</width>
+		<height>120</height>
 		<icon>edit</icon>
 		<selector>btnEditClicked</selector>
 	</object>
@@ -23,9 +23,9 @@
 		<type>button</type>
 		<posX>1022</posX>
 		<posY>93</posY>
-		<width>120</width>
+		<width>200</width>
 		<height>120</height>
-		<icon>add</icon>
+        <title>Add</title>
 		<selector>btnAddClicked</selector>
 	</object>
 

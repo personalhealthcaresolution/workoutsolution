@@ -11,53 +11,53 @@
 
 	<object>
 		<type>image</type>
-		<posX>145</posX>
-		<posY>83 + 140 + 340</posY>
-		<width>screenWidth - 145 - 145</width>
-		<height>190</height>
+		<posX>100</posX>
+		<posY>83 + 420</posY>
+		<width>screenWidth - 100 - 100</width>
+		<height>227</height>
 		<named>calisthenics</named>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>351</posX>
-		<posY>83 + 140 + 340 + 190 + 490</posY>
-		<width>screenWidth - 279 - 279</width>
-		<height>62</height>
+		<posX>227</posX>
+		<posY>83 + 420 + 227 + 440 - 172</posY>
+		<width>screenWidth - 227 - 227</width>
+		<height>72</height>
 		<text>CHOOSE BY</text>
 		<font>telegrafico</font>
-		<size>24</size>
+		<size>28</size>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>380</posX>
-		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80</posY>
-		<width>255</width>
-		<height>255</height>
+		<posX>320</posX>
+		<posY>83 + 420 + 227 + 440</posY>
+		<width>264</width>
+		<height>264</height>
 		<icon>type</icon>
 		<selector>btnTypeClicked</selector>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>380 + 255 + 45</posX>
-		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80 + 87</posY>
+		<posX>320 + 264 + 80</posX>
+		<posY>83 + 420 + 227 + 440 + 104</posY>
 		<width>540</width>
-		<height>81</height>
+		<height>60</height>
 		<text>TYPE</text>
 		<font>Arial-BoldMT</font>
-		<size>25</size>
+		<size>23</size>
 		<color>0xffffff</color>
 	</object>
 
 	<object>
 		<type>button</type>
-		<posX>380</posX>
-		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80 + 255 + 50</posY>
-		<width>255</width>
-		<height>255</height>
+		<posX>320</posX>
+		<posY>83 + 420 + 227 + 440 + 264 + 50</posY>
+		<width>264</width>
+		<height>264</height>
 		<icon>level</icon>
 		<selector>btnLevelClicked</selector>
 	</object>
@@ -65,12 +65,12 @@
 	<object>
 		<type>label</type>
 		<posX>380 + 255 + 45</posX>
-		<posY>83 + 140 + 340 + 190 + 490 + 62 + 80 + 255 + 50 + 87</posY>
+		<posY>83 + 420 + 227 + 440 + 264 + 50 + 104</posY>
 		<width>540</width>
-		<height>81</height>
+		<height>56</height>
 		<text>LEVEL</text>
 		<font>Arial-BoldMT</font>
-		<size>25</size>
+		<size>23</size>
 		<color>0xffffff</color>
 	</object>
 </view>

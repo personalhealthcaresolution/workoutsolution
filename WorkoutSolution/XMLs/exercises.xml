@@ -10,10 +10,10 @@
 	</object>
 
 	<object>
-		<type>button</type>
+		<type>backButton</type>
 		<posX>70</posX>
 		<posY>100</posY>
-		<width>120</width>
+		<width>300</width>
 		<height>120</height>
 		<icon>back</icon>
 		<selector>btnBackClicked</selector>
@@ -22,7 +22,7 @@
 	<object>
 		<type>button</type>
 		<posX>1042</posX>
-		<posY>100</posY>
+		<posY>93</posY>
 		<width>120</width>
 		<height>120</height>
 		<icon>add</icon>

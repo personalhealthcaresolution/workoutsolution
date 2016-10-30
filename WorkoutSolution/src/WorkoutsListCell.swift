@@ -21,7 +21,7 @@ class WorkoutsListCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
-		AddLabel(title, xPosition: 100, yPosition: 72, width: 700, height: 51, text: titleText, font: "Arial", size: 14, color: constant.citrus)
+		AddLabel(title, xPosition: 100, yPosition: 60, width: 700, height: 75, text: titleText, font: "Arial", size: 18, color: constant.citrus)
 		AddImage(icon, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "listWorkout")
 		AddImage(hamburger, xPosition: ScreenSize.defaultWidth - 159, yPosition: 68, width: 59, height: 59, named: "hamburger")
 		AddCheckBox(checkBox, xPosition: 100, yPosition: 50, width: 95, height: 95, selector: NSSelectorFromString("btnCheckBoxClicked:"))//y = 75, width = 45, height = 45

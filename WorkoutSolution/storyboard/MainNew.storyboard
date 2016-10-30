@@ -54,6 +54,7 @@
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="2vZ-2k-U6A"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="l61-Hc-J1X"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="nod-Am-EXQ"/>
+                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="oKj-ix-Gsp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-t1-cYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,13 +216,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kyg-Ev-LHj"/>
-        <segue reference="2hd-eY-0nB"/>
-        <segue reference="jcM-37-kd3"/>
-        <segue reference="pTy-IG-rOQ"/>
-        <segue reference="8X9-WU-Ybi"/>
         <segue reference="rki-9I-X5x"/>
+        <segue reference="oKj-ix-Gsp"/>
+        <segue reference="kyg-Ev-LHj"/>
+        <segue reference="8X9-WU-Ybi"/>
         <segue reference="d1b-GC-rIO"/>
         <segue reference="GZw-Zg-s5k"/>
+        <segue reference="jcM-37-kd3"/>
+        <segue reference="pTy-IG-rOQ"/>
     </inferredMetricsTieBreakers>
 </document>

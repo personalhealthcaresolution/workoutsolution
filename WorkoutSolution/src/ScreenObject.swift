@@ -17,6 +17,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var type = ""
 		var named = ""
 		var check = ""
+        var title = ""
 		var status = ""
 		var checked = ""
 		var background = ""
@@ -190,7 +191,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		case "background":
 			AddBackground(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
 		case "button":
-			AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, selector: object.selector)
+            AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, title: object.title, selector: object.selector)
 		case "image":
 			AddImage(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
 		case "label":
@@ -201,6 +202,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 			AddTypeButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
 		case "levelButton":
 			AddLevelButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, textX: object.textX, background: object.color, icon: object.icon, selector: object.selector)
+        case "backButton":
+            AddBackButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
 		default:
 			break
 		}
@@ -276,6 +279,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.setImage(UIImage(named: icon), for: UIControlState())
 		button.setBackgroundImage(UIImage(named: background), for: UIControlState())
 		button.setTitle(title, for: UIControlState())
+        button.setTitleColor(UIColor.red, for: UIControlState())
 
 		button.setTitleColor(UIColor.black, for: UIControlState())
 
@@ -284,6 +288,24 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		}
 		view.view.addSubview(button)
 	}
+
+    func AddBackButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, background: UInt32, icon: String, selector: Selector? = nil) {
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+        
+        let button = BackButton()
+        button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        //button.imageText = icon
+        //button.title.text = title
+        //button.backgroundColor = constant.UIColorFromHex(background)
+        if selector != nil {
+            button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
+        }
+        //button.UpdateButton()
+        view.view.addSubview(button)
+    }
 
 	func AddTypeButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, background: UInt32, icon: String, selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
@@ -365,6 +387,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 				object.named = string
 			case "check":
 				object.check = string
+            case "title":
+                object.title = string
 			case "status":
 				object.status = string
 			case "checked":

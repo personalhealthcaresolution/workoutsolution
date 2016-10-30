@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		10B025F31DBF9C3000E71FC5 /* telegrafico.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 10B025F21DBF9C3000E71FC5 /* telegrafico.ttf */; };
+		10E5A0951DC63E79009E0F4C /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E5A0941DC63E79009E0F4C /* BackButton.swift */; };
 		3A01FF791C05FA2900AD1F9D /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF781C05FA2900AD1F9D /* Login.swift */; };
 		3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */; };
 		3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A01FF7D1C05FFD000AD1F9D /* Account.swift */; };
@@ -117,6 +118,7 @@
 
 /* Begin PBXFileReference section */
 		10B025F21DBF9C3000E71FC5 /* telegrafico.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = telegrafico.ttf; path = Fonts/telegrafico.ttf; sourceTree = SOURCE_ROOT; };
+		10E5A0941DC63E79009E0F4C /* BackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackButton.swift; path = src/BackButton.swift; sourceTree = "<group>"; };
 		3A01FF781C05FA2900AD1F9D /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login.swift; path = ViewController/Login.swift; sourceTree = "<group>"; };
 		3A01FF7A1C05FA5500AD1F9D /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUp.swift; path = ViewController/SignUp.swift; sourceTree = "<group>"; };
 		3A01FF7D1C05FFD000AD1F9D /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = src/Account.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 				3A047C021DBA8BD100D7B0FA /* ExercisesListCell.swift */,
 				3AB7095C1DC25054003CF490 /* TypeButton.swift */,
 				3AB433141DC39EB8004E96D4 /* LevelButton.swift */,
+				10E5A0941DC63E79009E0F4C /* BackButton.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 				3A6B7FEF1D899F3E0073ABEA /* Database.swift in Sources */,
 				3AB7095D1DC25054003CF490 /* TypeButton.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
+				10E5A0951DC63E79009E0F4C /* BackButton.swift in Sources */,
 				3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */,
 				3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */,
 				3A0D9FD91D882FB20015189F /* Application.swift in Sources */,
