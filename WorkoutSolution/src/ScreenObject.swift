@@ -234,7 +234,6 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		if text == "" {
 			return
 		}
-
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -245,6 +244,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		label.text = text
 		label.font = UIFont(name: font, size: size)
 		label.textColor = constant.UIColorFromHex(color)
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.numberOfLines = 0
 		view.addSubview(label)
 
 	}

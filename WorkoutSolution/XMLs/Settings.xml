@@ -19,13 +19,46 @@
 
 	<object>
 		<type>label</type>
-		<posX>325</posX>
-		<posY>306</posY><!-- 83 + 223 -->
-		<width>592</width>
-		<height>70</height>
+		<posX>274</posX>
+		<posY>83 + 223</posY>
+		<width>screenWidth - 274 -274</width>
+		<height>80</height>
 		<text>CALISTHENICS</text>
 		<font>AlienEncountersSolid</font>
-		<size>22</size>
+		<size>26</size>
 		<color>0x373639</color>
 	</object>
+
+    <object>
+        <type>label</type>
+        <posX>451</posX>
+        <posY>83 + 223 + 47 + 80</posY>
+        <width>340</width>
+        <height>37</height>
+        <text>VERSION 1.00</text>
+        <font>Arial</font>
+        <size>13</size>
+        <color>0xF94343</color>
+    </object>
+
+    <object>
+        <type>background</type>
+        <posX>0</posX>
+        <posY>223 + 330</posY>
+        <width>screenWidth</width>
+        <height>screenHeight</height>
+        <color>0xF94343</color>
+    </object>
+
+    <object>
+        <type>label</type>
+        <posX>78</posX>
+        <posY>223 + 330 + 48</posY>
+        <width>screenWidth - 78 - 78</width>
+        <height>screenHeight - 223 - 330 - 48 - 48 - 188</height>
+        <text>Nguyen Hue and his brothers, together known as the Tay Son brothers, were the leaders of the famous Tay Son rebellion. As rebels, they conquered Vietnam, overthrowing the imperial Later Le dynasty and the two rival feudal houses of the Nguyen in the south and the Trinh in the north. After several years of constant military campaigning and rule, Nguyen Hue died at the age of 40, possibly due to a stroke.</text>
+        <font>Arial</font>
+        <size>22</size>
+        <color>0x373639</color>
+    </object>
 </view>

@@ -79,6 +79,8 @@ class Level: UIViewController {
 	func btnTrackerClicked(_ sender:UIButton) {
 	}
 
-	func btnSettingClicked(_ sender:UIButton) {
+	func btnSettingsClicked(_ sender:UIButton) {
+        self.performSegue(withIdentifier: "showSettings", sender: self)
+
 	}
 }

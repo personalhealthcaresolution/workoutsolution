@@ -144,8 +144,10 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	func btnTrackerClicked(_ sender:UIButton) {
 	}
 
-	func btnSettingClicked(_ sender:UIButton) {
-	}
+    func btnSettingsClicked(_ sender:UIButton) {
+        self.performSegue(withIdentifier: "showSettings", sender: self)
+        
+    }
 
 	func btnTableViewCellClicked(_ rowIndex: Int) {
 		self.performSegue(withIdentifier: "showDetails", sender: self)

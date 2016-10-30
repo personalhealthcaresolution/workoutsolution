@@ -9,49 +9,52 @@
 import UIKit
 
 class Settings: UIViewController {
-
-    @IBOutlet weak var enableNotification: UISwitch!
-    @IBAction func notificationChangedValue(_ sender: AnyObject) {
-        let defaults = Foundation.UserDefaults.standard
-        defaults.set(enableNotification.isOn, forKey: "enableNotification")
-        
-        if (enableNotification.isOn) {
-            
-            let curDate = Date()
-            let calendar = Calendar.current
-            let componentsYear = (calendar as NSCalendar).components(NSCalendar.Unit.year, from: curDate)
-            let componentsMonth = (calendar as NSCalendar).components(NSCalendar.Unit.month, from: curDate)
-            let componentsDay = (calendar as NSCalendar).components(NSCalendar.Unit.day, from: curDate)
-            
-            var dateComp:DateComponents = DateComponents()
-            dateComp.year = componentsYear.year
-            dateComp.month = componentsMonth.month;
-            dateComp.day = componentsDay.day;
-            dateComp.hour = 05;
-            dateComp.minute = 30;
-            (dateComp as NSDateComponents).timeZone = TimeZone.current
-            
-            let calender:Calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-            let date:Date = calender.date(from: dateComp)!
-            
-            let notification:UILocalNotification = UILocalNotification()
-            notification.category = "notifications on"
-            notification.alertBody = "Woww it works!!"
-            notification.fireDate = date
-            notification.repeatInterval = NSCalendar.Unit.day
-                
-            UIApplication.shared.scheduleLocalNotification(notification)
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let screenObject = ScreenObject()
+        screenObject.ParseXML("Settings")
+        screenObject.ParseXML("Footer")
         
-        let defaults = Foundation.UserDefaults.standard
-        enableNotification.isOn = defaults.bool(forKey: "enableNotification")
+        var objects = screenObject.GetObjects()
+        while objects.count > 0 {
+            var object = ScreenObject.Object()
+            object = objects.first!
+            screenObject.DrawObject(self, object: object)
+            objects.removeFirst()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    func btnExercisesClicked(_ sender:UIButton) {
+        switch Application.instance.currentExercisesView {
+        case Application.ExercisesView.type:
+            self.performSegue(withIdentifier: "showType", sender: self)
+        case Application.ExercisesView.level:
+            self.performSegue(withIdentifier: "showLevel", sender: self)
+        case Application.ExercisesView.details:
+            self.performSegue(withIdentifier: "showDetails", sender: self)
+        case Application.ExercisesView.workouts:
+            self.performSegue(withIdentifier: "showWorkouts", sender: self)
+        }
+    }
+
+    func btnWorkoutsClicked(_ sender:UIButton) {
+        switch Application.instance.CurrentWorkoutsView() {
+        case Application.WorkoutsView.workouts:
+            self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
+        case Application.WorkoutsView.exercises:
+            self.performSegue(withIdentifier: "showExercises", sender: self)
+        }
+    }
+    
+    func btnTrackerClicked(_ sender:UIButton) {
+    }
+    
+    func btnSettingsClicked(_ sender:UIButton) {
     }
 }

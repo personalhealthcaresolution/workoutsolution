@@ -72,4 +72,9 @@ class Details: UIViewController {
 			self.performSegue(withIdentifier: "showExercises", sender: self)
 		}
 	}
+
+    func btnSettingsClicked(_ sender:UIButton) {
+        self.performSegue(withIdentifier: "showSettings", sender: self)
+        
+    }
 }
