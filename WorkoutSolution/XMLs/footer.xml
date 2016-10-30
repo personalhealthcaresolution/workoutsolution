@@ -82,7 +82,7 @@
 		<width>122</width>
 		<height>122</height>
 		<icon>settings</icon>
-		<selector>btnSettingClicked</selector>
+		<selector>btnSettingsClicked</selector>
 	</object>
 
 	<object>
