@@ -18,6 +18,7 @@
 		<icon>back</icon>
 		<selector>btnBackClicked</selector>
 	</object>
+
     <object>
         <type>label</type>
         <posX>517</posX>
