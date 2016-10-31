@@ -23,6 +23,8 @@
 		3A29660C1C77860500A5E733 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29660B1C77860500A5E733 /* LoginEmail.swift */; };
 		3A44A5FF1D819BFB00B4D026 /* Tracker.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A44A5FE1D819BFB00B4D026 /* Tracker.xml */; };
 		3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4D5F2A1D448EDF00E0BFAF /* Details.swift */; };
+		3A5BC2541DC790830064D01E /* FooterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BC2531DC790830064D01E /* FooterButton.swift */; };
+		3A5BC2561DC791460064D01E /* BackButton.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A5BC2551DC791460064D01E /* BackButton.xml */; };
 		3A6609591DB54275004FC4F5 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6609581DB54273004FC4F5 /* Workouts.swift */; };
 		3A66095B1DB54432004FC4F5 /* Workouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A66095A1DB54432004FC4F5 /* Workouts.xml */; };
 		3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A66AF201D845629002BD1EA /* UserDefaults.swift */; };
@@ -133,6 +135,8 @@
 		3A29660B1C77860500A5E733 /* LoginEmail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginEmail.swift; path = ViewController/LoginEmail.swift; sourceTree = "<group>"; };
 		3A44A5FE1D819BFB00B4D026 /* Tracker.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Tracker.xml; path = XMLs/Tracker.xml; sourceTree = "<group>"; };
 		3A4D5F2A1D448EDF00E0BFAF /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Details.swift; path = ViewController/Details.swift; sourceTree = "<group>"; };
+		3A5BC2531DC790830064D01E /* FooterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FooterButton.swift; path = src/FooterButton.swift; sourceTree = "<group>"; };
+		3A5BC2551DC791460064D01E /* BackButton.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = BackButton.xml; path = XMLs/BackButton.xml; sourceTree = "<group>"; };
 		3A6609581DB54273004FC4F5 /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workouts.swift; path = ViewController/Workouts.swift; sourceTree = "<group>"; };
 		3A66095A1DB54432004FC4F5 /* Workouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Workouts.xml; path = XMLs/Workouts.xml; sourceTree = "<group>"; };
 		3A66AF201D845629002BD1EA /* UserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserDefaults.swift; path = src/UserDefaults.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				3AB7095C1DC25054003CF490 /* TypeButton.swift */,
 				3AB433141DC39EB8004E96D4 /* LevelButton.swift */,
 				10E5A0941DC63E79009E0F4C /* BackButton.swift */,
+				3A5BC2531DC790830064D01E /* FooterButton.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				3A20F8E11D64B5790049931A /* Type.xml */,
 				3A70C8051D808B5600E08F0E /* WorkoutsList.xml */,
 				3A66095A1DB54432004FC4F5 /* Workouts.xml */,
+				3A5BC2551DC791460064D01E /* BackButton.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -503,6 +509,7 @@
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */,
+				3A5BC2561DC791460064D01E /* BackButton.xml in Resources */,
 				3A70C8061D808B5600E08F0E /* WorkoutsList.xml in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
 			);
@@ -547,6 +554,7 @@
 				10E5A0951DC63E79009E0F4C /* BackButton.swift in Sources */,
 				3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */,
 				3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */,
+				3A5BC2541DC790830064D01E /* FooterButton.swift in Sources */,
 				3A0D9FD91D882FB20015189F /* Application.swift in Sources */,
 				3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,

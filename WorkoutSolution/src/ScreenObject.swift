@@ -364,6 +364,32 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		checkBox.isChecked(isChecked)
 	}
 
+	func AddLabel(_ label: UILabel, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		label.text = text
+		label.font = UIFont(name: font, size: size)
+		label.textColor = constant.UIColorFromHex(color)
+		view.addSubview(label)
+
+	}
+
+	func AddImage(_ icon: UIImageView, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		let image = UIImage(named: named)
+		icon.image = image
+		icon.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		view.addSubview(icon)
+	}
+
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
         curElement = elementName
         didStartElement = true

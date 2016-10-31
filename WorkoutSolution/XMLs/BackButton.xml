@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view>
+	<object>
+		<type>label</type>
+		<posX>100</posX>
+		<posY>30</posY>
+		<width>200</width>
+		<height>60</height>
+		<text>Back</text>
+		<font>Arial</font>
+		<size>15</size>
+		<color>0xF94343</color>
+	</object>
+	<object>
+		<type>image</type>
+		<posX>0</posX>
+		<posY>0</posY>
+		<width>120</width>
+		<height>120</height>
+		<named>back</named>
+	</object>
+</view>
