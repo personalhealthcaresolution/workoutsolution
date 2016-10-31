@@ -10,90 +10,54 @@
 	</object>
 
 	<object>
-		<type>button</type>
-		<posX>72</posX>
+		<type>footerButton</type>
+		<posX>0</posX>
 		<posY>2032</posY>
-		<width>122</width>
-		<height>122</height>
+		<width>310</width>
+		<height>188</height>
 		<icon>exercises</icon>
+		<text>Exercises</text>
+		<textX>60</textX>
+		<color>0xffffff</color>
 		<selector>btnExercisesClicked</selector>
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>61</posX>
-		<posY>2156</posY>
-		<width>250</width>
-		<height>38</height>
-		<text>Exercises</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>12</size>
-		<color>0xffffff</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>397</posX>
+		<type>footerButton</type>
+		<posX>310</posX>
 		<posY>2032</posY>
-		<width>122</width>
-		<height>122</height>
+		<width>310</width>
+		<height>188</height>
 		<icon>workouts</icon>
+		<text>Routine</text>
+		<textX>80</textX>
+		<color>0xffffff</color>
 		<selector>btnWorkoutsClicked</selector>
 	</object>
 
 	<object>
-		<type>label</type>
-		<posX>387</posX>
-		<posY>2156</posY>
-		<width>250</width>
-		<height>38</height>
-		<text>Routine</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>12</size>
-		<color>0xffffff</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>722</posX>
+		<type>footerButton</type>
+		<posX>310 + 310</posX>
 		<posY>2032</posY>
-		<width>122</width>
-		<height>122</height>
+		<width>310</width>
+		<height>188</height>
 		<icon>tracker</icon>
-		<!-- <selector>btnTrackerClicked</selector> -->
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>732</posX>
-		<posY>2156</posY>
-		<width>200</width>
-		<height>38</height>
 		<text>Tracker</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>12</size>
+		<textX>80</textX>
 		<color>0xffffff</color>
+		<selector>btnTrackerClicked</selector>
 	</object>
 
 	<object>
-		<type>button</type>
-		<posX>1047</posX>
+		<type>footerButton</type>
+		<posX>310 + 310 + 310</posX>
 		<posY>2032</posY>
-		<width>122</width>
-		<height>122</height>
+		<width>310</width>
+		<height>188</height>
 		<icon>settings</icon>
-		<selector>btnSettingsClicked</selector>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>1047</posX>
-		<posY>2156</posY>
-		<width>200</width>
-		<height>38</height>
 		<text>Settings</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>12</size>
+		<textX>72</textX>
 		<color>0xffffff</color>
+		<selector>btnSettingsClicked</selector>
 	</object>
 </view>
