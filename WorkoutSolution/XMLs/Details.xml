@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view>
+    <object>
+        <type>background</type>
+        <posX>0</posX>
+        <posY>83</posY>
+        <width>screenWidth</width>
+        <height>screenHeight</height>
+        <color>0x373639</color>
+    </object>
+    
+    <object>
+        <type>backButton</type>
+        <posX>70</posX>
+        <posY>100</posY>
+        <width>300</width>
+        <height>120</height>
+        <icon>back</icon>
+        <selector>btnBackClicked</selector>
+    </object>
+
+    <object>
+        <type>background</type>
+        <posX>0</posX>
+        <posY>223</posY>
+        <width>screenWidth</width>
+        <height>709</height>
+        <color>0xF94343</color>
+    </object>
+
+    <object>
+        <type>image</type>
+        <posX>76</posX>
+        <posY>386</posY>
+        <width>385</width>
+        <height>400</height>
+        <named>before</named>
+    </object>
+
+    <object>
+        <type>label</type>
+        <posX>93</posX>
+        <posY>829</posY>
+        <width>350</width>
+        <height>57</height>
+        <text>BEFORE</text>
+        <font>Arial</font>
+        <size>22</size>
+        <color>0x373639</color>
+    </object>
+
+    <object>
+        <type>image</type>
+        <posX>536</posX>
+        <posY>273</posY>
+        <width>630</width>
+        <height>510</height>
+        <named>behind</named>
+    </object>
+    
+    <object>
+        <type>label</type>
+        <posX>685</posX>
+        <posY>829</posY>
+        <width>332</width>
+        <height>57</height>
+        <text>BEHIND</text>
+        <font>Arial</font>
+        <size>22</size>
+        <color>0x373639</color>
+    </object>
+
+    <object>
+        <type>background</type>
+        <posX>0</posX>
+        <posY>1813</posY>
+        <width>screenWidth</width>
+        <height>255</height>
+        <color>0xF94343</color>
+    </object>
+
+    <object>
+        <type>button</type>
+        <posX>259</posX>
+        <posY>1813 + 20</posY>
+        <width>screenWidth - 259 - 259</width>
+        <height>149</height>
+        <background>button</background>
+        <title>START ROUTINE</title>
+        <color>0x373639</color>
+    </object>
+</view>

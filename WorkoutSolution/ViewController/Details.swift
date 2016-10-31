@@ -33,31 +33,31 @@ class Details: UIViewController {
     }
 
     func initView() {
-        let constant = Constant()
         let screenObject = ScreenObject()
+        screenObject.ParseXML("Details")
+        screenObject.ParseXML("Footer")
+        
+        var objects = screenObject.GetObjects()
+        while objects.count > 0 {
+            var object = ScreenObject.Object()
+            object = objects.first!
+            screenObject.DrawObject(self, object: object)
+            objects.removeFirst()
+        }
 
-        screenObject.AddBackground(self.view, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: constant.citrus)
-        screenObject.AddButton(self, xPosition: 70, yPosition: 100, width: 120, height: 120, icon: "back", selector: #selector(Details.btnBackClicked(_:)))
+        //screenObject.AddBackground(self.view, xPosition: 0, yPosition: 83, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: constant.citrus)
+        //screenObject.AddButton(self, xPosition: 70, yPosition: 100, width: 120, height: 120, icon: "back", selector: #selector(Details.btnBackClicked(_:)))
 
-        screenObject.AddBackground(self.view, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 709, color: constant.coralRed)
+        //screenObject.AddBackground(self.view, xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 709, color: constant.coralRed)
 
-        screenObject.AddImage(self.view, xPosition: 76, yPosition: 386, width: 385, height: 400, named: "before")
-        screenObject.AddLabel(self.view, xPosition: 93, yPosition: 829, width: 350, height: 57, text: "BEFORE", font: constant.helveticaNeueBold, size: 22, color: constant.citrus)
+        //screenObject.AddImage(self.view, xPosition: 76, yPosition: 386, width: 385, height: 400, named: "before")
+        //screenObject.AddLabel(self.view, xPosition: 93, yPosition: 829, width: 350, height: 57, text: "BEFORE", font: constant.helveticaNeueBold, size: 22, color: constant.citrus)
 
-        screenObject.AddImage(self.view, xPosition: 536, yPosition: 273, width: 630, height: 510, named: "behind")
-        screenObject.AddLabel(self.view, xPosition: 685, yPosition: 829, width: 332, height: 57, text: "BEHIND", font: constant.helveticaNeueBold, size: 22, color: constant.citrus)
+        //screenObject.AddImage(self.view, xPosition: 536, yPosition: 273, width: 630, height: 510, named: "behind")
+        //screenObject.AddLabel(self.view, xPosition: 685, yPosition: 829, width: 332, height: 57, text: "BEHIND", font: constant.helveticaNeueBold, size: 22, color: constant.citrus)
 
-        screenObject.AddBackground(self.view, xPosition: 0, yPosition: 1813, width: ScreenSize.defaultWidth, height: 255, color: constant.coralRed)
-        screenObject.AddButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, background: "button", title: "START ROUTINE", titleColor: Constant().citrus)
-
-		screenObject.ParseXML("Footer")
-		var objects = screenObject.GetObjects()
-		while objects.count > 0 {
-			var object = ScreenObject.Object()
-			object = objects.first!
-			screenObject.DrawObject(self, object: object)
-			objects.removeFirst()
-		}
+        //screenObject.AddBackground(self.view, xPosition: 0, yPosition: 1813, width: ScreenSize.defaultWidth, height: 255, color: constant.coralRed)
+        //screenObject.AddButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, background: "button", title: "START ROUTINE", titleColor: Constant().citrus)
     }
 
     func btnBackClicked(_ sender:UIButton!) {
