@@ -18,6 +18,17 @@
 		<icon>back</icon>
 		<selector>btnBackClicked</selector>
 	</object>
+    <object>
+        <type>label</type>
+        <posX>517</posX>
+        <posY>100</posY>
+        <width>208</width>
+        <height>120</height>
+        <text>Level</text>
+        <font>Arial</font>
+        <size>22</size>
+        <color>0xffffff</color>
+    </object>
 
 	<object>
 		<type>levelButton</type>
