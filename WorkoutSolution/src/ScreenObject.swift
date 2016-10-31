@@ -191,7 +191,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		case "background":
 			AddBackground(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, color: object.color)
 		case "button":
-            AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, title: object.title, selector: object.selector)
+            AddButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, background: object.background, title: object.title, titleColor: object.color, selector: object.selector)
 		case "image":
 			AddImage(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
 		case "label":
@@ -270,7 +270,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.addSubview(textBox)
 	}
 
-	func AddButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
+	func AddButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UInt32 = Constant().white, selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -281,9 +281,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.setImage(UIImage(named: icon), for: UIControlState())
 		button.setBackgroundImage(UIImage(named: background), for: UIControlState())
 		button.setTitle(title, for: UIControlState())
-        button.setTitleColor(UIColor.red, for: UIControlState())
-
-		button.setTitleColor(UIColor.black, for: UIControlState())
+        button.setTitleColor(constant.UIColorFromHex(titleColor), for: UIControlState())
 
 		if selector != nil {
 			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)

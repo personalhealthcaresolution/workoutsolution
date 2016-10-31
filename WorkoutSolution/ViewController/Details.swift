@@ -48,7 +48,7 @@ class Details: UIViewController {
         screenObject.AddLabel(self.view, xPosition: 685, yPosition: 829, width: 332, height: 57, text: "BEHIND", font: constant.helveticaNeueBold, size: 22, color: constant.citrus)
 
         screenObject.AddBackground(self.view, xPosition: 0, yPosition: 1813, width: ScreenSize.defaultWidth, height: 255, color: constant.coralRed)
-        screenObject.AddButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, background: "button", title: "START ROUTINE")
+        screenObject.AddButton(self, xPosition: 260, yPosition: 1866, width: 722, height: 149, background: "button", title: "START ROUTINE", titleColor: Constant().citrus)
 
 		screenObject.ParseXML("Footer")
 		var objects = screenObject.GetObjects()
