@@ -261,6 +261,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func btnTableViewCellClicked(_ rowIndex: Int) {
 		if currentEditState != EditState.editing {
+            Application.instance.CurrentWorkoutsListIndex(rowIndex)
 			self.performSegue(withIdentifier: "showExercises", sender: self)
 		}
 	}
