@@ -199,6 +199,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		popupCancelButton.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
 		popupBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
 		screenBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+        dismissKeyboard()
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
@@ -265,6 +266,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			self.performSegue(withIdentifier: "showExercises", sender: self)
 		}
 	}
+
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 
 	//tableview delegate
 	func numberOfSections(in tableView: UITableView) -> Int {
