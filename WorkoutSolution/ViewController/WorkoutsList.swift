@@ -11,12 +11,14 @@ import UIKit
 class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	var tableView = UITableView()
 
-	let popupAddButton = UIButton()
+    let image = UIImage(named: "backgroundTextbox")
+    let popupTitle = UILabel()
 	let popupTextBox = UITextView()
-	let popupTitle = UILabel()
-	let popupCancelButton = UIButton()
+    let popupAddButton = UIButton()
 	var popupBackground = UIImageView()
 	let screenBackground = UILabel()
+    let popupCancelButton = UIButton()
+    let popupBackgroundText = UIImageView()
 
 	let constant = Constant()
 	let screenObject = ScreenObject()
@@ -154,12 +156,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
 
+        popupBackgroundText.image = image
+        popupBackgroundText.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        view.addSubview(popupBackgroundText)
+
 		textView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		textView.font = UIFont(name: font, size: size)
 		textView.textColor = constant.UIColorFromHex(color)
-		textView.backgroundColor = constant.UIColorFromHex(0x373639)
+        textView.backgroundColor = constant.UIColorFromHex(0x373639, alpha: 0)
 		textView.textAlignment = NSTextAlignment.center
-		view.addSubview(textView)
+        view.addSubview(textView)
 	}
 
 	func AddBackground(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32, alpha:Double = 1.0) {
