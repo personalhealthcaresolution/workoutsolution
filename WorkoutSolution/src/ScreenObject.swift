@@ -33,6 +33,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var color: UInt32 = 0
 		var selector: Selector!
 		var isChecked = false
+        var backgroundColor: UInt32 = 0
     }
 
     var object = Object()
@@ -196,6 +197,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 			AddImage(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
 		case "label":
 			AddLabel(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+        case "textView":
+            AddTextView(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color, backgroundColor: object.backgroundColor)
 		case "check":
 			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkImage: object.check, checkedImage: object.checked, selector: object.selector)
 		case "typeButton":
@@ -249,11 +252,27 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		label.text = text
 		label.font = UIFont(name: font, size: size)
 		label.textColor = constant.UIColorFromHex(color)
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.numberOfLines = 0
-		view.addSubview(label)
-
+        view.addSubview(label)
 	}
+
+    func AddTextView(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32, backgroundColor: UInt32) {
+        if text == "" {
+            return
+        }
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+        
+        let textView = UITextView()
+        textView.isEditable = false
+        textView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        textView.text = text
+        textView.font = UIFont(name: font, size: size)
+        textView.textColor = constant.UIColorFromHex(color)
+        textView.backgroundColor = constant.UIColorFromHex(backgroundColor)
+        view.addSubview(textView)
+    }
 
 	func AddTextBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, font: String, size: CGFloat, color: UInt32) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
@@ -463,6 +482,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 				if object.type == "check" {
 					object.status = string
 				}
+            case "backgroundColor":
+                object.backgroundColor = GetColor(string)
             default:
                 return
             }

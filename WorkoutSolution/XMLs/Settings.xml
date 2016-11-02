@@ -51,7 +51,7 @@
     </object>
 
     <object>
-        <type>label</type>
+        <type>textView</type>
         <posX>78</posX>
         <posY>223 + 330 + 48</posY>
         <width>screenWidth - 78 - 78</width>
@@ -60,5 +60,6 @@
         <font>Arial</font>
         <size>22</size>
         <color>0x373639</color>
+        <backgroundColor>0xF94343</backgroundColor>
     </object>
 </view>
