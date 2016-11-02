@@ -21,9 +21,9 @@
 
 	<object>
 		<type>button</type>
-		<posX>1022</posX>
-		<posY>93</posY>
-		<width>200</width>
+		<posX>screenWidth - 100 - 132</posX>
+		<posY>83 + 10</posY>
+		<width>132</width>
 		<height>120</height>
         <title>Add</title>
         <color>0xF94343</color>

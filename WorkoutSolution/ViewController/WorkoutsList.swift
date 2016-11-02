@@ -205,6 +205,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		popupCancelButton.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
 		popupBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
 		screenBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
+        popupBackgroundText.frame.origin.x = ScreenSize.defaultWidth
         dismissKeyboard()
 	}
 
