@@ -88,5 +88,6 @@
         <background>button</background>
         <title>START ROUTINE</title>
         <color>0x373639</color>
+        <selector>btnStartClicked</selector>
     </object>
 </view>
