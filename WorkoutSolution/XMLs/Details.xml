@@ -38,11 +38,9 @@
     </object>
 
     <object>
-        <type>label</type>
-        <posX>93</posX>
-        <posY>829</posY>
-        <width>350</width>
-        <height>57</height>
+        <type>labelAuto</type>
+        <alignX>93</alignX>
+        <alignY>829</alignY>
         <text>BEFORE</text>
         <font>Arial</font>
         <size>22</size>
@@ -57,13 +55,11 @@
         <height>510</height>
         <named>behind</named>
     </object>
-    
+
     <object>
-        <type>label</type>
-        <posX>685</posX>
-        <posY>829</posY>
-        <width>332</width>
-        <height>57</height>
+        <type>labelAuto</type>
+        <alignX>685</alignX>
+        <alignY>829</alignY>
         <text>BEHIND</text>
         <font>Arial</font>
         <size>22</size>
