@@ -18,17 +18,15 @@
 		<named>calisthenics</named>
 	</object>
 
-	<object>
-		<type>label</type>
-		<posX>227</posX>
-		<posY>83 + 420 + 227 + 440 - 172</posY>
-		<width>screenWidth - 227 - 227</width>
-		<height>72</height>
-		<text>CHOOSE BY</text>
-		<font>telegrafico</font>
-		<size>28</size>
-		<color>0x373639</color>
-	</object>
+    <object>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>998</alignY>
+        <text>CHOOSE BY</text>
+        <font>telegrafico</font>
+        <size>28</size>
+        <color>0x373639</color>
+    </object>
 
 	<object>
 		<type>button</type>
