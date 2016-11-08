@@ -50,6 +50,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 
 		initView()
+        Application.instance.CurrentTab(Application.Tabs.workouts)
 		Application.instance.CurrentWorkoutsView(Application.WorkoutsView.exercises)
     }
 
@@ -125,6 +126,8 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
 
 	func btnTableViewCellClicked(_ rowIndex: Int) {
+        self.performSegue(withIdentifier: "showDetails", sender: self)
+
 	}
 
 	func AddImage(_ imageView: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {

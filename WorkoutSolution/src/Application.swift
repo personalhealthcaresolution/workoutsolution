@@ -11,6 +11,11 @@ import Foundation
 class Application {
 	static let instance = Application()
 
+    enum Tabs {
+        case workouts
+        case exercises
+    }
+
 	enum Workouts {
 		case type
 		case level
@@ -40,6 +45,10 @@ class Application {
 		case details
 		case workouts
 	}
+
+    var currentTab: Tabs = Tabs.exercises
+    func CurrentTab() -> Tabs { return currentTab }
+    func CurrentTab(_ value: Tabs) { currentTab = value }
 
 	var currentWorkout: Workouts = Workouts.type
 	func CurrentWorkout() -> Workouts { return currentWorkout }

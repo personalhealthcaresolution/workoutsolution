@@ -48,6 +48,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			workoutName = defaults.GetArrayString(workoutListName)
 		}
         initView()
+        Application.instance.CurrentTab(Application.Tabs.workouts)
 		Application.instance.CurrentWorkoutsView(Application.WorkoutsView.workouts)
     }
 

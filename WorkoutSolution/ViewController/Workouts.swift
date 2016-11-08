@@ -74,6 +74,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 
 		initView()
+        Application.instance.CurrentTab(Application.Tabs.exercises)
 		Application.instance.CurrentExercisesView(Application.ExercisesView.workouts)
     }
 

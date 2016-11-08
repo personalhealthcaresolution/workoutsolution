@@ -47,7 +47,12 @@ class Details: UIViewController {
     }
 
     func btnBackClicked(_ sender:UIButton!) {
-		self.performSegue(withIdentifier: "showWorkouts", sender: self)
+        switch Application.instance.CurrentTab() {
+        case Application.Tabs.workouts:
+            self.performSegue(withIdentifier: "showExercises", sender: self)
+        case Application.Tabs.exercises:
+            self.performSegue(withIdentifier: "showWorkouts", sender: self)
+        }
     }
 
     func btnStartClicked(_ sender:UIButton!) {

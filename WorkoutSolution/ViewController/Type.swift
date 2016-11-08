@@ -18,6 +18,7 @@ class Type: UIViewController {
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
 
+        Application.instance.CurrentTab(Application.Tabs.exercises)
 		Application.instance.CurrentWorkout(Application.Workouts.type)
 		Application.instance.CurrentExercisesView(Application.ExercisesView.type)
     }
