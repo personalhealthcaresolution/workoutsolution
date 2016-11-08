@@ -20,11 +20,9 @@
 	</object>
 
     <object>
-        <type>label</type>
-        <posX>528</posX>
-        <posY>100</posY>
-        <width>186</width>
-        <height>120</height>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>100</alignY>
         <text>Type</text>
         <font>Arial</font>
         <size>22</size>
