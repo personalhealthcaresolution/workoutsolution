@@ -446,6 +446,55 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(label)
     }
 
+    func AddButton(_ button: UIButton, view: UIView, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+        
+        button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        button.setImage(UIImage(named: icon), for: UIControlState())
+        button.setBackgroundImage(UIImage(named: background), for: UIControlState())
+        button.setTitle(title, for: UIControlState())
+        
+        button.setTitleColor(titleColor, for: UIControlState())
+        
+        if selector != nil {
+            button.addTarget(viewController, action: selector!, for: UIControlEvents.touchUpInside)
+        }
+        view.addSubview(button)
+    }
+    
+    func AddTextBox(_ textView: UITextView, view: UIView, background: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, font: String, size: CGFloat, color: UInt32) {
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+        let image = UIImage(named: "backgroundTextbox")
+        background.image = image
+        background.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        view.addSubview(background)
+        
+        textView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        textView.font = UIFont(name: font, size: size)
+        textView.textColor = constant.UIColorFromHex(color)
+        textView.backgroundColor = constant.UIColorFromHex(0x373639, alpha: 0)
+        textView.textAlignment = NSTextAlignment.center
+        view.addSubview(textView)
+    }
+    
+    func AddBackground(_ label: UILabel, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32, alpha:Double = 1.0) {
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+        
+        label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        label.backgroundColor = constant.UIColorFromHex(color, alpha: alpha)
+        view.addSubview(label)
+    }
+
     func GetAutoX(_ value: String, width: CGFloat) -> CGFloat {
         if (value == "center") {
             return (ScreenSize.currentWidth - width) / 2
