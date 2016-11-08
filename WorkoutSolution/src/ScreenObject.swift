@@ -18,6 +18,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		var named = ""
 		var check = ""
         var title = ""
+        var alignX = ""
+        var alignY = ""
 		var status = ""
 		var checked = ""
 		var background = ""
@@ -197,6 +199,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 			AddImage(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
 		case "label":
 			AddLabel(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+        case "labelAuto":
+            AddLabelAuto(view.view, alignX: object.alignX, alignY: object.alignY, text: object.text, font: object.font, size: object.size, color: object.color)
         case "textView":
             AddTextView(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color, backgroundColor: object.backgroundColor)
 		case "check":
@@ -413,8 +417,75 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		label.font = UIFont(name: font, size: size)
 		label.textColor = constant.UIColorFromHex(color)
 		view.addSubview(label)
-
 	}
+
+    func AddLabelAuto(_ view: UIView, alignX: String, alignY: String, text: String, font: String, size: CGFloat, color: UInt32) {
+        let label = UILabel()
+        label.text = text
+        label.font = UIFont(name: font, size: size)
+        label.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        label.textColor = constant.UIColorFromHex(color)
+        label.sizeToFit()
+        label.frame.origin.x = GetAutoX(alignX, width: label.frame.width)
+        label.frame.origin.y = GetAutoY(alignY, height: label.frame.height)
+        view.addSubview(label)
+    }
+
+    func GetAutoX(_ value: String, width: CGFloat) -> CGFloat {
+        if (value == "center") {
+            return (ScreenSize.currentWidth - width) / 2
+        } else {
+            var isAdd = true
+            var result: CGFloat = 0
+            var valueArray = value.components(separatedBy: " ")
+            while valueArray.count > 0 {
+                let current = valueArray.first
+                valueArray.removeFirst()
+                switch current {
+                case "-"?:
+                    isAdd = false
+                case "right"?:
+                    result = ScreenSize.defaultWidth
+                default:
+                    let number = StringToCGFloat(current!)
+                    if isAdd {
+                        result = result + number
+                    } else {
+                        result = result - number - ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+                    }
+                }
+            }
+            return ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: result)
+        }
+    }
+
+    func GetAutoY(_ value: String, height: CGFloat) -> CGFloat {
+        if (value == "center") {
+            return (ScreenSize.currentHeight - height) / 2
+        } else {
+            var isAdd = true
+            var result: CGFloat = 0
+            var valueArray = value.components(separatedBy: " ")
+            while valueArray.count > 0 {
+                let current = valueArray.first
+                valueArray.removeFirst()
+                switch current {
+                case "-"?:
+                    isAdd = false
+                case "bottom"?:
+                    result = ScreenSize.defaultHeight
+                default:
+                    let number = StringToCGFloat(current!)
+                    if isAdd {
+                        result = result + number
+                    } else {
+                        result = result - number - ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+                    }
+                }
+            }
+            return ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: result)
+        }
+    }
 
 	func AddImage(_ icon: UIImageView, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
@@ -453,6 +524,10 @@ class ScreenObject: NSObject, XMLParserDelegate {
 				object.check = string
             case "title":
                 object.title = string
+            case "alignX":
+                object.alignX = string
+            case "alignY":
+                object.alignY = string
 			case "status":
 				object.status = string
 			case "checked":
