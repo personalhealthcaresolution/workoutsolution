@@ -17,18 +17,15 @@
 		<color>0xffffff</color>
 	</object>
 
-	<object>
-		<type>label</type>
-		<posX>274</posX>
-		<posY>83 + 223</posY>
-		<width>screenWidth - 274 -274</width>
-		<height>80</height>
-		<text>CALISTHENICS</text>
-		<font>AlienEncountersSolid</font>
-		<size>26</size>
-		<color>0x373639</color>
-	</object>
-
+    <object>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>306</alignY>
+        <text>CALISTHENICS</text>
+        <font>AlienEncountersSolid</font>
+        <size>26</size>
+        <color>0x373639</color>
+    </object>
     <object>
         <type>label</type>
         <posX>451</posX>

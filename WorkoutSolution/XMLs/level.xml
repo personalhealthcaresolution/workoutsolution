@@ -12,7 +12,7 @@
 	<object>
 		<type>backButton</type>
 		<posX>70</posX>
-		<posY>100</posY>
+		<posY>93</posY>
 		<width>300</width>
 		<height>120</height>
 		<icon>back</icon>
