@@ -18,7 +18,7 @@ class Details: UIViewController {
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
         initView()
 
-		Application.instance.CurrentExercisesView(Application.ExercisesView.details)
+		//Application.instance.CurrentExercisesView(Application.ExercisesView.details)
     }
 
     override func didReceiveMemoryWarning() {
@@ -65,14 +65,11 @@ class Details: UIViewController {
         }
     }
 
+    func btnExercisesClicked(_ sender:UIButton) {
+    }
+
 	func btnWorkoutsClicked(_ sender:UIButton) {
-		switch Application.instance.CurrentWorkoutsView() {
-		case Application.WorkoutsView.workouts:
-			self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
-		case Application.WorkoutsView.exercises:
-			self.performSegue(withIdentifier: "showExercises", sender: self)
-		}
-	}
+    }
 
     func btnSettingsClicked(_ sender:UIButton) {
         self.performSegue(withIdentifier: "showSettings", sender: self)
