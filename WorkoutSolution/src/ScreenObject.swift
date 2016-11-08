@@ -406,6 +406,21 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		checkBox.isChecked(isChecked)
 	}
 
+    func AddCheckBox(_ check: CheckBox, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, checked: String = "", checkImage: String = "", checkedImage: String = "", selector: Selector? = nil) {
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+        
+        check.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+        check.SetCheckImange(checkImage)
+        check.SetCheckedImange(checkedImage)
+        if (selector != nil) {
+            check.addTarget(self, action: selector!, for: UIControlEvents.touchUpInside)
+        }
+        view.addSubview(check)
+    }
+
 	func AddLabel(_ label: UILabel, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
