@@ -234,11 +234,11 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-		return false
+		return true
 	}
 
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return false
+		return true
 	}
 
 	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
@@ -294,14 +294,13 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
-	/*
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-	let edit = UITableViewRowAction(style: .normal, title: "Edit") { action, index in
-	print("share button tapped")
-	}
-	edit.backgroundColor = UIColor.blue
+        let edit = UITableViewRowAction(style: .default, title: "Delete") { action, index in
+            print("share button tapped")
+        }
 
-	return [edit]
+        edit.backgroundColor = constant.UIColorFromHex(Constant.init().white)
+
+        return [edit]
 	}
-	*/
 }
