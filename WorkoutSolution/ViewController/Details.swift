@@ -71,6 +71,9 @@ class Details: UIViewController {
 	func btnWorkoutsClicked(_ sender:UIButton) {
     }
 
+    func btnTrackerClicked(_ sender:UIButton) {
+    }
+
     func btnSettingsClicked(_ sender:UIButton) {
         self.performSegue(withIdentifier: "showSettings", sender: self)
         

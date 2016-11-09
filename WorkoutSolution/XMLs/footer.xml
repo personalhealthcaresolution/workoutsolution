@@ -3,16 +3,16 @@
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>2020</posY>
+		<posY>2000</posY>
 		<width>1242</width>
-		<height>188</height>
+		<height>208</height>
 		<color>0x373639</color>
 	</object>
 
 	<object>
 		<type>footerButton</type>
 		<posX>0</posX>
-		<posY>2032</posY>
+		<posY>2020</posY>
 		<width>310</width>
 		<height>188</height>
 		<icon>exercises</icon>
@@ -25,7 +25,7 @@
 	<object>
 		<type>footerButton</type>
 		<posX>310</posX>
-		<posY>2032</posY>
+		<posY>2020</posY>
 		<width>310</width>
 		<height>188</height>
 		<icon>workouts</icon>
@@ -38,7 +38,7 @@
 	<object>
 		<type>footerButton</type>
 		<posX>310 + 310</posX>
-		<posY>2032</posY>
+		<posY>2020</posY>
 		<width>310</width>
 		<height>188</height>
 		<icon>tracker</icon>
@@ -51,7 +51,7 @@
 	<object>
 		<type>footerButton</type>
 		<posX>310 + 310 + 310</posX>
-		<posY>2032</posY>
+		<posY>2020</posY>
 		<width>310</width>
 		<height>188</height>
 		<icon>settings</icon>

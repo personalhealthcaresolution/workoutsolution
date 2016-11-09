@@ -15,9 +15,9 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	var exercisesName = [String]()
 
 	let homeName = ["CHINUPS", "WALL SIX"]
-	let completeArmName = ["Dip On Chair", "SQUATS"]
+	let completeArmName = ["DIP ON CHAIR", "SQUATS"]
 	let fullBodyName = ["PUSH UP"]
-	let fullExercisesName = ["CHINUPS", "WALL SIX", "Dip On Chair", "SQUATS", "PUSH UP"]
+	let fullExercisesName = ["CHINUPS", "WALL SIX", "DIP ON CHAIR", "SQUATS", "PUSH UP"]
 
 	var isAdding = false
 	let defaults = UserDefaults()

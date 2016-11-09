@@ -11,9 +11,9 @@
 	<object>
 		<type>label</type>
 		<posX>0</posX>
-		<posY>122</posY>
+		<posY>112</posY>
 		<width>310</width>
-		<height>38</height>
+		<height>66</height>
 		<size>12</size>
 		<font>Arial</font>
 	</object>

@@ -15,7 +15,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	let popupTextBox = UITextView()
     let popupAddButton = UIButton()
 	var popupBackground = UIImageView()
-	let screenBackground = UILabel()
+	let screenBackground = UIImageView()
     let popupCancelButton = UIButton()
     let popupBackgroundText = UIImageView()
 
@@ -124,6 +124,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		self.view.addSubview(tableView)
 	}
 
+    func ShowPopup(title: String, addString: String, content: String) {
+        let font = "Arial"
+        screenObject.AddImage(screenBackground, view: view, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, named: "popupBackground")
+        screenObject.AddImage(popupBackground, view: view, xPosition: 92, yPosition: 223 + 409, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
+        screenObject.AddLabelAuto(popupTitle, view: view, alignX: "center", alignY: "707", text: title, font: font, size: 25, color: 0xffffff)
+        screenObject.AddTextBox(popupTextBox, view: view,background: popupBackgroundText, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, content: content, font: font, size: 18, color: 0xffffff)
+        screenObject.AddButton(popupAddButton, view: view, viewController: self, xPosition: 725, yPosition: 1120, width: 295, height: 125, title: addString, selector: #selector(btnAddPopupClicked(_:)))
+        screenObject.AddButton(popupCancelButton, view: view, viewController: self, xPosition: 222, yPosition: 1120, width: 295, height: 125, title: "CANCEL", selector: #selector(btnCancelPopupClicked(_:)))
+    }
+
 	func HidePopup() {
 		popupTitle.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
 		popupTextBox.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
@@ -136,13 +146,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
-		let font = "Arial-BoldMT"
-        screenObject.AddBackground(screenBackground, view: view, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, color: 0x373639, alpha: 0.7)
-        screenObject.AddImage(popupBackground, view: view, xPosition: 92, yPosition: 223 + 409, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
-		screenObject.AddLabel(popupTitle, view: view, xPosition: 373, yPosition: 223 + 409 + 95, width: ScreenSize.defaultWidth - 746, height: 75, text: "New Workout", font: font, size: 20, color: 0xffffff)
-        screenObject.AddTextBox(popupTextBox, view: view,background: popupBackgroundText, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, font: font, size: 18, color: 0xffffff)
-        screenObject.AddButton(popupAddButton, view: view, viewController: self, xPosition: 725, yPosition: 1072, width: 295, height: 125, title: "ADD", selector: #selector(btnAddPopupClicked(_:)))
-        screenObject.AddButton(popupCancelButton, view: view, viewController: self, xPosition: 222, yPosition: 1072, width: 295, height: 125, title: "CANCEL", selector: #selector(btnCancelPopupClicked(_:)))
+        ShowPopup(title: "New Routine", addString: "OK", content: "")
 	}
 
 	func btnEditClicked(_ sender:UIButton!) {
@@ -197,7 +201,12 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		if currentEditState != EditState.editing {
             Application.instance.CurrentWorkoutsListIndex(rowIndex)
 			self.performSegue(withIdentifier: "showExercises", sender: self)
-		}
+        } else {
+            //var indexPath = IndexPath()
+            //indexPath.row = rowIndex
+            //tableView(tableView, editActionsForRowAt: indexPath)
+            ShowPopup(title: "Routine Name", addString: "OK", content: workoutName[rowIndex])
+        }
 	}
 
     func dismissKeyboard() {

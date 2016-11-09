@@ -10,11 +10,12 @@ import UIKit
 
 class FooterButton: UIButton {
 	let icon = UIImageView()
-	let title = UILabel()
+	var title = UILabel()
 	let constant = Constant()
 
 	var textX: CGFloat = 0
 	var imageText = ""
+    var titleText = ""
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -47,6 +48,6 @@ class FooterButton: UIButton {
 	func UpdateButton() {
 		let image = UIImage(named: imageText)
 		icon.image = image
-		title.frame.origin.x = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: textX)
+        title.textAlignment = NSTextAlignment.center
 	}
 }

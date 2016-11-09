@@ -22,10 +22,10 @@
     <object>
         <type>labelAuto</type>
         <alignX>center</alignX>
-        <alignY>100</alignY>
+        <alignY>110</alignY>
         <text>Level</text>
         <font>Arial</font>
-        <size>22</size>
+        <size>19</size>
         <color>0xffffff</color>
     </object>
 
@@ -84,7 +84,7 @@
 	<object>
 		<type>label</type>
 		<posX>451</posX>
-		<posY>223 + 580 + 24 + 580 + 55</posY>
+		<posY>223 + 580 + 24 + 580 + 55 - 10</posY>
 		<width>340</width>
 		<height>89</height>
 		<text>CARDIO</text>
@@ -96,7 +96,7 @@
 	<object>
 		<type>button</type>
 		<posX>412</posX>
-		<posY>223 + 580 + 24 + 580 + 55 + 89 + 42</posY>
+		<posY>223 + 580 + 24 + 580 + 55 + 89 + 42 - 10</posY>
 		<width>418</width>
 		<height>418</height>
 		<icon>cardio-1</icon>

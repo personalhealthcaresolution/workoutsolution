@@ -15,7 +15,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let upperText = ["CHINUPS", "WALL SIX"]
 	let upperIcon = ["chinups", "wallSix"]
 
-	let lowerText = ["Dip On Chair", "SQUATS"]
+	let lowerText = ["DIP ON CHAIR", "SQUATS"]
 	let lowerIcon = ["dipOnChair", "squats"]
 
 	let coreAbsText = ["PUSH UP"]
@@ -27,7 +27,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let intermediateText = ["WALL SIX"]
 	let intermediateIcon = ["wallSix"]
 
-	let advancedText = ["Dip On Chair"]
+	let advancedText = ["DIP ON CHAIR"]
 	let advancedIcon = ["dipOnChair"]
 
 	let expertText = ["SQUATS", "PUSH UP"]
@@ -95,7 +95,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			objects.removeFirst()
 		}
 
-		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1797)
+		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1777)
 	}
 
 	func AddTableView(xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat) {
@@ -203,7 +203,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
 		let screenObject = ScreenObject()
 		screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row])
-		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "HelveticaNeue-Bold", size: 16, color: constant.citrus)
+		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "Arial", size: 20, color: constant.citrus)
 
 		return cell
 	}

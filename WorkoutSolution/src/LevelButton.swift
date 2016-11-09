@@ -18,7 +18,7 @@ class LevelButton: UIButton {
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-		AddLabel(title, xPosition: 0, yPosition: 35, width: 619, height: 60, text: "", font: "Arial-BoldMT", size: 20, color: constant.citrus)
+		AddLabel(title, xPosition: 0, yPosition: 35, width: 619, height: 60, text: "", font: "Arial", size: 20, color: constant.citrus)
 		AddImage(icon, xPosition: 97, yPosition: 130, width: 415, height: 415, named: "")
 	}
 

@@ -17,7 +17,7 @@ class TypeButton: UIButton {
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 		AddImage(icon, xPosition: 104, yPosition: 39, width: 302, height: 302, named: "")
-		AddLabel(title, xPosition: 536, yPosition: 166, width: 619, height: 65, text: "", font: "Arial-BoldMT", size: 18, color: constant.citrus)
+		AddLabel(title, xPosition: 536, yPosition: 166, width: 619, height: 65, text: "", font: "Arial", size: 20, color: constant.citrus)
 	}
 
 	required init?(coder aDecoder: NSCoder) {

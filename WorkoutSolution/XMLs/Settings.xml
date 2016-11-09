@@ -11,37 +11,36 @@
 	<object>
 		<type>background</type>
 		<posX>0</posX>
-		<posY>223</posY>
+		<posY>83</posY>
 		<width>1242</width>
-		<height>330</height>
+		<height>400</height>
 		<color>0xffffff</color>
 	</object>
 
     <object>
         <type>labelAuto</type>
         <alignX>center</alignX>
-        <alignY>306</alignY>
+        <alignY>176</alignY>
         <text>CALISTHENICS</text>
         <font>AlienEncountersSolid</font>
-        <size>26</size>
+        <size>28</size>
         <color>0x373639</color>
     </object>
+
     <object>
-        <type>label</type>
-        <posX>451</posX>
-        <posY>83 + 223 + 47 + 80</posY>
-        <width>340</width>
-        <height>37</height>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>313</alignY>
         <text>VERSION 1.00</text>
         <font>Arial</font>
-        <size>13</size>
+        <size>17</size>
         <color>0xF94343</color>
     </object>
 
     <object>
         <type>background</type>
         <posX>0</posX>
-        <posY>223 + 330</posY>
+        <posY>223 + 330 - 140 + 70</posY>
         <width>screenWidth</width>
         <height>screenHeight</height>
         <color>0xF94343</color>
@@ -50,9 +49,9 @@
     <object>
         <type>textView</type>
         <posX>78</posX>
-        <posY>223 + 330 + 48</posY>
+        <posY>223 + 330 + 48 - 140 + 70</posY>
         <width>screenWidth - 78 - 78</width>
-        <height>screenHeight - 223 - 330 - 48 - 48 - 188</height>
+        <height>screenHeight - 223 - 330 - 48 - 48 - 188 + 70</height>
         <text>Nguyen Hue and his brothers, together known as the Tay Son brothers, were the leaders of the famous Tay Son rebellion. As rebels, they conquered Vietnam, overthrowing the imperial Later Le dynasty and the two rival feudal houses of the Nguyen in the south and the Trinh in the north. After several years of constant military campaigning and rule, Nguyen Hue died at the age of 40, possibly due to a stroke.</text>
         <font>Arial</font>
         <size>22</size>

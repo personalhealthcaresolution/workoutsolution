@@ -446,6 +446,17 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(label)
     }
 
+    func AddLabelAuto(_ label: UILabel, view: UIView, alignX: String, alignY: String, text: String, font: String, size: CGFloat, color: UInt32) {
+        label.text = text
+        label.font = UIFont(name: font, size: size)
+        label.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+        label.textColor = constant.UIColorFromHex(color)
+        label.sizeToFit()
+        label.frame.origin.x = GetAutoX(alignX, width: label.frame.width)
+        label.frame.origin.y = GetAutoY(alignY, height: label.frame.height)
+        view.addSubview(label)
+    }
+
     func AddButton(_ button: UIButton, view: UIView, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", background: String = "", title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
@@ -456,6 +467,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
         button.setImage(UIImage(named: icon), for: UIControlState())
         button.setBackgroundImage(UIImage(named: background), for: UIControlState())
         button.setTitle(title, for: UIControlState())
+        button.titleLabel?.font = UIFont(name: "Arial", size: 18)
         
         button.setTitleColor(titleColor, for: UIControlState())
         
@@ -465,7 +477,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(button)
     }
     
-    func AddTextBox(_ textView: UITextView, view: UIView, background: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, font: String, size: CGFloat, color: UInt32) {
+    func AddTextBox(_ textView: UITextView, view: UIView, background: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, content: String, font: String, size: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -478,6 +490,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
         
         textView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
         textView.font = UIFont(name: font, size: size)
+        textView.text = content
         textView.textColor = constant.UIColorFromHex(color)
         textView.backgroundColor = constant.UIColorFromHex(0x373639, alpha: 0)
         textView.textAlignment = NSTextAlignment.center
