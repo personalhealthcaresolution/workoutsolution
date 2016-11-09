@@ -132,6 +132,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
         screenObject.AddTextBox(popupTextBox, view: view,background: popupBackgroundText, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, content: content, font: font, size: 18, color: 0xffffff)
         screenObject.AddButton(popupAddButton, view: view, viewController: self, xPosition: 725, yPosition: 1120, width: 295, height: 125, title: addString, selector: #selector(btnAddPopupClicked(_:)))
         screenObject.AddButton(popupCancelButton, view: view, viewController: self, xPosition: 222, yPosition: 1120, width: 295, height: 125, title: "CANCEL", selector: #selector(btnCancelPopupClicked(_:)))
+        tableView.isUserInteractionEnabled = false
     }
 
 	func HidePopup() {
@@ -143,19 +144,24 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		screenBackground.frame = CGRect(x: ScreenSize.defaultWidth, y: ScreenSize.defaultHeight, width: 0, height: 0)
         popupBackgroundText.frame.origin.x = ScreenSize.defaultWidth
         dismissKeyboard()
+        tableView.isUserInteractionEnabled = true
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
-        ShowPopup(title: "New Routine", addString: "OK", content: "")
+        if tableView.isUserInteractionEnabled {
+            ShowPopup(title: "New Routine", addString: "OK", content: "")
+        }
 	}
 
 	func btnEditClicked(_ sender:UIButton!) {
-		switch currentEditState {
-		case EditState.none: currentEditState = EditState.editing
-		case EditState.editing: currentEditState = EditState.completed
-		case EditState.completed: break
-		}
-		tableView.reloadData()
+        if tableView.isUserInteractionEnabled {
+            switch currentEditState {
+            case EditState.none: currentEditState = EditState.editing
+            case EditState.editing: currentEditState = EditState.completed
+            case EditState.completed: break
+            }
+            tableView.reloadData()
+        }
 	}
 
 	func btnAddPopupClicked(_ sender:UIButton!) {
@@ -174,16 +180,18 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func btnExercisesClicked(_ sender:UIButton) {
-		switch Application.instance.currentExercisesView {
-		case Application.ExercisesView.type:
-			self.performSegue(withIdentifier: "showType", sender: self)
-		case Application.ExercisesView.level:
-			self.performSegue(withIdentifier: "showLevel", sender: self)
-		case Application.ExercisesView.details:
-			self.performSegue(withIdentifier: "showDetails", sender: self)
-		case Application.ExercisesView.workouts:
-			self.performSegue(withIdentifier: "showWorkouts", sender: self)
-		}
+        if tableView.isUserInteractionEnabled {
+            switch Application.instance.currentExercisesView {
+            case Application.ExercisesView.type:
+                self.performSegue(withIdentifier: "showType", sender: self)
+            case Application.ExercisesView.level:
+                self.performSegue(withIdentifier: "showLevel", sender: self)
+            case Application.ExercisesView.details:
+                self.performSegue(withIdentifier: "showDetails", sender: self)
+            case Application.ExercisesView.workouts:
+                self.performSegue(withIdentifier: "showWorkouts", sender: self)
+            }
+        }
     }
 
     func btnWorkoutsClicked(_ sender:UIButton) {
@@ -193,8 +201,9 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
     func btnSettingsClicked(_ sender:UIButton) {
-        self.performSegue(withIdentifier: "showSettings", sender: self)
-        
+        if tableView.isUserInteractionEnabled {
+            self.performSegue(withIdentifier: "showSettings", sender: self)
+        }
     }
 
 	func btnTableViewCellClicked(_ rowIndex: Int) {
@@ -202,9 +211,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
             Application.instance.CurrentWorkoutsListIndex(rowIndex)
 			self.performSegue(withIdentifier: "showExercises", sender: self)
         } else {
-            //var indexPath = IndexPath()
-            //indexPath.row = rowIndex
-            //tableView(tableView, editActionsForRowAt: indexPath)
             ShowPopup(title: "Routine Name", addString: "OK", content: workoutName[rowIndex])
         }
 	}
