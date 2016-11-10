@@ -19,6 +19,16 @@
 		<selector>btnBackClicked</selector>
 	</object>
 
+    <object>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>110</alignY>
+        <text>Home Workout</text>
+        <font>Arial</font>
+        <size>19</size>
+        <color>0xffffff</color>
+    </object>
+
 	<object>
 		<type>button</type>
 		<posX>screenWidth - 100 - 132</posX>
@@ -39,191 +49,4 @@
 		<color>0xF94343</color>
 		<rowHeight>339</rowHeight>
 	</object>
-	<!--
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>226</posY>
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>294</posY><-- 294 = 226 + 68 ->
-		<width>59</width>
-		<height>59</height>
-		<icon>list</icon>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>429</posY><-- 429 = 226 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>497</posY><-- 497 = 429 + 68 ->
-		<width>59</width>
-		<height>59</height>
-		<icon>list</icon>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>632</posY><-- 632 = 429 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>700</posY><-- 700 = 632 + 68 ->
-		<width>59</width>
-		<height>59</height>
-		<icon>list</icon>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>835</posY><-- 835 = 632 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>903</posY><-- 903 = 835 + 68 ->
-		<width>59</width>
-		<height>59</height>
-		<icon>list</icon>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1038</posY><-- 1038 = 835 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>1083</posX>
-		<posY>1106</posY><-- 1106 = 1038 + 68 ->
-		<width>59</width>
-		<height>59</height>
-		<icon>list</icon>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1241</posY><-- 1241 = 1038 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1444</posY><-- 1444 = 1241 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1647</posY><-- 1647 = 1444 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>background</type>
-		<posX>0</posX>
-		<posY>1850</posY><-- 1850 = 1647 + 193 + 10 ->
-		<width>1242</width>
-		<height>193</height>
-		<color>0xF94343</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>272</posY><-- 46 + 226 ->
-		<width>300</width>
-		<height>100</height>
-		<text>Back</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>475</posY><-- 46 + 429 ->
-		<width>300</width>
-		<height>100</height>
-		<text>Biceps</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>678</posY><-- 46 + 632 ->
-		<width>300</width>
-		<height>100</height>
-		<text>Legs</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>881</posY><-- 46 + 835 ->
-		<width>300</width>
-		<height>100</height>
-		<text>Chest</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>100</posX>
-		<posY>1084</posY><-- 46 + 1038 ->
-		<width>300</width>
-		<height>100</height>
-		<text>abc</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>20</size>
-		<color>0x373639</color>
-	</object>
-	-->
 </view>

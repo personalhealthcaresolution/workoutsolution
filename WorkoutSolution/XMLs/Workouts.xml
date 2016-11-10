@@ -18,4 +18,14 @@
 		<icon>back</icon>
 		<selector>btnBackClicked</selector>
 	</object>
+
+    <object>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>110</alignY>
+        <text>Upper Body</text>
+        <font>Arial</font>
+        <size>19</size>
+        <color>0xffffff</color>
+    </object>
 </view>

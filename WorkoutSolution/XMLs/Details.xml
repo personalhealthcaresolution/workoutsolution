@@ -20,6 +20,16 @@
     </object>
 
     <object>
+        <type>labelAuto</type>
+        <alignX>center</alignX>
+        <alignY>110</alignY>
+        <text>Details</text>
+        <font>Arial</font>
+        <size>19</size>
+        <color>0xffffff</color>
+    </object>
+
+    <object>
         <type>background</type>
         <posX>0</posX>
         <posY>223</posY>
