@@ -147,11 +147,11 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
     
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
@@ -192,7 +192,7 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
         print(#function + " - indexPath: \(indexPath.row)")
     }
-    
+    /*
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
             print("share button tapped")
@@ -201,4 +201,5 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         return [edit]
     }
+    */
 }
