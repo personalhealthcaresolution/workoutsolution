@@ -29,6 +29,16 @@
         <color>0xffffff</color>
     </object>
 
+    <object>
+        <type>table</type>
+        <posX>0</posX>
+        <posY>223</posY>
+        <width>1242</width>
+        <height>1797</height>
+        <color>0xF94343</color>
+        <rowHeight>380</rowHeight>
+    </object>
+<!--
 	<object>
 		<type>typeButton</type>
 		<posX>0</posX>
@@ -64,7 +74,7 @@
 		<color>0xF94343</color>
 		<selector>btnCoreAbsClicked</selector>
 	</object>
-
+-->
 	<object>
 		<type>label</type>
 		<posX>107</posX>
