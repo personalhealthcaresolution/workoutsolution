@@ -13,7 +13,7 @@
         <type>backButton</type>
         <posX>70</posX>
         <posY>93</posY>
-        <width>300</width>
+        <width>400</width>
         <height>120</height>
         <icon>back</icon>
         <selector>btnBackClicked</selector>

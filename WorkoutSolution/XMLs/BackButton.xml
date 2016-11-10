@@ -4,13 +4,14 @@
 		<type>label</type>
 		<posX>100</posX>
 		<posY>30</posY>
-		<width>200</width>
+		<width>280</width>
 		<height>60</height>
 		<text>Back</text>
 		<font>Arial</font>
 		<size>15</size>
 		<color>0xF94343</color>
 	</object>
+
 	<object>
 		<type>image</type>
 		<posX>0</posX>

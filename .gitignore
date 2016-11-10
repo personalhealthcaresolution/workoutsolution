@@ -1,8 +1,9 @@
-
+*.xcscheme
+*.xcbkptlist
 *.xcuserstate
 
+.DS_Store
+xcschememanagement.plist
 WorkoutSolution.xcodeproj/project.xcworkspace/xcuserdata/ianyuen.xcuserdatad/UserInterfaceState.xcuserstate
-
 Pods/Target Support Files/Pods-WorkoutSolution/Pods-WorkoutSolution.debug.xcconfig
-
 Pods/Target Support Files/Pods-WorkoutSolution/Pods-WorkoutSolution.release.xcconfig
