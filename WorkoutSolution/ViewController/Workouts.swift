@@ -73,9 +73,9 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			}
 		}
 
-		initView()
         Application.instance.CurrentTab(Application.Tabs.exercises)
-		Application.instance.CurrentExercisesView(Application.ExercisesView.workouts)
+        Application.instance.CurrentExercisesView(Application.ExercisesView.workouts)
+		initView()
     }
 
     override func didReceiveMemoryWarning() {

@@ -49,9 +49,9 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			exercisesName = defaults.GetArrayString(currentWorkoutName)
 		}
 
-		initView()
         Application.instance.CurrentTab(Application.Tabs.workouts)
-		Application.instance.CurrentWorkoutsView(Application.WorkoutsView.exercises)
+        Application.instance.CurrentWorkoutsView(Application.WorkoutsView.exercises)
+		initView()
     }
 
     override func didReceiveMemoryWarning() {

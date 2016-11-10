@@ -16,11 +16,11 @@ class Type: UIViewController {
         ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
-        initView()
 
         Application.instance.CurrentTab(Application.Tabs.exercises)
 		Application.instance.CurrentWorkout(Application.Workouts.type)
 		Application.instance.CurrentExercisesView(Application.ExercisesView.type)
+        initView()
     }
 
     override func didReceiveMemoryWarning() {

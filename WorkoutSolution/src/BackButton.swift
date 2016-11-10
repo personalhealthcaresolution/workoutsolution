@@ -26,11 +26,27 @@ class BackButton: UIButton {
 			var object = ScreenObject.Object()
 			object = objects.first!
 
+            var titleText = "Back"
+            if Application.instance.CurrentTab() == Application.Tabs.exercises {
+                if Application.instance.CurrentExercisesView() == Application.ExercisesView.workouts {
+                    switch Application.instance.CurrentWorkout() {
+                    case Application.Workouts.type:
+                        titleText = "Type"
+                    case Application.Workouts.level:
+                        titleText = "Level"
+                    }
+                }
+            } else if Application.instance.CurrentTab() == Application.Tabs.workouts {
+                if Application.instance.CurrentWorkoutsView() == Application.WorkoutsView.exercises {
+                    titleText = "Routine"
+                }
+            }
+
 			switch object.type {
 			case "image":
 				screenObject.AddImage(icon, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
 			case "label":
-				screenObject.AddLabel(title, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+				screenObject.AddLabel(title, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: titleText, font: object.font, size: object.size, color: object.color)
 			default: break
 			}
 			objects.removeFirst()

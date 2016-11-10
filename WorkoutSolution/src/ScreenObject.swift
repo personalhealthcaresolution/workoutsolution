@@ -320,13 +320,9 @@ class ScreenObject: NSObject, XMLParserDelegate {
         
         let button = BackButton()
         button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-        //button.imageText = icon
-        //button.title.text = title
-        //button.backgroundColor = constant.UIColorFromHex(background)
         if selector != nil {
             button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
         }
-        //button.UpdateButton()
         view.view.addSubview(button)
     }
 
