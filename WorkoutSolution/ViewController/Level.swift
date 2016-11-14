@@ -8,7 +8,11 @@
 
 import UIKit
 
-class Level: UIViewController {
+class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	let constant = Constant()
+	var tableView = UITableView()
+	var workoutName = ["UPPER BODY", "LOWER BODY", "CORE ABS"]
+	var workoutIcon = ["upper", "lower", "coreAbs"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +42,37 @@ class Level: UIViewController {
         let screenObject = ScreenObject()
 		screenObject.ParseXML("Level")
 		screenObject.ParseXML("Footer")
-        screenObject.DrawScreen(self)
+		var objects = screenObject.GetObjects()
+		while objects.count > 0 {
+			var object = ScreenObject.Object()
+			object = objects.first!
+			if (object.type == "table") {
+				AddTableView(object)
+			} else {
+				screenObject.DrawObject(self, object: object)
+			}
+			objects.removeFirst()
+		}
     }
+
+	func AddTableView(_ object: ScreenObject.Object) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
+
+		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		tableView.delegate = self
+		tableView.dataSource = self
+		tableView.register(LevelCell.self, forCellReuseIdentifier: "cell")
+		tableView.layoutMargins = UIEdgeInsets.zero
+		tableView.separatorInset = UIEdgeInsets.zero
+		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
+		tableView.backgroundColor = constant.UIColorFromHex(object.color)
+
+		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
+		self.view.addSubview(tableView)
+	}
 
 	func btnBackClicked(_ sender:UIButton!) {
 		self.performSegue(withIdentifier: "showMain", sender: self)
@@ -83,5 +116,19 @@ class Level: UIViewController {
 	func btnSettingsClicked(_ sender:UIButton) {
         self.performSegue(withIdentifier: "showSettings", sender: self)
 
+	}
+
+	//tableview delegate
+	func numberOfSections(in tableView: UITableView) -> Int {
+		return 1
+	}
+
+	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+		return 2
+	}
+
+	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		let cell:LevelCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! LevelCell
+		return cell
 	}
 }

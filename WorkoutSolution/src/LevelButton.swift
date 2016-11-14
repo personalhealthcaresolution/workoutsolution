@@ -18,7 +18,7 @@ class LevelButton: UIButton {
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-		AddLabel(title, xPosition: 0, yPosition: 35, width: 619, height: 60, text: "", font: "Arial", size: 20, color: constant.citrus)
+		AddLabel(title, xPosition: 0, yPosition: 35, width: 620, height: 60, text: "", font: "Arial", size: 20, color: constant.citrus)
 		AddImage(icon, xPosition: 97, yPosition: 130, width: 415, height: 415, named: "")
 	}
 
@@ -29,7 +29,6 @@ class LevelButton: UIButton {
 	func UpdateButton() {
 		let image = UIImage(named: imageText)
 		icon.image = image
-		title.frame.origin.x = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: textX)
 	}
 
 	func AddLabel(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
@@ -42,6 +41,7 @@ class LevelButton: UIButton {
 		label.text = text
 		label.font = UIFont(name: font, size: size)
 		label.textColor = constant.UIColorFromHex(color)
+		label.textAlignment = NSTextAlignment.center
 		addSubview(label)
 
 	}

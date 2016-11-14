@@ -208,7 +208,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		case "typeButton":
 			AddTypeButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
 		case "levelButton":
-			AddLevelButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, textX: object.textX, background: object.color, icon: object.icon, selector: object.selector)
+			AddLevelButton(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, textX: object.textX, background: object.color, icon: object.icon, selector: object.selector)
         case "backButton":
             AddBackButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
 		case "footerButton":
@@ -344,7 +344,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.view.addSubview(button)
 	}
 
-	func AddLevelButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, background: UInt32, icon: String, selector: Selector? = nil) {
+	func AddLevelButton(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, background: UInt32, icon: String, selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -356,11 +356,11 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.title.text = title
 		button.textX = textX
 		button.backgroundColor = constant.UIColorFromHex(background)
-		if selector != nil {
-			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
-		}
+		//if selector != nil {
+			//button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
+		//}
 		button.UpdateButton()
-		view.view.addSubview(button)
+		view.addSubview(button)
 	}
 
 	func AddFooterButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, color: UInt32, icon: String, selector: Selector? = nil) {

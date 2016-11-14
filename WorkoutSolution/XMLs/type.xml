@@ -38,43 +38,7 @@
         <color>0x373639</color>
         <rowHeight>380</rowHeight>
     </object>
-<!--
-	<object>
-		<type>typeButton</type>
-		<posX>0</posX>
-		<posY>223</posY>
-		<width>screenWidth</width>
-		<height>380</height>
-		<icon>upper</icon>
-		<text>UPPER BODY</text>
-		<color>0xF94343</color>
-		<selector>btnUpperClicked</selector>
-	</object>
 
-	<object>
-		<type>typeButton</type>
-		<posX>0</posX>
-		<posY>627</posY>
-		<width>screenWidth</width>
-		<height>380</height>
-		<icon>lower</icon>
-		<text>LOWER BODY</text>
-		<color>0xF94343</color>
-		<selector>btnLowerClicked</selector>
-	</object>
-
-	<object>
-		<type>typeButton</type>
-		<posX>0</posX>
-		<posY>1031</posY>
-		<width>screenWidth</width>
-		<height>380</height>
-		<icon>coreAbs</icon>
-		<text>CORE ABS</text>
-		<color>0xF94343</color>
-		<selector>btnCoreAbsClicked</selector>
-	</object>
--->
 	<object>
 		<type>label</type>
 		<posX>107</posX>

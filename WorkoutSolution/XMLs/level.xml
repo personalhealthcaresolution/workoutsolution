@@ -82,6 +82,16 @@
 	</object>
 
 	<object>
+		<type>table</type>
+		<posX>0</posX>
+		<posY>223</posY>
+		<width>1242</width>
+		<height>1797</height>
+		<color>0x373639</color>
+		<rowHeight>580</rowHeight>
+	</object>
+
+	<object>
 		<type>label</type>
 		<posX>451</posX>
 		<posY>223 + 580 + 24 + 580 + 55 - 10</posY>
