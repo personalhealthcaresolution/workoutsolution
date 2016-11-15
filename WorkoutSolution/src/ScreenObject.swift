@@ -344,7 +344,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.view.addSubview(button)
 	}
 
-	func AddLevelButton(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, background: UInt32, icon: String, selector: Selector? = nil) {
+	func AddLevelButton(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, background: UInt32, icon: String, parent: UIViewController? = nil, selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -356,9 +356,9 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.title.text = title
 		button.textX = textX
 		button.backgroundColor = constant.UIColorFromHex(background)
-		//if selector != nil {
-			//button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
-		//}
+		if selector != nil {
+			button.addTarget(parent, action: selector!, for: UIControlEvents.touchUpInside)
+		}
 		button.UpdateButton()
 		view.addSubview(button)
 	}

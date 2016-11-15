@@ -14,12 +14,28 @@ class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	var workoutName = ["UPPER BODY", "LOWER BODY", "CORE ABS"]
 	var workoutIcon = ["upper", "lower", "coreAbs"]
 
+	struct LevelProperties {
+		var icon = ""
+		var textX = 0
+		var title = ""
+		var selector = ""
+		var xPosition = 0
+		var yPosition = 0
+		var background = 0xF94343
+	}
+	var levelList = [LevelProperties]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
+
+		levelList.append(LevelProperties(icon: "absBeginner", textX: 100, title: "BEGINNER", selector: "btnAbsBeginnerClicked", xPosition: 0, yPosition: 0, background: 0xF94343))
+		levelList.append(LevelProperties(icon: "beginner", textX: 15, title: "INTERMEDIATE", selector: "btnBeginnerClicked", xPosition: 622, yPosition: 0, background: 0xF94343))
+		levelList.append(LevelProperties(icon: "advanced", textX: 82, title: "ADVANCED", selector: "btnAdvancedClicked", xPosition: 0, yPosition: 0, background: 0xF94343))
+		levelList.append(LevelProperties(icon: "intermediate", textX: 150, title: "EXPERT", selector: "btnIntermediateClicked", xPosition: 622, yPosition: 0, background: 0xF94343))
 
         Application.instance.CurrentTab(Application.Tabs.exercises)
         Application.instance.CurrentWorkout(Application.Workouts.level)
@@ -129,6 +145,29 @@ class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:LevelCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! LevelCell
+		cell.parent = self
+
+		var levelProperties = levelList.first
+		cell.icon1 = (levelProperties?.icon)!
+		cell.textX1 = (levelProperties?.textX)!
+		cell.title1 = (levelProperties?.title)!
+		cell.selector1 = (levelProperties?.selector)!
+		cell.xPosition1 = (levelProperties?.xPosition)!
+		cell.yPosition1 = (levelProperties?.yPosition)!
+		cell.background1 = (levelProperties?.background)!
+		levelList.removeFirst()
+
+		levelProperties = levelList.first
+		cell.icon2 = (levelProperties?.icon)!
+		cell.textX2 = (levelProperties?.textX)!
+		cell.title2 = (levelProperties?.title)!
+		cell.selector2 = (levelProperties?.selector)!
+		cell.xPosition2 = (levelProperties?.xPosition)!
+		cell.yPosition2 = (levelProperties?.yPosition)!
+		cell.background2 = (levelProperties?.background)!
+		levelList.removeFirst()
+
+		cell.initView()
 		return cell
 	}
 }
