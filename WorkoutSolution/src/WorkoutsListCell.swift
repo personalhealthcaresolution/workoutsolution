@@ -25,7 +25,7 @@ class WorkoutsListCell: UITableViewCell {
 		screenObject.AddLabel(title, view: contentView, xPosition: 100, yPosition: 60, width: 700, height: 75, text: titleText, font: "Arial", size: 18, color: constant.citrus)
 		screenObject.AddImage(icon, view: contentView, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "listWorkout")
 		screenObject.AddImage(hamburger, view: contentView, xPosition: ScreenSize.defaultWidth - 159, yPosition: 68, width: 59, height: 59, named: "hamburger")
-        screenObject.AddCheckBox(checkBox, view: contentView, xPosition: 100, yPosition: 50, width: 95, height: 95, selector: NSSelectorFromString("btnCheckBoxClicked:"))//y = 75, width = 45, height = 45
+		screenObject.AddCheckBox(checkBox, view: contentView, xPosition: 100, yPosition: 50, width: 95, height: 95, parent: self, selector: NSSelectorFromString("btnCheckBoxClicked:"))//y = 75, width = 45, height = 45
 
 		checkBox.SetCheckImange("workoutsChecked")
 		checkBox.SetCheckedImange("workoutsChecked")
