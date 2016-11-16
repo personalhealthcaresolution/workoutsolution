@@ -154,14 +154,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func btnEditClicked(_ sender:UIButton!) {
-        if tableView.isUserInteractionEnabled {
-            switch currentEditState {
-            case EditState.none: currentEditState = EditState.editing
-            case EditState.editing: currentEditState = EditState.completed
-            case EditState.completed: break
-            }
-            tableView.reloadData()
-        }
+		tableView.isEditing = !tableView.isEditing
 	}
 
 	func btnAddPopupClicked(_ sender:UIButton!) {
@@ -228,14 +221,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		btnTableViewCellClicked(indexPath.row)
 	}
 
-	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}
@@ -279,6 +264,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 			}
 		}
 		cell.updateCell()
+
 		return cell
 	}
 
@@ -292,14 +278,5 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
 		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-		let edit = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
-			print("share button tapped")
-		}
-		edit.backgroundColor = constant.UIColorFromHex(constant.citrus)
-
-		return [edit]
 	}
 }
