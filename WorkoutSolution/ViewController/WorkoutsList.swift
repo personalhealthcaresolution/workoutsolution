@@ -250,19 +250,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:WorkoutsListCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkoutsListCell
 		cell.titleText = workoutName[indexPath.row]
-		switch currentEditState {
-		case EditState.none: cell.isEditing = false
-		case EditState.editing: cell.isEditing = true
-		case EditState.completed:
-			cell.isEditing = false
-			if cell.checkBox.isChecked() {
-				needDelete.append(indexPath.row)
-			}
-			if indexPath.row == workoutName.count - 1  {
-				currentEditState = EditState.none
-				RemoveRows()
-			}
-		}
 		cell.updateCell()
 
 		return cell
