@@ -472,7 +472,23 @@ class ScreenObject: NSObject, XMLParserDelegate {
         }
         view.addSubview(button)
     }
-    
+
+	func AddMaiButton(_ button: MainButton, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", title: String = "", selector: Selector? = nil) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		button.text = title
+		button.iconNamed = icon
+		if selector != nil {
+			button.addTarget(viewController, action: selector!, for: UIControlEvents.touchUpInside)
+		}
+		button.initView()
+		viewController.view.addSubview(button)
+	}
+
     func AddTextBox(_ textView: UITextView, view: UIView, background: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, content: String, font: String, size: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)

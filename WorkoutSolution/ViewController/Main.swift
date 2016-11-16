@@ -9,6 +9,8 @@
 import UIKit
 
 class Main: UIViewController, XMLParserDelegate {
+	let typeButton = MainButton()
+	let levelButton = MainButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +37,18 @@ class Main: UIViewController, XMLParserDelegate {
         let screenObject = ScreenObject()
         screenObject.ParseXML("Main")
         screenObject.DrawScreen(self)
-    }
+
+		screenObject.AddMaiButton(typeButton, viewController: self, xPosition: 320, yPosition: 1170, width: 622, height: 264, icon: "type", title: "TYPE", selector: #selector(btnTypeClicked(_:)))
+		screenObject.AddMaiButton(levelButton, viewController: self, xPosition: 320, yPosition: 1484, width: 622, height: 264, icon: "level", title: "LEVEL", selector: #selector(btnLevelClicked(_:)))
+	}
 
     func btnTypeClicked(_ sender:UIButton!) {
+		typeButton.Touched()
         self.performSegue(withIdentifier: "showType", sender: self)
     }
 
     func btnLevelClicked(_ sender:UIButton!) {
+		levelButton.Touched()
         self.performSegue(withIdentifier: "showLevel", sender: self)        
     }
 

@@ -31,44 +31,10 @@
 	<object>
 		<type>button</type>
 		<posX>320</posX>
-		<posY>83 + 420 + 227 + 440</posY>
-		<width>264</width>
-		<height>264</height>
-		<icon>type</icon>
-		<selector>btnTypeClicked</selector>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>320 + 264 + 80</posX>
-		<posY>83 + 420 + 227 + 440 + 97</posY>
-		<width>540</width>
-		<height>70</height>
-		<text>TYPE</text>
-		<font>Arial-BoldMT</font>
-		<size>23</size>
-		<color>0xffffff</color>
-	</object>
-
-	<object>
-		<type>button</type>
-		<posX>320</posX>
 		<posY>83 + 420 + 227 + 440 + 264 + 50</posY>
 		<width>264</width>
 		<height>264</height>
 		<icon>level</icon>
 		<selector>btnLevelClicked</selector>
-	</object>
-
-	<object>
-		<type>label</type>
-		<posX>380 + 255 + 45</posX>
-		<posY>83 + 420 + 227 + 440 + 264 + 50 + 97</posY>
-		<width>540</width>
-		<height>70</height>
-		<text>LEVEL</text>
-		<font>Arial-BoldMT</font>
-		<size>23</size>
-		<color>0xffffff</color>
 	</object>
 </view>
