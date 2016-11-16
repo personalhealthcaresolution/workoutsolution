@@ -10,6 +10,7 @@ import UIKit
 
 class Details: UIViewController {
 	let backButton = BackButton()
+	let routineButton = RoutineButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class Details: UIViewController {
             objects.removeFirst()
         }
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
+		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 259, yPosition: 1830, width: 724, height: 149, selector: #selector(btnStartClicked(_:)))
     }
 
     func btnBackClicked(_ sender:UIButton!) {
@@ -60,6 +62,7 @@ class Details: UIViewController {
     }
 
     func btnStartClicked(_ sender:UIButton!) {
+		routineButton.Touched()
         let ourApplication = UIApplication.shared
         let URLEncodedText = "test"
         let ourPath = "timer://" + URLEncodedText

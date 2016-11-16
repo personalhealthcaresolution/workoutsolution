@@ -39,6 +39,7 @@
 		3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */; };
 		3A7BC3F51CEA190B008B329E /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BC3F41CEA190B008B329E /* Type.swift */; };
 		3A7BCC491DDCAECC008D063A /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BCC481DDCAECC008D063A /* MainButton.swift */; };
+		3A7BCC4B1DDCDE0D008D063A /* RoutineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7BCC4A1DDCDE0D008D063A /* RoutineButton.swift */; };
 		3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */; };
 		3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */; };
 		3A8F287E1BC150B600BCC5BC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F287C1BC150B600BCC5BC /* Interface.storyboard */; };
@@ -156,6 +157,7 @@
 		3A7A5B461C134F8700C6EA87 /* TrackerBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrackerBack.swift; path = ViewController/TrackerBack.swift; sourceTree = "<group>"; };
 		3A7BC3F41CEA190B008B329E /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Type.swift; path = ViewController/Type.swift; sourceTree = "<group>"; };
 		3A7BCC481DDCAECC008D063A /* MainButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainButton.swift; path = src/MainButton.swift; sourceTree = "<group>"; };
+		3A7BCC4A1DDCDE0D008D063A /* RoutineButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineButton.swift; path = src/RoutineButton.swift; sourceTree = "<group>"; };
 		3A7BEA4B1D673DEF00A5F57F /* Exercises.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Exercises.xml; path = XMLs/Exercises.xml; sourceTree = "<group>"; };
 		3A8CDDF01CE111DF00CE7D62 /* MainNew.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainNew.storyboard; path = storyboard/MainNew.storyboard; sourceTree = "<group>"; };
 		3A8F287A1BC150B600BCC5BC /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -234,6 +236,7 @@
 				3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */,
 				3A0DFE001DD9FA88005723A4 /* LevelCell.swift */,
 				3A7BCC481DDCAECC008D063A /* MainButton.swift */,
+				3A7BCC4A1DDCDE0D008D063A /* RoutineButton.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -558,6 +561,7 @@
 				3AB433151DC39EB8004E96D4 /* LevelButton.swift in Sources */,
 				3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */,
 				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
+				3A7BCC4B1DDCDE0D008D063A /* RoutineButton.swift in Sources */,
 				3A7BCC491DDCAECC008D063A /* MainButton.swift in Sources */,
 				3A0D38561DA8ADF400388457 /* WorkoutsListCell.swift in Sources */,
 				3A01FF7B1C05FA5500AD1F9D /* SignUp.swift in Sources */,

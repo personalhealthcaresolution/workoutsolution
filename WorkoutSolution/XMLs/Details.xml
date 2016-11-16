@@ -74,16 +74,4 @@
         <height>255</height>
         <color>0xF94343</color>
     </object>
-
-    <object>
-        <type>button</type>
-        <posX>259</posX>
-        <posY>1813 + 17</posY>
-        <width>screenWidth - 259 - 259</width>
-        <height>149</height>
-        <background>button</background>
-        <title>START ROUTINE</title>
-        <color>0x373639</color>
-        <selector>btnStartClicked</selector>
-    </object>
 </view>
