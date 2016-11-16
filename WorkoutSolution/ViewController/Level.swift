@@ -9,6 +9,8 @@
 import UIKit
 
 class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	let backButton = BackButton()
+
 	let constant = Constant()
 	var tableView = UITableView()
 	var workoutName = ["UPPER BODY", "LOWER BODY", "CORE ABS"]
@@ -69,6 +71,7 @@ class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			}
 			objects.removeFirst()
 		}
+		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
     }
 
 	func AddTableView(_ object: ScreenObject.Object) {
@@ -91,6 +94,7 @@ class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func btnBackClicked(_ sender:UIButton!) {
+		backButton.Touched()
 		self.performSegue(withIdentifier: "showMain", sender: self)
 	}
 

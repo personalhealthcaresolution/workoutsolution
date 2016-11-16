@@ -9,6 +9,7 @@
 import UIKit
 
 class Details: UIViewController {
+	let backButton = BackButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,9 +45,11 @@ class Details: UIViewController {
             screenObject.DrawObject(self, object: object)
             objects.removeFirst()
         }
+		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
     }
 
     func btnBackClicked(_ sender:UIButton!) {
+		backButton.Touched()
         switch Application.instance.CurrentTab() {
         case Application.Tabs.workouts:
             self.performSegue(withIdentifier: "showExercises", sender: self)

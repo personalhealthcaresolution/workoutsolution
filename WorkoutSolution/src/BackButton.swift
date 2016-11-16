@@ -11,6 +11,8 @@ import UIKit
 class BackButton: UIButton {
     let icon = UIImageView()
     let title = UILabel()
+	let touch = UILabel()
+
     let constant = Constant()
     
     var textX: CGFloat = 0
@@ -51,9 +53,8 @@ class BackButton: UIButton {
 			}
 			objects.removeFirst()
 		}
-
-
-
+		screenObject.AddBackground(touch, view: self, xPosition: 0, yPosition: 0, width: 400, height: 120, color: constant.citrus, alpha: 0.5)
+		touch.isHidden = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,4 +66,8 @@ class BackButton: UIButton {
         icon.image = image
         title.frame.origin.x = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: textX)
     }
+
+	func Touched() {
+		touch.isHidden = false
+	}
 }

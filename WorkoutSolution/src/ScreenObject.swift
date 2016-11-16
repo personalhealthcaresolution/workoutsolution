@@ -326,6 +326,19 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.view.addSubview(button)
     }
 
+	func AddBackButton(_ button: BackButton, view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, icon: String, selector: Selector? = nil) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+
+		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		if selector != nil {
+			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
+		}
+		view.view.addSubview(button)
+	}
+
 	func AddTypeButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, background: UInt32, icon: String, selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
@@ -473,7 +486,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(button)
     }
 
-	func AddMaiButton(_ button: MainButton, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", title: String = "", selector: Selector? = nil) {
+	func AddMainButton(_ button: MainButton, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", title: String = "", selector: Selector? = nil) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)

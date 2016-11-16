@@ -9,6 +9,8 @@
 import UIKit
 
 class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	let backButton = BackButton()
+
 	let constant = Constant()
 	var tableView = UITableView()
 	let screenObject = ScreenObject()
@@ -74,6 +76,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			}
 			objects.removeFirst()
 		}
+		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
 	}
 
 	func FindExerciseIcon(_ exerciseName: String) -> String {
@@ -99,6 +102,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func btnBackClicked(_ sender:UIButton!) {
+		backButton.Touched()
 		self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
 	}
 
