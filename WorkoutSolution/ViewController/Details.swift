@@ -52,6 +52,7 @@ class Details: UIViewController {
             self.performSegue(withIdentifier: "showExercises", sender: self)
         case Application.Tabs.exercises:
             self.performSegue(withIdentifier: "showWorkouts", sender: self)
+		default: break
         }
     }
 

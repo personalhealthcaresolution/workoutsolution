@@ -46,8 +46,29 @@ class FooterButton: UIButton {
 	}
 
 	func UpdateButton() {
+		GetImageText()
 		let image = UIImage(named: imageText)
 		icon.image = image
         title.textAlignment = NSTextAlignment.center
+	}
+
+	func GetImageText() {
+		switch Application.instance.CurrentTab() {
+		case Application.Tabs.exercises:
+			if imageText == "exercises" {
+				imageText = "exercisesTouch"
+				title.textColor = constant.UIColorFromHex(constant.coralRed)
+			}
+		case Application.Tabs.workouts:
+			if imageText == "workouts" {
+				imageText = "workoutsTouch"
+				title.textColor = constant.UIColorFromHex(constant.coralRed)
+			}
+		case Application.Tabs.settings:
+			if imageText == "settings" {
+				imageText = "settingsTouch"
+				title.textColor = constant.UIColorFromHex(constant.coralRed)
+			}
+		}
 	}
 }

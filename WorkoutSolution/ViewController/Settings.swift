@@ -13,6 +13,8 @@ class Settings: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		Application.instance.CurrentTab(Application.Tabs.settings)
+
         let screenObject = ScreenObject()
         screenObject.ParseXML("Settings")
         screenObject.ParseXML("Footer")

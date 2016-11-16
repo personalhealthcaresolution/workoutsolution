@@ -14,6 +14,7 @@ class Application {
     enum Tabs {
         case workouts
         case exercises
+		case settings
     }
 
 	enum Workouts {
