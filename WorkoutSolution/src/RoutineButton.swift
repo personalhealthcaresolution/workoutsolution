@@ -33,8 +33,8 @@ class RoutineButton: UIButton {
 
 	func Touched() {
 		let constant = Constant()
-		//let image = UIImage(named: "buttonTouch")
-		//icon.image = image
+		let image = UIImage(named: "buttonTouch")
+		icon.image = image
 		title.textColor = constant.UIColorFromHex(constant.coralRed)
 	}
 }
