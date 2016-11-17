@@ -28,7 +28,8 @@ class RoutineButton: UIButton {
 		let constant = Constant()
 		let screenObject = ScreenObject()
 		screenObject.AddImage(icon, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, named: "button")
-		screenObject.AddLabel(title, view: self, xPosition: 40, yPosition: 0, width: 684, height: 149, text: "START ROUTINE", font: fontName, size: 18, color: constant.citrus)
+		screenObject.AddLabel(title, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, text: "START ROUTINE", font: fontName, size: 18, color: constant.citrus)
+        title.textAlignment = NSTextAlignment.center
 	}
 
 	func Touched() {

@@ -245,7 +245,11 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return true
+        if isAdding {
+            return false
+        } else {
+            return true
+        }
 	}
 
 	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
@@ -268,7 +272,11 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		return true
+        if isAdding {
+            return false
+        } else {
+            return true
+        }
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -283,6 +291,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			cell.isAdding = false
 			cell.titleText = exercisesName[indexPath.row]
 		}
+        cell.mineHeight = tableView.rowHeight
 		cell.currentWorkoutName = currentWorkoutName
 		cell.iconNamed = FindExerciseIcon(cell.titleText)
 		cell.updateCell()

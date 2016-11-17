@@ -181,6 +181,7 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
         cell.isAdding = false
         cell.titleText = workoutName[indexPath.row]
         cell.iconNamed = workoutIcon[indexPath.row]
+        cell.mineHeight = tableView.rowHeight
         cell.updateCell()
         return cell
     }
@@ -196,14 +197,4 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
         print(#function + " - indexPath: \(indexPath.row)")
     }
-    /*
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let edit = UITableViewRowAction(style: .normal, title: "Delete") { action, index in
-            print("share button tapped")
-        }
-        edit.backgroundColor = constant.UIColorFromHex(constant.citrus)
-        
-        return [edit]
-    }
-    */
 }

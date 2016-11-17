@@ -327,7 +327,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
     }
 
 	func AddBackButton(_ button: BackButton, view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, icon: String, selector: Selector? = nil) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 0)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
@@ -500,7 +500,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(button)
     }
 
-	func AddMainButton(_ button: MainButton, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", title: String = "", selector: Selector? = nil) {
+    func AddMainButton(_ button: MainButton, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", title: String = "", touched: Selector, clicked: Selector) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -509,9 +509,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		button.text = title
 		button.iconNamed = icon
-		if selector != nil {
-			button.addTarget(viewController, action: selector!, for: UIControlEvents.touchUpInside)
-		}
+        button.addTarget(viewController, action: touched, for: UIControlEvents.touchDown)
+        button.addTarget(viewController, action: clicked, for: UIControlEvents.touchUpInside)
 		button.initView()
 		viewController.view.addSubview(button)
 	}

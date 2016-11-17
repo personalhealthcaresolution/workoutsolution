@@ -15,13 +15,13 @@
         <alignY>110</alignY>
         <text>Home Workout</text>
         <font>Arial</font>
-        <size>19</size>
+        <size>18</size>
         <color>0xffffff</color>
     </object>
 
 	<object>
 		<type>button</type>
-		<posX>screenWidth - 100 - 132</posX>
+		<posX>screenWidth - 100 - 132 + 50</posX>
 		<posY>83 + 10</posY>
 		<width>132</width>
 		<height>120</height>

@@ -15,7 +15,7 @@
         <alignY>110</alignY>
         <text>Level</text>
         <font>Arial</font>
-        <size>19</size>
+        <size>18</size>
         <color>0xffffff</color>
     </object>
 
@@ -83,20 +83,20 @@
 
 	<object>
 		<type>label</type>
-		<posX>451</posX>
-		<posY>223 + 580 + 24 + 580 + 55 - 10</posY>
-		<width>340</width>
+		<posX>456</posX>
+		<posY>223 + 580 + 24 + 580 + 55 - 10 - 40</posY>
+		<width>350</width>
 		<height>89</height>
 		<text>CARDIO</text>
-		<font>HelveticaNeue-Bold</font>
-		<size>22</size>
+		<font>HelveticaNeue</font>
+		<size>23</size>
 		<color>0xffffff</color>
 	</object>
 
 	<object>
 		<type>button</type>
 		<posX>412</posX>
-		<posY>223 + 580 + 24 + 580 + 55 + 89 + 42 - 10</posY>
+		<posY>223 + 580 + 24 + 580 + 55 + 89 + 42 - 10 - 40</posY>
 		<width>418</width>
 		<height>418</height>
 		<icon>cardio-1</icon>

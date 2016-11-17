@@ -15,6 +15,7 @@ class ExercisesListCell: UITableViewCell {
 	let constant = Constant()
 	let checkBox = CheckBox()
 
+    var mineHeight: CGFloat = 0
 	var isAdding = false
 	var iconNamed = ""
 	var titleText = ""
@@ -56,6 +57,10 @@ class ExercisesListCell: UITableViewCell {
 			listIcon.isHidden = false
 			checkBox.isHidden = true
 		}
+
+        let iconHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: 303)
+        let iconX = (mineHeight - iconHeight) / 2
+        icon.frame = CGRect(x: iconX, y: icon.frame.origin.y, width: icon.frame.width, height: icon.frame.height)
 	}
 
 	func AddImage(_ icon: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {

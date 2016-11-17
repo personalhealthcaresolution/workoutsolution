@@ -15,7 +15,7 @@
         <alignY>110</alignY>
         <text>Type</text>
         <font>Arial</font>
-        <size>19</size>
+        <size>18</size>
         <color>0xffffff</color>
     </object>
 
@@ -32,11 +32,11 @@
 	<object>
 		<type>label</type>
 		<posX>107</posX>
-		<posY>1691</posY>
+		<posY>1691 - 40</posY>
 		<width>390</width>
 		<height>102</height>
 		<text>CARDIO</text>
-		<font>HelveticaNeue-Bold</font>
+		<font>HelveticaNeue</font>
 		<size>25</size>
 		<color>0xffffff</color>
 	</object>
@@ -44,7 +44,7 @@
 	<object>
 		<type>button</type>
 		<posX>694</posX>
-		<posY>1513</posY>
+		<posY>1513 - 40</posY>
 		<width>441</width>
 		<height>441</height>
 		<icon>cardio</icon>

@@ -38,17 +38,28 @@ class Main: UIViewController, XMLParserDelegate {
         screenObject.ParseXML("Main")
         screenObject.DrawScreen(self)
 
-		screenObject.AddMainButton(typeButton, viewController: self, xPosition: 320, yPosition: 1170, width: 622, height: 264, icon: "type", title: "TYPE", selector: #selector(btnTypeClicked(_:)))
-		screenObject.AddMainButton(levelButton, viewController: self, xPosition: 320, yPosition: 1484, width: 622, height: 264, icon: "level", title: "LEVEL", selector: #selector(btnLevelClicked(_:)))
+        var touched = #selector(btnTypeTouched(_:))
+        var clicked = #selector(btnTypeClicked(_:))
+        screenObject.AddMainButton(typeButton, viewController: self, xPosition: 320, yPosition: 1170, width: 622, height: 264, icon: "type", title: "TYPE", touched: touched, clicked: clicked)
+
+        touched = #selector(btnLevelTouched(_:))
+        clicked = #selector(btnLevelClicked(_:))
+		screenObject.AddMainButton(levelButton, viewController: self, xPosition: 320, yPosition: 1484, width: 622, height: 264, icon: "level", title: "LEVEL", touched: touched, clicked: clicked)
 	}
 
+    func btnTypeTouched(_ sender:UIButton!) {
+        typeButton.Touched()
+    }
+
     func btnTypeClicked(_ sender:UIButton!) {
-		typeButton.Touched()
         self.performSegue(withIdentifier: "showType", sender: self)
     }
 
+    func btnLevelTouched(_ sender:UIButton!) {
+        levelButton.Touched()
+    }
+
     func btnLevelClicked(_ sender:UIButton!) {
-		levelButton.Touched()
         self.performSegue(withIdentifier: "showLevel", sender: self)        
     }
 

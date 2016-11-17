@@ -11,7 +11,7 @@
 
 	<object>
 		<type>button</type>
-		<posX>100</posX>
+		<posX>50</posX>
 		<posY>93</posY>
 		<width>120</width>
 		<height>120</height>
@@ -25,13 +25,13 @@
         <alignY>110</alignY>
         <text>Routine</text>
         <font>Arial</font>
-        <size>19</size>
+        <size>18</size>
         <color>0xffffff</color>
     </object>
 
 	<object>
 		<type>button</type>
-		<posX>screenWidth - 100 - 132</posX>
+		<posX>screenWidth - 100 - 132 + 50</posX>
 		<posY>83 + 10</posY>
 		<width>132</width>
 		<height>120</height>
