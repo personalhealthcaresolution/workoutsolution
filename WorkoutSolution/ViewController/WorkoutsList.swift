@@ -121,6 +121,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.separatorInset = UIEdgeInsets.zero
 		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
 		tableView.backgroundColor = constant.UIColorFromHex(object.color)
+		tableView.allowsSelectionDuringEditing = true
 
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
 		self.view.addSubview(tableView)
@@ -202,11 +203,11 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
     }
 
 	func btnTableViewCellClicked(_ rowIndex: Int) {
-		if currentEditState != EditState.editing {
-            Application.instance.CurrentWorkoutsListIndex(rowIndex)
-			self.performSegue(withIdentifier: "showExercises", sender: self)
+		if tableView.isEditing {
+			ShowPopup(title: "Routine Name", addString: "OK", content: workoutName[rowIndex])
         } else {
-            ShowPopup(title: "Routine Name", addString: "OK", content: workoutName[rowIndex])
+			Application.instance.CurrentWorkoutsListIndex(rowIndex)
+			self.performSegue(withIdentifier: "showExercises", sender: self)
         }
 	}
 
@@ -224,16 +225,11 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-		return true
+		return tableView.isEditing
 	}
 
 	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return true
-	}
-
-	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-		tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
+		return tableView.isEditing
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
