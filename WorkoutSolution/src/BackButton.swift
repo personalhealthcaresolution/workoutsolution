@@ -46,14 +46,22 @@ class BackButton: UIButton {
 
 			switch object.type {
 			case "image":
-				screenObject.AddImage(icon, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+				screenObject.AddImage(icon, view: self, object: object)
 			case "label":
-				screenObject.AddLabel(title, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: titleText, font: object.font, size: object.size, color: object.color)
+				object.text = titleText
+				screenObject.AddLabel(title, view: self, object: object)
 			default: break
 			}
 			objects.removeFirst()
 		}
-		screenObject.AddBackground(touch, view: self, xPosition: 0, yPosition: 0, width: 400, height: 120, color: constant.citrus, alpha: 0.5)
+
+		var object = ScreenObject.Object()
+		object.xPosition = 0
+		object.yPosition = 0
+		object.width = 400
+		object.height = 120
+		object.color = constant.citrus
+		screenObject.AddBackground(touch, view: self, object: object, alpha: 0.5)
 		touch.isHidden = true
     }
     

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view>
+	<object>
+		<type>label</type>
+		<posX>0</posX>
+		<posY>0</posY>
+		<size>17</size>
+		<font>Arial</font>
+		<text>START ROUTINE</text>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>image</type>
+		<posX>0</posX>
+		<posY>0</posY>
+		<width>724</width>
+		<height>149</height>
+		<named>button</named>
+	</object>
+</view>

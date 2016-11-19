@@ -128,9 +128,23 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
     func ShowPopup(title: String, addString: String, content: String) {
-        let font = "Arial"
-        screenObject.AddImage(screenBackground, view: view, xPosition: 0, yPosition: 0, width: ScreenSize.defaultWidth, height: ScreenSize.defaultHeight, named: "popupBackground")
-        screenObject.AddImage(popupBackground, view: view, xPosition: 92, yPosition: 223 + 409, width: ScreenSize.defaultWidth - 184, height: 660, named: "addBackground")
+		var object = ScreenObject.Object()
+		object.xPosition = 0
+		object.yPosition = 0
+		object.width = ScreenSize.defaultWidth
+		object.height = ScreenSize.defaultHeight
+		object.named = "popupBackground"
+        screenObject.AddImage(screenBackground, view: view, object: object)
+
+		object = ScreenObject.Object()
+		object.xPosition = 92
+		object.yPosition = 632
+		object.width = ScreenSize.defaultWidth - 184
+		object.height = 660
+		object.named = "addBackground"
+		screenObject.AddImage(popupBackground, view: view, object: object)
+
+		let font = "Arial"
         screenObject.AddLabelAuto(popupTitle, view: view, alignX: "center", alignY: "707", text: title, font: font, size: 25, color: 0xffffff)
         screenObject.AddTextBox(popupTextBox, view: view,background: popupBackgroundText, xPosition: 250, yPosition: 857, width: ScreenSize.defaultWidth - 500, height: 160, content: content, font: font, size: 18, color: 0xffffff)
         screenObject.AddButton(popupAddButton, view: view, viewController: self, xPosition: 725, yPosition: 1120, width: 295, height: 125, title: addString, selector: #selector(btnAddPopupClicked(_:)))

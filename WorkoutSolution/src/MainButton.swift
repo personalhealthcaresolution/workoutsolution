@@ -14,7 +14,6 @@ class MainButton: UIButton {
 	//let touch = UILabel()
 
 	var text = ""
-	var fontName = "Arial"
 	var iconNamed = ""
 
 	init() {
@@ -28,8 +27,25 @@ class MainButton: UIButton {
 	func initView() {
 		let constant = Constant()
 		let screenObject = ScreenObject()
-		screenObject.AddImage(icon, view: self, xPosition: 0, yPosition: 0, width: 264, height: 264, named: iconNamed)
-		screenObject.AddLabel(title, view: self, xPosition: 322, yPosition: 97, width: 300, height: 70, text: text, font: fontName, size: 23, color: constant.white)
+
+		var object = ScreenObject.Object()
+		object.xPosition = 0
+		object.yPosition = 0
+		object.width = 264
+		object.height = 264
+		object.named = iconNamed
+		screenObject.AddImage(icon, view: self, object: object)
+
+		object = ScreenObject.Object()
+		object.xPosition = 322
+		object.yPosition = 97
+		object.width = 300
+		object.height = 70
+		object.size = 23
+		object.font = "Arial"
+		object.text = text
+		object.color = constant.white
+		screenObject.AddLabel(title, view: self, object: object)
 	}
 
 	func Touched() {

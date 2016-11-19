@@ -50,6 +50,10 @@
 		3A8F28921BC150B600BCC5BC /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8F28911BC150B600BCC5BC /* NotificationController.swift */; };
 		3A8F28941BC150B600BCC5BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8F28931BC150B600BCC5BC /* Assets.xcassets */; };
 		3A8F28981BC150B600BCC5BC /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A8F287A1BC150B600BCC5BC /* Watch.app */; };
+		3A9BF6051DDF3CDA00D6451F /* TypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9BF6041DDF3CDA00D6451F /* TypeCell.swift */; };
+		3A9BF6071DDF456F00D6451F /* TypeButton.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A9BF6061DDF456F00D6451F /* TypeButton.xml */; };
+		3A9BF6091DDF5BFF00D6451F /* RoutineButton.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A9BF6081DDF5BFF00D6451F /* RoutineButton.xml */; };
+		3A9BF60B1DDFD40E00D6451F /* MainButton.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3A9BF60A1DDFD40E00D6451F /* MainButton.xml */; };
 		3AB433151DC39EB8004E96D4 /* LevelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB433141DC39EB8004E96D4 /* LevelButton.swift */; };
 		3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB51FB31D412C5B00872A67 /* ScreenSize.swift */; };
 		3AB7095D1DC25054003CF490 /* TypeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB7095C1DC25054003CF490 /* TypeButton.swift */; };
@@ -171,6 +175,10 @@
 		3A8F28911BC150B600BCC5BC /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
 		3A8F28931BC150B600BCC5BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A8F28951BC150B600BCC5BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A9BF6041DDF3CDA00D6451F /* TypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeCell.swift; path = src/TypeCell.swift; sourceTree = "<group>"; };
+		3A9BF6061DDF456F00D6451F /* TypeButton.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TypeButton.xml; path = XMLs/TypeButton.xml; sourceTree = "<group>"; };
+		3A9BF6081DDF5BFF00D6451F /* RoutineButton.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RoutineButton.xml; path = XMLs/RoutineButton.xml; sourceTree = "<group>"; };
+		3A9BF60A1DDFD40E00D6451F /* MainButton.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MainButton.xml; path = XMLs/MainButton.xml; sourceTree = "<group>"; };
 		3AB433141DC39EB8004E96D4 /* LevelButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LevelButton.swift; path = src/LevelButton.swift; sourceTree = "<group>"; };
 		3AB51FB31D412C5B00872A67 /* ScreenSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenSize.swift; path = src/ScreenSize.swift; sourceTree = "<group>"; };
 		3AB7095C1DC25054003CF490 /* TypeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TypeButton.swift; path = src/TypeButton.swift; sourceTree = "<group>"; };
@@ -237,6 +245,7 @@
 				3A0DFE001DD9FA88005723A4 /* LevelCell.swift */,
 				3A7BCC481DDCAECC008D063A /* MainButton.swift */,
 				3A7BCC4A1DDCDE0D008D063A /* RoutineButton.swift */,
+				3A9BF6041DDF3CDA00D6451F /* TypeCell.swift */,
 			);
 			name = src;
 			sourceTree = "<group>";
@@ -318,6 +327,9 @@
 				3A20F8E11D64B5790049931A /* Type.xml */,
 				3A66095A1DB54432004FC4F5 /* Workouts.xml */,
 				3A70C8051D808B5600E08F0E /* WorkoutsList.xml */,
+				3A9BF6061DDF456F00D6451F /* TypeButton.xml */,
+				3A9BF6081DDF5BFF00D6451F /* RoutineButton.xml */,
+				3A9BF60A1DDFD40E00D6451F /* MainButton.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -516,6 +528,8 @@
 				3A66095B1DB54432004FC4F5 /* Workouts.xml in Resources */,
 				3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */,
 				3AD4A7921D5F50010046C52C /* Main.xml in Resources */,
+				3A9BF60B1DDFD40E00D6451F /* MainButton.xml in Resources */,
+				3A9BF6091DDF5BFF00D6451F /* RoutineButton.xml in Resources */,
 				10B025F31DBF9C3000E71FC5 /* telegrafico.ttf in Resources */,
 				3A20F8E21D64B5790049931A /* Type.xml in Resources */,
 				3AEFCF341D85504600DD2B5E /* Settings.xml in Resources */,
@@ -525,6 +539,7 @@
 				3A5BC2581DC795DE0064D01E /* FooterButton.xml in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */,
+				3A9BF6071DDF456F00D6451F /* TypeButton.xml in Resources */,
 				3A5BC2561DC791460064D01E /* BackButton.xml in Resources */,
 				10DEB1CE1DC7BFE400521B54 /* Details.xml in Resources */,
 				3A70C8061D808B5600E08F0E /* WorkoutsList.xml in Resources */,
@@ -578,6 +593,7 @@
 				3A0D9FD91D882FB20015189F /* Application.swift in Sources */,
 				3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */,
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
+				3A9BF6051DDF3CDA00D6451F /* TypeCell.swift in Sources */,
 				3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */,
 				3A174E641D083C4F00C308A4 /* Level.swift in Sources */,
 				3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */,

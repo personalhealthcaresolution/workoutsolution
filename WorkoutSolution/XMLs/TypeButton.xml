@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<view>
+	<object>
+		<type>background</type>
+		<posX>0</posX>
+		<posY>0</posY>
+		<width>1242</width>
+		<height>380</height>
+		<color>0xF94343</color>
+	</object>
+
+	<object>
+		<type>label</type>
+		<posX>536</posX>
+		<posY>166</posY>
+		<font>Arial</font>
+		<size>20</size>
+		<color>0x373639</color>
+	</object>
+
+	<object>
+		<type>image</type>
+		<posX>104</posX>
+		<posY>39</posY>
+		<width>302</width>
+		<height>302</height>
+	</object>
+</view>

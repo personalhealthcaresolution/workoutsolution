@@ -25,10 +25,19 @@ class RoutineButton: UIButton {
 	}
 
 	func initView() {
-		let constant = Constant()
 		let screenObject = ScreenObject()
-		screenObject.AddImage(icon, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, named: "button")
-		screenObject.AddLabel(title, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, text: "START ROUTINE", font: fontName, size: 18, color: constant.citrus)
+		screenObject.ParseXML("RoutineButton")
+		for object in screenObject.GetObjects() {
+			switch object.type {
+			case "label":
+				screenObject.AddLabel(title, view: self, object: object)
+			case "image":
+				screenObject.AddImage(icon, view: self, object: object)
+			default: break
+			}
+		}
+		//screenObject.AddImage(icon, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, named: "button")
+		//screenObject.AddLabel(title, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, text: "START ROUTINE", font: fontName, size: 18, color: constant.citrus)
         title.textAlignment = NSTextAlignment.center
 	}
 

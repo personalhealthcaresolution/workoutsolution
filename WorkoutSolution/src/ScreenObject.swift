@@ -444,16 +444,16 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(check)
     }
 
-	func AddLabel(_ label: UILabel, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+	func AddLabel(_ label: UILabel, view: UIView, object: Object) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
 
 		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		label.text = text
-		label.font = UIFont(name: font, size: size)
-		label.textColor = constant.UIColorFromHex(color)
+		label.text = object.text
+		label.font = UIFont(name: object.font, size: object.size)
+		label.textColor = constant.UIColorFromHex(object.color)
 		view.addSubview(label)
 	}
 
@@ -535,14 +535,14 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(textView)
     }
     
-    func AddBackground(_ label: UILabel, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, color: UInt32, alpha:Double = 1.0) {
-        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+	func AddBackground(_ label: UILabel, view: UIView, object: Object, alpha:Double = 1.0) {
+        let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+        let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+        let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+        let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
         
         label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-        label.backgroundColor = constant.UIColorFromHex(color, alpha: alpha)
+        label.backgroundColor = constant.UIColorFromHex(object.color, alpha: alpha)
         view.addSubview(label)
     }
 
@@ -602,16 +602,16 @@ class ScreenObject: NSObject, XMLParserDelegate {
         }
     }
 
-	func AddImage(_ icon: UIImageView, view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+	func AddImage(_ image: UIImageView, view: UIView, object: Object) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
 
-		let image = UIImage(named: named)
-		icon.image = image
-		icon.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		view.addSubview(icon)
+		let icon = UIImage(named: object.named)
+		image.image = icon
+		image.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		view.addSubview(image)
 	}
 
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {

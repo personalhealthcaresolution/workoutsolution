@@ -11,13 +11,27 @@ import UIKit
 class TypeButton: UIButton {
 	let icon = UIImageView()
 	let title = UILabel()
-	let constant = Constant()
+	let touched = UILabel()
+	let background = UILabel()
+
 	var imageText = ""
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-		AddImage(icon, xPosition: 104, yPosition: 39, width: 302, height: 302, named: "")
-		AddLabel(title, xPosition: 536, yPosition: 166, width: 619, height: 65, text: "", font: "Arial", size: 20, color: constant.citrus)
+
+		let screenObject = ScreenObject()
+		screenObject.ParseXML("TypeButton")
+		for object in screenObject.GetObjects() {
+			switch object.type {
+			case "label":
+				screenObject.AddLabel(title, view: self, object: object)
+			case "image":
+				screenObject.AddImage(icon, view: self, object: object)
+			case "background":
+				screenObject.AddBackground(background, view: self, object: object)
+			default: break
+			}
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -27,31 +41,5 @@ class TypeButton: UIButton {
 	func UpdateButton() {
 		let image = UIImage(named: imageText)
 		icon.image = image
-	}
-
-	func AddLabel(_ label: UILabel, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
-
-		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		label.text = text
-		label.font = UIFont(name: font, size: size)
-		label.textColor = constant.UIColorFromHex(color)
-		addSubview(label)
-
-	}
-
-	func AddImage(_ icon: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
-
-		let image = UIImage(named: named)
-		icon.image = image
-		icon.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		addSubview(icon)
 	}
 }

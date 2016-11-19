@@ -70,7 +70,7 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ExercisesListCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TypeCell.self, forCellReuseIdentifier: "cell")
         tableView.layoutMargins = UIEdgeInsets.zero
         tableView.separatorInset = UIEdgeInsets.zero
         tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
@@ -177,12 +177,10 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:ExercisesListCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! ExercisesListCell
-        cell.isAdding = false
+        let cell:TypeCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TypeCell
         cell.titleText = workoutName[indexPath.row]
         cell.iconNamed = workoutIcon[indexPath.row]
-        cell.mineHeight = tableView.rowHeight
-        cell.updateCell()
+        cell.initView()
         return cell
     }
     

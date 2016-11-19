@@ -20,8 +20,25 @@ class WorkoutsListCell: UITableViewCell {
 		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
 
         let screenObject = ScreenObject()
-		screenObject.AddLabel(title, view: contentView, xPosition: 100, yPosition: 60, width: 700, height: 75, text: titleText, font: "Arial", size: 18, color: constant.citrus)
-		screenObject.AddImage(icon, view: contentView, xPosition: ScreenSize.defaultWidth - 135, yPosition: 72, width: 35, height: 51, named: "listWorkout")
+
+		var object = ScreenObject.Object()
+		object.xPosition = 100
+		object.yPosition = 60
+		object.width = 700
+		object.height = 75
+		object.text = titleText
+		object.font = "Arial"
+		object.size = 18
+		object.color = constant.citrus
+		screenObject.AddLabel(title, view: contentView, object: object)
+
+		object = ScreenObject.Object()
+		object.xPosition = ScreenSize.defaultWidth - 135
+		object.yPosition = 72
+		object.width = 35
+		object.height = 51
+		object.named = "listWorkout"
+		screenObject.AddImage(icon, view: contentView, object: object)
 	}
 
 	required init?(coder aDecoder: NSCoder) {

@@ -29,9 +29,9 @@ class FooterButton: UIButton {
 
 			switch object.type {
 			case "image":
-				screenObject.AddImage(icon, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, named: object.named)
+				screenObject.AddImage(icon, view: self, object: object)
 			case "label":
-				screenObject.AddLabel(title, view: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color)
+				screenObject.AddLabel(title, view: self, object: object)
 			default: break
 			}
 			objects.removeFirst()
