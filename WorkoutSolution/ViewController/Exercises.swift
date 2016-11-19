@@ -9,6 +9,7 @@
 import UIKit
 
 class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
+	let addButton = UIButton()
 	let backButton = BackButton()
 
 	let constant = Constant()
@@ -77,6 +78,8 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			objects.removeFirst()
 		}
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
+
+		screenObject.AddButton(addButton, view: self.view, viewController: self, xPosition: 980, yPosition: 93, width: 220, height: 120, title: "ADD", titleColor: constant.UIColorFromHex(constant.coralRed), selector: #selector(btnAddClicked(_:)))
 	}
 
 	func FindExerciseIcon(_ exerciseName: String) -> String {
@@ -98,6 +101,12 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	func btnAddClicked(_ sender:UIButton!) {
 		isAdding = !isAdding
+		backButton.isHidden = isAdding
+		if isAdding {
+			addButton.setTitle("DONE", for: UIControlState())
+		} else {
+			addButton.setTitle("ADD", for: UIControlState())
+		}
 		tableView.reloadData()
 	}
 

@@ -20,17 +20,6 @@
     </object>
 
 	<object>
-		<type>button</type>
-		<posX>screenWidth - 100 - 132 + 50</posX>
-		<posY>83 + 10</posY>
-		<width>132</width>
-		<height>120</height>
-        <title>Add</title>
-        <color>0xF94343</color>
-		<selector>btnAddClicked</selector>
-	</object>
-
-	<object>
 		<type>table</type>
 		<posX>0</posX>
 		<posY>223</posY>
