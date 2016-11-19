@@ -16,6 +16,7 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var workoutName = ["UPPER BODY", "LOWER BODY", "CORE ABS"]
     var workoutIcon = ["upper", "lower", "coreAbs"]
+	var workoutSelector = ["btnUpperClicked", "btnLowerClicked", "btnCoreAbsClicked"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,18 +139,6 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        btnTableViewCellClicked(indexPath.row)
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        print(#function + " - indexPath: \(indexPath.row)")
-    }
-    
-    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-        print(#function + " - indexPath: \(indexPath.row)")
-    }
-    
     func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return false
     }
@@ -168,8 +157,7 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-        print(#function + " - indexPath: \(indexPath.row)")
-        return true
+		return true
     }
     
     func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
@@ -178,12 +166,14 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TypeCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! TypeCell
-        cell.titleText = workoutName[indexPath.row]
-        cell.iconNamed = workoutIcon[indexPath.row]
-        cell.initView()
-        return cell
-    }
-    
+		cell.titleText = workoutName[indexPath.row]
+		cell.iconNamed = workoutIcon[indexPath.row]
+		cell.selector = workoutSelector[indexPath.row]
+		cell.parent = self
+		cell.initView()
+		return cell
+	}
+
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         print(#function + " - sourceIndexPath: \(sourceIndexPath)")
     }

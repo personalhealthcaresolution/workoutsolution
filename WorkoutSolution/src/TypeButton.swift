@@ -11,7 +11,6 @@ import UIKit
 class TypeButton: UIButton {
 	let icon = UIImageView()
 	let title = UILabel()
-	let touched = UILabel()
 	let background = UILabel()
 
 	var imageText = ""
@@ -39,7 +38,23 @@ class TypeButton: UIButton {
 	}
 
 	func UpdateButton() {
+		title.sizeToFit()
+		title.frame.origin.y = (frame.height - title.frame.height) / 2
+
 		let image = UIImage(named: imageText)
 		icon.image = image
+	}
+
+	func Touched(_ sender:UIButton) {
+		let touch = UILabel()
+		var object = ScreenObject.Object()
+		object.xPosition = 0
+		object.yPosition = 0
+		object.width = ScreenSize.defaultWidth
+		object.height = 380
+		object.color = Constant.init().citrus
+
+		let screenObject = ScreenObject()
+		screenObject.AddBackground(touch, view: self, object: object, alpha: 0.5)
 	}
 }

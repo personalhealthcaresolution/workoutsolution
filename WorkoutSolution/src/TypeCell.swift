@@ -11,6 +11,8 @@ import UIKit
 class TypeCell: UITableViewCell {
 	var iconNamed = ""
 	var titleText = ""
+	var selector = ""
+	var parent: UIViewController! = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +33,16 @@ class TypeCell: UITableViewCell {
     }
 
 	func initView() {
-		let button = TypeButton()
-		button.UpdateButton()
+		var object = ScreenObject.Object()
+		let screenObject = ScreenObject()
+
+		object.xPosition = 0
+		object.yPosition = 0
+		object.width = ScreenSize.defaultWidth
+		object.height = 380
+		object.icon = iconNamed
+		object.title = titleText
+		object.selector = NSSelectorFromString(selector + ":")
+		screenObject.AddTypeButton(self, target: parent, object: object)
 	}
 }

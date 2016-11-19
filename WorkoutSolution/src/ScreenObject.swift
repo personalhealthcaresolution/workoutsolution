@@ -205,8 +205,6 @@ class ScreenObject: NSObject, XMLParserDelegate {
             AddTextView(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, text: object.text, font: object.font, size: object.size, color: object.color, backgroundColor: object.backgroundColor)
 		case "check":
 			AddCheckBox(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, checked: object.status, checkImage: object.check, checkedImage: object.checked, selector: object.selector)
-		case "typeButton":
-			AddTypeButton(view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, background: object.color, icon: object.icon, selector: object.selector)
 		case "levelButton":
 			AddLevelButton(view.view, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, title: object.text, textX: object.textX, background: object.color, icon: object.icon, selector: object.selector)
         case "backButton":
@@ -353,22 +351,20 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.view.addSubview(button)
 	}
 
-	func AddTypeButton(_ view: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, background: UInt32, icon: String, selector: Selector? = nil) {
-		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
-		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
-		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
-		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
+	func AddTypeButton(_ parent: UITableViewCell, target: UIViewController, object: Object) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
 
 		let button = TypeButton()
 		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		button.imageText = icon
-		button.title.text = title
-		button.backgroundColor = constant.UIColorFromHex(background)
-		if selector != nil {
-			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
-		}
+		button.imageText = object.icon
+		button.title.text = object.title
+		button.addTarget(button, action: NSSelectorFromString("Touched:"), for: UIControlEvents.touchDown)
+		button.addTarget(target, action: object.selector, for: UIControlEvents.touchUpInside)
 		button.UpdateButton()
-		view.view.addSubview(button)
+		parent.contentView.addSubview(button)
 	}
 
 	func AddLevelButton(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, title: String, textX: CGFloat, background: UInt32, icon: String, parent: UIViewController? = nil, selector: Selector? = nil) {
@@ -444,7 +440,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(check)
     }
 
-	func AddLabel(_ label: UILabel, view: UIView, object: Object) {
+	func AddLabel(_ label: UILabel, view: UIView, object: Object, alpha: Double = 1.0) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
@@ -453,7 +449,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		label.text = object.text
 		label.font = UIFont(name: object.font, size: object.size)
-		label.textColor = constant.UIColorFromHex(object.color)
+		label.textColor = constant.UIColorFromHex(object.color, alpha: alpha)
 		view.addSubview(label)
 	}
 
