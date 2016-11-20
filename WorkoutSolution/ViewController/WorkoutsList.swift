@@ -12,7 +12,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	var tableView = UITableView()
 
     let popupTitle = UILabel()
-	let popupTextBox = UITextView()
+	let popupTextBox = UITextField()
     let popupAddButton = UIButton()
 	var popupBackground = UIImageView()
 	let screenBackground = UIImageView()
@@ -176,7 +176,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func btnAddPopupClicked(_ sender:UIButton!) {
 		if (popupTextBox.text != nil) {
-			AddRow(popupTextBox.text)
+			AddRow(popupTextBox.text!)
 		}
 		HidePopup()
 	}

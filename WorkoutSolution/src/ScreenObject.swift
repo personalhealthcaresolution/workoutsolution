@@ -512,7 +512,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		viewController.view.addSubview(button)
 	}
 
-    func AddTextBox(_ textView: UITextView, view: UIView, background: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, content: String, font: String, size: CGFloat, color: UInt32) {
+    func AddTextBox(_ textView: UITextField, view: UIView, background: UIImageView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, content: String, font: String, size: CGFloat, color: UInt32) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
