@@ -20,63 +20,11 @@
     </object>
 
 	<object>
-		<type>levelButton</type>
-		<posX>0</posX>
-		<posY>223</posY>
-		<width>609</width>
-		<height>580</height>
-		<icon>absBeginner</icon>
-		<text>BEGINNER</text>
-		<textX>100</textX>
-		<color>0xF94343</color>
-		<selector>btnAbsBeginnerClicked</selector>
-	</object>
-
-	<object>
-		<type>levelButton</type>
-		<posX>609 + 24</posX>
-		<posY>223</posY>
-		<width>609</width>
-		<height>580</height>
-		<icon>beginner</icon>
-		<text>INTERMEDIATE</text>
-		<textX>15</textX>
-		<color>0xF94343</color>
-		<selector>btnBeginnerClicked</selector>
-	</object>
-
-	<object>
-		<type>levelButton</type>
-		<posX>0</posX>
-		<posY>223 + 580 + 24</posY>
-		<width>609</width>
-		<height>580</height>
-		<icon>advanced</icon>
-		<text>ADVANCED</text>
-		<textX>82</textX>
-		<color>0xF94343</color>
-		<selector>btnAdvancedClicked</selector>
-	</object>
-
-	<object>
-		<type>levelButton</type>
-		<posX>609 + 24</posX>
-		<posY>223 + 580 + 24</posY>
-		<width>609</width>
-		<height>580</height>
-		<icon>intermediate</icon>
-		<text>EXPERT</text>
-		<textX>150</textX>
-		<color>0xF94343</color>
-		<selector>btnIntermediateClicked</selector>
-	</object>
-
-	<object>
 		<type>table</type>
 		<posX>0</posX>
 		<posY>223</posY>
 		<width>1242</width>
-		<height>1797</height>
+		<height>1160</height>
 		<color>0x373639</color>
 		<rowHeight>580</rowHeight>
 	</object>
