@@ -118,7 +118,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.dataSource = self
 		tableView.register(WorkoutsListCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
-		tableView.separatorInset = UIEdgeInsets.zero
+		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 10)
 		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
 		tableView.backgroundColor = constant.UIColorFromHex(object.color)
 		tableView.allowsSelectionDuringEditing = true
