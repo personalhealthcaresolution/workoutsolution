@@ -331,9 +331,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
 
 		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-		if selector != nil {
-			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
-		}
+		button.title.text = title
+		button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
 		view.view.addSubview(button)
 	}
 

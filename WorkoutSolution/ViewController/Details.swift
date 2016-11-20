@@ -46,7 +46,8 @@ class Details: UIViewController {
             screenObject.DrawObject(self, object: object)
             objects.removeFirst()
         }
-		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
+
+		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Exercises", icon: "back", selector: #selector(btnBackClicked(_:)))
 		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 259, yPosition: 1830, width: 724, height: 149, selector: #selector(btnStartClicked(_:)))
     }
 

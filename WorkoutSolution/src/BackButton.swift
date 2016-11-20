@@ -17,7 +17,8 @@ class BackButton: UIButton {
     
     var textX: CGFloat = 0
     var imageText = ""
-    
+	var titleText = "Back"
+	
     init() {
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
 
@@ -28,27 +29,10 @@ class BackButton: UIButton {
 			var object = ScreenObject.Object()
 			object = objects.first!
 
-            var titleText = "Back"
-            if Application.instance.CurrentTab() == Application.Tabs.exercises {
-                if Application.instance.CurrentExercisesView() == Application.ExercisesView.workouts {
-                    switch Application.instance.CurrentWorkout() {
-                    case Application.Workouts.type:
-                        titleText = "Type"
-                    case Application.Workouts.level:
-                        titleText = "Level"
-                    }
-                }
-            } else if Application.instance.CurrentTab() == Application.Tabs.workouts {
-                if Application.instance.CurrentWorkoutsView() == Application.WorkoutsView.exercises {
-                    titleText = "Routine"
-                }
-            }
-
 			switch object.type {
 			case "image":
 				screenObject.AddImage(icon, view: self, object: object)
 			case "label":
-				object.text = titleText
 				screenObject.AddLabel(title, view: self, object: object)
 			default: break
 			}
@@ -72,6 +56,7 @@ class BackButton: UIButton {
     func UpdateButton() {
         let image = UIImage(named: imageText)
         icon.image = image
+		title.text = titleText
         title.frame.origin.x = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: textX)
     }
 

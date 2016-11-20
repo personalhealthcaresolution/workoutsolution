@@ -96,7 +96,15 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			screenObject.DrawObject(self, object: object)
 			objects.removeFirst()
 		}
-		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
+
+		var title = ""
+		switch Application.instance.CurrentWorkout() {
+		case Application.Workouts.type:
+			title = "Type"
+		case Application.Workouts.level:
+			title = "Level"
+		}
+		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: title, icon: "back", selector: #selector(btnBackClicked(_:)))
 		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1777)
 	}
 
