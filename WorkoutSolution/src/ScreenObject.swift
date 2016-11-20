@@ -361,7 +361,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		button.imageText = object.icon
 		button.title.text = object.title
-		button.addTarget(button, action: NSSelectorFromString("Touched:"), for: UIControlEvents.touchDown)
+		let touched = NSSelectorFromString("Touched:")
+		button.addTarget(button, action: touched, for: UIControlEvents.touchDown)
 		button.addTarget(target, action: object.selector, for: UIControlEvents.touchUpInside)
 		button.UpdateButton()
 		parent.contentView.addSubview(button)
@@ -379,9 +380,9 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		button.title.text = title
 		button.textX = textX
 		button.backgroundColor = constant.UIColorFromHex(background)
-		if selector != nil {
-			button.addTarget(parent, action: selector!, for: UIControlEvents.touchUpInside)
-		}
+		let touched = NSSelectorFromString("Touched:")
+		button.addTarget(button, action: touched, for: UIControlEvents.touchDown)
+		button.addTarget(parent, action: selector!, for: UIControlEvents.touchUpInside)
 		button.UpdateButton()
 		view.addSubview(button)
 	}

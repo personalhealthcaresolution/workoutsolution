@@ -57,4 +57,17 @@ class LevelButton: UIButton {
 		icon.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		addSubview(icon)
 	}
+
+	func Touched(_ sender:UIButton) {
+		let touch = UILabel()
+		var object = ScreenObject.Object()
+		object.xPosition = 0
+		object.yPosition = 0
+		object.width = 620
+		object.height = 580
+		object.color = Constant.init().citrus
+		
+		let screenObject = ScreenObject()
+		screenObject.AddBackground(touch, view: self, object: object, alpha: 0.5)
+	}
 }
