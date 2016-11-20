@@ -73,6 +73,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 				workoutName = intermediateText;
 				workoutIcon = intermediateIcon;
 			}
+		default: break
 		}
 
         Application.instance.CurrentTab(Application.Tabs.exercises)
@@ -103,6 +104,8 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			title = "Type"
 		case Application.Workouts.level:
 			title = "Level"
+		default:
+			title = "Type"
 		}
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: title, icon: "back", selector: #selector(btnBackClicked(_:)))
 		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1777)
@@ -134,6 +137,8 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			self.performSegue(withIdentifier: "showType", sender: self)
 		case Application.Workouts.level:
 			self.performSegue(withIdentifier: "showLevel", sender: self)
+		default:
+			self.performSegue(withIdentifier: "showType", sender: self)
 		}
 	}
 

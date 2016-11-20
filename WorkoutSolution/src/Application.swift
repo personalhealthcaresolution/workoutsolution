@@ -20,6 +20,7 @@ class Application {
 	enum Workouts {
 		case type
 		case level
+		case cardio
 	}
 
 	enum WorkoutsType {

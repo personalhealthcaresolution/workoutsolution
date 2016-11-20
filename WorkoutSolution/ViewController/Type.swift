@@ -101,6 +101,11 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "showWorkouts", sender: self)
     }
 
+	func btnCardioClicked(_ sender:UIButton!) {
+		Application.instance.CurrentWorkout(Application.Workouts.cardio)
+		self.performSegue(withIdentifier: "showWorkouts", sender: self)
+	}
+
 	func btnExercisesClicked(_ sender:UIButton) {
 	}
 

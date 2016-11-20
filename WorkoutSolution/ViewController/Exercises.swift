@@ -79,7 +79,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Routine", icon: "back", selector: #selector(btnBackClicked(_:)))
 
-		screenObject.AddButton(addButton, view: self.view, viewController: self, xPosition: 980, yPosition: 93, width: 220, height: 120, title: "ADD", titleColor: constant.UIColorFromHex(constant.coralRed), selector: #selector(btnAddClicked(_:)))
+		screenObject.AddButton(addButton, view: self.view, viewController: self, xPosition: 980, yPosition: 93, width: 220, height: 120, title: "Add", titleColor: constant.UIColorFromHex(constant.coralRed), selector: #selector(btnAddClicked(_:)))
 	}
 
 	func FindExerciseIcon(_ exerciseName: String) -> String {
@@ -103,9 +103,9 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		isAdding = !isAdding
 		backButton.isHidden = isAdding
 		if isAdding {
-			addButton.setTitle("DONE", for: UIControlState())
+			addButton.setTitle("Done", for: UIControlState())
 		} else {
-			addButton.setTitle("ADD", for: UIControlState())
+			addButton.setTitle("Add", for: UIControlState())
 		}
 		tableView.reloadData()
 	}
@@ -312,7 +312,10 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
+		exercisesName.remove(at: indexPath.row)
+		//let defaults = UserDefaults()
+		//defaults.SetArrayString(workoutListName, value: exercisesName)
+		tableView.reloadData()
 	}
 
 	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
@@ -321,10 +324,12 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .default, title: "Delete") { action, index in
-            print("share button tapped")
+			self.exercisesName.remove(at: indexPath.row)
+			self.defaults.SetArrayString(self.currentWorkoutName, value: self.exercisesName)
+			tableView.reloadData()
         }
 
-        edit.backgroundColor = constant.UIColorFromHex(Constant.init().white)
+        edit.backgroundColor = constant.UIColorFromHex(Constant.init().citrus)
 
         return [edit]
 	}

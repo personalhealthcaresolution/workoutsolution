@@ -32,13 +32,15 @@ class WorkoutsListCell: UITableViewCell {
 		object.color = constant.citrus
 		screenObject.AddLabel(title, view: contentView, object: object)
 
-		object = ScreenObject.Object()
-		object.xPosition = ScreenSize.defaultWidth - 135
-		object.yPosition = 72
-		object.width = 35
-		object.height = 51
-		object.named = "listWorkout"
-		screenObject.AddImage(icon, view: contentView, object: object)
+		if isEditing == false {
+			object = ScreenObject.Object()
+			object.xPosition = ScreenSize.defaultWidth - 135
+			object.yPosition = 72
+			object.width = 35
+			object.height = 51
+			object.named = "listWorkout"
+			screenObject.AddImage(icon, view: contentView, object: object)
+		}
 	}
 
 	required init?(coder aDecoder: NSCoder) {
@@ -55,15 +57,15 @@ class WorkoutsListCell: UITableViewCell {
     }
 
 	func updateCell() {
-        var positionX: CGFloat = 0
+		var positionX: CGFloat = 0
 		if isEditing {
 			icon.isHidden = true
-            positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 245)
+			positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 50)
 		} else {
 			icon.isHidden = false
-            positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 100)
+			positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: 100)
 		}
         title.text = titleText
-        title.frame = CGRect(x: positionX, y: title.frame.origin.y, width: title.frame.width, height: title.frame.height)
+		title.frame = CGRect(x: positionX, y: title.frame.origin.y, width: title.frame.width, height: title.frame.height)
 	}
 }

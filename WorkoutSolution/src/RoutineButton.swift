@@ -36,8 +36,10 @@ class RoutineButton: UIButton {
 			default: break
 			}
 		}
-		//screenObject.AddImage(icon, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, named: "button")
-		//screenObject.AddLabel(title, view: self, xPosition: 0, yPosition: 0, width: 724, height: 149, text: "START ROUTINE", font: fontName, size: 18, color: constant.citrus)
+
+		title.sizeToFit()
+		title.frame.origin.x = (frame.width - title.frame.width) / 2
+		title.frame.origin.y = ((frame.height - title.frame.height) / 2) + 1
         title.textAlignment = NSTextAlignment.center
 	}
 

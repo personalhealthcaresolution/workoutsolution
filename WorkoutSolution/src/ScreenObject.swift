@@ -80,6 +80,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 				case Application.WorkoutsLevel.expert:
 					iconID = "Expert" + value
 				}
+			default: break
 			}
 			let userDefaults = UserDefaults()
 			let result = userDefaults.GetString(iconID)
@@ -113,6 +114,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 				case Application.WorkoutsLevel.expert:
 					textID = "Expert" + value
 				}
+			default: break
 			}
 			let userDefaults = UserDefaults()
 			let result = userDefaults.GetString(textID)

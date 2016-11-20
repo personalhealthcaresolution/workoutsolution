@@ -38,6 +38,7 @@ class BackButton: UIButton {
 			}
 			objects.removeFirst()
 		}
+		title.sizeToFit()
 
 		var object = ScreenObject.Object()
 		object.xPosition = 0

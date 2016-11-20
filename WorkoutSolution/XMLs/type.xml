@@ -48,5 +48,6 @@
 		<width>441</width>
 		<height>441</height>
 		<icon>cardio</icon>
+		<selector>btnCardioClicked</selector>
 	</object>
 </view>

@@ -118,7 +118,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.dataSource = self
 		tableView.register(WorkoutsListCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
-		tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 10)
+		tableView.separatorInset = UIEdgeInsets.zero
 		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
 		tableView.backgroundColor = constant.UIColorFromHex(object.color)
 		tableView.allowsSelectionDuringEditing = true
@@ -172,10 +172,16 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func btnEditClicked(_ sender:UIButton!) {
 		tableView.isEditing = !tableView.isEditing
+		if tableView.isEditing {
+			tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 10)
+		} else {
+			tableView.separatorInset = UIEdgeInsets.zero
+		}
+		tableView.reloadData()
 	}
 
 	func btnAddPopupClicked(_ sender:UIButton!) {
-		if (popupTextBox.text != nil) {
+		if (popupTextBox.text != "") {
 			AddRow(popupTextBox.text!)
 		}
 		HidePopup()
@@ -262,6 +268,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell:WorkoutsListCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkoutsListCell
 		cell.titleText = workoutName[indexPath.row]
+		cell.isEditing = tableView.isEditing
 		cell.updateCell()
 
 		return cell
@@ -272,7 +279,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
+		workoutName.remove(at: indexPath.row)
+		let defaults = UserDefaults()
+		defaults.SetArrayString(workoutListName, value: workoutName)
+		tableView.reloadData()
 	}
 
 	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
