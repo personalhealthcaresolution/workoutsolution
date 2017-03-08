@@ -15,6 +15,14 @@ class Main: UIViewController, XMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		var index = 0
+		var workouts = WorkoutsParser().Parse()
+		for workout in workouts {
+			workouts[index] = WorkoutParser().Parse(workout)
+			index = index + 1
+		}
+		Application.instance.SetWorkouts(workouts)
+
 		_ = Database()
         ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
         ScreenSize.setCurrentWidth(self.view.frame.size.width)

@@ -14,29 +14,8 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let tableView = UITableView()
 	let screenObject = ScreenObject()
 
-	let upperText = ["CHINUPS", "WALL SIX"]
-	let upperIcon = ["chinups", "wallSix"]
-
-	let lowerText = ["DIP ON CHAIR", "SQUATS"]
-	let lowerIcon = ["dipOnChair", "squats"]
-
-	let coreAbsText = ["PUSH UP"]
-	let coreAbsIcon = ["pushUp"]
-
-	let beginnerText = ["CHINUPS"]
-	let beginnerIcon = ["chinups"]
-
-	let intermediateText = ["WALL SIX"]
-	let intermediateIcon = ["wallSix"]
-
-	let advancedText = ["DIP ON CHAIR"]
-	let advancedIcon = ["dipOnChair"]
-
-	let expertText = ["SQUATS", "PUSH UP"]
-	let expertIcon = ["squats", "pushUp"]
-
-	var workoutName = ["CHINUPS", "WALL SIX", "Dip On Chair"]
-	var workoutIcon = ["chinups", "wallSix", "dipOnChair"]
+	var workoutName = [String]()
+	var workoutIcon = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,33 +24,39 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		ScreenSize.setCurrentWidth(self.view.frame.size.width)
 		ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
+		var search = ""
+		let workouts = Application.instance.GetWorkouts()
+
 		switch Application.instance.CurrentWorkout() {
 		case Application.Workouts.type:
 			switch Application.instance.CurrentWorkoutType() {
 			case Application.WorkoutsType.lower:
-				workoutName = lowerText;
-				workoutIcon = lowerIcon;
+				search = "LowerBody"
 			case Application.WorkoutsType.upper:
-				workoutName = upperText;
-				workoutIcon = upperIcon;
+				search = "UpperBody"
 			case Application.WorkoutsType.coreAbs:
-				workoutName = coreAbsText;
-				workoutIcon = coreAbsIcon;
+				search = "CoreABS"
+			}
+			for workout in workouts {
+				if workout.type == search {
+					workoutName.append(workout.name)
+				}
 			}
 		case Application.Workouts.level:
 			switch Application.instance.CurrentWorkoutLevel() {
 			case Application.WorkoutsLevel.advanced:
-				workoutName = advancedText;
-				workoutIcon = advancedIcon;
+				search = "Advanced"
 			case Application.WorkoutsLevel.beginner:
-				workoutName = beginnerText;
-				workoutIcon = beginnerIcon;
+				search = "Beginner"
 			case Application.WorkoutsLevel.expert:
-				workoutName = expertText;
-				workoutIcon = expertIcon;
+				search = "Expert"
 			case Application.WorkoutsLevel.intermediate:
-				workoutName = intermediateText;
-				workoutIcon = intermediateIcon;
+				search = "Intermediate"
+			}
+			for workout in workouts {
+				if workout.level == search {
+					workoutName.append(workout.name)
+				}
 			}
 		default: break
 		}
@@ -107,6 +92,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		default:
 			title = "Type"
 		}
+
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: title, icon: "back", selector: #selector(btnBackClicked(_:)))
 		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1777)
 	}
@@ -172,19 +158,11 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	//tableview delegate
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return 1
+		return workoutName.count
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		btnTableViewCellClicked(indexPath.row)
-	}
-
-	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -195,16 +173,11 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		return false
 	}
 
-	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return workoutName.count
+		return 1
 	}
 
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath.row)")
 		return true
 	}
 
@@ -213,50 +186,19 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell:UITableViewCell! = tableView.dequeueReusableCell(withIdentifier: "cell")
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
 		let constant = Constant()
 		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
 		let screenObject = ScreenObject()
-		screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row])
-		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "Arial", size: 20, color: constant.citrus)
+		//screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row])
+		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.section], font: "Arial", size: 20, color: constant.citrus)
 
 		return cell
 	}
 
-	func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, didEndDisplayingFooterView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, didEndDisplayingHeaderView view: UIView, forSection section: Int) {
-		print(#function + " - section: \(section)")
-	}
-
-	func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		print(#function + " - sourceIndexPath: \(sourceIndexPath)")
-	}
-
-	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-		print(#function + " - indexPath: \(indexPath.row)")
+	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+		let temp = workoutName as NSArray
+		return temp.index(of: title)
 	}
 }

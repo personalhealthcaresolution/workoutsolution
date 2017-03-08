@@ -66,6 +66,60 @@
 		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
 		3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */; };
 		3AEFCF341D85504600DD2B5E /* Settings.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF331D85504600DD2B5E /* Settings.xml */; };
+		3C778E811E7047CF00DAA561 /* ListWorkouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E801E7047CF00DAA561 /* ListWorkouts.xml */; };
+		3C778EB51E70481100DAA561 /* AbsoluteBeginner.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E831E70481100DAA561 /* AbsoluteBeginner.xml */; };
+		3C778EB61E70481100DAA561 /* Advanced.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E841E70481100DAA561 /* Advanced.xml */; };
+		3C778EB71E70481100DAA561 /* AlternatingToeTap.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E851E70481100DAA561 /* AlternatingToeTap.xml */; };
+		3C778EB81E70481100DAA561 /* ArmLegRaise.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E861E70481100DAA561 /* ArmLegRaise.xml */; };
+		3C778EB91E70481100DAA561 /* Beginner.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E871E70481100DAA561 /* Beginner.xml */; };
+		3C778EBA1E70481100DAA561 /* BicycleCrunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E881E70481100DAA561 /* BicycleCrunches.xml */; };
+		3C778EBB1E70481100DAA561 /* ChestHighPullUps.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E891E70481100DAA561 /* ChestHighPullUps.xml */; };
+		3C778EBC1E70481100DAA561 /* Chinups.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E8A1E70481100DAA561 /* Chinups.xml */; };
+		3C778EBD1E70481100DAA561 /* ClappingPullUps.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E8B1E70481100DAA561 /* ClappingPullUps.xml */; };
+		3C778EBE1E70481100DAA561 /* ClappingPushUp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E8C1E70481100DAA561 /* ClappingPushUp.xml */; };
+		3C778EBF1E70481100DAA561 /* CrossCrunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E8D1E70481100DAA561 /* CrossCrunches.xml */; };
+		3C778EC01E70481100DAA561 /* CrossLegSitUps.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E8E1E70481100DAA561 /* CrossLegSitUps.xml */; };
+		3C778EC11E70481100DAA561 /* Crunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E8F1E70481100DAA561 /* Crunches.xml */; };
+		3C778EC21E70481100DAA561 /* DeadBug.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E901E70481100DAA561 /* DeadBug.xml */; };
+		3C778EC31E70481100DAA561 /* DeclinePushUps.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E911E70481100DAA561 /* DeclinePushUps.xml */; };
+		3C778EC41E70481100DAA561 /* DipOnChair.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E921E70481100DAA561 /* DipOnChair.xml */; };
+		3C778EC51E70481100DAA561 /* DipsOnStrainghtBar.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E931E70481100DAA561 /* DipsOnStrainghtBar.xml */; };
+		3C778EC61E70481100DAA561 /* FlutterKicks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E941E70481100DAA561 /* FlutterKicks.xml */; };
+		3C778EC71E70481100DAA561 /* HalfWipers.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E951E70481100DAA561 /* HalfWipers.xml */; };
+		3C778EC81E70481100DAA561 /* HeadBangersPullUpGrif.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E961E70481100DAA561 /* HeadBangersPullUpGrif.xml */; };
+		3C778EC91E70481100DAA561 /* HighCrunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E971E70481100DAA561 /* HighCrunches.xml */; };
+		3C778ECA1E70481100DAA561 /* HollowHold.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E981E70481100DAA561 /* HollowHold.xml */; };
+		3C778ECB1E70481100DAA561 /* Hundreds.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E991E70481100DAA561 /* Hundreds.xml */; };
+		3C778ECC1E70481100DAA561 /* Intermediate.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E9A1E70481100DAA561 /* Intermediate.xml */; };
+		3C778ECD1E70481100DAA561 /* KneeCrunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E9B1E70481100DAA561 /* KneeCrunches.xml */; };
+		3C778ECE1E70481100DAA561 /* KneeToElbow.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E9C1E70481100DAA561 /* KneeToElbow.xml */; };
+		3C778ECF1E70481100DAA561 /* LegCrunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E9D1E70481100DAA561 /* LegCrunches.xml */; };
+		3C778ED01E70481100DAA561 /* LegRaises.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E9E1E70481100DAA561 /* LegRaises.xml */; };
+		3C778ED11E70481100DAA561 /* LegReises.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E9F1E70481100DAA561 /* LegReises.xml */; };
+		3C778ED21E70481100DAA561 /* LegSit.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA01E70481100DAA561 /* LegSit.xml */; };
+		3C778ED31E70481100DAA561 /* LongArmCrunch.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA11E70481100DAA561 /* LongArmCrunch.xml */; };
+		3C778ED41E70481100DAA561 /* MarkDanielHandstand.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA21E70481100DAA561 /* MarkDanielHandstand.xml */; };
+		3C778ED51E70481100DAA561 /* PlankCrunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA31E70481100DAA561 /* PlankCrunches.xml */; };
+		3C778ED61E70481100DAA561 /* PulseUp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA41E70481100DAA561 /* PulseUp.xml */; };
+		3C778ED71E70481100DAA561 /* PushUp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA51E70481100DAA561 /* PushUp.xml */; };
+		3C778ED81E70481100DAA561 /* ReverseCrunch.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA61E70481100DAA561 /* ReverseCrunch.xml */; };
+		3C778ED91E70481100DAA561 /* RollPlanks.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA71E70481100DAA561 /* RollPlanks.xml */; };
+		3C778EDA1E70481100DAA561 /* Scissors.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA81E70481100DAA561 /* Scissors.xml */; };
+		3C778EDB1E70481100DAA561 /* SideJackknife.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EA91E70481100DAA561 /* SideJackknife.xml */; };
+		3C778EDC1E70481100DAA561 /* SingleLegButtLiftBridge.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EAA1E70481100DAA561 /* SingleLegButtLiftBridge.xml */; };
+		3C778EDD1E70481100DAA561 /* SittingPunches.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EAB1E70481100DAA561 /* SittingPunches.xml */; };
+		3C778EDE1E70481100DAA561 /* SittingTwists.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EAC1E70481100DAA561 /* SittingTwists.xml */; };
+		3C778EDF1E70481100DAA561 /* SitUps.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EAD1E70481100DAA561 /* SitUps.xml */; };
+		3C778EE01E70481100DAA561 /* Squats.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EAE1E70481100DAA561 /* Squats.xml */; };
+		3C778EE11E70481100DAA561 /* StarPlank.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EAF1E70481100DAA561 /* StarPlank.xml */; };
+		3C778EE21E70481100DAA561 /* ToeTap.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EB01E70481100DAA561 /* ToeTap.xml */; };
+		3C778EE31E70481100DAA561 /* TypeWriterPullUp.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EB11E70481100DAA561 /* TypeWriterPullUp.xml */; };
+		3C778EE41E70481100DAA561 /* VUps.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EB21E70481100DAA561 /* VUps.xml */; };
+		3C778EE51E70481100DAA561 /* WallSix.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EB31E70481100DAA561 /* WallSix.xml */; };
+		3C778EE61E70481100DAA561 /* Wiper.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778EB41E70481100DAA561 /* Wiper.xml */; };
+		3C778EE81E70485700DAA561 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C778EE71E70485700DAA561 /* Workout.swift */; };
+		3C778EEA1E704AD000DAA561 /* WorkoutsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C778EE91E704AD000DAA561 /* WorkoutsParser.swift */; };
+		3C778EEC1E70548200DAA561 /* WorkoutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C778EEB1E70548200DAA561 /* WorkoutParser.swift */; };
 		5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539C1B27B228005C167E /* AppDelegate.swift */; };
 		5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */; };
 		5D6A53A21B27B228005C167E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6A53A11B27B228005C167E /* ViewController.swift */; };
@@ -191,6 +245,60 @@
 		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
 		3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AlienEncountersSolid.ttf; path = Fonts/AlienEncountersSolid.ttf; sourceTree = SOURCE_ROOT; };
 		3AEFCF331D85504600DD2B5E /* Settings.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Settings.xml; path = XMLs/Settings.xml; sourceTree = "<group>"; };
+		3C778E801E7047CF00DAA561 /* ListWorkouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ListWorkouts.xml; path = XMLs/ListWorkouts.xml; sourceTree = "<group>"; };
+		3C778E831E70481100DAA561 /* AbsoluteBeginner.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AbsoluteBeginner.xml; path = Workouts/AbsoluteBeginner.xml; sourceTree = "<group>"; };
+		3C778E841E70481100DAA561 /* Advanced.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Advanced.xml; path = Workouts/Advanced.xml; sourceTree = "<group>"; };
+		3C778E851E70481100DAA561 /* AlternatingToeTap.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AlternatingToeTap.xml; path = Workouts/AlternatingToeTap.xml; sourceTree = "<group>"; };
+		3C778E861E70481100DAA561 /* ArmLegRaise.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ArmLegRaise.xml; path = Workouts/ArmLegRaise.xml; sourceTree = "<group>"; };
+		3C778E871E70481100DAA561 /* Beginner.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Beginner.xml; path = Workouts/Beginner.xml; sourceTree = "<group>"; };
+		3C778E881E70481100DAA561 /* BicycleCrunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = BicycleCrunches.xml; path = Workouts/BicycleCrunches.xml; sourceTree = "<group>"; };
+		3C778E891E70481100DAA561 /* ChestHighPullUps.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ChestHighPullUps.xml; path = Workouts/ChestHighPullUps.xml; sourceTree = "<group>"; };
+		3C778E8A1E70481100DAA561 /* Chinups.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Chinups.xml; path = Workouts/Chinups.xml; sourceTree = "<group>"; };
+		3C778E8B1E70481100DAA561 /* ClappingPullUps.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ClappingPullUps.xml; path = Workouts/ClappingPullUps.xml; sourceTree = "<group>"; };
+		3C778E8C1E70481100DAA561 /* ClappingPushUp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ClappingPushUp.xml; path = Workouts/ClappingPushUp.xml; sourceTree = "<group>"; };
+		3C778E8D1E70481100DAA561 /* CrossCrunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = CrossCrunches.xml; path = Workouts/CrossCrunches.xml; sourceTree = "<group>"; };
+		3C778E8E1E70481100DAA561 /* CrossLegSitUps.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = CrossLegSitUps.xml; path = Workouts/CrossLegSitUps.xml; sourceTree = "<group>"; };
+		3C778E8F1E70481100DAA561 /* Crunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Crunches.xml; path = Workouts/Crunches.xml; sourceTree = "<group>"; };
+		3C778E901E70481100DAA561 /* DeadBug.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DeadBug.xml; path = Workouts/DeadBug.xml; sourceTree = "<group>"; };
+		3C778E911E70481100DAA561 /* DeclinePushUps.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DeclinePushUps.xml; path = Workouts/DeclinePushUps.xml; sourceTree = "<group>"; };
+		3C778E921E70481100DAA561 /* DipOnChair.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DipOnChair.xml; path = Workouts/DipOnChair.xml; sourceTree = "<group>"; };
+		3C778E931E70481100DAA561 /* DipsOnStrainghtBar.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = DipsOnStrainghtBar.xml; path = Workouts/DipsOnStrainghtBar.xml; sourceTree = "<group>"; };
+		3C778E941E70481100DAA561 /* FlutterKicks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = FlutterKicks.xml; path = Workouts/FlutterKicks.xml; sourceTree = "<group>"; };
+		3C778E951E70481100DAA561 /* HalfWipers.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = HalfWipers.xml; path = Workouts/HalfWipers.xml; sourceTree = "<group>"; };
+		3C778E961E70481100DAA561 /* HeadBangersPullUpGrif.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = HeadBangersPullUpGrif.xml; path = Workouts/HeadBangersPullUpGrif.xml; sourceTree = "<group>"; };
+		3C778E971E70481100DAA561 /* HighCrunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = HighCrunches.xml; path = Workouts/HighCrunches.xml; sourceTree = "<group>"; };
+		3C778E981E70481100DAA561 /* HollowHold.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = HollowHold.xml; path = Workouts/HollowHold.xml; sourceTree = "<group>"; };
+		3C778E991E70481100DAA561 /* Hundreds.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Hundreds.xml; path = Workouts/Hundreds.xml; sourceTree = "<group>"; };
+		3C778E9A1E70481100DAA561 /* Intermediate.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Intermediate.xml; path = Workouts/Intermediate.xml; sourceTree = "<group>"; };
+		3C778E9B1E70481100DAA561 /* KneeCrunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = KneeCrunches.xml; path = Workouts/KneeCrunches.xml; sourceTree = "<group>"; };
+		3C778E9C1E70481100DAA561 /* KneeToElbow.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = KneeToElbow.xml; path = Workouts/KneeToElbow.xml; sourceTree = "<group>"; };
+		3C778E9D1E70481100DAA561 /* LegCrunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LegCrunches.xml; path = Workouts/LegCrunches.xml; sourceTree = "<group>"; };
+		3C778E9E1E70481100DAA561 /* LegRaises.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LegRaises.xml; path = Workouts/LegRaises.xml; sourceTree = "<group>"; };
+		3C778E9F1E70481100DAA561 /* LegReises.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LegReises.xml; path = Workouts/LegReises.xml; sourceTree = "<group>"; };
+		3C778EA01E70481100DAA561 /* LegSit.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LegSit.xml; path = Workouts/LegSit.xml; sourceTree = "<group>"; };
+		3C778EA11E70481100DAA561 /* LongArmCrunch.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LongArmCrunch.xml; path = Workouts/LongArmCrunch.xml; sourceTree = "<group>"; };
+		3C778EA21E70481100DAA561 /* MarkDanielHandstand.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = MarkDanielHandstand.xml; path = Workouts/MarkDanielHandstand.xml; sourceTree = "<group>"; };
+		3C778EA31E70481100DAA561 /* PlankCrunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PlankCrunches.xml; path = Workouts/PlankCrunches.xml; sourceTree = "<group>"; };
+		3C778EA41E70481100DAA561 /* PulseUp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PulseUp.xml; path = Workouts/PulseUp.xml; sourceTree = "<group>"; };
+		3C778EA51E70481100DAA561 /* PushUp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = PushUp.xml; path = Workouts/PushUp.xml; sourceTree = "<group>"; };
+		3C778EA61E70481100DAA561 /* ReverseCrunch.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ReverseCrunch.xml; path = Workouts/ReverseCrunch.xml; sourceTree = "<group>"; };
+		3C778EA71E70481100DAA561 /* RollPlanks.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = RollPlanks.xml; path = Workouts/RollPlanks.xml; sourceTree = "<group>"; };
+		3C778EA81E70481100DAA561 /* Scissors.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Scissors.xml; path = Workouts/Scissors.xml; sourceTree = "<group>"; };
+		3C778EA91E70481100DAA561 /* SideJackknife.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SideJackknife.xml; path = Workouts/SideJackknife.xml; sourceTree = "<group>"; };
+		3C778EAA1E70481100DAA561 /* SingleLegButtLiftBridge.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SingleLegButtLiftBridge.xml; path = Workouts/SingleLegButtLiftBridge.xml; sourceTree = "<group>"; };
+		3C778EAB1E70481100DAA561 /* SittingPunches.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SittingPunches.xml; path = Workouts/SittingPunches.xml; sourceTree = "<group>"; };
+		3C778EAC1E70481100DAA561 /* SittingTwists.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SittingTwists.xml; path = Workouts/SittingTwists.xml; sourceTree = "<group>"; };
+		3C778EAD1E70481100DAA561 /* SitUps.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = SitUps.xml; path = Workouts/SitUps.xml; sourceTree = "<group>"; };
+		3C778EAE1E70481100DAA561 /* Squats.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Squats.xml; path = Workouts/Squats.xml; sourceTree = "<group>"; };
+		3C778EAF1E70481100DAA561 /* StarPlank.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = StarPlank.xml; path = Workouts/StarPlank.xml; sourceTree = "<group>"; };
+		3C778EB01E70481100DAA561 /* ToeTap.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ToeTap.xml; path = Workouts/ToeTap.xml; sourceTree = "<group>"; };
+		3C778EB11E70481100DAA561 /* TypeWriterPullUp.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = TypeWriterPullUp.xml; path = Workouts/TypeWriterPullUp.xml; sourceTree = "<group>"; };
+		3C778EB21E70481100DAA561 /* VUps.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = VUps.xml; path = Workouts/VUps.xml; sourceTree = "<group>"; };
+		3C778EB31E70481100DAA561 /* WallSix.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = WallSix.xml; path = Workouts/WallSix.xml; sourceTree = "<group>"; };
+		3C778EB41E70481100DAA561 /* Wiper.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Wiper.xml; path = Workouts/Wiper.xml; sourceTree = "<group>"; };
+		3C778EE71E70485700DAA561 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = src/Workout.swift; sourceTree = "<group>"; };
+		3C778EE91E704AD000DAA561 /* WorkoutsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutsParser.swift; path = src/WorkoutsParser.swift; sourceTree = "<group>"; };
+		3C778EEB1E70548200DAA561 /* WorkoutParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutParser.swift; path = src/WorkoutParser.swift; sourceTree = "<group>"; };
 		5D6A53971B27B228005C167E /* WorkoutSolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutSolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6A539B1B27B228005C167E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6A539C1B27B228005C167E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -224,7 +332,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3A01FF7C1C05FF7900AD1F9D /* src */ = {
+		3A01FF7C1C05FF7900AD1F9D /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				3A01FF7D1C05FFD000AD1F9D /* Account.swift */,
@@ -237,17 +345,20 @@
 				3A047C021DBA8BD100D7B0FA /* ExercisesListCell.swift */,
 				3A5BC2531DC790830064D01E /* FooterButton.swift */,
 				3AB433141DC39EB8004E96D4 /* LevelButton.swift */,
-				3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */,
-				3AB51FB31D412C5B00872A67 /* ScreenSize.swift */,
-				3AB7095C1DC25054003CF490 /* TypeButton.swift */,
-				3A66AF201D845629002BD1EA /* UserDefaults.swift */,
-				3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */,
 				3A0DFE001DD9FA88005723A4 /* LevelCell.swift */,
 				3A7BCC481DDCAECC008D063A /* MainButton.swift */,
 				3A7BCC4A1DDCDE0D008D063A /* RoutineButton.swift */,
+				3AC2156C1D3FBC41003C26E9 /* ScreenObject.swift */,
+				3AB51FB31D412C5B00872A67 /* ScreenSize.swift */,
+				3AB7095C1DC25054003CF490 /* TypeButton.swift */,
 				3A9BF6041DDF3CDA00D6451F /* TypeCell.swift */,
+				3A66AF201D845629002BD1EA /* UserDefaults.swift */,
+				3C778EE71E70485700DAA561 /* Workout.swift */,
+				3C778EEB1E70548200DAA561 /* WorkoutParser.swift */,
+				3A0D38551DA8ADF400388457 /* WorkoutsListCell.swift */,
+				3C778EE91E704AD000DAA561 /* WorkoutsParser.swift */,
 			);
-			name = src;
+			name = Source;
 			sourceTree = "<group>";
 		};
 		3A2F803D1BB1A6DD00AAA040 /* ViewController */ = {
@@ -321,15 +432,16 @@
 				3A70C8011D804C8C00E08F0E /* Footer.xml */,
 				3A5BC2571DC795DE0064D01E /* FooterButton.xml */,
 				3A0CCEBE1D65EA1B005D8128 /* Level.xml */,
+				3C778E801E7047CF00DAA561 /* ListWorkouts.xml */,
 				3AD4A7911D5F50010046C52C /* Main.xml */,
+				3A9BF60A1DDFD40E00D6451F /* MainButton.xml */,
+				3A9BF6081DDF5BFF00D6451F /* RoutineButton.xml */,
 				3AEFCF331D85504600DD2B5E /* Settings.xml */,
 				3A44A5FE1D819BFB00B4D026 /* Tracker.xml */,
 				3A20F8E11D64B5790049931A /* Type.xml */,
+				3A9BF6061DDF456F00D6451F /* TypeButton.xml */,
 				3A66095A1DB54432004FC4F5 /* Workouts.xml */,
 				3A70C8051D808B5600E08F0E /* WorkoutsList.xml */,
-				3A9BF6061DDF456F00D6451F /* TypeButton.xml */,
-				3A9BF6081DDF5BFF00D6451F /* RoutineButton.xml */,
-				3A9BF60A1DDFD40E00D6451F /* MainButton.xml */,
 			);
 			name = XMLs;
 			sourceTree = "<group>";
@@ -349,6 +461,63 @@
 				3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		3C778E821E7047E000DAA561 /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				3C778E831E70481100DAA561 /* AbsoluteBeginner.xml */,
+				3C778E841E70481100DAA561 /* Advanced.xml */,
+				3C778E851E70481100DAA561 /* AlternatingToeTap.xml */,
+				3C778E861E70481100DAA561 /* ArmLegRaise.xml */,
+				3C778E871E70481100DAA561 /* Beginner.xml */,
+				3C778E881E70481100DAA561 /* BicycleCrunches.xml */,
+				3C778E891E70481100DAA561 /* ChestHighPullUps.xml */,
+				3C778E8A1E70481100DAA561 /* Chinups.xml */,
+				3C778E8B1E70481100DAA561 /* ClappingPullUps.xml */,
+				3C778E8C1E70481100DAA561 /* ClappingPushUp.xml */,
+				3C778E8D1E70481100DAA561 /* CrossCrunches.xml */,
+				3C778E8E1E70481100DAA561 /* CrossLegSitUps.xml */,
+				3C778E8F1E70481100DAA561 /* Crunches.xml */,
+				3C778E901E70481100DAA561 /* DeadBug.xml */,
+				3C778E911E70481100DAA561 /* DeclinePushUps.xml */,
+				3C778E921E70481100DAA561 /* DipOnChair.xml */,
+				3C778E931E70481100DAA561 /* DipsOnStrainghtBar.xml */,
+				3C778E941E70481100DAA561 /* FlutterKicks.xml */,
+				3C778E951E70481100DAA561 /* HalfWipers.xml */,
+				3C778E961E70481100DAA561 /* HeadBangersPullUpGrif.xml */,
+				3C778E971E70481100DAA561 /* HighCrunches.xml */,
+				3C778E981E70481100DAA561 /* HollowHold.xml */,
+				3C778E991E70481100DAA561 /* Hundreds.xml */,
+				3C778E9A1E70481100DAA561 /* Intermediate.xml */,
+				3C778E9B1E70481100DAA561 /* KneeCrunches.xml */,
+				3C778E9C1E70481100DAA561 /* KneeToElbow.xml */,
+				3C778E9D1E70481100DAA561 /* LegCrunches.xml */,
+				3C778E9E1E70481100DAA561 /* LegRaises.xml */,
+				3C778E9F1E70481100DAA561 /* LegReises.xml */,
+				3C778EA01E70481100DAA561 /* LegSit.xml */,
+				3C778EA11E70481100DAA561 /* LongArmCrunch.xml */,
+				3C778EA21E70481100DAA561 /* MarkDanielHandstand.xml */,
+				3C778EA31E70481100DAA561 /* PlankCrunches.xml */,
+				3C778EA41E70481100DAA561 /* PulseUp.xml */,
+				3C778EA51E70481100DAA561 /* PushUp.xml */,
+				3C778EA61E70481100DAA561 /* ReverseCrunch.xml */,
+				3C778EA71E70481100DAA561 /* RollPlanks.xml */,
+				3C778EA81E70481100DAA561 /* Scissors.xml */,
+				3C778EA91E70481100DAA561 /* SideJackknife.xml */,
+				3C778EAA1E70481100DAA561 /* SingleLegButtLiftBridge.xml */,
+				3C778EAB1E70481100DAA561 /* SittingPunches.xml */,
+				3C778EAC1E70481100DAA561 /* SittingTwists.xml */,
+				3C778EAD1E70481100DAA561 /* SitUps.xml */,
+				3C778EAE1E70481100DAA561 /* Squats.xml */,
+				3C778EAF1E70481100DAA561 /* StarPlank.xml */,
+				3C778EB01E70481100DAA561 /* ToeTap.xml */,
+				3C778EB11E70481100DAA561 /* TypeWriterPullUp.xml */,
+				3C778EB21E70481100DAA561 /* VUps.xml */,
+				3C778EB31E70481100DAA561 /* WallSix.xml */,
+				3C778EB41E70481100DAA561 /* Wiper.xml */,
+			);
+			name = Workouts;
 			sourceTree = "<group>";
 		};
 		5D6A538E1B27B228005C167E = {
@@ -375,16 +544,16 @@
 		5D6A53991B27B228005C167E /* WorkoutSolution */ = {
 			isa = PBXGroup;
 			children = (
-				3AEFCF301D854FBB00DD2B5E /* Fonts */,
-				3AD4A7901D5F4FEC0046C52C /* XMLs */,
-				3AEE15E81C720900005F9F81 /* storyboard */,
-				3A01FF7C1C05FF7900AD1F9D /* src */,
-				3A2F803D1BB1A6DD00AAA040 /* ViewController */,
 				5D6A539C1B27B228005C167E /* AppDelegate.swift */,
+				3AEFCF301D854FBB00DD2B5E /* Fonts */,
 				5D6A53A61B27B228005C167E /* Images.xcassets */,
 				5D6A53A81B27B228005C167E /* LaunchScreen.xib */,
-				5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */,
+				3A01FF7C1C05FF7900AD1F9D /* Source */,
+				3AEE15E81C720900005F9F81 /* storyboard */,
 				5D6A539A1B27B228005C167E /* Supporting Files */,
+				3A2F803D1BB1A6DD00AAA040 /* ViewController */,
+				3C778E821E7047E000DAA561 /* Workouts */,
+				3AD4A7901D5F4FEC0046C52C /* XMLs */,
 			);
 			path = WorkoutSolution;
 			sourceTree = "<group>";
@@ -392,8 +561,9 @@
 		5D6A539A1B27B228005C167E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */,
 				5D6A539B1B27B228005C167E /* Info.plist */,
+				3A67FE131BF41E1F002A8198 /* WorkoutSolution-Bridging-Header.h */,
+				5D6A539E1B27B228005C167E /* WorkoutSolution.xcdatamodeld */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -524,25 +694,76 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C778ED81E70481100DAA561 /* ReverseCrunch.xml in Resources */,
+				3C778EBA1E70481100DAA561 /* BicycleCrunches.xml in Resources */,
+				3C778ECF1E70481100DAA561 /* LegCrunches.xml in Resources */,
+				3C778EBE1E70481100DAA561 /* ClappingPushUp.xml in Resources */,
 				3A70C8021D804C8C00E08F0E /* Footer.xml in Resources */,
+				3C778EC21E70481100DAA561 /* DeadBug.xml in Resources */,
 				3A66095B1DB54432004FC4F5 /* Workouts.xml in Resources */,
+				3C778EC31E70481100DAA561 /* DeclinePushUps.xml in Resources */,
+				3C778EB61E70481100DAA561 /* Advanced.xml in Resources */,
+				3C778ECD1E70481100DAA561 /* KneeCrunches.xml in Resources */,
+				3C778ED51E70481100DAA561 /* PlankCrunches.xml in Resources */,
 				3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */,
+				3C778EC41E70481100DAA561 /* DipOnChair.xml in Resources */,
+				3C778ECA1E70481100DAA561 /* HollowHold.xml in Resources */,
+				3C778EC51E70481100DAA561 /* DipsOnStrainghtBar.xml in Resources */,
+				3C778EE21E70481100DAA561 /* ToeTap.xml in Resources */,
+				3C778EE61E70481100DAA561 /* Wiper.xml in Resources */,
+				3C778EDA1E70481100DAA561 /* Scissors.xml in Resources */,
 				3AD4A7921D5F50010046C52C /* Main.xml in Resources */,
 				3A9BF60B1DDFD40E00D6451F /* MainButton.xml in Resources */,
 				3A9BF6091DDF5BFF00D6451F /* RoutineButton.xml in Resources */,
 				10B025F31DBF9C3000E71FC5 /* telegrafico.ttf in Resources */,
+				3C778EBC1E70481100DAA561 /* Chinups.xml in Resources */,
+				3C778EC61E70481100DAA561 /* FlutterKicks.xml in Resources */,
+				3C778ED31E70481100DAA561 /* LongArmCrunch.xml in Resources */,
+				3C778EDB1E70481100DAA561 /* SideJackknife.xml in Resources */,
+				3C778EE41E70481100DAA561 /* VUps.xml in Resources */,
 				3A20F8E21D64B5790049931A /* Type.xml in Resources */,
 				3AEFCF341D85504600DD2B5E /* Settings.xml in Resources */,
+				3C778EB71E70481100DAA561 /* AlternatingToeTap.xml in Resources */,
+				3C778EC11E70481100DAA561 /* Crunches.xml in Resources */,
+				3C778ED11E70481100DAA561 /* LegReises.xml in Resources */,
+				3C778EDC1E70481100DAA561 /* SingleLegButtLiftBridge.xml in Resources */,
 				3A0CCEBF1D65EA1B005D8128 /* Level.xml in Resources */,
+				3C778ED61E70481100DAA561 /* PulseUp.xml in Resources */,
+				3C778EE11E70481100DAA561 /* StarPlank.xml in Resources */,
 				3A44A5FF1D819BFB00B4D026 /* Tracker.xml in Resources */,
 				5D6A53AA1B27B228005C167E /* LaunchScreen.xib in Resources */,
+				3C778ED21E70481100DAA561 /* LegSit.xml in Resources */,
 				3A5BC2581DC795DE0064D01E /* FooterButton.xml in Resources */,
 				3A8CDDF11CE111DF00CE7D62 /* MainNew.storyboard in Resources */,
 				3A7BEA4C1D673DEF00A5F57F /* Exercises.xml in Resources */,
+				3C778EC71E70481100DAA561 /* HalfWipers.xml in Resources */,
+				3C778ECB1E70481100DAA561 /* Hundreds.xml in Resources */,
+				3C778ED91E70481100DAA561 /* RollPlanks.xml in Resources */,
+				3C778E811E7047CF00DAA561 /* ListWorkouts.xml in Resources */,
+				3C778EE31E70481100DAA561 /* TypeWriterPullUp.xml in Resources */,
+				3C778EC91E70481100DAA561 /* HighCrunches.xml in Resources */,
+				3C778EDD1E70481100DAA561 /* SittingPunches.xml in Resources */,
+				3C778EBF1E70481100DAA561 /* CrossCrunches.xml in Resources */,
+				3C778EC01E70481100DAA561 /* CrossLegSitUps.xml in Resources */,
+				3C778EBB1E70481100DAA561 /* ChestHighPullUps.xml in Resources */,
+				3C778ECC1E70481100DAA561 /* Intermediate.xml in Resources */,
+				3C778EBD1E70481100DAA561 /* ClappingPullUps.xml in Resources */,
+				3C778EDF1E70481100DAA561 /* SitUps.xml in Resources */,
+				3C778EC81E70481100DAA561 /* HeadBangersPullUpGrif.xml in Resources */,
+				3C778EB81E70481100DAA561 /* ArmLegRaise.xml in Resources */,
+				3C778EB91E70481100DAA561 /* Beginner.xml in Resources */,
 				3A9BF6071DDF456F00D6451F /* TypeButton.xml in Resources */,
+				3C778EE51E70481100DAA561 /* WallSix.xml in Resources */,
+				3C778EB51E70481100DAA561 /* AbsoluteBeginner.xml in Resources */,
+				3C778ED41E70481100DAA561 /* MarkDanielHandstand.xml in Resources */,
+				3C778EDE1E70481100DAA561 /* SittingTwists.xml in Resources */,
 				3A5BC2561DC791460064D01E /* BackButton.xml in Resources */,
 				10DEB1CE1DC7BFE400521B54 /* Details.xml in Resources */,
 				3A70C8061D808B5600E08F0E /* WorkoutsList.xml in Resources */,
+				3C778EE01E70481100DAA561 /* Squats.xml in Resources */,
+				3C778ED01E70481100DAA561 /* LegRaises.xml in Resources */,
+				3C778ECE1E70481100DAA561 /* KneeToElbow.xml in Resources */,
+				3C778ED71E70481100DAA561 /* PushUp.xml in Resources */,
 				5D6A53A71B27B228005C167E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -587,6 +808,7 @@
 				3AB7095D1DC25054003CF490 /* TypeButton.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				10E5A0951DC63E79009E0F4C /* BackButton.swift in Sources */,
+				3C778EE81E70485700DAA561 /* Workout.swift in Sources */,
 				3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */,
 				3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */,
 				3A5BC2541DC790830064D01E /* FooterButton.swift in Sources */,
@@ -595,8 +817,10 @@
 				5D6A539D1B27B228005C167E /* AppDelegate.swift in Sources */,
 				3A9BF6051DDF3CDA00D6451F /* TypeCell.swift in Sources */,
 				3AB51FB41D412C5B00872A67 /* ScreenSize.swift in Sources */,
+				3C778EEC1E70548200DAA561 /* WorkoutParser.swift in Sources */,
 				3A174E641D083C4F00C308A4 /* Level.swift in Sources */,
 				3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */,
+				3C778EEA1E704AD000DAA561 /* WorkoutsParser.swift in Sources */,
 				3A6609591DB54275004FC4F5 /* Workouts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -157,38 +157,4 @@ class Type: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		cell.initView()
 		return cell
 	}
-/* try rem it, if not error will remove
-	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-		tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
-	}
-
-	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-		return false
-	}
-
-	func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-		return false
-	}
-
-	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-		return true
-	}
-
-	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
-		return true
-	}
-
-    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-        print(#function + " - sourceIndexPath: \(sourceIndexPath)")
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        print(#function + " - indexPath: \(indexPath.row)")
-    }
-    
-    func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-        print(#function + " - indexPath: \(indexPath.row)")
-    }
-*/
 }

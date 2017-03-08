@@ -74,5 +74,9 @@ class Application {
 
 	var currentWorkoutsListIndex = 0
 	func CurrentWorkoutsListIndex() -> Int { return currentWorkoutsListIndex }
-	func CurrentWorkoutsListIndex(_ value: Int) { currentWorkoutsListIndex = value}
+	func CurrentWorkoutsListIndex(_ value: Int) { currentWorkoutsListIndex = value }
+
+	var workouts = [Workout]()
+	func GetWorkouts() -> [Workout] { return workouts }
+	func SetWorkouts(_ value: [Workout]) { workouts = value }
 }
