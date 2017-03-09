@@ -1,4 +1,6 @@
 <workout>
+	<name>Pulse Up</name>
+	<icon>PulseUp.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

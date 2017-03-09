@@ -1,4 +1,6 @@
 <workout>
+	<name>Squats</name>
+	<icon>Squats.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
 	<support1>WallSitsBefore</support1>

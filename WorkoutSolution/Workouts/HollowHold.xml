@@ -1,4 +1,6 @@
 <workout>
+	<name>Hollow Hold</name>
+	<icon>HollowHold.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

@@ -1,4 +1,6 @@
 <workout>
+	<name>Head Bangers Pull Up Grif</name>
+	<icon>HeadBangersPullUpGrif.png</icon>
 	<type>UpperBody</type>
 	<level>Intermediate</level>
 	<support1>DipOnChairBefore</support1>

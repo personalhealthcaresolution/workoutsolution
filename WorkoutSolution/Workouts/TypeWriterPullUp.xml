@@ -1,4 +1,6 @@
 <workout>
+	<name>Type Writer Pull Up</name>
+	<icon>TypeWriterPullUp.png</icon>
 	<type>UpperBody</type>
 	<level>Expert</level>
 	<support1>DipOnChairBefore</support1>

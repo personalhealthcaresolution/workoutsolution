@@ -1,4 +1,6 @@
 <workout>
+	<name>Flutter Kicks</name>
+	<icon>FlutterKicks.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
 	<support1>WallSitsBefore</support1>

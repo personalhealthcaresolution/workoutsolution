@@ -1,4 +1,6 @@
 <workout>
+	<name>Clapping Pull Ups</name>
+	<icon>ClappingPullUps.png</icon>
 	<type>UpperBody</type>
 	<level>Intermediate</level>
 	<support1>DipOnChairBefore</support1>

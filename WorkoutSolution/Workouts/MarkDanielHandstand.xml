@@ -1,4 +1,6 @@
 <workout>
+	<name>Mark Daniel Handstand</name>
+	<icon>MarkDanielHandstand.png</icon>
 	<type>UpperBody</type>
 	<level>Intermediate</level>
 	<support1>DipOnChairBefore</support1>

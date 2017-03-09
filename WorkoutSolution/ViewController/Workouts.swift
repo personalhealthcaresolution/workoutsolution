@@ -40,7 +40,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			for workout in workouts {
 				if workout.type == search {
 					workoutName.append(workout.name)
-					workoutIcon.append(workout.name)
+					workoutIcon.append(workout.icon)
 				}
 			}
 		case Application.Workouts.level:
@@ -57,7 +57,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			for workout in workouts {
 				if workout.level == search {
 					workoutName.append(workout.name)
-					workoutIcon.append(workout.name)
+					workoutIcon.append(workout.icon)
 				}
 			}
 		default: break

@@ -10,6 +10,7 @@ import Foundation
 
 class Workout {
 	var name = ""
+	var icon = ""
 	var type = ""
 	var level = ""
 	var support1 = ""

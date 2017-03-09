@@ -1,4 +1,6 @@
 <workout>
+	<name>Decline Push Ups</name>
+	<icon>DeclinePushUps.png</icon>
 	<type>UpperBody</type>
 	<level>Beginner</level>
 	<support1>DipOnChairBefore</support1>

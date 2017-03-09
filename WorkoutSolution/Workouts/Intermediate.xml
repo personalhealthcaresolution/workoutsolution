@@ -1,4 +1,6 @@
 <workout>
+	<name>Intermediate</name>
+	<icon>Intermediate.png</icon>
 	<type>UpperBody</type>
 	<level>Expert</level>
 	<support1>DipOnChairBefore</support1>

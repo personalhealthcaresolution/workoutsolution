@@ -1,4 +1,6 @@
 <workout>
+	<name>Push Up</name>
+	<icon>PushUp.png</icon>
 	<type>UpperBody</type>
 	<level>Beginner</level>
 	<support1>DipOnChairBefore</support1>

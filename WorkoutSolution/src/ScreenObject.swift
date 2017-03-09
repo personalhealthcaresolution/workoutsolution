@@ -238,7 +238,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 
 		var image = UIImage()
 		if useBundle {
-			image = UIImage(named: named + ".png", in: Bundle(for: type(of: self)), compatibleWith: nil)!
+			image = UIImage(named: named, in: Bundle(for: type(of: self)), compatibleWith: nil)!
 		} else {
 			image = UIImage(named: named)!
 		}

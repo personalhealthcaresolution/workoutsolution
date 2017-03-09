@@ -1,4 +1,6 @@
 <workout>
+	<name>Alternating Toe Tap</name>
+	<icon>AlternatingToeTap.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

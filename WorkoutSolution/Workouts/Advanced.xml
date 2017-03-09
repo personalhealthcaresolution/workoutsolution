@@ -1,4 +1,6 @@
 <workout>
+	<name>Advanced</name>
+	<icon>Advanced.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
 	<support1>WallSitsBefore</support1>

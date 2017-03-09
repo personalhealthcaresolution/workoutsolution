@@ -1,4 +1,6 @@
 <workout>
+	<name>Sit Ups</name>
+	<icon>SitUps.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
 	<support1>WallSitsBefore</support1>

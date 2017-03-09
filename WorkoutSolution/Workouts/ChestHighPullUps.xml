@@ -1,4 +1,6 @@
 <workout>
+	<name>Chest High Pull Ups</name>
+	<icon>ChestHighPullUps.png</icon>
 	<type>UpperBody</type>
 	<level>Intermediate</level>
 	<support1>DipOnChairBefore</support1>

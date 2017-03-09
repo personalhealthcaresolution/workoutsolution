@@ -1,4 +1,6 @@
 <workout>
+	<name>Knee To Elbow</name>
+	<icon>KneeToElbow.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

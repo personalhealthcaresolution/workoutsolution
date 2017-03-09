@@ -1,4 +1,6 @@
 <workout>
+	<name>Wiper</name>
+	<icon>Wiper.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

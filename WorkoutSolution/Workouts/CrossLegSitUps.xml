@@ -1,4 +1,6 @@
 <workout>
+	<name>Cross Leg Sit Ups</name>
+	<icon>CrossLegSitUps.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

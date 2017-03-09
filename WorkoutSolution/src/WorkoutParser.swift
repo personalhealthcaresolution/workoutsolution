@@ -36,6 +36,10 @@ class WorkoutParser: NSObject, XMLParserDelegate {
 	func parser(_ parser: XMLParser, foundCharacters string: String) {
 		if didStartElement {
 			switch curElement {
+			case "name":
+				workout.name = string
+			case "icon":
+				workout.icon = string
 			case "type":
 				workout.type = string
 			case "level":

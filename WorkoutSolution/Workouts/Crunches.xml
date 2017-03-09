@@ -1,4 +1,6 @@
 <workout>
+	<name>Crunches</name>
+	<icon>Crunches.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

@@ -1,4 +1,6 @@
 <workout>
+	<name>Chinups</name>
+	<icon>Chinups.png</icon>
 	<type>UpperBody</type>
 	<level>Intermediate</level>
 	<support1>DipOnChairBefore</support1>

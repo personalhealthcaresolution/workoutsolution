@@ -1,4 +1,6 @@
 <workout>
+	<name>Side Jackknife</name>
+	<icon>SideJackknife.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
 	<support1>WallSitsBefore</support1>

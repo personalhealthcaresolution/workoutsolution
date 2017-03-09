@@ -1,4 +1,6 @@
 <workout>
+	<name>Dead Bug</name>
+	<icon>DeadBug.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

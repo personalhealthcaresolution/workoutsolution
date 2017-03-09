@@ -1,4 +1,6 @@
 <workout>
+	<name>Dip On Chair</name>
+	<icon>DipOnChair.png</icon>
 	<type>UpperBody</type>
 	<level>Beginner</level>
 	<support1>DipOnChairBefore</support1>

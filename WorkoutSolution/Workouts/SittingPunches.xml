@@ -1,4 +1,6 @@
 <workout>
+	<name>Sitting Punches</name>
+	<icon>SittingPunches.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>

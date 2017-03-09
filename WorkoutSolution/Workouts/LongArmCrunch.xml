@@ -1,4 +1,6 @@
 <workout>
+	<name>Long Arm Crunch</name>
+	<icon>LongArmCrunch.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support1>Before</support1>
