@@ -371,6 +371,7 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		let touched = NSSelectorFromString("Touched:")
 		button.addTarget(button, action: touched, for: UIControlEvents.touchDown)
 		button.addTarget(target, action: object.selector, for: UIControlEvents.touchUpInside)
+		button.initView()
 		button.UpdateButton()
 		parent.contentView.addSubview(button)
 	}
@@ -409,6 +410,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		if selector != nil {
 			button.addTarget(view, action: selector!, for: UIControlEvents.touchUpInside)
 		}
+
+		button.initView()
 		button.UpdateButton()
 		view.view.addSubview(button)
 	}
@@ -606,13 +609,19 @@ class ScreenObject: NSObject, XMLParserDelegate {
         }
     }
 
-	func AddImage(_ image: UIImageView, view: UIView, object: Object) {
+	func AddImage(_ image: UIImageView, view: UIView, object: Object, useBundle: Bool = false) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
 
-		let icon = UIImage(named: object.named)
+		var icon = UIImage()
+		if useBundle {
+			icon = UIImage(named: object.named, in: Bundle(for: type(of: self)), compatibleWith: nil)!
+		} else {
+			icon = UIImage(named: object.named)!
+		}
+
 		image.image = icon
 		image.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		view.addSubview(image)

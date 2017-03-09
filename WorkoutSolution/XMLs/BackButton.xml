@@ -14,8 +14,6 @@
 
 	<object>
 		<type>image</type>
-		<posX>0</posX>
-		<posY>0</posY>
 		<width>120</width>
 		<height>120</height>
 		<named>back</named>

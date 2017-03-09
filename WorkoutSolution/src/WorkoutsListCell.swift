@@ -17,7 +17,7 @@ class WorkoutsListCell: UITableViewCell {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
 
 		let constant = Constant()
-		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
+		self.backgroundColor = constant.UIColorFromHex(0xFFFFFF)
 
         let screenObject = ScreenObject()
 

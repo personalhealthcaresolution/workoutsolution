@@ -2,8 +2,6 @@
 <view>
 	<object>
 		<type>background</type>
-		<posX>0</posX>
-		<posY>0</posY>
 		<width>1242</width>
 		<height>380</height>
 		<color>0xF94343</color>

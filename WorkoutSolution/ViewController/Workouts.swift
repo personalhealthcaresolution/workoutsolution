@@ -109,7 +109,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		tableView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		tableView.delegate = self
 		tableView.dataSource = self
-		tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+		tableView.register(WorkoutCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
         tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
@@ -188,14 +188,10 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
-		let constant = Constant()
-		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
-		let screenObject = ScreenObject()
-		screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row], useBundle: true)
-		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "Arial", size: 20, color: constant.citrus)
-
+		let cell:WorkoutCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkoutCell
+		cell.SetIcon(workoutIcon[indexPath.row])
+		cell.SetText(workoutName[indexPath.row])
+		cell.initView()
 		return cell
 	}
 }

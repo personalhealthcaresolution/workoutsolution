@@ -119,8 +119,8 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		tableView.register(WorkoutsListCell.self, forCellReuseIdentifier: "cell")
 		tableView.layoutMargins = UIEdgeInsets.zero
 		tableView.separatorInset = UIEdgeInsets.zero
-		tableView.separatorColor = constant.UIColorFromHex(constant.citrus)
-		tableView.backgroundColor = constant.UIColorFromHex(object.color)
+		tableView.separatorColor = constant.UIColorFromHex(constant.coralRed)
+		tableView.backgroundColor = constant.UIColorFromHex(0xFFFFFF)
 		tableView.allowsSelectionDuringEditing = true
 
 		tableView.rowHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.rowHeight)
@@ -165,7 +165,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
-        if tableView.isUserInteractionEnabled {
+        if tableView.isUserInteractionEnabled || tableView.isEditing == false {
             ShowPopup(title: "New Routine", addString: "OK", content: "")
         }
 	}

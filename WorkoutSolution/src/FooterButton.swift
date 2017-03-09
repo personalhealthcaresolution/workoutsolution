@@ -15,34 +15,33 @@ class FooterButton: UIButton {
 
 	var textX: CGFloat = 0
 	var imageText = ""
-    var titleText = ""
 
 	init() {
 		super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+	}
 
+	required init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	func initView() {
 		let screenObject = ScreenObject()
 		screenObject.ParseXML("FooterButton")
 		var objects = screenObject.GetObjects()
 		while objects.count > 0 {
 			var object = ScreenObject.Object()
 			object = objects.first!
-
 			switch object.type {
 			case "image":
+				object.named = imageText
 				screenObject.AddImage(icon, view: self, object: object)
 			case "label":
+				object.text = title.text!
 				screenObject.AddLabel(title, view: self, object: object)
 			default: break
 			}
 			objects.removeFirst()
 		}
-
-
-
-	}
-
-	required init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
 	}
 
 	func UpdateButton() {

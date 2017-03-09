@@ -120,6 +120,8 @@
 		3C778EE81E70485700DAA561 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C778EE71E70485700DAA561 /* Workout.swift */; };
 		3C778EEA1E704AD000DAA561 /* WorkoutsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C778EE91E704AD000DAA561 /* WorkoutsParser.swift */; };
 		3C778EEC1E70548200DAA561 /* WorkoutParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C778EEB1E70548200DAA561 /* WorkoutParser.swift */; };
+		3CFA0A641E7187CA0005C06E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA0A631E7187CA0005C06E /* TableViewCell.swift */; };
+		3CFA0A671E7188550005C06E /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFA0A661E7188550005C06E /* WorkoutCell.swift */; };
 		4145AA271E71556F003843EC /* AbsoluteBeginner.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145A9EC1E71556F003843EC /* AbsoluteBeginner.png */; };
 		4145AA281E71556F003843EC /* Advanced.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145A9ED1E71556F003843EC /* Advanced.png */; };
 		4145AA291E71556F003843EC /* AlternatingToeTap.png in Resources */ = {isa = PBXBuildFile; fileRef = 4145A9EE1E71556F003843EC /* AlternatingToeTap.png */; };
@@ -358,6 +360,8 @@
 		3C778EE71E70485700DAA561 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Workout.swift; path = src/Workout.swift; sourceTree = "<group>"; };
 		3C778EE91E704AD000DAA561 /* WorkoutsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutsParser.swift; path = src/WorkoutsParser.swift; sourceTree = "<group>"; };
 		3C778EEB1E70548200DAA561 /* WorkoutParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutParser.swift; path = src/WorkoutParser.swift; sourceTree = "<group>"; };
+		3CFA0A631E7187CA0005C06E /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = BaseObject/TableViewCell.swift; sourceTree = "<group>"; };
+		3CFA0A661E7188550005C06E /* WorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WorkoutCell.swift; path = CustomObject/WorkoutCell.swift; sourceTree = "<group>"; };
 		4145A9EC1E71556F003843EC /* AbsoluteBeginner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AbsoluteBeginner.png; path = WorkoutsIcon/AbsoluteBeginner.png; sourceTree = "<group>"; };
 		4145A9ED1E71556F003843EC /* Advanced.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Advanced.png; path = WorkoutsIcon/Advanced.png; sourceTree = "<group>"; };
 		4145A9EE1E71556F003843EC /* AlternatingToeTap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = AlternatingToeTap.png; path = WorkoutsIcon/AlternatingToeTap.png; sourceTree = "<group>"; };
@@ -638,6 +642,22 @@
 			name = Workouts;
 			sourceTree = "<group>";
 		};
+		3CFA0A621E7187770005C06E /* BaseObject */ = {
+			isa = PBXGroup;
+			children = (
+				3CFA0A631E7187CA0005C06E /* TableViewCell.swift */,
+			);
+			name = BaseObject;
+			sourceTree = "<group>";
+		};
+		3CFA0A651E7188070005C06E /* CustomObject */ = {
+			isa = PBXGroup;
+			children = (
+				3CFA0A661E7188550005C06E /* WorkoutCell.swift */,
+			);
+			name = CustomObject;
+			sourceTree = "<group>";
+		};
 		4145A9EB1E715473003843EC /* WorkoutsIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -729,6 +749,8 @@
 			isa = PBXGroup;
 			children = (
 				5D6A539C1B27B228005C167E /* AppDelegate.swift */,
+				3CFA0A621E7187770005C06E /* BaseObject */,
+				3CFA0A651E7188070005C06E /* CustomObject */,
 				3AEFCF301D854FBB00DD2B5E /* Fonts */,
 				5D6A53A61B27B228005C167E /* Images.xcassets */,
 				5D6A53A81B27B228005C167E /* LaunchScreen.xib */,
@@ -1052,9 +1074,11 @@
 				3AB7095D1DC25054003CF490 /* TypeButton.swift in Sources */,
 				5D6A53A01B27B228005C167E /* WorkoutSolution.xcdatamodeld in Sources */,
 				10E5A0951DC63E79009E0F4C /* BackButton.swift in Sources */,
+				3CFA0A641E7187CA0005C06E /* TableViewCell.swift in Sources */,
 				3C778EE81E70485700DAA561 /* Workout.swift in Sources */,
 				3A734B1A1D3CFBF6000EF7DC /* WorkoutsList.swift in Sources */,
 				3A66AF211D845629002BD1EA /* UserDefaults.swift in Sources */,
+				3CFA0A671E7188550005C06E /* WorkoutCell.swift in Sources */,
 				3A5BC2541DC790830064D01E /* FooterButton.swift in Sources */,
 				3A0D9FD91D882FB20015189F /* Application.swift in Sources */,
 				3A7A5B471C134F8700C6EA87 /* TrackerBack.swift in Sources */,
