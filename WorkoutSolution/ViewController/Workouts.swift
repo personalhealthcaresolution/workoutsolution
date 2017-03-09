@@ -40,6 +40,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			for workout in workouts {
 				if workout.type == search {
 					workoutName.append(workout.name)
+					workoutIcon.append(workout.name)
 				}
 			}
 		case Application.Workouts.level:
@@ -56,6 +57,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			for workout in workouts {
 				if workout.level == search {
 					workoutName.append(workout.name)
+					workoutIcon.append(workout.name)
 				}
 			}
 		default: break
@@ -158,7 +160,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	//tableview delegate
 	func numberOfSections(in tableView: UITableView) -> Int {
-		return workoutName.count
+		return 1
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -174,7 +176,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 1
+		return workoutName.count
 	}
 
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
@@ -191,14 +193,9 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		let constant = Constant()
 		cell.backgroundColor = constant.UIColorFromHex(constant.coralRed)
 		let screenObject = ScreenObject()
-		//screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row])
-		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.section], font: "Arial", size: 20, color: constant.citrus)
+		screenObject.AddImage(cell.contentView, xPosition: 100, yPosition: 18, width: 303, height: 303, named: workoutIcon[indexPath.row], useBundle: true)
+		screenObject.AddLabel(cell.contentView, xPosition: 503, yPosition: 140, width: 500, height: 59, text: workoutName[indexPath.row], font: "Arial", size: 20, color: constant.citrus)
 
 		return cell
-	}
-
-	func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
-		let temp = workoutName as NSArray
-		return temp.index(of: title)
 	}
 }

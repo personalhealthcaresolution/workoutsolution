@@ -230,14 +230,20 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		view.addSubview(background)
 	}
 
-	func AddImage(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String) {
+	func AddImage(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, named: String, useBundle: Bool = false) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
 
-		let image = UIImage(named: named)
-		let imageView = UIImageView(image: image!)
+		var image = UIImage()
+		if useBundle {
+			image = UIImage(named: named + ".png", in: Bundle(for: type(of: self)), compatibleWith: nil)!
+		} else {
+			image = UIImage(named: named)!
+		}
+
+		let imageView = UIImageView(image: image)
 		imageView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		view.addSubview(imageView)
 	}
