@@ -44,10 +44,8 @@ class WorkoutParser: NSObject, XMLParserDelegate {
 				workout.type = string
 			case "level":
 				workout.level = string
-			case "support1":
-				workout.support1 = string
-			case "support2":
-				workout.support2 = string
+			case "support":
+				workout.support = string
 			case "description":
 				workout.description = string
 			default: break

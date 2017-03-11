@@ -3,7 +3,6 @@
 	<icon>ArmLegRaise.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
-	<support1>Before</support1>
-	<support2>Behind</support2>
+	<support>Before</support>
 	<description></description>
 </workout>

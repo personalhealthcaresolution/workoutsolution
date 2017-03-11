@@ -3,7 +3,6 @@
 	<icon>Squats.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
-	<support1>WallSitsBefore</support1>
-	<support2>WallSitsBehind</support2>
+	<support>WallSitsBefore</support>
 	<description></description>
 </workout>

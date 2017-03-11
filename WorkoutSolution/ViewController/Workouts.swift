@@ -10,6 +10,7 @@ import UIKit
 
 class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let backButton = BackButton()
+	let titleHeader = UILabel()
 
 	let tableView = UITableView()
 	let screenObject = ScreenObject()

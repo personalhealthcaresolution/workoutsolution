@@ -13,7 +13,6 @@ class Workout {
 	var icon = ""
 	var type = ""
 	var level = ""
-	var support1 = ""
-	var support2 = ""
+	var support = ""
 	var description = ""
 }

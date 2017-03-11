@@ -3,7 +3,6 @@
 	<icon>PushUp.png</icon>
 	<type>UpperBody</type>
 	<level>Beginner</level>
-	<support1>DipOnChairBefore</support1>
-	<support2>DeclinePushUpBehind</support2>
+	<support>DipOnChairBefore</support>
 	<description></description>
 </workout>
