@@ -41,8 +41,6 @@ class BackButton: UIButton {
 		title.sizeToFit()
 
 		var object = ScreenObject.Object()
-		object.xPosition = 0
-		object.yPosition = 0
 		object.width = 400
 		object.height = 120
 		object.color = constant.citrus

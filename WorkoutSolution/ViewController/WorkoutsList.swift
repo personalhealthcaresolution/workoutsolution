@@ -165,7 +165,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
-        if tableView.isUserInteractionEnabled || tableView.isEditing == false {
+        if tableView.isUserInteractionEnabled && tableView.isEditing == false {
             ShowPopup(title: "New Routine", addString: "OK", content: "")
         }
 	}
@@ -257,7 +257,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 	}
 
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath.row)")
 		return true
 	}
 
@@ -274,18 +273,10 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		return cell
 	}
 
-	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		print(#function + " - sourceIndexPath: \(sourceIndexPath)")
-	}
-
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		workoutName.remove(at: indexPath.row)
 		let defaults = UserDefaults()
 		defaults.SetArrayString(workoutListName, value: workoutName)
 		tableView.reloadData()
-	}
-
-	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-		print(#function + " - indexPath: \(indexPath.row)")
 	}
 }

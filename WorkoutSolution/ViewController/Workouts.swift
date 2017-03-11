@@ -96,6 +96,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: title, icon: "back", selector: #selector(btnBackClicked(_:)))
+		backButton.title.sizeToFit()
 		AddTableView(xPosition: 0, yPosition: 223, width: ScreenSize.defaultWidth, height: 1777)
 	}
 
