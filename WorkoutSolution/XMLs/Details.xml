@@ -15,7 +15,7 @@
 		<height>screenHeight</height>
 		<color>0xF94343</color>
 	</object>
-
+<!--
 	<object>
 		<type>background</type>
 		<posY>460</posY>
@@ -23,12 +23,5 @@
 		<height>1330</height>
 		<color>0x373639</color>
 	</object>
-
-	<object>
-		<type>image</type>
-		<posY>460</posY>
-		<width>screenWidth</width>
-		<height>1330</height>
-		<named>behind</named>
-	</object>
+ -->
 </view>

@@ -284,6 +284,21 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(textView)
     }
 
+	func AddTextView(_ textView: UITextView, parent: UIView, object: ScreenObject.Object) {
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
+		
+		textView.isEditable = false
+		textView.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		textView.text = object.text
+		textView.font = UIFont(name: object.font, size: object.size)
+		textView.textColor = constant.UIColorFromHex(object.color)
+		textView.backgroundColor = constant.UIColorFromHex(object.backgroundColor)
+		parent.addSubview(textView)
+	}
+
 	func AddTextBox(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, font: String, size: CGFloat, color: UInt32) {
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)

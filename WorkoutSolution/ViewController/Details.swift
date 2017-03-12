@@ -9,12 +9,14 @@
 import UIKit
 
 class Details: UIViewController {
+	let details = UITextView()
+	let support = UIImageView()
 	let backButton = BackButton()
 	let beforeText = UILabel()
 	let behindText = UILabel()
 	let routineButton = RoutineButton()
 
-    override func viewDidLoad() {
+	override func viewDidLoad() {
         super.viewDidLoad()
 
         ScreenSize.setStatusHeight(UIApplication.shared.statusBarFrame.size.height)
@@ -73,6 +75,18 @@ class Details: UIViewController {
 		let width = behindText.frame.width
 		let height = behindText.frame.height
 		behindText.frame = CGRect(x: x, y: y, width: width, height: height)
+
+		object.width = 1242
+		object.height = 1330
+		object.xPosition = 0
+		object.yPosition = 460
+		object.text = "hehehe"
+		object.color = 0xffffff
+		object.backgroundColor = 0x373639
+		screenObject.AddTextView(details, parent: view, object: object)
+
+		object.named = "behind"
+		screenObject.AddImage(support, view: view, object: object)
 
 		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 259, yPosition: 1830, width: 724, height: 149, selector: #selector(btnStartClicked(_:)))
     }

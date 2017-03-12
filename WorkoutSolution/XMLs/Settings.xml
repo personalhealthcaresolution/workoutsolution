@@ -42,17 +42,4 @@
         <height>screenHeight</height>
         <color>0xF94343</color>
     </object>
-
-    <object>
-        <type>textView</type>
-        <posX>78</posX>
-        <posY>223 + 330 + 48 - 140 + 70</posY>
-        <width>screenWidth - 78 - 78</width>
-        <height>screenHeight - 223 - 330 - 48 - 48 - 188 + 70</height>
-        <text>Nguyen Hue and his brothers, together known as the Tay Son brothers, were the leaders of the famous Tay Son rebellion. As rebels, they conquered Vietnam, overthrowing the imperial Later Le dynasty and the two rival feudal houses of the Nguyen in the south and the Trinh in the north. After several years of constant military campaigning and rule, Nguyen Hue died at the age of 40, possibly due to a stroke.</text>
-        <font>Arial</font>
-        <size>22</size>
-        <color>0x373639</color>
-        <backgroundColor>0xF94343</backgroundColor>
-    </object>
 </view>
