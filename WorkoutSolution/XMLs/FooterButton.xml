@@ -3,14 +3,12 @@
 	<object>
 		<type>image</type>
 		<posX>94</posX>
-		<posY>0</posY>
 		<width>122</width>
 		<height>122</height>
 	</object>
 
 	<object>
 		<type>label</type>
-		<posX>0</posX>
 		<posY>112</posY>
 		<width>310</width>
 		<height>66</height>

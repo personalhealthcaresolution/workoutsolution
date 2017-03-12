@@ -1,77 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <view>
-    <object>
-        <type>background</type>
-        <posX>0</posX>
-        <posY>83</posY>
-        <width>screenWidth</width>
-        <height>screenHeight</height>
-        <color>0x373639</color>
-    </object>
+	<object>
+		<type>background</type>
+		<posY>83</posY>
+		<width>screenWidth</width>
+		<height>screenHeight</height>
+		<color>0x373639</color>
+	</object>
 
-    <object>
-        <type>labelAuto</type>
-        <alignX>center</alignX>
-        <alignY>110</alignY>
-        <text>Details</text>
-        <font>Arial</font>
-        <size>18</size>
-        <color>0xffffff</color>
-    </object>
+	<object>
+		<type>background</type>
+		<posY>223</posY>
+		<width>screenWidth</width>
+		<height>screenHeight</height>
+		<color>0xF94343</color>
+	</object>
 
-    <object>
-        <type>background</type>
-        <posX>0</posX>
-        <posY>223</posY>
-        <width>screenWidth</width>
-        <height>709</height>
-        <color>0xF94343</color>
-    </object>
+	<object>
+		<type>background</type>
+		<posY>460</posY>
+		<width>screenWidth</width>
+		<height>1330</height>
+		<color>0x373639</color>
+	</object>
 
-    <object>
-        <type>image</type>
-        <posX>76</posX>
-        <posY>386</posY>
-        <width>385</width>
-        <height>400</height>
-        <named>before</named>
-    </object>
-
-    <object>
-        <type>labelAuto</type>
-        <alignX>93</alignX>
-        <alignY>814</alignY>
-        <text>BEFORE</text>
-        <font>Arial</font>
-        <size>22</size>
-        <color>0x373639</color>
-    </object>
-
-    <object>
-        <type>image</type>
-        <posX>536</posX>
-        <posY>273</posY>
-        <width>630</width>
-        <height>510</height>
-        <named>behind</named>
-    </object>
-
-    <object>
-        <type>labelAuto</type>
-        <alignX>685</alignX>
-        <alignY>814</alignY>
-        <text>BEHIND</text>
-        <font>Arial</font>
-        <size>22</size>
-        <color>0x373639</color>
-    </object>
-
-    <object>
-        <type>background</type>
-        <posX>0</posX>
-        <posY>1813</posY>
-        <width>screenWidth</width>
-        <height>255</height>
-        <color>0xF94343</color>
-    </object>
+	<object>
+		<type>image</type>
+		<posY>460</posY>
+		<width>screenWidth</width>
+		<height>1330</height>
+		<named>behind</named>
+	</object>
 </view>

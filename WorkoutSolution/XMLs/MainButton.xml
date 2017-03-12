@@ -4,8 +4,6 @@
 		<type>label</type>
 		<posX>322</posX>
 		<posY>97</posY>
-		<width>0</width>
-		<height>0</height>
 		<size>23</size>
 		<font>Arial</font>
 		<color>0xffffff</color>
@@ -13,8 +11,6 @@
 
 	<object>
 		<type>image</type>
-		<posX>0</posX>
-		<posY>0</posY>
 		<width>264</width>
 		<height>264</height>
 	</object>

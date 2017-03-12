@@ -10,6 +10,8 @@ import UIKit
 
 class Details: UIViewController {
 	let backButton = BackButton()
+	let beforeText = UILabel()
+	let behindText = UILabel()
 	let routineButton = RoutineButton()
 
     override func viewDidLoad() {
@@ -48,6 +50,30 @@ class Details: UIViewController {
         }
 
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Back", icon: "back", selector: #selector(btnBackClicked(_:)))
+
+		var object = ScreenObject.Object()
+		object.size = 22
+		object.font = "Arial"
+		object.color = Constant().citrus
+
+		object.text = "BEFORE"
+		object.xPosition = 220
+		object.yPosition = 315
+		screenObject.AddLabel(beforeText, view: view, object: object)
+		beforeText.sizeToFit()
+
+		object.text = "BEHIND"
+		object.xPosition = 1242 - 220
+		object.yPosition = 315
+		screenObject.AddLabel(behindText, view: view, object: object)
+
+		behindText.sizeToFit()
+		let x = behindText.frame.origin.x - behindText.frame.width
+		let y = behindText.frame.origin.y
+		let width = behindText.frame.width
+		let height = behindText.frame.height
+		behindText.frame = CGRect(x: x, y: y, width: width, height: height)
+
 		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 259, yPosition: 1830, width: 724, height: 149, selector: #selector(btnStartClicked(_:)))
     }
 

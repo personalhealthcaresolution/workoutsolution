@@ -2,7 +2,6 @@
 <view>
 	<object>
 		<type>background</type>
-		<posX>0</posX>
 		<posY>83</posY>
 		<width>screenWidth</width>
 		<height>screenHeight</height>
@@ -21,7 +20,6 @@
 
     <object>
         <type>table</type>
-        <posX>0</posX>
         <posY>223</posY>
         <width>1242</width>
         <height>1140</height>
