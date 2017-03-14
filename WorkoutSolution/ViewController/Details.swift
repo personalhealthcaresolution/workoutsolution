@@ -94,9 +94,9 @@ class Details: UIViewController {
 		object.backgroundColor = 0x373639
 		screenObject.AddTextView(details, parent: view, object: object)
 
-		object.icon = "behind"
+		object.icon = "SupportBehind"
 		object.selector = #selector(btnSupportClicked(_:))
-		screenObject.AddButton(support, view: view, viewController: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector)
+		screenObject.AddButton(support, view: view, viewController: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, useBundle: true, selector: object.selector)
 
 		originalSupport = support.frame.origin.y
 		newPositionSupport = originalSupport - 100
