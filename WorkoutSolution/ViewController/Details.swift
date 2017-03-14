@@ -16,7 +16,8 @@ class Details: UIViewController {
 	let behindText = UILabel()
 	let routineButton = RoutineButton()
 
-	var needMoveSupport = false
+	var needMoveUp = false
+	var needMoveDown = false
 	var originalSupport: CGFloat = 0
 	var newPositionSupport: CGFloat = 0
 
@@ -28,7 +29,7 @@ class Details: UIViewController {
         ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
 		let selector = #selector(Update)
-		Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: selector, userInfo: nil, repeats: true);
+		Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: selector, userInfo: nil, repeats: true);
 
 		initView()
 
@@ -96,6 +97,7 @@ class Details: UIViewController {
 		object.icon = "behind"
 		object.selector = #selector(btnSupportClicked(_:))
 		screenObject.AddButton(support, view: view, viewController: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, selector: object.selector)
+
 		originalSupport = support.frame.origin.y
 		newPositionSupport = originalSupport - 100
 
@@ -103,20 +105,26 @@ class Details: UIViewController {
     }
 
 	func Update() {
-		if needMoveSupport {
+		if needMoveUp {
 			let x = support.frame.origin.x
-			var y = support.frame.origin.y
+			let y = support.frame.origin.y - 1
 			let width = support.frame.width
 			let height = support.frame.height
-			if y == originalSupport {
-				y = newPositionSupport
-			} else {
-				y = originalSupport
-			
-			}
 			support.frame = CGRect(x: x, y: y, width: width, height: height)
+			if support.frame.origin.y == newPositionSupport {
+				needMoveUp = false
+			}
 		}
-		needMoveSupport = false
+		if needMoveDown {
+			let x = support.frame.origin.x
+			let y = support.frame.origin.y + 1
+			let width = support.frame.width
+			let height = support.frame.height
+			support.frame = CGRect(x: x, y: y, width: width, height: height)
+			if support.frame.origin.y == originalSupport {
+				needMoveDown = false
+			}
+		}
 	}
 
     func btnBackClicked(_ sender:UIButton!) {
@@ -131,7 +139,13 @@ class Details: UIViewController {
     }
 
 	func btnSupportClicked(_ sender: UIButton) {
-		needMoveSupport = true
+		if !needMoveUp && !needMoveDown {
+			if support.frame.origin.y == originalSupport {
+				needMoveUp = true
+			} else {
+				needMoveDown = true
+			}
+		}
 	}
 
     func btnStartClicked(_ sender:UIButton!) {
