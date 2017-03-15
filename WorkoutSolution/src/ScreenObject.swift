@@ -502,21 +502,26 @@ class ScreenObject: NSObject, XMLParserDelegate {
         view.addSubview(label)
     }
 
-	func AddButton(_ button: UIButton, view: UIView, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", useBundle: Bool = false, background: String = "", title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
+	func AddButton(_ button: UIButton, view: UIView, viewController: UIViewController, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, icon: String = "", useBundle: Bool = false, background: String = "", backgroundColor: UIColor = UIColor.clear, title: String = "", titleColor: UIColor = UIColor.white, selector: Selector? = nil) {
         let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
         let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
         let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
         let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
 
-		var image = UIImage()
-		if useBundle {
-			image = UIImage(named: icon, in: Bundle(for: type(of: self)), compatibleWith: nil)!
-		} else {
-			image = UIImage(named: icon)!
+		if icon != "" {
+			var image = UIImage()
+			if useBundle {
+				image = UIImage(named: icon, in: Bundle(for: type(of: self)), compatibleWith: nil)!
+			} else {
+				image = UIImage(named: icon)!
+			}
+			button.setImage(image, for: UIControlState())
 		}
         button.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
-        button.setImage(image, for: UIControlState())
         button.setBackgroundImage(UIImage(named: background), for: UIControlState())
+		if backgroundColor != UIColor.clear {
+			button.backgroundColor = backgroundColor
+		}
         button.setTitle(title, for: UIControlState())
         button.titleLabel?.font = UIFont(name: "Arial", size: 18)
         

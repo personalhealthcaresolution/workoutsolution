@@ -53,7 +53,7 @@
 		<width>310</width>
 		<height>188</height>
 		<icon>settings</icon>
-		<text>Settings</text>
+		<text>Abouts</text>
 		<textX>72</textX>
 		<color>0xffffff</color>
 		<selector>btnSettingsClicked</selector>

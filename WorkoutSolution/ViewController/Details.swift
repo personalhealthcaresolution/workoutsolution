@@ -21,6 +21,10 @@ class Details: UIViewController {
 	var originalSupport: CGFloat = 0
 	var newPositionSupport: CGFloat = 0
 
+	override var prefersStatusBarHidden: Bool {
+		return true
+	}
+
 	override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -67,42 +71,27 @@ class Details: UIViewController {
 		object.font = "Arial"
 		object.color = Constant().citrus
 
-		object.text = "BEFORE"
-		object.xPosition = 220
-		object.yPosition = 315
-		screenObject.AddLabel(beforeText, view: view, object: object)
-		beforeText.sizeToFit()
-
-		object.text = "BEHIND"
-		object.xPosition = 1242 - 220
-		object.yPosition = 315
-		screenObject.AddLabel(behindText, view: view, object: object)
-
-		behindText.sizeToFit()
-		let x = behindText.frame.origin.x - behindText.frame.width
-		let y = behindText.frame.origin.y
-		let width = behindText.frame.width
-		let height = behindText.frame.height
-		behindText.frame = CGRect(x: x, y: y, width: width, height: height)
-
-		object.width = 1242
-		object.height = 1330
-		object.xPosition = 0
-		object.yPosition = 460
+		object.width = 1142
+		object.height = 1316
+		object.xPosition = 50
+		object.yPosition = 273
 		object.text = "hehehe"
 		object.color = 0xffffff
 		object.backgroundColor = 0x373639
 		screenObject.AddTextView(details, parent: view, object: object)
 
 		object.icon = "SupportBehind"
+		object.width = 1242
+		object.height = 1416
+		object.xPosition = 0
+		object.yPosition = 223
 		object.selector = #selector(btnSupportClicked(_:))
-		screenObject.AddButton(support, view: view, viewController: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, useBundle: true, selector: object.selector)
+		screenObject.AddButton(support, view: view, viewController: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, useBundle: true, backgroundColor: UIColor.white, selector: object.selector)
 
-		let heightTemp = CGFloat(Int(support.frame.height))
 		originalSupport = support.frame.origin.y
-		newPositionSupport = originalSupport - heightTemp - CGFloat(Int(heightTemp / 10))
+		newPositionSupport = originalSupport - CGFloat(Int(support.frame.height))
 
-		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 259, yPosition: 1830, width: 724, height: 149, selector: #selector(btnStartClicked(_:)))
+		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 191, yPosition: 1737, width: 859, height: 175, selector: #selector(btnStartClicked(_:)))
     }
 
 	func Update() {
@@ -150,7 +139,6 @@ class Details: UIViewController {
 	}
 
     func btnStartClicked(_ sender:UIButton!) {
-		routineButton.Touched()
         let ourApplication = UIApplication.shared
         let URLEncodedText = "test"
         let ourPath = "timer://" + URLEncodedText

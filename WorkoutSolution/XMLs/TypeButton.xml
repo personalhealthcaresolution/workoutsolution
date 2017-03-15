@@ -9,7 +9,7 @@
 
 	<object>
 		<type>label</type>
-		<posX>536</posX>
+		<posX>436</posX>
 		<posY>166</posY>
 		<font>Arial</font>
 		<size>20</size>
@@ -18,7 +18,7 @@
 
 	<object>
 		<type>image</type>
-		<posX>104</posX>
+		<posX>50</posX>
 		<posY>39</posY>
 		<width>302</width>
 		<height>302</height>

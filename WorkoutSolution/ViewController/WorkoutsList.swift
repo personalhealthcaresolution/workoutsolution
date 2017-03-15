@@ -172,11 +172,6 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 	func btnEditClicked(_ sender:UIButton!) {
 		tableView.isEditing = !tableView.isEditing
-		if tableView.isEditing {
-			tableView.separatorInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 10)
-		} else {
-			tableView.separatorInset = UIEdgeInsets.zero
-		}
 		tableView.reloadData()
 	}
 

@@ -22,16 +22,16 @@ class WorkoutCell: TableViewCell {
 		let screenObject = ScreenObject()
 		var object = ScreenObject.Object()
 
-		object.xPosition = 100
+		object.xPosition = 50
 		object.yPosition = 18
 		object.width = 303
 		object.height = 303
 		object.named = iconText
 		screenObject.AddImage(icon, view: contentView, object: object, useBundle: true)
 
-		object.xPosition = 503
+		object.xPosition = 403
 		object.yPosition = 120
-		object.width = 500
+		object.width = 600
 		object.height = 97
 		object.font = "Arial"
 		object.size = 20

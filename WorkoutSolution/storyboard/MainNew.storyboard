@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="scc-Mf-cgh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="scc-Mf-cgh">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -102,8 +102,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="77Z-dx-kZg"/>
-                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="Jya-nm-CTo"/>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" animates="NO" id="77Z-dx-kZg"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" animates="NO" id="Jya-nm-CTo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ylt-v3-a8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,13 +216,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rki-9I-X5x"/>
-        <segue reference="oKj-ix-Gsp"/>
         <segue reference="kyg-Ev-LHj"/>
-        <segue reference="8X9-WU-Ybi"/>
+        <segue reference="oKj-ix-Gsp"/>
+        <segue reference="rki-9I-X5x"/>
         <segue reference="d1b-GC-rIO"/>
-        <segue reference="GZw-Zg-s5k"/>
-        <segue reference="jcM-37-kd3"/>
+        <segue reference="8X9-WU-Ybi"/>
+        <segue reference="77Z-dx-kZg"/>
         <segue reference="pTy-IG-rOQ"/>
+        <segue reference="Jya-nm-CTo"/>
     </inferredMetricsTieBreakers>
 </document>

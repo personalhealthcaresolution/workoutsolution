@@ -2,14 +2,14 @@
 <view>
 	<object>
 		<type>image</type>
-		<width>724</width>
-		<height>149</height>
+		<width>859</width>
+		<height>175</height>
 		<named>button</named>
 	</object>
 
 	<object>
 		<type>label</type>
-		<size>17</size>
+		<size>22</size>
 		<font>Arial</font>
 		<text>START ROUTINE</text>
 		<color>0x373639</color>

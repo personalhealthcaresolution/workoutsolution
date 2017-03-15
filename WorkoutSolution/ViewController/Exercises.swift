@@ -78,6 +78,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			objects.removeFirst()
 		}
 		screenObject.AddBackButton(backButton, view: self, xPosition: 70, yPosition: 93, width: 400, height: 120, title: "Routine", icon: "back", selector: #selector(btnBackClicked(_:)))
+		backButton.title.sizeToFit()
 
 		screenObject.AddButton(addButton, view: self.view, viewController: self, xPosition: 980, yPosition: 93, width: 220, height: 120, title: "Add", titleColor: constant.UIColorFromHex(constant.coralRed), selector: #selector(btnAddClicked(_:)))
 	}
@@ -241,14 +242,6 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		btnTableViewCellClicked(indexPath.row)
 	}
 
-	func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
-	func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
-	}
-
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}
@@ -262,7 +255,6 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
-		print(#function + " - indexPath: \(indexPath.row)")
 		tableView.selectRow(at: indexPath, animated: true, scrollPosition: UITableViewScrollPosition.none)
 	}
 
@@ -276,7 +268,6 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, canFocusRowAt indexPath: IndexPath) -> Bool {
-		print(#function + " - indexPath: \(indexPath.row)")
 		return true
 	}
 
@@ -307,14 +298,8 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		return cell
 	}
 
-	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-		print(#function + " - sourceIndexPath: \(sourceIndexPath)")
-	}
-
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
 		exercisesName.remove(at: indexPath.row)
-		//let defaults = UserDefaults()
-		//defaults.SetArrayString(workoutListName, value: exercisesName)
 		tableView.reloadData()
 	}
 

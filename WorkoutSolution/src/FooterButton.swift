@@ -38,6 +38,7 @@ class FooterButton: UIButton {
 			case "label":
 				object.text = title.text!
 				screenObject.AddLabel(title, view: self, object: object)
+				title.textColor = UIColor.white
 			default: break
 			}
 			objects.removeFirst()

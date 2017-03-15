@@ -41,9 +41,12 @@ class RoutineButton: UIButton {
 		title.frame.origin.x = (frame.width - title.frame.width) / 2
 		title.frame.origin.y = ((frame.height - title.frame.height) / 2) + 1
         title.textAlignment = NSTextAlignment.center
+
+		let touched = #selector(Touched(_:))
+		addTarget(self, action: touched, for: UIControlEvents.touchDown)
 	}
 
-	func Touched() {
+	func Touched(_ sender: UIButton) {
 		let constant = Constant()
 		let image = UIImage(named: "buttonTouch")
 		icon.image = image
