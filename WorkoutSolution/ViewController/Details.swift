@@ -98,8 +98,9 @@ class Details: UIViewController {
 		object.selector = #selector(btnSupportClicked(_:))
 		screenObject.AddButton(support, view: view, viewController: self, xPosition: object.xPosition, yPosition: object.yPosition, width: object.width, height: object.height, icon: object.icon, useBundle: true, selector: object.selector)
 
+		let heightTemp = CGFloat(Int(support.frame.height))
 		originalSupport = support.frame.origin.y
-		newPositionSupport = originalSupport - 100
+		newPositionSupport = originalSupport - heightTemp - CGFloat(Int(heightTemp / 10))
 
 		screenObject.AddRoutineButton(routineButton, view: self, xPosition: 259, yPosition: 1830, width: 724, height: 149, selector: #selector(btnStartClicked(_:)))
     }
