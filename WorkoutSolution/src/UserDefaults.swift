@@ -10,6 +10,20 @@ import Foundation
 
 class UserDefaults {
 
+	func GetInt(_ key: String) -> Int {
+		let defaults = Foundation.UserDefaults.standard
+		if defaults.object(forKey: key) != nil {
+			return defaults.object(forKey: key) as! Int
+		} else {
+			return 0
+		}
+	}
+
+	func SetInt(_ key: String, value: Int) {
+		let defaults = Foundation.UserDefaults.standard
+		defaults.set(value, forKey: key)
+	}
+
 	func GetBool(_ key: String) -> Bool {
 		let defaults = Foundation.UserDefaults.standard
 		return defaults.bool(forKey: key)

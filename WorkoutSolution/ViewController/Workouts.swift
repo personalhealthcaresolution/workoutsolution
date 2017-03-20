@@ -17,6 +17,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	var workoutName = [String]()
 	var workoutIcon = [String]()
+	var workoutIndex = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,11 +39,14 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			case Application.WorkoutsType.coreAbs:
 				search = "CoreABS"
 			}
+			var index = 0
 			for workout in workouts {
 				if workout.type == search {
 					workoutName.append(workout.name)
 					workoutIcon.append(workout.icon)
+					workoutIndex.append(index)
 				}
+				index = index + 1
 			}
 		case Application.Workouts.level:
 			switch Application.instance.CurrentWorkoutLevel() {
@@ -55,11 +59,14 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			case Application.WorkoutsLevel.intermediate:
 				search = "Intermediate"
 			}
+			var index = 0
 			for workout in workouts {
 				if workout.level == search {
 					workoutName.append(workout.name)
 					workoutIcon.append(workout.icon)
+					workoutIndex.append(index)
 				}
+				index = index + 1
 			}
 		default: break
 		}
@@ -132,14 +139,14 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 	}
 
-	func btnDetailsClicked(_ sender:UIButton!) {
+	func btnDetailsClicked(_ sender: UIButton!) {
 		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
-	func btnExercisesClicked(_ sender:UIButton) {
+	func btnExercisesClicked(_ sender: UIButton) {
 	}
 
-	func btnWorkoutsClicked(_ sender:UIButton) {
+	func btnWorkoutsClicked(_ sender: UIButton) {
 		switch Application.instance.CurrentWorkoutsView() {
 		case Application.WorkoutsView.workouts:
 			self.performSegue(withIdentifier: "showWorkoutsList", sender: self)
@@ -148,15 +155,17 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		}
 	}
 
-	func btnTrackerClicked(_ sender:UIButton) {
+	func btnTrackerClicked(_ sender: UIButton) {
 	}
 
-    func btnSettingsClicked(_ sender:UIButton) {
+    func btnSettingsClicked(_ sender: UIButton) {
         self.performSegue(withIdentifier: "showSettings", sender: self)
         
     }
 
-	func btnTableViewCellClicked(_ rowIndex: Int) {
+	func btnTableViewCellClicked(_ workoutIndex: Int) {
+		let defaults = UserDefaults()
+		defaults.SetInt("workoutIndex", value: workoutIndex)
 		self.performSegue(withIdentifier: "showDetails", sender: self)
 	}
 
@@ -166,7 +175,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		btnTableViewCellClicked(indexPath.row)
+		btnTableViewCellClicked(workoutIndex[indexPath.row])
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
@@ -193,6 +202,7 @@ class Workouts: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		let cell:WorkoutCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! WorkoutCell
 		cell.SetIcon(workoutIcon[indexPath.row])
 		cell.SetText(workoutName[indexPath.row])
+		cell.SetIndex(workoutIndex[indexPath.row])
 		cell.initView()
 		return cell
 	}

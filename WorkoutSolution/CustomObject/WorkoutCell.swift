@@ -14,6 +14,7 @@ class WorkoutCell: TableViewCell {
 
 	var iconText = ""
 	var labelText = ""
+	var workoutIndex = 0
 
 	override func initView() {
 		let constant = Constant()
@@ -46,5 +47,9 @@ class WorkoutCell: TableViewCell {
 
 	func SetText(_ value: String) {
 		labelText = value
+	}
+
+	func SetIndex(_ index: Int) {
+		workoutIndex = index
 	}
 }

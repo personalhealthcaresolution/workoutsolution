@@ -125,7 +125,8 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "showSettings", sender: self)
     }
 
-	func btnTableViewCellClicked(_ rowIndex: Int) {
+	func btnTableViewCellClicked(_ workoutIndex: Int) {
+		defaults.SetInt("workoutIndex", value: workoutIndex)
         self.performSegue(withIdentifier: "showDetails", sender: self)
 
 	}
@@ -225,7 +226,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		btnTableViewCellClicked(indexPath.row)
+		btnTableViewCellClicked(exercisesIndex[indexPath.row])
 	}
 
 	func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
