@@ -66,6 +66,8 @@
 		3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADB5C741CBFD43700D847BA /* ConnectServer.swift */; };
 		3AEFCF321D854FFA00DD2B5E /* AlienEncountersSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */; };
 		3AEFCF341D85504600DD2B5E /* Settings.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFCF331D85504600DD2B5E /* Settings.xml */; };
+		3C0DFA6D1E804410005B9933 /* SegueFromLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFA6C1E804410005B9933 /* SegueFromLeft.swift */; };
+		3C0DFA6F1E804D7F005B9933 /* SegueFromRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C0DFA6E1E804D7F005B9933 /* SegueFromRight.swift */; };
 		3C778E811E7047CF00DAA561 /* ListWorkouts.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E801E7047CF00DAA561 /* ListWorkouts.xml */; };
 		3C778EB51E70481100DAA561 /* AbsoluteBeginner.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E831E70481100DAA561 /* AbsoluteBeginner.xml */; };
 		3C778EB61E70481100DAA561 /* Advanced.xml in Resources */ = {isa = PBXBuildFile; fileRef = 3C778E841E70481100DAA561 /* Advanced.xml */; };
@@ -308,6 +310,8 @@
 		3ADB5C741CBFD43700D847BA /* ConnectServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectServer.swift; path = src/ConnectServer.swift; sourceTree = "<group>"; };
 		3AEFCF311D854FFA00DD2B5E /* AlienEncountersSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = AlienEncountersSolid.ttf; path = Fonts/AlienEncountersSolid.ttf; sourceTree = SOURCE_ROOT; };
 		3AEFCF331D85504600DD2B5E /* Settings.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Settings.xml; path = XMLs/Settings.xml; sourceTree = "<group>"; };
+		3C0DFA6C1E804410005B9933 /* SegueFromLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueFromLeft.swift; path = CustomObject/SegueFromLeft.swift; sourceTree = "<group>"; };
+		3C0DFA6E1E804D7F005B9933 /* SegueFromRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueFromRight.swift; path = CustomObject/SegueFromRight.swift; sourceTree = "<group>"; };
 		3C778E801E7047CF00DAA561 /* ListWorkouts.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = ListWorkouts.xml; path = XMLs/ListWorkouts.xml; sourceTree = "<group>"; };
 		3C778E831E70481100DAA561 /* AbsoluteBeginner.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = AbsoluteBeginner.xml; path = Workouts/AbsoluteBeginner.xml; sourceTree = "<group>"; };
 		3C778E841E70481100DAA561 /* Advanced.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = Advanced.xml; path = Workouts/Advanced.xml; sourceTree = "<group>"; };
@@ -657,6 +661,8 @@
 		3CFA0A651E7188070005C06E /* CustomObject */ = {
 			isa = PBXGroup;
 			children = (
+				3C0DFA6C1E804410005B9933 /* SegueFromLeft.swift */,
+				3C0DFA6E1E804D7F005B9933 /* SegueFromRight.swift */,
 				3CFA0A661E7188550005C06E /* WorkoutCell.swift */,
 			);
 			name = CustomObject;
@@ -1070,6 +1076,7 @@
 				5D6A53A21B27B228005C167E /* ViewController.swift in Sources */,
 				3AB433151DC39EB8004E96D4 /* LevelButton.swift in Sources */,
 				3A4D5F2B1D448EDF00E0BFAF /* Details.swift in Sources */,
+				3C0DFA6F1E804D7F005B9933 /* SegueFromRight.swift in Sources */,
 				3A01FF7E1C05FFD000AD1F9D /* Account.swift in Sources */,
 				3A7BCC4B1DDCDE0D008D063A /* RoutineButton.swift in Sources */,
 				3A7BCC491DDCAECC008D063A /* MainButton.swift in Sources */,
@@ -1097,6 +1104,7 @@
 				3A174E641D083C4F00C308A4 /* Level.swift in Sources */,
 				3ADB5C751CBFD43700D847BA /* ConnectServer.swift in Sources */,
 				3C778EEA1E704AD000DAA561 /* WorkoutsParser.swift in Sources */,
+				3C0DFA6D1E804410005B9933 /* SegueFromLeft.swift in Sources */,
 				3A6609591DB54275004FC4F5 /* Workouts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

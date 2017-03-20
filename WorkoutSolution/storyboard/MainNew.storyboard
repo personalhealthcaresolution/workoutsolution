@@ -49,9 +49,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="xWl-iE-MFF"/>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" customClass="SegueFromLeft" customModule="WorkoutSolution" customModuleProvider="target" id="xWl-iE-MFF"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="bId-fO-APc"/>
-                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="2vZ-2k-U6A"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" customClass="SegueFromLeft" customModule="WorkoutSolution" customModuleProvider="target" id="2vZ-2k-U6A"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="l61-Hc-J1X"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="nod-Am-EXQ"/>
                         <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="oKj-ix-Gsp"/>
@@ -126,7 +126,7 @@
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" animates="NO" id="gdv-pP-NxB"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="8GG-l1-AV4"/>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="ZDV-1n-cdP"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" customClass="SegueFromRight" customModule="WorkoutSolution" customModuleProvider="target" id="ZDV-1n-cdP"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="E7w-a8-VCb"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="3rw-X9-GOn"/>
                         <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="Jh2-7b-P62"/>
@@ -177,7 +177,7 @@
                     </view>
                     <connections>
                         <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" animates="NO" id="pTy-IG-rOQ"/>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="nAt-Xj-2Px"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" customClass="SegueFromRight" customModule="WorkoutSolution" customModuleProvider="target" id="nAt-Xj-2Px"/>
                         <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="dHK-07-q3d"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="ag7-ve-xIK"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="g7E-DY-15V"/>
@@ -216,13 +216,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="HVy-hK-TLY"/>
-        <segue reference="9eQ-MY-E5f"/>
-        <segue reference="yLj-9e-h4A"/>
+        <segue reference="ZDV-1n-cdP"/>
+        <segue reference="2vZ-2k-U6A"/>
+        <segue reference="E7w-a8-VCb"/>
+        <segue reference="xWl-iE-MFF"/>
+        <segue reference="nod-Am-EXQ"/>
+        <segue reference="dHK-07-q3d"/>
         <segue reference="tAG-pv-qnC"/>
-        <segue reference="J8D-cn-1m3"/>
         <segue reference="2Q0-Nk-DEZ"/>
-        <segue reference="OkA-ER-VUD"/>
-        <segue reference="Uhk-vc-ncI"/>
     </inferredMetricsTieBreakers>
 </document>
