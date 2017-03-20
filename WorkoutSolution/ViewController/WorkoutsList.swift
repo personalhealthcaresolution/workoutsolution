@@ -42,7 +42,7 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 
 		let defaults = UserDefaults()
 		if (defaults.GetArrayString(workoutListName) == [""]) {
-			workoutName = ["Home Workout", "Complete Arm Workout", "Full Body Workout"]
+			workoutName = ["Home Workout", "Full Body Workout", "Complete Arm Workout"]
 			defaults.SetArrayString(workoutListName, value: workoutName)
 		} else {
 			workoutName = defaults.GetArrayString(workoutListName)

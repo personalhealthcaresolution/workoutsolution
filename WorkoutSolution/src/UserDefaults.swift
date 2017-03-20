@@ -34,6 +34,20 @@ class UserDefaults {
 		defaults.set(value, forKey: key)
 	}
 
+	func GetArrayInt(_ key: String) -> [Int] {
+		let defaults = Foundation.UserDefaults.standard
+		if defaults.object(forKey: key) != nil {
+			return defaults.object(forKey: key) as! [Int]
+		} else {
+			return [0]
+		}
+	}
+
+	func SetArrayInt(_ key: String, value: [Int]) {
+		let defaults = Foundation.UserDefaults.standard
+		defaults.set(value, forKey: key)
+	}
+
 	func GetArrayString(_ key: String) -> [String] {
 		let defaults = Foundation.UserDefaults.standard
 		if defaults.object(forKey: key) != nil {

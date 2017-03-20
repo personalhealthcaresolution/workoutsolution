@@ -19,16 +19,11 @@ class ExercisesListCell: UITableViewCell {
 	var isAdding = false
 	var iconNamed = ""
 	var titleText = ""
+	var workoutIndex = 0
 	var currentWorkoutName = ""
 
 	override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
 		super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
-		AddImage(icon, xPosition: 100, yPosition: 18, width: 303, height: 303, named: "")
-		AddLabel(title, xPosition: 503, yPosition: 140, width: 700, height: 59, text: titleText, font: "Arial", size: 20, color: constant.citrus)
-		AddImage(listIcon, xPosition: ScreenSize.defaultWidth - 145, yPosition: 136, width: 45, height: 67, named: "listExercise")
-		AddCheckBox(checkBox, xPosition: ScreenSize.defaultWidth - 199, yPosition: 120, width: 99, height: 99, selector: NSSelectorFromString("btnCheckBoxClicked:"))
 	}
 	
 	required init?(coder aDecoder: NSCoder) {
@@ -45,6 +40,14 @@ class ExercisesListCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+	func initView() {
+		self.backgroundColor = constant.UIColorFromHex(constant.coralRed)
+		AddImage(icon, xPosition: 100, yPosition: 18, width: 303, height: 303, named: iconNamed)
+		AddLabel(title, xPosition: 353, yPosition: 140, width: 700, height: 59, text: titleText, font: "Arial", size: 20, color: constant.citrus)
+		AddImage(listIcon, xPosition: ScreenSize.defaultWidth - 145, yPosition: 136, width: 45, height: 67, named: "listExercise")
+		AddCheckBox(checkBox, xPosition: ScreenSize.defaultWidth - 199, yPosition: 120, width: 99, height: 99, selector: NSSelectorFromString("btnCheckBoxClicked:"))
+	}
 
 	func updateCell() {
 		let image = UIImage(named: iconNamed)
@@ -69,7 +72,7 @@ class ExercisesListCell: UITableViewCell {
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
 		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: height)
 
-		let image = UIImage(named: named)
+		let image = UIImage(named: named, in: Bundle(for: type(of: self)), compatibleWith: nil)!
 		icon.image = image
 		icon.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
 		contentView.addSubview(icon)
@@ -112,20 +115,18 @@ class ExercisesListCell: UITableViewCell {
 		checkBox.isChecked(!checkBox.isChecked())
 		checkBox.updateImage()
 		let defaults = UserDefaults()
-		var array = defaults.GetArrayString(currentWorkoutName)
+		var array = defaults.GetArrayInt(currentWorkoutName)
 		if checkBox.isChecked() {
-			array.append(titleText)
+			array.append(workoutIndex)
 		} else {
-			var temp = [String]()
-			while array.count > 0 {
-				let value = array.first
-				if value != titleText {
-					temp.append(value!)
+			var temp = [Int]()
+			for value in array {
+				if value != workoutIndex {
+					temp.append(value)
 				}
-				array.removeFirst()
 			}
 			array = temp
 		}
-		defaults.SetArrayString(currentWorkoutName, value: array)
+		defaults.SetArrayInt(currentWorkoutName, value: array)
 	}
 }

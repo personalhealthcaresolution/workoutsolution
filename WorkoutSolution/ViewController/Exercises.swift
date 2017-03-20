@@ -15,16 +15,14 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	let constant = Constant()
 	var tableView = UITableView()
 	let screenObject = ScreenObject()
-	var exercisesName = [String]()
 
-	let homeName = ["CHINUPS", "WALL SIX"]
-	let completeArmName = ["DIP ON CHAIR", "SQUATS"]
-	let fullBodyName = ["PUSH UP"]
-	let fullExercisesName = ["CHINUPS", "WALL SIX", "DIP ON CHAIR", "SQUATS", "PUSH UP"]
+	let workouts = Application.instance.GetWorkouts()
+
+	var currentName = ""
+	var exercisesIndex = [Int]()
 
 	var isAdding = false
 	let defaults = UserDefaults()
-	var currentWorkoutName = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,23 +31,28 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		ScreenSize.setCurrentWidth(self.view.frame.size.width)
 		ScreenSize.setCurrentHeight(self.view.frame.size.height)
 
+		let homeIndex = [0, 3]
+		let fullBodyIndex = [2, 5]
+		let completeArmIndex = [1, 4]
+
 		let workoutListName = defaults.GetArrayString("workoutListName")
 		let workoutListIndex = Application.instance.CurrentWorkoutsListIndex()
-		currentWorkoutName = workoutListName[workoutListIndex]
-		if (defaults.GetArrayString(currentWorkoutName) == [""]) {
-			switch currentWorkoutName {
+		currentName = workoutListName[workoutListIndex]
+
+		if (defaults.GetArrayInt(currentName) == [0]) {
+			switch currentName {
 			case "Home Workout":
-				exercisesName = homeName
-			case "Complete Arm Workout":
-				exercisesName = completeArmName
+				exercisesIndex = homeIndex
 			case "Full Body Workout":
-				exercisesName = fullBodyName
+				exercisesIndex = fullBodyIndex
+			case "Complete Arm Workout":
+				exercisesIndex = completeArmIndex
 			default:
-				exercisesName = homeName
+				exercisesIndex = homeIndex
 			}
-			defaults.SetArrayString(currentWorkoutName, value: exercisesName)
+			defaults.SetArrayInt(currentName, value: exercisesIndex)
 		} else {
-			exercisesName = defaults.GetArrayString(currentWorkoutName)
+			exercisesIndex = defaults.GetArrayInt(currentName)
 		}
 
         Application.instance.CurrentTab(Application.Tabs.workouts)
@@ -81,23 +84,6 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		backButton.title.sizeToFit()
 
 		screenObject.AddButton(addButton, view: self.view, viewController: self, xPosition: 980, yPosition: 93, width: 220, height: 120, title: "Add", titleColor: constant.UIColorFromHex(constant.coralRed), selector: #selector(btnAddClicked(_:)))
-	}
-
-	func FindExerciseIcon(_ exerciseName: String) -> String {
-		switch exerciseName {
-		case "CHINUPS":
-			return "chinups"
-		case "WALL SIX":
-			return "wallSix"
-		case "Dip On Chair":
-			return "dipOnChair"
-		case "SQUATS":
-			return "squats"
-		case "PUSH UP":
-			return "pushUp"
-		default:
-			return "chinups"
-		}
 	}
 
 	func btnAddClicked(_ sender:UIButton!) {
@@ -260,10 +246,10 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if isAdding {
-			return fullExercisesName.count
+			return workouts.count
 		} else {
-			exercisesName = defaults.GetArrayString(currentWorkoutName)
-			return exercisesName.count
+			exercisesIndex = defaults.GetArrayInt(currentName)
+			return exercisesIndex.count
 		}
 	}
 
@@ -283,37 +269,36 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		let cell:ExercisesListCell! = tableView.dequeueReusableCell(withIdentifier: "cell") as! ExercisesListCell
 		if isAdding {
 			cell.isAdding = true
-			cell.titleText = fullExercisesName[indexPath.row]
-			if exercisesName.contains(cell.titleText) {
+			cell.titleText = workouts[indexPath.row].name
+			cell.iconNamed = workouts[indexPath.row].icon
+			cell.workoutIndex = indexPath.row
+			if exercisesIndex.contains(cell.workoutIndex) {
 				cell.checkBox.isChecked(true)
 			}
 		} else {
 			cell.isAdding = false
-			cell.titleText = exercisesName[indexPath.row]
+			cell.titleText = workouts[exercisesIndex[indexPath.row]].name
+			cell.iconNamed = workouts[exercisesIndex[indexPath.row]].icon
+			cell.workoutIndex = exercisesIndex[indexPath.row]
 		}
-        cell.mineHeight = tableView.rowHeight
-		cell.currentWorkoutName = currentWorkoutName
-		cell.iconNamed = FindExerciseIcon(cell.titleText)
+		cell.mineHeight = tableView.rowHeight
+		cell.currentWorkoutName = currentName
+		cell.initView()
 		cell.updateCell()
 		return cell
 	}
 
 	func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-		exercisesName.remove(at: indexPath.row)
+		exercisesIndex.remove(at: indexPath.row)
 		tableView.reloadData()
-	}
-
-	func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
-		print(#function + " - indexPath: \(indexPath.row)")
 	}
 
 	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let edit = UITableViewRowAction(style: .default, title: "Delete") { action, index in
-			self.exercisesName.remove(at: indexPath.row)
-			self.defaults.SetArrayString(self.currentWorkoutName, value: self.exercisesName)
+			self.exercisesIndex.remove(at: indexPath.row)
+			self.defaults.SetArrayInt(self.currentName, value: self.exercisesIndex)
 			tableView.reloadData()
         }
-
         edit.backgroundColor = constant.UIColorFromHex(Constant.init().citrus)
 
         return [edit]
