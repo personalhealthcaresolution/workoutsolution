@@ -27,8 +27,8 @@
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="TTg-CR-enP"/>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="clp-QH-msr"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="Zqa-mK-Txn"/>
-                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="ENt-8t-EXs"/>
-                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="ac7-lR-XU9"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="ENt-8t-EXs"/>
+                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="ac7-lR-XU9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aj3-GG-en2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,11 +50,11 @@
                     </view>
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="xWl-iE-MFF"/>
-                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="bId-fO-APc"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="bId-fO-APc"/>
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="2vZ-2k-U6A"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="l61-Hc-J1X"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="nod-Am-EXQ"/>
-                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="oKj-ix-Gsp"/>
+                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="oKj-ix-Gsp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Vz-t1-cYj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,13 +75,13 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="J8D-cn-1m3"/>
-                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="tAG-pv-qnC"/>
-                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="Uhk-vc-ncI"/>
-                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="OkA-ER-VUD"/>
-                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="yLj-9e-h4A"/>
-                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="HVy-hK-TLY"/>
-                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="2Q0-Nk-DEZ"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" animates="NO" id="J8D-cn-1m3"/>
+                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" animates="NO" id="tAG-pv-qnC"/>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" animates="NO" id="Uhk-vc-ncI"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" animates="NO" id="OkA-ER-VUD"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" animates="NO" id="yLj-9e-h4A"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" animates="NO" id="HVy-hK-TLY"/>
+                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="2Q0-Nk-DEZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06C-PC-2kY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -124,12 +124,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="gdv-pP-NxB"/>
-                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="8GG-l1-AV4"/>
+                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" animates="NO" id="gdv-pP-NxB"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="8GG-l1-AV4"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="ZDV-1n-cdP"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="E7w-a8-VCb"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="3rw-X9-GOn"/>
-                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="Jh2-7b-P62"/>
+                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="Jh2-7b-P62"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U5J-tR-xcg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -150,12 +150,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="rki-9I-X5x"/>
-                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="kyg-Ev-LHj"/>
-                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="8X9-WU-Ybi"/>
-                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="d1b-GC-rIO"/>
-                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="GZw-Zg-s5k"/>
-                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="jcM-37-kd3"/>
+                        <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" animates="NO" id="rki-9I-X5x"/>
+                        <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" animates="NO" id="kyg-Ev-LHj"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="8X9-WU-Ybi"/>
+                        <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" animates="NO" id="d1b-GC-rIO"/>
+                        <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" animates="NO" id="GZw-Zg-s5k"/>
+                        <segue destination="j7F-lH-Kty" kind="show" identifier="showType" animates="NO" id="jcM-37-kd3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="geu-FI-Jfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -176,12 +176,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" id="pTy-IG-rOQ"/>
+                        <segue destination="scc-Mf-cgh" kind="show" identifier="showMain" animates="NO" id="pTy-IG-rOQ"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="nAt-Xj-2Px"/>
-                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="dHK-07-q3d"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="dHK-07-q3d"/>
                         <segue destination="tbn-Ls-kZQ" kind="show" identifier="showWorkouts" id="ag7-ve-xIK"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="g7E-DY-15V"/>
-                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="2hd-eY-0nB"/>
+                        <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" animates="NO" id="2hd-eY-0nB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gZ-n3-8ee" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -204,7 +204,7 @@
                     <connections>
                         <segue destination="j7F-lH-Kty" kind="show" identifier="showType" id="mNi-ob-pkO"/>
                         <segue destination="vzv-Ww-cyC" kind="show" identifier="showLevel" id="a27-VJ-66M"/>
-                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" id="9eQ-MY-E5f"/>
+                        <segue destination="WJM-jH-MOM" kind="show" identifier="showDetails" animates="NO" id="9eQ-MY-E5f"/>
                         <segue destination="F2X-mc-cpk" kind="show" identifier="showWorkoutsList" id="uKc-Um-tMX"/>
                         <segue destination="9Kv-gd-a2T" kind="show" identifier="showExercises" id="fVF-On-9ua"/>
                         <segue destination="6eZ-xz-URi" kind="show" identifier="showSettings" id="Ccq-6p-sOR"/>
@@ -216,13 +216,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kyg-Ev-LHj"/>
-        <segue reference="oKj-ix-Gsp"/>
-        <segue reference="rki-9I-X5x"/>
-        <segue reference="d1b-GC-rIO"/>
-        <segue reference="8X9-WU-Ybi"/>
-        <segue reference="77Z-dx-kZg"/>
-        <segue reference="pTy-IG-rOQ"/>
-        <segue reference="Jya-nm-CTo"/>
+        <segue reference="HVy-hK-TLY"/>
+        <segue reference="9eQ-MY-E5f"/>
+        <segue reference="yLj-9e-h4A"/>
+        <segue reference="tAG-pv-qnC"/>
+        <segue reference="J8D-cn-1m3"/>
+        <segue reference="2Q0-Nk-DEZ"/>
+        <segue reference="OkA-ER-VUD"/>
+        <segue reference="Uhk-vc-ncI"/>
     </inferredMetricsTieBreakers>
 </document>
