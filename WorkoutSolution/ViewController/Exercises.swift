@@ -272,9 +272,6 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 			cell.titleText = workouts[indexPath.row].name
 			cell.iconNamed = workouts[indexPath.row].icon
 			cell.workoutIndex = indexPath.row
-			if exercisesIndex.contains(cell.workoutIndex) {
-				cell.checkBox.isChecked(true)
-			}
 		} else {
 			cell.isAdding = false
 			cell.titleText = workouts[exercisesIndex[indexPath.row]].name
@@ -284,6 +281,11 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 		cell.mineHeight = tableView.rowHeight
 		cell.currentWorkoutName = currentName
 		cell.initView()
+		if isAdding {
+			if exercisesIndex.contains(cell.workoutIndex) {
+				cell.checkBox.isChecked(true)
+			}
+		}
 		cell.updateCell()
 		return cell
 	}
