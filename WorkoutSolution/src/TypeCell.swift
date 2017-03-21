@@ -33,6 +33,9 @@ class TypeCell: UITableViewCell {
     }
 
 	func initView() {
+		let constant = Constant()
+		backgroundColor = constant.UIColorFromHex(constant.citrus)
+
 		var object = ScreenObject.Object()
 		let screenObject = ScreenObject()
 

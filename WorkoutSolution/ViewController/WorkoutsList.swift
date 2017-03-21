@@ -255,6 +255,12 @@ class WorkoutsList: UIViewController, UITableViewDelegate, UITableViewDataSource
 		return true
 	}
 
+	func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+	#if DEBUG
+		print(#function + " - sourceIndexPath: \(sourceIndexPath)")
+	#endif
+	}
+
 	func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
 		return true
 	}

@@ -1,6 +1,6 @@
 <workout>
-	<name>Intermediate</name>
-	<icon>Intermediate.png</icon>
+	<name>Flag</name>
+	<icon>Flag.png</icon>
 	<type>UpperBody</type>
 	<level>Expert</level>
 	<support>DipOnChairBefore</support>

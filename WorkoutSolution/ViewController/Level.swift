@@ -119,8 +119,8 @@ class Level: UIViewController, UITableViewDelegate, UITableViewDataSource {
 	}
 
 	func btnCardioClicked(_ sender:UIButton!) {
-		Application.instance.CurrentWorkout(Application.Workouts.cardio)
-		self.performSegue(withIdentifier: "showWorkouts", sender: self)
+		//Application.instance.CurrentWorkout(Application.Workouts.cardio)
+		//self.performSegue(withIdentifier: "showWorkouts", sender: self)
 	}
 
 	func btnExercisesClicked(_ sender:UIButton) {

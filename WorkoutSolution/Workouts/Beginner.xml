@@ -1,6 +1,6 @@
 <workout>
-	<name>Beginner</name>
-	<icon>Beginner.png</icon>
+	<name>Push Ups</name>
+	<icon>PushUps.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support>Before</support>

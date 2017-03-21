@@ -1,6 +1,6 @@
 <workout>
-	<name>Absolute Beginner</name>
-	<icon>AbsoluteBeginner.png</icon>
+	<name>Wall Squats</name>
+	<icon>WallSquats.png</icon>
 	<type>CoreABS</type>
 	<level>Beginner</level>
 	<support>Before</support>

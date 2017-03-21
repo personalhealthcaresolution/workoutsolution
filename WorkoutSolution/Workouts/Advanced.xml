@@ -1,6 +1,6 @@
 <workout>
-	<name>Advanced</name>
-	<icon>Advanced.png</icon>
+	<name>Pull Up</name>
+	<icon>PullUp.png</icon>
 	<type>LowerBody</type>
 	<level>Beginner</level>
 	<support>WallSitsBefore</support>

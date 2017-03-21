@@ -47,8 +47,7 @@ class Exercises: UIViewController, UITableViewDelegate, UITableViewDataSource {
 				exercisesIndex = fullBodyIndex
 			case "Complete Arm Workout":
 				exercisesIndex = completeArmIndex
-			default:
-				exercisesIndex = homeIndex
+			default: break
 			}
 			defaults.SetArrayInt(currentName, value: exercisesIndex)
 		} else {
