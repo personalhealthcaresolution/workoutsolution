@@ -249,9 +249,8 @@ class ScreenObject: NSObject, XMLParserDelegate {
 	}
 
 	func AddLabel(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32) {
-		if text == "" {
-			return
-		}
+		if text == "" { return }
+
 		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: xPosition)
 		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: yPosition)
 		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: width)
@@ -262,10 +261,36 @@ class ScreenObject: NSObject, XMLParserDelegate {
 		label.text = text
 		label.font = UIFont(name: font, size: size)
 		label.textColor = constant.UIColorFromHex(color)
-        view.addSubview(label)
+
+		view.addSubview(label)
 	}
 
-    func AddTextView(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32, backgroundColor: UInt32) {
+	func AddLabel(_ view: UIView, object: ScreenObject.Object) {
+		if object.text == "" {
+			return
+		}
+		let positionX = ScreenSize.getPositionX(ScreenSize.getCurrentWidth(), positionX: object.xPosition)
+		let positionY = ScreenSize.getPositionY(ScreenSize.getCurrentHeight(), positionY: object.yPosition)
+		let itemWidth = ScreenSize.getItemWidth(ScreenSize.getCurrentWidth(), itemWidth: object.width)
+		let itemHeight = ScreenSize.getItemHeight(ScreenSize.getCurrentHeight(), itemHeight: object.height)
+		
+		let label = UILabel()
+		label.frame = CGRect(x: positionX, y: positionY, width: itemWidth, height: itemHeight)
+		label.text = object.text
+		label.font = UIFont(name: object.font, size: object.size)
+		label.textColor = constant.UIColorFromHex(object.color)
+		
+		let gradientLayer = CAGradientLayer()
+		gradientLayer.frame = label.bounds
+		gradientLayer.colors = [UIColor.white.cgColor, UIColor.clear.cgColor]
+		gradientLayer.startPoint = CGPoint(x: 0.8, y: 1.0)
+		gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+		label.layer.mask = gradientLayer
+		
+		view.addSubview(label)
+	}
+
+	func AddTextView(_ view: UIView, xPosition: CGFloat, yPosition: CGFloat, width: CGFloat, height: CGFloat, text: String, font: String, size: CGFloat, color: UInt32, backgroundColor: UInt32) {
         if text == "" {
             return
         }

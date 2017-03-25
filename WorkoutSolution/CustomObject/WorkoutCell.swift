@@ -38,7 +38,7 @@ class WorkoutCell: TableViewCell {
 		object.size = 20
 		object.text = labelText
 		object.color = constant.citrus
-		screenObject.AddLabel(label, view: contentView, object: object)
+		screenObject.AddLabel(contentView, object: object)
 	}
 
 	func SetIcon(_ value: String) {
